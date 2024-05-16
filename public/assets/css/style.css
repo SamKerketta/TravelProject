@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap');
+@import "../sass/style.css";
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  
+  .mhtext {
+  	overflow: hidden;
+  }
+  .mhtext video {
+  	transform: scale(1.2);
+  }
+
+  .SlidrBnnrAbt {
+  	overflow: hidden;
+  }
+
+  .NwlShw {
+  	overflow: hidden;
+  }
+
+  .DintinGides {
+  	overflow: hidden;
+  }
+  .WhyDisntShw {
+  	overflow: hidden;
+  }
+
+  .MapCont .address_panel {
+  	top: 83px;
+  }
+
+  #ContentPlaceHolder1_PnlNOrmalinquiry {
+  	width: 100%;
+  }
+
+  #ContentPlaceHolder1_UpdatePanelNOrmalinquiry {
+  	 width: 100%;
+  }
+
+  #ContentPlaceHolder1_UpdatePanelPaymentinquiry {
+  	width: 100%;
+  }
+
+
+  #ContentPlaceHolder1_PnlPaymentinquiry {
+  	width: 100%;
+  }
+
+  .SlidrDlSecMn {
+  	overflow: hidden;
+  }
+
+  .cl12Owlsecmn {
+  	overflow: hidden;
+  }
+
+  .item {
+  	overflow: hidden;
+  }
+
+  .cl12wnSldrdl {
+  	overflow: hidden;
+  }
+
+  .SlirPgeMn  {
+  	overflow: hidden;
+  }
+
+ .ChwseSecShw {
+ 	overflow: hidden;
+ }
+ .owl-stage-outer {
+ 	overflow: hidden;
+ }
+
+ .owl-item {
+ 	overflow: hidden;
+ }
+
+ .owl-stage {
+ 	overflow: hidden;
+ }
+
+
+}
+
