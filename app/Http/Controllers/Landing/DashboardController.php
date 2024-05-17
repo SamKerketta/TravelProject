@@ -20,10 +20,10 @@ class DashboardController extends Controller
         | Serial No : 01
         | Under Con 
      */
-    public function dashboardView()
+    public function index()
     {
         try {
-            return view("dashboard/hero");
+            return view("pages/hero");
         } catch (Exception $e) {
         }
     }

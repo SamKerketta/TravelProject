@@ -36,6 +36,7 @@ Route::controller(TestController::class)->group(function () {
  * | Use for the Dashboard sections
  */
 Route::controller(DashboardController::class)->group(function () {
-    Route::get('', 'dashboardView');
+    Route::get('', 'index');
+    Route::get('about-us', 'aboutUs');
     Route::get('/destination','destinationView');
 });
