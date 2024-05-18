@@ -11,7 +11,6 @@ class DashboardController extends Controller
     // Initializing Construct Function 
     public function __construct()
     {
-        
     }
 
     /**
@@ -22,10 +21,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        try {
-            return view("pages/hero");
-        } catch (Exception $e) {
-        }
+        return view("pages/hero");
     }
 
 
@@ -35,12 +31,9 @@ class DashboardController extends Controller
         | Serial No : 02
         | Under con
      */
-    public function destinationView()
+    public function aboutUs()
     {
-
-        try {
-        } catch (Exception $e) {
-        }
+        return view("pages/about-us");
     }
 
     /**
@@ -49,10 +42,29 @@ class DashboardController extends Controller
         | Serial No : 03
         | Under Con 
      */
-    public function servicesView()
+    public function ourDestination()
     {
-        try {
-        } catch (Exception $e) {
-        }
+        return view("pages/our-destination");
+    }
+
+    /**
+     * | Get the destials for the little inpiration page 
+        | Serial No : 04
+        | Under Con
+     */
+    public function littileInspiration()
+    {
+        return view("page/littile-inspiration");
+    }
+
+
+    /**
+     * | Get the details for the our services page 
+        | Serial No : 05
+        | Under Con 
+     */
+    public function ourServic()
+    {
+        return view("page/our-servic");
     }
 }

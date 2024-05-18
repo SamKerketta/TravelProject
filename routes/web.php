@@ -38,5 +38,7 @@ Route::controller(TestController::class)->group(function () {
 Route::controller(DashboardController::class)->group(function () {
     Route::get('', 'index');
     Route::get('about-us', 'aboutUs');
-    Route::get('/destination','destinationView');
+    Route::get('our-destination','ourDestination');
+    Route::get('littile-inspiration','littileInspiration');
+    Route::get('our-servic','ourServic');
 });

@@ -1151,17 +1151,17 @@
                                         <div class="inner-mainu">
                                             <ul class="list-mainu">
                                                 <li class="list"><a href="about-us">ABOUT US</a></li>
-                                                <li class="list"><a href="destinations.html">OUR DESTINATIONS</a></li>
-                                                <li class="list"> <a href="services.html">OUR SERVICES</a></li>
-                                                <li class="list"><a href="littile-inspirations.html">LITTLE
+                                                <li class="list"><a href="our-destination">OUR DESTINATIONS</a></li>
+                                                <li class="list"> <a href="services">OUR SERVICES</a></li>
+                                                <li class="list"><a href="littile-inspiration">LITTLE
                                                         INSPIRATIONS</a></li>
-                                                <li class="list"><a href="responsible-travel.html">RESPONSIBLE
+                                                <li class="list"><a href="responsible-travel">RESPONSIBLE
                                                         TRAVEL</a></li>
                                                 <li class="list"> <a href="about-us.html#why-us">WHY US</a></li>
                                                 <li class="list"><a href="about-us.html#meet-our-team">MEET OUR
                                                         TEAM</a></li>
-                                                <li class="list"> <a href="blogs.html">BLOGS</a></li>
-                                                <li class="list"> <a href="contact-us.html">CONTACT</a></li>
+                                                <li class="list"> <a href="blogs">BLOGS</a></li>
+                                                <li class="list"> <a href="contact-us">CONTACT</a></li>
                                             </ul>
                                         </div>
                                     </div>
