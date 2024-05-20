@@ -146,7 +146,7 @@
             margin: auto;
             background: red;
             overflow: hidden;
-            position: absolute;
+            position: sticky;
             bottom: 20%;
             left: 10%;
         }

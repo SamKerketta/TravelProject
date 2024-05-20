@@ -54,7 +54,7 @@ class DashboardController extends Controller
      */
     public function littileInspiration()
     {
-        return view("page/littile-inspiration");
+        return view("pages/littile-inspiration");
     }
 
 
@@ -65,6 +65,26 @@ class DashboardController extends Controller
      */
     public function ourServic()
     {
-        return view("page/our-servic");
+        return view("pages/our-servic");
+    }
+
+    /**
+     * | Get the details for the responsible travel page 
+        | Serial No : 06
+        | Under Con 
+     */
+    public function responsibleTravel()
+    {
+        return view("pages/responsible-travel");
+    }
+
+    /**
+     * | Get the blog page details and view it 
+        | Serial No : 07
+        | Under Con
+     */
+    public function blogs()
+    {
+        return view("pages/blogs");
     }
 }

@@ -41,4 +41,6 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('our-destination','ourDestination');
     Route::get('littile-inspiration','littileInspiration');
     Route::get('our-servic','ourServic');
+    Route::get('responsible-travel','responsibleTravel');
+    Route::get('blogs','blogs');
 });

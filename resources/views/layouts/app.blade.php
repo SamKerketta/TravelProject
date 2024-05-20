@@ -1152,13 +1152,13 @@
                                             <ul class="list-mainu">
                                                 <li class="list"><a href="about-us">ABOUT US</a></li>
                                                 <li class="list"><a href="our-destination">OUR DESTINATIONS</a></li>
-                                                <li class="list"> <a href="services">OUR SERVICES</a></li>
+                                                <li class="list"> <a href="our-servic">OUR SERVICES</a></li>
                                                 <li class="list"><a href="littile-inspiration">LITTLE
                                                         INSPIRATIONS</a></li>
                                                 <li class="list"><a href="responsible-travel">RESPONSIBLE
                                                         TRAVEL</a></li>
-                                                <li class="list"> <a href="about-us.html#why-us">WHY US</a></li>
-                                                <li class="list"><a href="about-us.html#meet-our-team">MEET OUR
+                                                <li class="list"> <a href="about-us#why-us">WHY US</a></li>
+                                                <li class="list"><a href="about-us#meet-our-team">MEET OUR
                                                         TEAM</a></li>
                                                 <li class="list"> <a href="blogs">BLOGS</a></li>
                                                 <li class="list"> <a href="contact-us">CONTACT</a></li>
