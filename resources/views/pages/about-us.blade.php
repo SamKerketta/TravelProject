@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('web-layouts.app')
 
 @section('page-content')
     <section class="hero" style="position:relative; ">
