@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('web-layouts.app')
+
 @section('page-content')
     <section class="hero" style="position:relative; ">
         <img src="images/home/destination.jpg" class="d-block w-100" alt="Luxury Travels Bali">

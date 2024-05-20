@@ -18,9 +18,9 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 | Created By : 
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 /**
@@ -43,4 +43,14 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('our-servic','ourServic');
     Route::get('responsible-travel','responsibleTravel');
     Route::get('blogs','blogs');
+});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
