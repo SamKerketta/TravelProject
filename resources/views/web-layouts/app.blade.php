@@ -1135,7 +1135,7 @@
                     <div class="col-12">
                         <nav class="navbar navbar-expand-lg">
                             <div class="logo">
-                                <a href="index.html" class="logo">
+                                <a href="/" class="logo">
                                     <img src="images/logo/logo_far_and_beyond.png" alt="logo" style="height: 20px;">
                                 </a>
                             </div>
@@ -1166,7 +1166,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="contact" onclick="location.href='contact-us.html';">CONTACT US</div>
+                                <div class="contact" onclick="location.href='contact-us';">CONTACT US</div>
                             </div>
                         </nav>
                     </div>

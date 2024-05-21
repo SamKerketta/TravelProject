@@ -65,7 +65,7 @@ class DashboardController extends Controller
      */
     public function ourServic()
     {
-        return view("pages/our-servic");
+        return view("pages/our-service");
     }
 
     /**
