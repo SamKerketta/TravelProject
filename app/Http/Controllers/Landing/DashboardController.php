@@ -87,4 +87,15 @@ class DashboardController extends Controller
     {
         return view("pages/blogs");
     }
+
+
+    /**
+     * | Get the details and view the contact us page 
+        | Serial no :
+        | Under Con 
+     */
+    public function contactUs()
+    {
+        return view("pages/contact-us");
+    }
 }

@@ -43,6 +43,7 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('our-servic','ourServic');
     Route::get('responsible-travel','responsibleTravel');
     Route::get('blogs','blogs');
+    Route::get('contact-us','contactUs');
 });
 
 Route::middleware([

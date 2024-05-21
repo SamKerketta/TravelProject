@@ -1110,7 +1110,7 @@
 
         .owl-carousel .owl-item img {
             display: block;
-            width: 100px;
+            width: 100%;
         }
 
         .inner_img_text {

@@ -420,6 +420,205 @@
             </div>
         </div>
     </section>
+
+
+
+    {{-- new slider sections  --}}
+    <section id="ContentPlaceHolder1_PnlExperiencesDistinctDestinations">
+        <div class="Nwlter exprSec" id="target7">
+            <div class="container">
+                <div class="NwlShw">
+                    <div class="SliderMnNweshw2 owl-carousel owl-theme">
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="accessible-tours" title="Accessible Tours" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="art-and-architecture" title="Art and Architecture" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name2</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="bike-tour" title="Bike Tours" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name3</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="craft-and-textile-tours" title="Craft and Textile Tours" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name4</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="culinary-tours" title="Culinary Tours" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name5</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="cultural-tours" title="Cultural Tours" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name6</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="family-tour" title="Family Tours" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name7</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="food-tour" title="Food Tours" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name8</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="history-tours" title="History Tours" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name9</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="photography-tour" title="Photography Tours" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name10</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="social-impact-tours" title="Social Impact Tours" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name11</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="unique-tours" title="Unique Tours" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name12</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="village-tours" title="Village Tours" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name13</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="something-went-wrong.html" target="_blank">
+                                <div class="cl12Nwslter">
+                                    <div class="ImgScHw"><img
+                                            src="https://w7.pngwing.com/pngs/184/113/png-transparent-user-profile-computer-icons-profile-heroes-black-silhouette-thumbnail.png"
+                                            alt="walking-tours" title="Walking Tours" /></div>
+                                    <div class="cl12Cnt">
+                                        <p style="margin-top:15px ">Name14</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!--Our patenar-->
     <section class="our_team">
         <h2>Our Partners Say</h2>
