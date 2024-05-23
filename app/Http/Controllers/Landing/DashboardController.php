@@ -3,15 +3,26 @@
 namespace App\Http\Controllers\Landing;
 
 use App\Http\Controllers\Controller;
+use App\Models\PageSection;
+use App\Models\SectionType;
+use App\Models\SectionValue;
 use Exception;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    private $mPageSection;
+    private $mSectionType;
+    private $mSectionValue;
+
     // Initializing Construct Function 
     public function __construct()
     {
+        $this->mPageSection     = new PageSection();
+        $this->mSectionType     = new SectionType();
+        $this->mSectionValue    = new SectionValue();
     }
+
 
     /**
      * | Get and render Dasboard details 
@@ -21,6 +32,13 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $pageName = "landingPage";                                              // Static put in config
+
+        # Get the landing page Dats
+        $pageData = $this->mSectionValue->getDataForPage($pageName)->orderBy("page_section")->get();
+
+        # Structure the data for the frontend 
+        // $viewData = [];
         return view("pages/hero");
     }
 

@@ -55,3 +55,4 @@ Route::middleware([
         return view('admin.dashboard');
     })->name('dashboard');
 });
+

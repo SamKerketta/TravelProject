@@ -1,7 +1,6 @@
 @extends('web-layouts.app')
 
 @section('page-content')
-    {{-- first section --}}
     <section class="">
         <div class="video">
             <!--<video width="100%" class="elVideo" loop="loop" autoPlay playsInline muted src=" https://www.distinctdestinations.in/asset/video/ddvideos.mp4" id='video-slider-1'></video>-->
@@ -10,23 +9,21 @@
             <!--<img src="slider/banner-1.jpg" alt="banner-1">-->
             <div class="text-video">
                 <h2><span
-                        style="ont-size: 3.75rem;font-weight: 400;letter-spacing: 3px;line-height: 1.05;text-transform:uppercase;color:white">
-                        YOUR DEPENDABLE PARTNER FOR
-                        EXCLUSIVE AND INNOVATIVE LUXURY!
+                        style="font-size: 2.75rem;font-weight: 400;letter-spacing: 3px;line-height: 1.05;text-transform:uppercase;color:white">
+                        YOUR DEPENDABLE PARTNER FOR EXCLUSIVE AND INNOVATIVE EXPERIENTIAL TRAVEL
                     </span></h2>
 
             </div>
         </div>
     </section>
 
-    {{-- second section --}}
     <section class="trips-bg">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="trips-text">
                         <h2 style="margin-top:25px;margin-bottom:10px;">
-                            <spna class="titleheading">THE LUXURY TRAVEL EXPERTS</spna>
+                            <spna class="titleheading">THE LUXURY SPECIALISTS</spna>
                         </h2>
                         <p>It’s the era of limitless information about the wonders of
                             the world. It’s not easy to navigate your way to the choices
@@ -42,8 +39,9 @@
                             <br />
                             Let’s Go. Far and Beyond. Together.
                         </p>
-                        <div class="btn_know"><a class="btn_more" href="#" style="text-decoration:none;">KNOW
-                                US MORE</a></div>
+                        <div class="btn_know"><a class="btn_more" href="about-us.html" style="text-decoration:none;">KNOW
+                                MORE</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,75 +49,76 @@
         </div>
     </section>
 
-    {{-- third section --}}
-    <section class="destination" style="background:#FFF3EF;padding-top:30px;padding-bottom: 65px;">
-        <div class="dest-heading">
-            <h2>Our Destinations</h2>
-        </div>
-        <div class="container-fluid">
-            <div class="row" style="padding-left:10px;padding-right:10px; ">
-                <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hover">
-                    <img src="images/home/india.jpg" alt="vote-for-us">
-                    <!--<section class="botom"></section>-->
-                    <div class="offer-slider-btn-expele">
-                        <h2 style="font-weight:400;">INDIA</h2>
-                        <div class="slider_p">
-                            <p style="font-size:0.85rem;">
-                                History, heritage, culture and the modern avatar of this
-                                ancient land defines the quintessential “India Experience”</p>
+    <section>
+        <div class="destination" style="background:#FFF3EF!important; padding-bottom:40px;">
+            <div class="dest-heading">
+                <h2 style="margin-bottom:0px!important; margin-top:0px;">Our Destinations</h2>
+            </div>
+            <div class="container-fluid">
+                <div class="row" style="padding-left:10px;padding-right:10px; ">
+                    <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hover">
+                        <img src="images/home/india.jpg" alt="vote-for-us">
+                        <!--<section class="botom"></section>-->
+                        <div class="offer-slider-btn-expele">
+                            <h2 style="font-weight:400;">INDIA</h2>
+                            <div class="slider_p">
+                                <p style="font-size:0.85rem;">
+                                    History, heritage, culture and the modern avatar of this
+                                    ancient land defines the quintessential “India Experience”</p>
+                            </div>
+                            <button class="expo"><a href="destinations.html#india">EXPLORE</a></button>
                         </div>
-                        <button class="expo"><a href="#">EXPLORE</a></button>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hover">
-                    <img src="images/home/nepal%20home.jpg" alt="vote-for-us">
-                    <!--<button class="expo"><a href="">EXPLORE</a></button>-->
-                    <div class="offer-slider-btn-expele">
-                        <h2 style="font-weight:400;">NEPAL</h2>
-                        <div class="slider_p">
-                            <p style="font-size:0.85rem;">
-                                Home to many of the world’s highest mountains, it is still
-                                deeply grounded in ancient traditions.</p>
+                    <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hover">
+                        <img src="images/home/nepal%20home.jpg" alt="vote-for-us">
+                        <!--<button class="expo"><a href="">EXPLORE</a></button>-->
+                        <div class="offer-slider-btn-expele">
+                            <h2 style="font-weight:400;">NEPAL</h2>
+                            <div class="slider_p">
+                                <p style="font-size:0.85rem;">
+                                    Home to many of the world’s highest mountains, it is still
+                                    deeply grounded in ancient traditions.</p>
+                            </div>
+                            <button class="expo"><a href="destinations.html#nepal">EXPLORE</a></button>
                         </div>
-                        <button class="expo"><a href="#">EXPLORE</a></button>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hover">
-                    <img src="images/home/bhutan%20home.jpg" alt="vote-for-us">
-                    <!--<button class="expo"><a href="">EXPLORE</a></button>-->
-                    <div class="offer-slider-btn-expele">
-                        <h2 style="font-weight:400;">BHUTAN</h2>
-                        <div class="slider_p">
-                            <p style="font-size:0.85rem;">
-                                This remote Himalayan kingdom reminds us how sustainable
-                                practices can drive travel.
-                            </p>
+                    <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hover">
+                        <img src="images/home/bhutan%20home.jpg" alt="vote-for-us">
+                        <!--<button class="expo"><a href="">EXPLORE</a></button>-->
+                        <div class="offer-slider-btn-expele">
+                            <h2 style="font-weight:400;">BHUTAN</h2>
+                            <div class="slider_p">
+                                <p style="font-size:0.85rem;">
+                                    This remote Himalayan kingdom reminds us how sustainable
+                                    practices can drive travel.
+                                </p>
+                            </div>
+                            <button class="expo"><a href="destinations.html#bhutan">EXPLORE</a></button>
                         </div>
-                        <button class="expo"><a href="#">EXPLORE</a></button>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hover">
-                    <img src="images/home/sri%20lanka%20home.jpg" alt="vote-for-us">
-                    <!--<button class="expo"><a href="">EXPLORE</a></button>-->
-                    <div class="offer-slider-btn-expele">
-                        <h2 style="font-weight:400;">SRI LANKA</h2>
-                        <div class="slider_p">
-                            <p style="font-size:0.85rem;">
-                                The ‘Spice Island’ illustrates, in the most imaginative ways,
-                                why— “Small is Beautiful”.</p>
+                    <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hover">
+                        <img src="images/home/sri%20lanka%20home.jpg" alt="vote-for-us">
+                        <!--<button class="expo"><a href="">EXPLORE</a></button>-->
+                        <div class="offer-slider-btn-expele">
+                            <h2 style="font-weight:400;">SRI LANKA</h2>
+                            <div class="slider_p">
+                                <p style="font-size:0.85rem;">
+                                    The ‘Spice Island’ illustrates, in the most imaginative ways,
+                                    why— “Small is Beautiful”.</p>
+                            </div>
+                            <button class="expo"><a href="destinations.html#shrilanka">EXPLORE</a></button>
                         </div>
-                        <button class="expo"><a href="#">EXPLORE</a></button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    {{-- wtf --}}
+
     <div class="why-choose">
         <div class="container">
             <div class="row">
-                <h2 class="text-center">Why travel with Far and Beyond:</h2>
+                <h2 class="text-center">Why travel with Far and Beyond</h2>
                 <div class="col-lg-3 col-md-4 col-12">
                     <div class="pakage-image text-center">
                         <img src="images/FarAndBeyond_Heart.svg" class="img-fluid">
@@ -152,10 +151,10 @@
                 <div class="col-lg-3 col-md-4 col-12">
                     <div class="pakage-image text-center">
                         <img src="images/FarAndBeyond_Guide.svg" class="img-fluid">
-                        <h4>Finest Guides</h4>
+                        <h4>Our Guarantee</h4>
                         <div class="slider_p">
-                            <p>The intimate knowledge and the immersive approach of our
-                                private and specialist guides bring invaluable insights.</p>
+                            <p>We deliver what we commit, your extended team on- ground creating memorable experiences.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -168,7 +167,7 @@
             <div class="row" style="padding-left:7px;padding-right:7px;">
                 <div class="col-lg-3 col-md-6 col-sm-12" style="position:relative">
                     <div class="inner_img_text">
-                        <h2 style="color:black;text-align: left;">Our Services:</h2>
+                        <h2 style="color:black;text-align: left;">Our Services</h2>
                         <div class="slider_p" style="padding-top: 10px;">
                             <p style="font-weight:bold; color:black;text-align: left;">
                                 We offer the most exclusive experiences to guests through
@@ -178,43 +177,55 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2">
-                    <img src="images/home/luxury%20collection%20home.jpg" alt="vote-for-us">
-                    <div class="offer-slider-btn-expele">
-                        <h2 style="font-size: 20px; color:white;">The Luxury Collection</h2>
-                        <div class="slider_p" style="padding-top: 10px;">
-                            <p style="color:white">
-                                Our Luxury Collection is in sync with the expanded
-                                new &quot;three T&#39;s&quot; of luxury: Time, Truth and Trust.
-                            </p>
-                        </div>
+                    <div class="card">
+                        <img src="images/home/luxury%20collection%20home.jpg" alt="vote-for-us">
                     </div>
+                    <a href="services.html" style="text-decoration:none;">
+                        <div class="offer-slider-btn-expele">
+                            <h2 style="font-size: 20px; color:white;">The Luxury Collection</h2>
+                            <div class="slider_p" style="padding-top: 10px;">
+                                <p style="color:white">
+                                    Our Luxury Collection is in sync with the expanded
+                                    new &quot;three T&#39;s&quot; of luxury: Time, Truth and Trust.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2">
-                    <img src="images/home/meetingandconf.jpg" alt="vote-for-us">
+                    <div class="card">
+                        <img src="images/home/meetingandconf.jpg" alt="vote-for-us">
+                    </div>
                     <!--<span class="text" style="font-size: 15px;">MICE</span>-->
-                    <div class="offer-slider-btn-expele">
-                        <h2 style="font-size:20px;color:white;">meeting & conferences</h2>
-                        <div class="slider_p" style="padding-top: 10px;">
-                            <p style="color:white">
-                                We provide a comprehensive range of customisable services,
-                                including technological solutions and more, for a richly
-                                value-added experience to the secure long-term growth of
-                                your business
-                            </p>
+                    <a href="services.html">
+                        <div class="offer-slider-btn-expele">
+                            <h2 style="font-size:20px;color:white;">meeting & conferences</h2>
+                            <div class="slider_p" style="padding-top: 10px;">
+                                <p style="color:white">
+                                    We provide a comprehensive range of customisable services,
+                                    including technological solutions and more, for a richly
+                                    value-added experience to the secure long-term growth of
+                                    your business
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2">
-                    <img src="images/home/incentives.jpg" alt="vote-for-us">
-                    <div class="offer-slider-btn-expele">
-                        <h2 style="font-size: 20px;color:white;">Incentives</h2>
-                        <div class="slider_p" style="padding-top: 10px;">
-                            <p style="color:white">
-                                Our leisure time programmes offer the greatest value for
-                                time and money through a spectrum of thrilling events and
-                                fun activities</p>
-                        </div>
+                    <div class="card">
+                        <img src="images/home/incentives.jpg" alt="vote-for-us">
                     </div>
+                    <a href="services.html">
+                        <div class="offer-slider-btn-expele">
+                            <h2 style="font-size: 20px;color:white;">Incentives</h2>
+                            <div class="slider_p" style="padding-top: 10px;">
+                                <p style="color:white">
+                                    Our leisure time programmes offer the greatest value for
+                                    time and money through a spectrum of thrilling events and
+                                    fun activities</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -271,8 +282,10 @@
                             most alluring in-house products.
                         </p>
                         <span style=" margin-top: 20px;
-        display: inline-block;">
-                            <a href="#" class="enquri" style="cursor: pointer;border-radius:5px;">Read More</a>
+display: inline-block;">
+                            <a href="littile-inspirations.html" class="enquri"
+                                style="cursor: pointer;border-radius:5px;">Read
+                                More</a>
                         </span>
                     </div>
                 </div>
@@ -296,8 +309,9 @@
                             plastic is in our DNA; respecting communities and their
                             culture is embedded in our work ethos…</p>
                         <span style=" margin-top: 20px;
-        display: inline-block;">
-                            <a href="#" class="enquri" style="cursor: pointer;border-radius:5px;">Read More</a>
+display: inline-block;">
+                            <a href="responsible-travel.html" class="enquri"
+                                style="cursor: pointer;border-radius:5px;">Read More</a>
                         </span>
                     </div>
                 </div>
@@ -456,83 +470,16 @@
                     </div>
                 </div>
             </div>
-            <!--<div class="box">-->
-            <!--<img src="images/1/hongkong-travels.jpg" alt="Luxury Travels Hongkong, Makau">-->
-            <!--<div class="box-content">-->
-            <!--<h3 class="title">HONGKONG MACAU</h3>-->
-            <!--<span class="post"><a href="">Know More</a></span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box">-->
-            <!--<img src="images/1/singapore-travels.jpg" alt="Luxury Travels Singapore">-->
-            <!--<div class="box-content">-->
-            <!--<h3 class="title">SINGAPORE</h3>-->
-            <!--<span class="post"><a href="">Know More</a></span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box">-->
-            <!--<img src="images/1/malaysia-travels.jpg" alt="Luxury Travels Malaysia">-->
-            <!--<div class="box-content">-->
-            <!--<h3 class="title">MALAYSIA</h3>-->
-            <!--<span class="post"><a href="">Know More</a></span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box">-->
-            <!--<img src="images/1/vietnam-travels.jpg" alt="Luxury Travels Vietnam">-->
-            <!--<div class="box-content">-->
-            <!--<h3 class="title">VIETNAM</h3>-->
-            <!--<span class="post"><a href="#">Know More</a></span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box">-->
-            <!--<img src="images/1/thailand-travels.jpg" alt="Luxury Travels Thailand">-->
-            <!--<div class="box-content">-->
-            <!--<h3 class="title">THAILAND</h3>-->
-            <!--<span class="post"><a href="">Know More</a></span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box">-->
-            <!--<img src="images/1/usa-travels.jpg" alt="Luxury Travels USA">-->
-            <!--<div class="box-content">-->
-            <!--<h3 class="title">USA</h3>-->
-            <!--<span class="post"><a href="">Know More</a></span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box">-->
-            <!--<img src="images/1/canada-travels.jpg" alt="Luxury Travels Canada">-->
-            <!--<div class="box-content">-->
-            <!--<h3 class="title">CANADA</h3>-->
-            <!--<span class="post"><a href="">Know More</a></span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box">-->
-            <!--<img src="images/1/new-zealand-travels.jpg" alt="Luxury Travels New Zealand">-->
-            <!--<div class="box-content">-->
-            <!--<h3 class="title">NEW ZEALAND</h3>-->
-            <!--<span class="post"><a href="">Know More</a></span>-->
-            <!--</div>-->
-            <!--</div>-->
+
         </div>
-        <!--<div style="text-align: center;">-->
-        <!--    <a href="" class="btn btn-outline-success" style="width:200px;">View All</a>-->
-        <!--</div>-->
     </div>
+
     <div class="clear"></div>
-    <!--End blog section-->
 
     <!--Our patenar-->
     <section class="our_team">
         <h2>Our Partners Say</h2>
         <div id="myCarousel" class="carousel slide" data-ride="carousel" position="relative;">
-            <!--<span style="position:absolute">-->
-            <!--  <img src="images/home/icon-3.png" style="height:58px; position: absolute;left:297px; top: -30px;">-->
-            <!--</span>-->
-            <!-- Carousel indicators -->
-            <!--<ol class="carousel-indicators">-->
-            <!--	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
-            <!--	<li data-target="#myCarousel" data-slide-to="1"></li>-->
-            <!--	<li data-target="#myCarousel" data-slide-to="2"></li>-->
-            <!--</ol>   -->
             <!-- Wrapper for carousel items -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -540,40 +487,23 @@
                         <img src="../examples/images/clients/3.html" alt="">
                     </div>
                     <p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia.
-                        Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus
-                        risus risus, volutpat vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget
-                        rutrum.</p>
+                        Etiam faucibus
+                        mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus,
+                        volutpat vel
+                        tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
                     <p class="overview">
                         <b>Michael Holz</b>Seo Analyst at <a href="#">OsCorp Tech.</a>
                     </p>
-                    <!--<div class="star-rating">-->
-                    <!--  <ul class="list-inline">-->
-                    <!--    <li class="list-inline-item">-->
-                    <!--      <i class="fa fa-star"></i>-->
-                    <!--    </li>-->
-                    <!--    <li class="list-inline-item">-->
-                    <!--      <i class="fa fa-star"></i>-->
-                    <!--    </li>-->
-                    <!--    <li class="list-inline-item">-->
-                    <!--      <i class="fa fa-star"></i>-->
-                    <!--    </li>-->
-                    <!--    <li class="list-inline-item">-->
-                    <!--      <i class="fa fa-star"></i>-->
-                    <!--    </li>-->
-                    <!--    <li class="list-inline-item">-->
-                    <!--      <i class="fa fa-star-o"></i>-->
-                    <!--    </li>-->
-                    <!--  </ul>-->
-                    <!--</div>-->
                 </div>
                 <div class="carousel-item">
                     <div class="img-box" style="display:none">
                         <img src="../examples/images/clients/1.html" alt="">
                     </div>
                     <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor,
-                        varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.
-                        Vestibulum idac nisl bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.
-                    </p>
+                        varius quam
+                        at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum
+                        idac nisl
+                        bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
                     <p class="overview">
                         <b>Paula Wilson</b>Media Analyst at <a href="#">SkyNet Inc.</a>
                     </p>
@@ -584,9 +514,10 @@
                         <img src="../examples/images/clients/2.html" alt="">
                     </div>
                     <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a
-                        mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis.
-                        Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor
-                        velit.</p>
+                        mi suscipit
+                        tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse
+                        potenti.
+                        Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor velit.</p>
                     <p class="overview">
                         <b>Antonio Moreno</b>Web Developer at <a href="#">Circle Ltd.</a>
                     </p>
@@ -597,9 +528,10 @@
                         <img src="../examples/images/clients/2.html" alt="">
                     </div>
                     <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a
-                        mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis.
-                        Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor
-                        velit.</p>
+                        mi suscipit
+                        tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse
+                        potenti.
+                        Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor velit.</p>
                     <p class="overview">
                         <b>Antonio Moreno</b>Web Developer at <a href="#">Circle Ltd.</a>
                     </p>
@@ -625,8 +557,8 @@
                 <p>CONTACT US</p>
                 <h3
                     style=" font-family: 'Kadwa', serif;
-            font-size: 3.5em; line-height: 52px;
-        letter-spacing: -2.5px;margin-bottom: 40px;">
+    font-size: 3.5em; line-height: 52px;
+letter-spacing: -2.5px;margin-bottom: 40px;">
                     Have questions? <br> Get in touch! </h3>
                 <div class="row">
                     <div class="col-sm-6">
@@ -673,7 +605,8 @@
                             <label class="check">
                                 <input type="checkbox">
                                 <p>I have read and accept the <a style="text-decoration: underline;">Privacy and Data
-                                        Protection Policy*</a> and I know that I can unsubscribe at any time. </p>
+                                        Protection
+                                        Policy*</a> and I know that I can unsubscribe at any time. </p>
                             </label>
                         </div>
                     </form>
@@ -683,39 +616,5 @@
     </section>
 
     <!--End news latter-->
-    <div class="client-logo-bg">
-        <div class="client-text" style="display:none;">
-            <h3 class="border_line1">
-                <span>Our Affiliations</span>
-            </h3>
-        </div>
-        <div class="inspired_section-1">
-            <div class="owl-carousel owl-theme inspired_slider1">
-                <div class="item">
-                    <img src="slider/trustedFITservice.png" alt="One and only ">
-                </div>
-                <div class="item">
-                    <img src="slider/IATO.png" alt="Atlantis">
-                </div>
-                <div class="item">
-                    <img src="slider/trustedFITservice.png" alt="Four Seasons">
-                </div>
-                <div class="item">
-                    <img src="slider/IATO.png" alt="Raffles">
-                </div>
-                <div class="item">
-                    <img src="slider/trustedFITservice.png" alt="Fairmont">
-                </div>
-                <div class="item">
-                    <img src="slider/IATO.png" alt="Sofitel">
-                </div>
-                <div class="item">
-                    <img src="slider/trustedFITservice.png" alt="St Regis">
-                </div>
-                <div class="item">
-                    <img src="slider/IATO.png" alt="Preferred hotels">
-                </div>
-            </div>
-        </div>
-    </div>
+    
 @endsection

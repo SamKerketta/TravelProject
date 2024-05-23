@@ -15,434 +15,18 @@
     <meta name="description" content=" " />
     <meta name="keywords" content=" " />
     <!-- css****** -->
-    <!-- <link rel="icon" href="images/fevicon.png" type="image/png" sizes="16x16"> -->
     <link href="css/custom_style.css" type="text/css" rel="stylesheet">
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="style.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css">-->
     <link href="https://db.onlinewebfonts.com/c/02d8f1743ede250c7c9865f1574d7cc6?family=Circular+Book" rel="stylesheet">
     <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&amp;display=swap"
         rel="stylesheet">
-    <!-- New Global site tag (gtag.js) - Google Analytics -->
-
     <style>
-        .copy-itm {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            text-align: center;
-            list-style: none;
-        }
-
-        .copywrite {
-            background: white;
-            padding: 10px 0 10px 0;
-            border-top: 1px #dedede solid;
-            color: black;
-            text-align: center;
-        }
-
-        .copy-itm .list-itm span {
-            color: black;
-            font-weight: 100;
-            padding-left: 24px;
-            font-size: 12px;
-        }
-    </style>
-    <style>
-        .cheack input {
-            margin-left: -20px;
-        }
-
-        .check input {
-            margin-top: -35px;
-        }
-
-        .check {
-            width: 70%;
-            font-size: 14px;
-            color: white;
-            margin-top: 20px;
-        }
-
-        .btn-2:hover a {
-            color: black;
-            background: white;
-        }
-
-        .btn-2 {
-            padding: 12px 25px !important;
-            border: 1px solid rgb(255 255 255 / 50%);
-            color: white !important;
-            font-size: 13px !important;
-            line-height: 14px;
-            letter-spacing: 1px;
-            position: relative;
-            color: white;
-            z-index: 0;
-        }
-
-        .form-inline .form-group {
-            width: 33%;
-        }
-
-        .form-inline {
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-            -ms-flex-align: center;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .form-inline input[type=email] {
-            background: transparent;
-            border: 0;
-            border-bottom: 1px solid rgb(255 255 255 / 50%);
-            border-radius: 0;
-            padding: 13px 13px 13px 0 !important;
-            color: #FFFFFF;
-            outline: #000000;
-            font-size: 15px !important;
-            line-height: 16px;
-            letter-spacing: .5px;
-            width: 100%;
-        }
-
-        .news-cont {
-            color: white;
-            font-family: "Portrait", Sans-serif;
-            font-size: 21px;
-            font-weight: 400;
-            line-height: 35px;
-        }
-
-        .news-latter {
-            transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-            padding: 64px 30px 62px 30px;
-            background: #000000;
-        }
-    </style>
-    <style>
-        /*.carousel-inner {*/
-        /*    position: relative;*/
-        /*    width: 100%;*/
-        /*    overflow: hidden;*/
-        /*    background-image: url(https://indiaforworld.com/design2/images/home/testi.jpg);*/
-        /*}*/
-        h2 {
-            text-align: center;
-            position: relative;
-            margin: 50px 0 30px;
-        }
-
-        /*h2::after {*/
-        /*  content: "";*/
-        /*  width: 100px;*/
-        /*  position: absolute;*/
-        /*  margin: 0 auto;*/
-        /*  height: 3px;*/
-        /*  background: #e6d1cc;*/
-        /*  left: 0;*/
-        /*  right: 0;*/
-        /*  bottom: -10px;*/
-        /*}*/
-
-        .carousel {
-            width: 650px;
-            margin: 0 auto;
-            padding-bottom: 50px;
-        }
-
-        .carousel .carousel-item {
-            color: #999;
-            font-size: 14px;
-            text-align: center;
-            overflow: hidden;
-            min-height: 340px;
-        }
-
-        .carousel .carousel-item a {
-            color: #eb7245;
-        }
-
-        .carousel .img-box {
-            width: 145px;
-            height: 145px;
-            margin: 0 auto;
-            border-radius: 50%;
-        }
-
-        .carousel .img-box img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            border-radius: 50%;
-        }
-
-        .carousel .testimonial {
-            padding: 20px 0 10px;
-        }
-
-        .carousel .overview {
-            text-align: center;
-            padding-bottom: 5px;
-        }
-
-        .carousel .overview b {
-            color: #333;
-            font-size: 15px;
-            text-transform: uppercase;
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .carousel .star-rating i {
-            font-size: 18px;
-            color: #ffdc12;
-        }
-
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: #999;
-            text-shadow: none;
-            top: 198px;
-        }
-
-        .carousel-control-prev i,
-        .carousel-control-next i {
-            font-size: 20px;
-            margin-right: 2px;
-        }
-
-        /*.carousel-control-prev {*/
-        /*  left: auto;*/
-        /*  right: 40px;*/
-        /*}*/
-        .carousel-control-prev {
-            left: auto;
-            right: 22rem;
-        }
-
-        .carousel-control-next {
-            left: auto;
-            left: 22rem;
-        }
-
-        .carousel-control-next i {
-            margin-right: -2px;
-        }
-
-        .carousel .carousel-indicators {
-            bottom: 15px;
-        }
-
-        .carousel-indicators li,
-        .carousel-indicators li.active {
-            width: 11px;
-            height: 11px;
-            margin: 1px 5px;
-            border-radius: 50%;
-        }
-
-        .carousel-indicators li {
-            background: #e2e2e2;
-            border: none;
-        }
-
-        .carousel-indicators li.active {
-            background: #888;
-        }
-    </style>
-    <style>
-        .contact {
-            position: relative;
-        }
-
-        .form {
-            position: absolute;
-            top: 114px;
-            right: 114px;
-            width: 45%;
-            height: auto;
-            background: #f6f3ec;
-        }
-
-        .form .inner-f {
-            width: 100%;
-            height: auto;
-            padding: 60px;
-        }
-
-        .inner-f .col-sm-6 {
-            padding-bottom: 20px;
-        }
-
-        input[type="text"] {
-            border-top: 0px;
-            border-left: 0px;
-            border-right: 0px;
-            border-bottom: 1px solid;
-            border-radius: 0px;
-            background: #f6f3ec;
-            outline: none;
-            padding-top: 13px;
-            padding-bottom: 13px;
-        }
-        }
-
-        . .inner-f h3 {
-            font-family: 'Kadwa', serif;
-            font-size: 3.5em;
-            text-align: center;
-        }
-
-        .btn-1 {
-            padding-left: 56px;
-            padding-right: 56px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            background: #d8a01d;
-            border: none;
-            color: white;
-        }
-
-        .chek {
-            padding-bottom: 10px;
-        }
-
-        input[type="checkbox"] {
-            margin: 5px;
-        }
-    </style>
-    <style>
-        .inspire {
-            text-align: center;
-            padding-top: 10px;
-            padding-bottom: 16px;
-            position: relative;
-        }
-
-        .inspire h1::before {
-            width: 231px;
-            height: 2px;
-            top: auto;
-            right: auto;
-            bottom: 44px;
-            left: 50%;
-            position: absolute;
-            content: "";
-            background-color: #f17011;
-            transform: translate(-50%, 0px);
-        }
-    </style>
-    <style>
-        .blog-content .category {
-            padding: 10px 0px 10px 0px;
-            font-weight: 500;
-        }
-
-        .blog-content .blog-t {
-            font-size: 1.0rem;
-            cursor: pointer;
-            color: rgb(26 44 53);
-        }
-
-        .blog-content .comment {
-            /* display: flex;*/
-            /*justify-content: space-between;*/
-            /*text-align: center;*/
-            align-items: center;
-        }
-
-        .blog-content .comment span {
-            color: #a89f84;
-            font-size: 15px;
-        }
-
-        /*.owl-theme .blog{*/
-        /*    width:347px;*/
-        /*    margin: auto;*/
-        /*}*/
-        .border_line1 span {
-            background-color: #fff;
-            padding: 8px 15px;
-            position: relative;
-            z-index: 5;
-            display: block;
-            font-size: 20px;
-            color: black;
-        }
-    </style>
-    <style>
-        .footers {
-            border-top: 1px #dedede solid;
-            transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-            padding: 90px 30px 100px 30px;
-        }
-
-        .f-list-item .list-item {
-            list-style: none;
-        }
-
-        .f-list-item {
-            padding-left: 0px;
-        }
-
-        .f-list-item .list-item a {
-            text-decoration: none;
-            font-family: "Inter", Sans-serif;
-            font-size: 12px;
-            font-weight: 500;
-            text-transform: none;
-            line-height: 16px;
-            letter-spacing: .5px;
-            color: black;
-        }
-
-        .f-heading {
-            font-size: 1rem;
-        }
-
-        .img-hove2 .animated {
-            animation-duration: 1s;
-            animation-fill-mode: both
-        }
-
-        .img-hove2 .-in {
-            z-index: 0
-        }
-
-        .img-hove2 .img-hove2-out {
-            z-index: 1
-        }
-
-        .img-hove2 .fadeOut {
-            animation-name: fadeOut
-        }
-
-        @keyframes fadeOut {
-            0% {
-                opacity: 1
-            }
-
-            100% {
-                opacity: 0
-            }
-        }
-
-        .why-choose {
-            padding-top: 60px;
-            padding-bottom: 60px;
-        }
+        body {}
 
         p {
             font-family: Futura, Trebuchet MS, Arial, sans-serif !important;
@@ -939,6 +523,32 @@
             width: 25%;
         }
 
+        /*social media icon css*/
+
+        .social {
+            display: flex;
+            justify-content: left;
+            text-align: center;
+            align-items: center;
+        }
+
+        .social i {
+            color: #000;
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            font-size: 20px;
+            text-align: center;
+            margin-right: 5px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /*End social media icon css*/
+    </style>
+    <style>
         .why-choose img {
             width: 100px;
         }
@@ -951,12 +561,13 @@
 
         .dest-heading {
             text-align: center;
+            padding: 75px 0px 40px 0px;
         }
 
         .dest-heading h2 {
             /*font-size: 40px;*/
-            margin-top: 50px;
-            margin-bottom: 35px;
+            /*margin-top: 50px;*/
+            /*margin-bottom:35px;*/
             text-transform: uppercase;
         }
 
@@ -977,8 +588,8 @@
 
         .desti-img {
             position: relative;
-            padding-left: 12px;
-            padding-right: 12px;
+            /*padding-left: 12px;*/
+            padding-right: 0px !important;
             overflow: hidden;
         }
 
@@ -1110,9 +721,15 @@
 
         .owl-carousel .owl-item img {
             display: block;
-            width: 100%;
+            width: 100px;
         }
 
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+        }
+    </style>
+    <style>
         .inner_img_text {
             position: absolute;
             top: 40%;
@@ -1123,8 +740,423 @@
             color: black;
         }
     </style>
-</head>
+    <style>
+        .img-hove2 .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both
+        }
 
+        .img-hove2 .-in {
+            z-index: 0
+        }
+
+        .img-hove2 .img-hove2-out {
+            z-index: 1
+        }
+
+        .img-hove2 .fadeOut {
+            animation-name: fadeOut
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        .why-choose {
+            padding-top: 75px;
+            padding-bottom: 75px;
+        }
+    </style>
+    <style>
+        .inspire {
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 16px;
+            position: relative;
+        }
+
+        .inspire h1::before {
+            width: 231px;
+            height: 2px;
+            top: auto;
+            right: auto;
+            bottom: 44px;
+            left: 50%;
+            position: absolute;
+            content: "";
+            background-color: #f17011;
+            transform: translate(-50%, 0px);
+        }
+    </style>
+    <style>
+        .blog-content .category {
+            padding: 10px 0px 10px 0px;
+            font-weight: 500;
+        }
+
+        .blog-content .blog-t {
+            font-size: 1.0rem;
+            cursor: pointer;
+            color: rgb(26 44 53);
+        }
+
+        .blog-content .comment {
+            /* display: flex;*/
+            /*justify-content: space-between;*/
+            /*text-align: center;*/
+            align-items: center;
+        }
+
+        .blog-content .comment span {
+            color: #a89f84;
+            font-size: 15px;
+        }
+
+        /*.owl-theme .blog{*/
+        /*    width:347px;*/
+        /*    margin: auto;*/
+        /*}*/
+        .border_line1 span {
+            background-color: #fff;
+            padding: 8px 15px;
+            position: relative;
+            z-index: 5;
+            display: block;
+            font-size: 20px;
+            color: black;
+        }
+    </style>
+    <style>
+        .contact {
+            position: relative;
+        }
+
+        .form {
+            position: absolute;
+            top: 114px;
+            right: 114px;
+            width: 45%;
+            height: auto;
+            background: #f6f3ec;
+        }
+
+        .form .inner-f {
+            width: 100%;
+            height: auto;
+            padding: 60px;
+        }
+
+        .inner-f .col-sm-6 {
+            padding-bottom: 20px;
+        }
+
+        input[type="text"] {
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom: 1px solid;
+            border-radius: 0px;
+            background: #f6f3ec;
+            outline: none;
+            padding-top: 13px;
+            padding-bottom: 13px;
+        }
+        }
+
+        . .inner-f h3 {
+            font-family: 'Kadwa', serif;
+            font-size: 3.5em;
+            text-align: center;
+        }
+
+        .btn-1 {
+            padding-left: 56px;
+            padding-right: 56px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background: #d8a01d;
+            border: none;
+            color: white;
+        }
+
+        .chek {
+            padding-bottom: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin: 5px;
+        }
+    </style>
+    <style>
+        /*.carousel-inner {*/
+        /*    position: relative;*/
+        /*    width: 100%;*/
+        /*    overflow: hidden;*/
+        /*    background-image: url(https://indiaforworld.com/design2/images/home/testi.jpg);*/
+        /*}*/
+        h2 {
+            text-align: center;
+            position: relative;
+            margin: 50px 0 30px;
+        }
+
+        /*h2::after {*/
+        /*  content: "";*/
+        /*  width: 100px;*/
+        /*  position: absolute;*/
+        /*  margin: 0 auto;*/
+        /*  height: 3px;*/
+        /*  background: #e6d1cc;*/
+        /*  left: 0;*/
+        /*  right: 0;*/
+        /*  bottom: -10px;*/
+        /*}*/
+
+        .carousel {
+            width: 650px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+        }
+
+        .carousel .carousel-item {
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 340px;
+        }
+
+        .carousel .carousel-item a {
+            color: #eb7245;
+        }
+
+        .carousel .img-box {
+            width: 145px;
+            height: 145px;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+
+        .carousel .img-box img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 50%;
+        }
+
+        .carousel .testimonial {
+            padding: 20px 0 10px;
+        }
+
+        .carousel .overview {
+            text-align: center;
+            padding-bottom: 5px;
+        }
+
+        .carousel .overview b {
+            color: #333;
+            font-size: 15px;
+            text-transform: uppercase;
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        .carousel .star-rating i {
+            font-size: 18px;
+            color: #ffdc12;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #999;
+            text-shadow: none;
+            top: 198px;
+        }
+
+        .carousel-control-prev i,
+        .carousel-control-next i {
+            font-size: 20px;
+            margin-right: 2px;
+        }
+
+        /*.carousel-control-prev {*/
+        /*  left: auto;*/
+        /*  right: 40px;*/
+        /*}*/
+        .carousel-control-prev {
+            left: auto;
+            right: 22rem;
+        }
+
+        .carousel-control-next {
+            left: auto;
+            left: 22rem;
+        }
+
+        .carousel-control-next i {
+            margin-right: -2px;
+        }
+
+        .carousel .carousel-indicators {
+            bottom: 15px;
+        }
+
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            width: 11px;
+            height: 11px;
+            margin: 1px 5px;
+            border-radius: 50%;
+        }
+
+        .carousel-indicators li {
+            background: #e2e2e2;
+            border: none;
+        }
+
+        .carousel-indicators li.active {
+            background: #888;
+        }
+    </style>
+    <style>
+        .cheack input {
+            margin-left: -20px;
+        }
+
+        .check input {
+            margin-top: -35px;
+        }
+
+        .check {
+            width: 70%;
+            font-size: 14px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .btn-2:hover a {
+            color: black;
+            background: white;
+        }
+
+        .btn-2 {
+            padding: 12px 25px !important;
+            border: 1px solid rgb(255 255 255 / 50%);
+            color: white !important;
+            font-size: 13px !important;
+            line-height: 14px;
+            letter-spacing: 1px;
+            position: relative;
+            color: white;
+            z-index: 0;
+        }
+
+        .form-inline .form-group {
+            width: 33%;
+        }
+
+        .form-inline {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+            -ms-flex-align: center;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .form-inline input[type=email] {
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid rgb(255 255 255 / 50%);
+            border-radius: 0;
+            padding: 13px 13px 13px 0 !important;
+            color: #FFFFFF;
+            outline: #000000;
+            font-size: 15px !important;
+            line-height: 16px;
+            letter-spacing: .5px;
+            width: 100%;
+        }
+
+        .news-cont {
+            color: white;
+            font-family: "Portrait", Sans-serif;
+            font-size: 21px;
+            font-weight: 400;
+            line-height: 35px;
+        }
+
+        .news-latter {
+            transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            padding: 64px 30px 62px 30px;
+            background: #000000;
+        }
+    </style>
+    <style>
+        .footers {
+            border-top: 1px #dedede solid;
+            transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            padding: 90px 30px 100px 30px;
+        }
+
+        .f-list-item .list-item {
+            list-style: none;
+        }
+
+        .f-list-item {
+            padding-left: 0px;
+        }
+
+        .f-list-item .list-item a {
+            text-decoration: none;
+            font-family: "Inter", Sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: none;
+            line-height: 16px;
+            letter-spacing: .5px;
+            color: black;
+        }
+
+        .f-heading {
+            font-size: 1rem;
+        }
+    </style>
+    <style>
+        .copy-itm {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            list-style: none;
+        }
+
+        .copywrite {
+            background: white;
+            padding: 10px 0 10px 0;
+            border-top: 1px #dedede solid;
+            color: black;
+            text-align: center;
+        }
+
+        .copy-itm .list-itm span {
+            color: black;
+            font-weight: 100;
+            padding-left: 24px;
+            font-size: 12px;
+        }
+    </style>
+</head>
 
 <body>
 
@@ -1166,7 +1198,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="contact" onclick="location.href='contact-us';">CONTACT US</div>
+                                <div class="contact" onclick="location.href='contact-us.html';">CONTACT US</div>
                             </div>
                         </nav>
                     </div>
@@ -1175,11 +1207,48 @@
         </div>
     </header>
 
+
+
+
     @yield('page-content')
 
-
-
     <!--new footer desine-->
+    <div class="client-logo-bg">
+        <div class="client-text" style="display:none;">
+            <h3 class="border_line1">
+                <span>Our Affiliations</span>
+            </h3>
+        </div>
+        <div class="inspired_section-1">
+            <div class="owl-carousel owl-theme inspired_slider1">
+                <div class="items">
+                    <img src="slider/trustedFITservice.png" alt="One and only ">
+                </div>
+                <div class="items">
+                    <img src="slider/IATO.png" alt="Atlantis">
+                </div>
+                <div class="items">
+                    <img src="slider/trustedFITservice.png" alt="Four Seasons">
+                </div>
+                <div class="items">
+                    <img src="slider/IATO.png" alt="Raffles">
+                </div>
+                <div class="items">
+                    <img src="slider/trustedFITservice.png" alt="Fairmont">
+                </div>
+                <div class="items">
+                    <img src="slider/IATO.png" alt="Sofitel">
+                </div>
+                <div class="items">
+                    <img src="slider/trustedFITservice.png" alt="St Regis">
+                </div>
+                <div class="items">
+                    <img src="slider/IATO.png" alt="Preferred hotels">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footers">
         <div class="container-fluid">
             <div class="row">
@@ -1353,78 +1422,6 @@
             </div>
         </div>
     </footer>
-    <!--End footer desine-->
-    <!--footer start-->
-    <!--<footer class="footer">-->
-    <!--<div class="container footer-area">-->
-    <!--<div class="row">-->
-    <!--<div class="col-lg-4 col-md-6 col-12">-->
-    <!--<div class="footer-box">-->
-    <!--<h4>ABOUT BLISS TRAVELS</h4>-->
-    <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>-->
-    <!--<p>-->
-    <!--<i class="fa fa-phone-square"></i> +91 7878787878-->
-    <!--</p>-->
-    <!--<p><i class="fa fa-envelope"></i>xyza@travels.in</p>-->
-    <!--<p>-->
-    <!--<a href="" target="blank"><i class="fa fa-facebook-square"></i></a>-->
-    <!--<a href=" " target="blank"><i class="fa fa-instagram"></i></a>-->
-    <!--<a href=" " target="blank"><i class="fa fa-twitter"></i></a>-->
-    <!--<a href=" " target="blank"><i class="fa fa-linkedin-square"></i></a>-->
-    <!--</p>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-lg-2 col-md-6 col-6 footer-left-border">-->
-    <!--<div class="footer-box">-->
-    <!--<h4>ASIA</h4>-->
-    <!--<ul>-->
-    <!--<li><a href="">Bali</a></li>-->
-    <!--<li><a href="">Cambodia</a></li>-->
-    <!--<li><a href="">China</a></li>-->
-    <!--<li><a href="">Hong Kong - Macau </a></li>-->
-    <!--<li><a href="">Thailand</a></li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-lg-2 col-md-6 col-6 footer-left-border">-->
-    <!--<div class="footer-box">-->
-    <!--<h4>AFRICA</h4>              -->
-    <!--<ul>-->
-    <!--<li><a href="">Egypt</a></li>-->
-    <!--<li><a href="">Kenya</a></li>-->
-    <!--<li><a href="">Tanzania</a></li>-->
-    <!--<li><a href="">Botswana</a></li>-->
-    <!--<li><a href="">Uganda</a></li>-->
-    <!--</ul>-->
-    <!--<div class="clear"></div><br>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-lg-2 col-md-6 col-6 footer-left-border">-->
-    <!--<div class="footer-box">-->
-    <!--<h4>EUROPE</h4>-->
-    <!--<ul>-->
-    <!--<li><a href="">Finland</a></li>-->
-    <!--<li><a href="">France</a></li>-->
-    <!--<li><a href="">Greece</a></li>-->
-    <!--<li><a href="">Italy</a></li>-->
-    <!--<li><a href="">Ireland</a></li>-->
-    <!--</ul>-->
-    <!--<div class="clear"></div><br>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-lg-2 col-md-6 col-6 footer-left-border">-->
-    <!--<div class="footer-box">-->
-    <!--<h4>NORTH AMERICA</h4>-->
-    <!--<ul>-->
-    <!--<li><a href="">Canada</a></li>-->
-    <!--<li><a href="">USA</a></li>-->
-    <!--</ul>-->
-    <!--<div class="clear"></div>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>		-->
-    <!--</footer>-->
 
     <div class="copywrite">
         <div class="container-fluid">
@@ -1444,10 +1441,17 @@
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 text-center" style="font-size:12px;"> © 2024 FAR & BEYOND. All
-                    Rights Reserved.
+                    Rights
+                    Reserved.
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 text-left" style="font-size:12px;">
-                    Social Media Icons
+                    <div class="social">
+                        <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                        <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1569,9 +1573,6 @@
             }
         }
     </script>
-    <!--transparent nabigation-->
 </body>
-
-<!-- Mirrored from indiaforworld.com/farandbeyond/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 May 2024 17:08:47 GMT -->
 
 </html>
