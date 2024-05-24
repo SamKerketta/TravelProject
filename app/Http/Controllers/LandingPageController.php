@@ -27,6 +27,7 @@ class LandingPageController extends Controller
     {
         $this->mPageSection     = new PageSection();
         $this->mSectionType     = new SectionType();
+        
         $this->mSectionValue    = new SectionValue();
     }
 
@@ -38,17 +39,13 @@ class LandingPageController extends Controller
      */
     public function sectionUpdate(Request $req)
     {
-        $validated = Validator::make(
-            $req->all(),
-            [
-                'page_name'                 => 'required',
-                'section'                   => 'required|array',
-                'section.*.value'           => 'required',
-                'section.*.section_name'    => 'required|string',
-            ]
-        );
-        if ($validated->fails())
-            return validationError($validated);
+        $req->validate([
+            'pagename'                 => 'required',
+            // 'section'                   => 'required|array',
+            // 'section.*.value'           => 'required',
+            // 'section.*.section_name'    => 'required|string',
+        ]);
+        dd($req->all());
 
         try {
             # Update the page contents 
@@ -59,7 +56,7 @@ class LandingPageController extends Controller
             $responseMsg = $req->page_name . " Content Updated";
             return responseMsg(true, $responseMsg, []);
         } catch (Exception $e) {
-            return responseMsg(false, $e->getMessage(), []);
+           return back()->with('error',$e->getMessage());
         }
     }
 
@@ -100,5 +97,13 @@ class LandingPageController extends Controller
         } catch (Exception $e) {
             return responseMsg(false, $e->getMessage(), []);
         }
+    }
+
+    public function landingPage(){
+        $user=[
+            "id"=>1,
+            "name"=>2
+        ];
+        return view('admin.pages.landing',['user'=>$user]);
     }
 }
