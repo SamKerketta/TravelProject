@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Landing\DashboardController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\Test\TestController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -54,5 +55,12 @@ Route::middleware([
     Route::get('/admin-dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+    
+    Route::controller(LandingPageController::class)->group(function () {
+        Route::get('landing-page','landingPage');
+        Route::post('section/update', 'sectionUpdate')->name('section.update');
+        Route::post('section/delete', 'sectionDelete');
+        Route::post('section/save', 'sectionSave');
+    });
 });
 

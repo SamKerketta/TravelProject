@@ -292,6 +292,8 @@
                     <div class="about-img2">
                         <img src="images/home/little%20inspirations%20F%20and%20B.jpg" alt="about">
                     </div>
+                
+
                 </div>
             </div>
         </div>
