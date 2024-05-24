@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('section_values', function (Blueprint $table) {
             $table->id();
-            $table->integer('section_type')->nullable();
+            $table->string  ('section_type')->nullable();
             $table->integer('page_section')->nullable();
             $table->string('value')->nullable();
             $table->string('page_name')->nullable();
