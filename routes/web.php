@@ -58,7 +58,8 @@ Route::middleware([
     
     Route::controller(LandingPageController::class)->group(function () {
         Route::get('landing-page','landingPage');
-        Route::post('section/update', 'sectionUpdate')->name('section.update');
+        Route::post('section1/update', 'sectionUpdate')->name('section1.update');
+        Route::post('section2/update','sectionUpdate2')->name('section2.update');
         Route::post('section/delete', 'sectionDelete');
         Route::post('section/save', 'sectionSave');
     });
