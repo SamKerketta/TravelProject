@@ -15,11 +15,12 @@ class SectionValue extends Model
      */
     public function updateValues($updateValues, $pageName)
     {
-        SectionValue::where("page_section", $updateValues->section_name)
+        SectionValue::where("page_section", $updateValues["sectionName"])
             ->where("page_name", $pageName)
+            ->where("section_type",$updateValues['type'])
             ->where("status", true)
             ->update([
-                "value" => $updateValues->value
+                "value" => $updateValues['value']
             ]);
     }
 
