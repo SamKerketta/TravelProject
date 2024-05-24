@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUsPageController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\LandingPageController;
 use Illuminate\Http\Request;
@@ -30,4 +31,10 @@ Route::controller(LandingPageController::class)->group(function () {
 
 Route::controller(DestinationController::class)->group(function () {
     Route::post('', '');
+});
+
+Route::controller(AboutUsPageController::class)->group(function () {
+    Route::get('aboutus-page','aboutusPage');
+    Route::post('about/section1/update', 'sectionUpdate');
+    Route::post('about/section2/update','sectionUpdate2');
 });
