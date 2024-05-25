@@ -35,6 +35,10 @@ Route::controller(DestinationController::class)->group(function () {
 
 Route::controller(AboutUsPageController::class)->group(function () {
     Route::get('aboutus-page','aboutusPage');
-    Route::post('about/section1/update', 'sectionUpdate');
+    Route::post('about/section1/update', 'sectionUpdate1');
     Route::post('about/section2/update','sectionUpdate2');
+    Route::post('about/section3/update','sectionUpdate3');
+    Route::post('about/section4/update','sectionUpdate4');
+    Route::post('about/section5/update','sectionUpdate5');
+    Route::post('about/section6/update','sectionUpdate6');
 });
