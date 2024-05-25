@@ -29,17 +29,19 @@ class DashboardController extends Controller
      * | Get the details from the db and render the dashboard 
         | Serial No : 01
         | Under Con 
+        | 6 section`
      */
     public function index()
     {
         $pageName = "landingPage";                                              // Static put in config
-
+        $newArray = array();
         # Get the landing page Dats
-        $pageData = $this->mSectionValue->getDataForPage($pageName)->orderBy("page_section")->get();
-
-        # Structure the data for the frontend 
-        // $viewData = [];
-        return view("pages/hero");
+        $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
+        foreach ($pageData as $pageDatas) {
+            $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
+            $newArray[$newKey] = $pageDatas->value;
+        }
+        return view("pages/hero", $newArray);
     }
 
 

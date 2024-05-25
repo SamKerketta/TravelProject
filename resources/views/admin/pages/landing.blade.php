@@ -32,26 +32,23 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="{{ route('section1.update') }}" method="POST">
+                        <form action="{{ route('section1.update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <input type="hidden" class=" form-control " id="pageName" name="pageName"
-                                    value="landinPage">
-                                <input type="hidden" class=" form-control " id="section1" name="section1" value="1">
+                                <input type="hidden" class="form-control" id="pageName" name="pageName"
+                                    value="landingPage">
+                                <input type="hidden" class="form-control" id="section1" name="section1" value="1">
 
-                                <label class="form-label" for="value">Default file input example</label>
+                                <label class="form-label" for="value1">Default file input example</label>
                                 <input type="file" class="@error('value1') is-invalid @enderror form-control"
                                     id="value1" name="value1" accept="video/*" />
                                 @error('value1')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-
                             </div>
                             <div class="form-group">
-
                                 <label for="exampleFormControlTextarea1">Example textarea</label>
                                 <textarea class="form-control" id="value2" name="value2" rows="3"></textarea>
-
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
