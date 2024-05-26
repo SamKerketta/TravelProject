@@ -35,7 +35,7 @@
                     <form action="{{ route('section1.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <input type="hidden" class="form-control" id="pageName" name="pageName" value="landingPage">
+                            <input type="hidden" class="form-control" id="pageName" name="pageName" value="aboutUs">
                             <input type="hidden" class="form-control" id="section1" name="section1" value="1">
 
                             <label class="form-label" for="value1">Section 1 Image</label>
@@ -45,8 +45,6 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="hidden" class=" form-control " id="pageName" name="pageName" value="landinPage">
-                            <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
 
                             <label for="exampleFormControlTextarea1">Section 1 Title</label>
                             <textarea class="form-control" id="value1" name="value1" rows="3"></textarea>
@@ -73,8 +71,9 @@
                     <form action="{{ route('section2.update') }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <input type="hidden" class="form-control" id="pageName" name="pageName" value="landingPage">
+                            <input type="hidden" class="form-control" id="pageName" name="pageName" value="aboutUs">
                             <input type="hidden" class="form-control" id="section1" name="section1" value="1">
+                            
                             <label class="form-label" for="value1">Section 2 Image</label>
                             <input type="file" class="@error('value1') is-invalid @enderror form-control" id="value1" name="value1" accept="video/*" />
                             @error('value1')
@@ -82,8 +81,6 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="hidden" class=" form-control " id="pageName" name="pageName" value="landinPage">
-                            <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
                             <label for="exampleFormControlTextarea1">Section 2 Heading 1</label>
                             <textarea class="form-control" id="value1" name="value1" rows="3"></textarea>
 
@@ -97,8 +94,6 @@
                             <textarea class="form-control" id="value2" name="value2" rows="3"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="hidden" class=" form-control " id="pageName" name="pageName" value="landinPage">
-                            <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
                             <label for="exampleFormControlTextarea1">Section 2 Heading 2</label>
                             <textarea class="form-control" id="value1" name="value1" rows="3"></textarea>
 
@@ -125,7 +120,7 @@
                     <form action="{{ route('section1.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <input type="hidden" class="form-control" id="pageName" name="pageName" value="landingPage">
+                            <input type="hidden" class="form-control" id="pageName" name="pageName" value="aboutUs">
                             <input type="hidden" class="form-control" id="section1" name="section1" value="1">
                             <label class="form-label" for="value1">Section 3 Image</label>
                             <input type="file" class="@error('value1') is-invalid @enderror form-control" id="value1" name="value1" accept="video/*" />
@@ -134,8 +129,6 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="hidden" class=" form-control " id="pageName" name="pageName" value="landinPage">
-                            <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
                             <label for="exampleFormControlTextarea1">Section 3 Heading  </label>
                             <textarea class="form-control" id="value1" name="value1" rows="3"></textarea>
                         </div>
@@ -167,7 +160,7 @@
                     <form action="{{ route('section1.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <input type="hidden" class="form-control" id="pageName" name="pageName" value="landingPage">
+                            <input type="hidden" class="form-control" id="pageName" name="pageName" value="aboutUs">
                             <input type="hidden" class="form-control" id="section1" name="section1" value="1">
                             <label class="form-label" for="value1">Section 4 Image 1</label>
                             <input type="file" class="@error('value1') is-invalid @enderror form-control" id="value1" name="value1" accept="video/*" />
@@ -176,8 +169,6 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="hidden" class="form-control" id="pageName" name="pageName" value="landingPage">
-                            <input type="hidden" class="form-control" id="section1" name="section1" value="1">
                             <label class="form-label" for="value1">Section 4 Image 2</label>
                             <input type="file" class="@error('value1') is-invalid @enderror form-control" id="value1" name="value1" accept="video/*" />
                             @error('value1')
@@ -185,8 +176,6 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="hidden" class=" form-control " id="pageName" name="pageName" value="landingPage">
-                            <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
                             <label for="exampleFormControlTextarea1">Section 4 Heading  </label>
                             <textarea class="form-control" id="value1" name="value1" rows="3"></textarea>
                         </div>
@@ -222,14 +211,12 @@
                     <form action="{{ route('section1.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <input type="hidden" class=" form-control " id="pageName" name="pageName" value="landingPage">
+                            <input type="hidden" class=" form-control " id="pageName" name="pageName" value="aboutUs">
                             <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
                             <label for="exampleFormControlTextarea1">Section 5 Title  </label>
                             <textarea class="form-control" id="value1" name="value1" rows="3"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="hidden" class="form-control" id="pageName" name="pageName" value="landingPage">
-                            <input type="hidden" class="form-control" id="section1" name="section1" value="1">
                             <label class="form-label" for="value1">Section 5 Image 1</label>
                             <input type="file" class="@error('value1') is-invalid @enderror form-control" id="value1" name="value1" accept="video/*" />
                             @error('value1')
@@ -237,14 +224,10 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="hidden" class=" form-control " id="pageName" name="pageName" value="landingPage">
-                            <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
                             <label for="exampleFormControlTextarea1">Section 5 Heading 1 </label>
                             <textarea class="form-control" id="value1" name="value1" rows="3"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="hidden" class=" form-control " id="pageName" name="pageName" value="landingPage">
-                            <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
                             <label for="exampleFormControlTextarea1">Section 5 Sub Heading 1 </label>
                             <textarea class="form-control" id="value1" name="value1" rows="3"></textarea>
                         </div>
@@ -257,8 +240,6 @@
                             <textarea class="form-control" id="value2" name="value2" rows="3"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="hidden" class="form-control" id="pageName" name="pageName" value="landingPage">
-                            <input type="hidden" class="form-control" id="section1" name="section1" value="1">
                             <label class="form-label" for="value1">Section 5 Image 2</label>
                             <input type="file" class="@error('value1') is-invalid @enderror form-control" id="value1" name="value1" accept="video/*" />
                             @error('value1')
@@ -266,14 +247,10 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="hidden" class=" form-control " id="pageName" name="pageName" value="landingPage">
-                            <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
                             <label for="exampleFormControlTextarea1">Section 5 Heading 2 </label>
                             <textarea class="form-control" id="value1" name="value1" rows="3"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="hidden" class=" form-control " id="pageName" name="pageName" value="landingPage">
-                            <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
                             <label for="exampleFormControlTextarea1">Section 5 Sub Heading 2 </label>
                             <textarea class="form-control" id="value1" name="value1" rows="3"></textarea>
                         </div>

@@ -14,7 +14,7 @@ class AboutUsPageController extends Controller
     public function aboutusPage()
     {
         return view('admin.pages.aboutus');
-    }
+    }   
 
     private $mPageSection;
     private $mSectionType;
