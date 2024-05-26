@@ -275,7 +275,13 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('admin.designation')}}" class="nav-link">
+                                    <a href="aboutus-page" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>About Us</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="landing-page" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Designation</p>
                                     </a>
