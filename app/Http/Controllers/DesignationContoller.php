@@ -31,15 +31,24 @@ class DesignationContoller extends Controller
     // Update Section
     public function updateSections(Request $req)
     {
-        return $this->updateSection1($req);
-        return $this->updateSection2($req);
-        return $this->updateSection3($req);
-        return $this->updateSection4($req);
-        return $this->updateSection5($req);
-        return $this->updateSection6($req);
-        return $this->updateSection7($req);
-        return $this->updateSection8($req);
-        return $this->updateSection9($req);
+        if ($req->section == 1)
+            return $this->updateSection1($req);
+        if ($req->section == 2)
+            return $this->updateSection2($req);
+        if ($req->section == 3)
+            return $this->updateSection3($req);
+        if ($req->section == 4)
+            return $this->updateSection4($req);
+        if ($req->section == 5)
+            return $this->updateSection5($req);
+        if ($req->section == 6)
+            return $this->updateSection6($req);
+        if ($req->section == 7)
+            return $this->updateSection7($req);
+        if ($req->section == 8)
+            return $this->updateSection8($req);
+        if ($req->section == 9)
+            return $this->updateSection9($req);
     }
 
     // Update Section 1
@@ -115,7 +124,6 @@ class DesignationContoller extends Controller
                 "section2Heading"    => "required|string",
                 "section2Content"    => "required|string"
             ]);
-
             $section = array();
             try {
                 if ($req->hasFile('section2Image') && $req->section2Image) {
