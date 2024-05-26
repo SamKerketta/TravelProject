@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DesignationContoller;
 use App\Http\Controllers\Landing\DashboardController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\Test\TestController;
@@ -39,12 +40,12 @@ Route::controller(TestController::class)->group(function () {
 Route::controller(DashboardController::class)->group(function () {
     Route::get('', 'index');
     Route::get('about-us', 'aboutUs');
-    Route::get('our-destination','ourDestination');
-    Route::get('littile-inspiration','littileInspiration');
-    Route::get('our-servic','ourServic');
-    Route::get('responsible-travel','responsibleTravel');
-    Route::get('blogs','blogs');
-    Route::get('contact-us','contactUs');
+    Route::get('our-destination', 'ourDestination');
+    Route::get('littile-inspiration', 'littileInspiration');
+    Route::get('our-servic', 'ourServic');
+    Route::get('responsible-travel', 'responsibleTravel');
+    Route::get('blogs', 'blogs');
+    Route::get('contact-us', 'contactUs');
 });
 
 Route::middleware([
@@ -55,15 +56,17 @@ Route::middleware([
     Route::get('/admin-dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
-    
+
     Route::controller(LandingPageController::class)->group(function () {
-        Route::get('landing-page','landingPage');
+        Route::get('landing-page', 'landingPage');
         Route::post('section1/update', 'sectionUpdate')->name('section1.update');
         Route::post('section2/update','sectionUpdate2')->name('section2.update');
-        Route::post('section3/update','sectionUpdate3')->name('section3.update');
-
         Route::post('section/delete', 'sectionDelete');
         Route::post('section/save', 'sectionSave');
     });
-});
 
+    // Designation
+    Route::controller(DesignationContoller::class)->group(function () {
+        Route::get('admin/designation', 'viewAdminDesignation')->name('admin.designation');
+    });
+});
