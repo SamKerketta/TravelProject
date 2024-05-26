@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FAR & Bayond</title>
 
+    <base href="/">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -274,9 +275,9 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./index3.html" class="nav-link">
+                                    <a href="{{route('admin.designation')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v3</p>
+                                        <p>Designation</p>
                                     </a>
                                 </li>
                             </ul>
@@ -894,7 +895,7 @@
         @yield('page-content')
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            
+
         </footer>
 
         <!-- Control Sidebar -->
