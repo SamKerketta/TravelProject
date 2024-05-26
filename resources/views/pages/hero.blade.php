@@ -8,7 +8,7 @@
         <!--<img src="slider/banner-1.jpg" alt="banner-1">-->
         <div class="text-video">
             <h2><span style="font-size: 2.75rem;font-weight: 400;letter-spacing: 3px;line-height: 1.05;text-transform:uppercase;color:white">
-                    {{$section1heading}}
+                    {{$section1heading ?? ''}}
                 </span></h2>
 
         </div>
