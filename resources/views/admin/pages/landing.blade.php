@@ -96,30 +96,44 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="{{ route('section2.update') }}" method="POST">
+                        <form action="{{ route('section3.update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <input type="hidden" class=" form-control " id="pageName" name="pageName"
                                     value="landinPage">
-                                <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
+                                <input type="hidden" class=" form-control " id="section3" name="section2" value="3">
 
-                                <label for="exampleFormControlTextarea1">Section 2 Heading</label>
-                                <textarea class="form-control" id="value1" name="value1" rows="3"></textarea>
+
+                                <label for="exampleFormControlTextarea1">Section 3 Heading</label>
+                                <input type="text" class="form-control" id="value1" name="value1"
+                                    rows="3" />
 
                             </div>
+
+                            <?php 
+                            $noOfSection = 8; 
+                            for($i= 1 ; $i<=$noOfSection ; $i++){
+                            ?>
+
                             <div class="form-group">
-
-                                <label for="exampleFormControlTextarea1">Section 2 Content</label>
-                                <textarea class="form-control" id="value2" name="value2" rows="3"></textarea>
-
-                            </div>
-                            <div class="form-group">
-
-                                <label for="exampleFormControlTextarea1">Section2 sub content</label>
-                                <textarea class="form-control" id="value3" name="value3" rows="3"></textarea>
+                                <label class="form-label" for="value1">Section 3 image{{$i}}</label>
+                                <input type="file"
+                                    class="@error('value{{ $i+1 }}') is-invalid @enderror form-control"
+                                    id="value{{  $i+1 }}" name="value{{  $i+1 }}" accept="image/*" />
+                                @error('value{{  $i+1 }}')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
 
                             </div>
+                            <div class="form-group" style="margin-bottom: 10px">
+                                <label for="exampleFormControlTextarea1">Section 3 heading {{ $i+1}}</label>
+                                <input type="text" class="form-control" id="value{{  $i+1 }}"
+                                    name="value{{ $i+1 }}" rows="3" />
+                            </div>
+                            <?php } ?>
+                            
                             <button type="submit" class="btn btn-primary">Submit</button>
+                            
                         </form>
                     </div>
                 </div>

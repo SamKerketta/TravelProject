@@ -60,6 +60,8 @@ Route::middleware([
         Route::get('landing-page','landingPage');
         Route::post('section1/update', 'sectionUpdate')->name('section1.update');
         Route::post('section2/update','sectionUpdate2')->name('section2.update');
+        Route::post('section3/update','sectionUpdate3')->name('section3.update');
+
         Route::post('section/delete', 'sectionDelete');
         Route::post('section/save', 'sectionSave');
     });

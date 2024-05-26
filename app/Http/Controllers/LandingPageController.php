@@ -151,104 +151,138 @@ class LandingPageController extends Controller
             'pageName'  => 'required',
             'section3'  => 'required',
             'value1'    => 'nullable',
-            'value2'    => 'nullable',
+            'value2'    => 'nullable', //
             'value3'    => 'nullable',
-            'value4'    => 'nullable',
+            'value4'    => 'nullable', // 
             'value5'    => 'nullable',
-            'value6'    => 'nullable',
+            'value6'    => 'nullable', // 
             'value7'    => 'nullable',
-            'value8'    => 'nullable',
+            'value8'    => 'nullable', //
             'value9'    => 'nullable'
         ]);
 
         try {
             $section = array();
 
-            #1
+            
             if (isset($req->value1)) {
-                $second = [
+                $array = [
                     "sectionName" => $req->section3,
                     "value" => $req->value1,
                     "type" => "title"                                       // Static
                 ];
-                array_push($section, $second);
+                array_push($section, $array);
             }
 
-            #2
             if (isset($req->value2)) {
-                $second = [
+
+                $file = $req->file('value2');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/section3";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $array = [
                     "sectionName" => $req->section3,
-                    "value" => $req->value2,
+                    "value" => $actualFileName,
                     "type" => "image1"                                     // Static
                 ];
-                array_push($section, $second);
+                array_push($section, $array);
             }
 
-            #3
             if (isset($req->value3)) {
-                $second = [
+                $array = [
                     "sectionName" => $req->section3,
                     "value" => $req->value3,
                     "type" => "heading1"                                  // Static
                 ];
-                array_push($section, $second);
+                array_push($section, $array);
             }
 
             if (isset($req->value4)) {
-                $second = [
+                
+                $file = $req->file('value4');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/section3";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+                
+                $array = [
                     "sectionName" => $req->section3,
-                    "value" => $req->value4,
+                    "value" => $actualFileName,
                     "type" => "image2"                                     // Static
                 ];
-                array_push($section, $second);
+                array_push($section, $array);
             }
 
             #3
             if (isset($req->value5)) {
-                $second = [
+                $array = [
                     "sectionName" => $req->section3,
                     "value" => $req->value5,
                     "type" => "headin2"                                  // Static
                 ];
-                array_push($section, $second);
+                array_push($section, $array);
             }
 
             if (isset($req->value6)) {
-                $second = [
+                
+                $file = $req->file('value6');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/section3";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+                
+                $array = [
                     "sectionName" => $req->section3,
-                    "value" => $req->value6,
+                    "value" => $actualFileName,
                     "type" => "image3"                                     // Static
                 ];
-                array_push($section, $second);
+                array_push($section, $array);
             }
 
             #3
             if (isset($req->value7)) {
-                $second = [
+                $array = [
                     "sectionName" => $req->section3,
                     "value" => $req->value7,
                     "type" => "heading3"                                  // Static
                 ];
-                array_push($section, $second);
+                array_push($section, $array);
             }
 
             if (isset($req->value8)) {
-                $second = [
+
+                $file = $req->file('value8');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/section3";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+                
+                $array = [
                     "sectionName" => $req->section3,
-                    "value" => $req->value8,
+                    "value" => $actualFileName,
                     "type" => "image4"                                     // Static
                 ];
-                array_push($section, $second);
+                array_push($section, $array);
             }
 
             #3
             if (isset($req->value9)) {
-                $second = [
+                $array = [
                     "sectionName" => $req->section3,
                     "value" => $req->value9,
                     "type" => "heading4"                                  // Static
                 ];
-                array_push($section, $second);
+                array_push($section, $array);
             }
 
             if (!empty($section)) {
@@ -257,7 +291,6 @@ class LandingPageController extends Controller
                 }
             }
             $responseMsg = $req->pageName . " Content Updated";
-            return back()->with('success', $responseMsg);
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }
