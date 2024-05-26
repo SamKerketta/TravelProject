@@ -60,7 +60,7 @@ Route::middleware([
     Route::controller(LandingPageController::class)->group(function () {
         Route::get('landing-page', 'landingPage');
         Route::post('section1/update', 'sectionUpdate')->name('section1.update');
-        Route::post('section2/update','sectionUpdate2')->name('section2.update');
+        Route::post('section2/update', 'sectionUpdate2')->name('section2.update');
         Route::post('section/delete', 'sectionDelete');
         Route::post('section/save', 'sectionSave');
     });
@@ -68,5 +68,6 @@ Route::middleware([
     // Designation
     Route::controller(DesignationContoller::class)->group(function () {
         Route::get('admin/designation', 'viewAdminDesignation')->name('admin.designation');
+        Route::post('admin/designation/update-section', 'updateSections')->name('admin.designation.updatesection');
     });
 });
