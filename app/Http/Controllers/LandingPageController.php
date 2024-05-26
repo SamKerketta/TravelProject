@@ -35,7 +35,6 @@ class LandingPageController extends Controller
      */
     public function sectionUpdate(Request $req)
     {
-        // dd($req->all());
         $req->validate([
             'section1'  => 'required',
             'value1'    => 'nullable|file|mimetypes:video/mp4,video/avi,video/mpeg,video/quicktime|',
@@ -45,7 +44,7 @@ class LandingPageController extends Controller
         try {
             # Update the page contents 
             $section = array();
-            
+
             if ($req->hasFile('value1') && $req->value1) {
                 $file = $req->file('value1');
                 $extension = $file->getClientOriginalExtension();
@@ -164,7 +163,7 @@ class LandingPageController extends Controller
         try {
             $section = array();
 
-            
+
             if (isset($req->value1)) {
                 $array = [
                     "sectionName" => $req->section3,
@@ -202,7 +201,7 @@ class LandingPageController extends Controller
             }
 
             if (isset($req->value4)) {
-                
+
                 $file = $req->file('value4');
                 $extension = $file->getClientOriginalExtension();
                 $filename = time() . rand(10, 100) . "." . $extension;
@@ -210,7 +209,7 @@ class LandingPageController extends Controller
                 $path = public_path() . "/" . $viewPath;
                 $file->move($path, $filename);
                 $actualFileName = $viewPath . "/" . $filename;
-                
+
                 $array = [
                     "sectionName" => $req->section3,
                     "value" => $actualFileName,
@@ -230,7 +229,7 @@ class LandingPageController extends Controller
             }
 
             if (isset($req->value6)) {
-                
+
                 $file = $req->file('value6');
                 $extension = $file->getClientOriginalExtension();
                 $filename = time() . rand(10, 100) . "." . $extension;
@@ -238,7 +237,7 @@ class LandingPageController extends Controller
                 $path = public_path() . "/" . $viewPath;
                 $file->move($path, $filename);
                 $actualFileName = $viewPath . "/" . $filename;
-                
+
                 $array = [
                     "sectionName" => $req->section3,
                     "value" => $actualFileName,
@@ -266,7 +265,7 @@ class LandingPageController extends Controller
                 $path = public_path() . "/" . $viewPath;
                 $file->move($path, $filename);
                 $actualFileName = $viewPath . "/" . $filename;
-                
+
                 $array = [
                     "sectionName" => $req->section3,
                     "value" => $actualFileName,
