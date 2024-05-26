@@ -11,15 +11,11 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    private $mPageSection;
-    private $mSectionType;
     private $mSectionValue;
 
     // Initializing Construct Function 
     public function __construct()
     {
-        $this->mPageSection     = new PageSection();
-        $this->mSectionType     = new SectionType();
         $this->mSectionValue    = new SectionValue();
     }
 
@@ -53,7 +49,15 @@ class DashboardController extends Controller
      */
     public function aboutUs()
     {
-        return view("pages/about-us");
+        $pageName = "aboutUs";                                              // Static put in config
+        $newArray = array();
+        # Get the landing page Dats
+        $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
+        foreach ($pageData as $pageDatas) {
+            $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
+            $newArray[$newKey] = $pageDatas->value;
+        }
+        return view("pages/about-us", $newArray);
     }
 
     /**
@@ -64,7 +68,15 @@ class DashboardController extends Controller
      */
     public function ourDestination()
     {
-        return view("pages/our-destination");
+        $pageName = "ourDestination";                                              // Static put in config
+        $newArray = array();
+        # Get the landing page Dats
+        $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
+        foreach ($pageData as $pageDatas) {
+            $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
+            $newArray[$newKey] = $pageDatas->value;
+        }
+        return view("pages/our-destination", $newArray);
     }
 
     /**
@@ -74,7 +86,15 @@ class DashboardController extends Controller
      */
     public function littileInspiration()
     {
-        return view("pages/littile-inspiration");
+        $pageName = "littileInspiration";                                              // Static put in config
+        $newArray = array();
+        # Get the landing page Dats
+        $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
+        foreach ($pageData as $pageDatas) {
+            $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
+            $newArray[$newKey] = $pageDatas->value;
+        }
+        return view("pages/littile-inspiration", $newArray);
     }
 
 
@@ -85,7 +105,15 @@ class DashboardController extends Controller
      */
     public function ourServic()
     {
-        return view("pages/our-service");
+        $pageName = "ourServic";                                              // Static put in config
+        $newArray = array();
+        # Get the landing page Dats
+        $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
+        foreach ($pageData as $pageDatas) {
+            $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
+            $newArray[$newKey] = $pageDatas->value;
+        }
+        return view("pages/our-service", $newArray);
     }
 
     /**
@@ -95,7 +123,15 @@ class DashboardController extends Controller
      */
     public function responsibleTravel()
     {
-        return view("pages/responsible-travel");
+        $pageName = "responsibleTravel";                                              // Static put in config
+        $newArray = array();
+        # Get the landing page Dats
+        $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
+        foreach ($pageData as $pageDatas) {
+            $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
+            $newArray[$newKey] = $pageDatas->value;
+        }
+        return view("pages/responsible-travel", $newArray);
     }
 
     /**
@@ -105,7 +141,15 @@ class DashboardController extends Controller
      */
     public function blogs()
     {
-        return view("pages/blogs");
+        $pageName = "blogs";                                              // Static put in config
+        $newArray = array();
+        # Get the landing page Dats
+        $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
+        foreach ($pageData as $pageDatas) {
+            $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
+            $newArray[$newKey] = $pageDatas->value;
+        }
+        return view("pages/blogs", $newArray);
     }
 
 

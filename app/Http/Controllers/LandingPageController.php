@@ -92,7 +92,6 @@ class LandingPageController extends Controller
     public function sectionUpdate2(Request $req)
     {
         $req->validate([
-            'pageName'  => 'required',
             'section2'  => 'required',
             'value1'    => 'nullable',
             'value2'    => 'nullable',
@@ -101,12 +100,11 @@ class LandingPageController extends Controller
 
         try {
             $section = array();
-
             #1
             if (isset($req->value1)) {
                 $array = [
                     "sectionName"   => $req->section2,
-                    "value"         => "$req->value2",
+                    "value"         => $req->value2,
                     "type"          => "title"                                       // Static
                 ];
                 array_push($section, $array);
@@ -134,12 +132,11 @@ class LandingPageController extends Controller
 
             if (!empty($section)) {
                 foreach ($section as $sections) {
-                    $this->mSectionValue->updateValues($sections, $req->pageName);
+                    $this->mSectionValue->updateValues($sections, $this->_pageName);
                 }
             }
 
             $responseMsg = $req->pageName . " Content Updated";
-            // return back()->with('success', $responseMsg);
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -210,7 +207,7 @@ class LandingPageController extends Controller
             if (isset($req->value5)) {
                 $second = [
                     "sectionName" => $req->section3,
-                    "value" => $req->value3,
+                    "value" => $req->value5,
                     "type" => "headin2"                                  // Static
                 ];
                 array_push($section, $second);
@@ -219,7 +216,7 @@ class LandingPageController extends Controller
             if (isset($req->value6)) {
                 $second = [
                     "sectionName" => $req->section3,
-                    "value" => $req->value2,
+                    "value" => $req->value6,
                     "type" => "image3"                                     // Static
                 ];
                 array_push($section, $second);
@@ -229,7 +226,7 @@ class LandingPageController extends Controller
             if (isset($req->value7)) {
                 $second = [
                     "sectionName" => $req->section3,
-                    "value" => $req->value3,
+                    "value" => $req->value7,
                     "type" => "heading3"                                  // Static
                 ];
                 array_push($section, $second);
@@ -238,7 +235,7 @@ class LandingPageController extends Controller
             if (isset($req->value8)) {
                 $second = [
                     "sectionName" => $req->section3,
-                    "value" => $req->value2,
+                    "value" => $req->value8,
                     "type" => "image4"                                     // Static
                 ];
                 array_push($section, $second);
@@ -248,7 +245,7 @@ class LandingPageController extends Controller
             if (isset($req->value9)) {
                 $second = [
                     "sectionName" => $req->section3,
-                    "value" => $req->value3,
+                    "value" => $req->value9,
                     "type" => "heading4"                                  // Static
                 ];
                 array_push($section, $second);
