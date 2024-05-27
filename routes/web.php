@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutUsPageController;
 use App\Http\Controllers\DesignationContoller;
 use App\Http\Controllers\Landing\DashboardController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\ResponsibleController;
 use App\Http\Controllers\Test\TestController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -61,9 +62,9 @@ Route::middleware([
     Route::controller(LandingPageController::class)->group(function () {
         Route::get('landing-page', 'landingPage');
         Route::post('section1/update', 'sectionUpdate')->name('section1.update');
-        Route::post('section2/update','sectionUpdate2')->name('section2.update');
-        Route::post('section3/update','sectionUpdate3')->name('section3.update');
-        Route::post('section4/update','sectionUpdate4')->name('section4.update');
+        Route::post('section2/update', 'sectionUpdate2')->name('section2.update');
+        Route::post('section3/update', 'sectionUpdate3')->name('section3.update');
+        Route::post('section4/update', 'sectionUpdate4')->name('section4.update');
 
         Route::post('section2/update', 'sectionUpdate2')->name('section2.update');
         Route::post('section/delete', 'sectionDelete');
@@ -81,4 +82,8 @@ Route::middleware([
         Route::get('aboutus-page','aboutusPage')->name("admin.aboutUs");
         });
     
+    // Responsible Travel
+    Route::controller(ResponsibleController::class)->group(function () {
+        Route::get('admin/responsible', 'viewResponsible')->name('admin.responsible');
+    });
 });
