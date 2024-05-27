@@ -86,7 +86,7 @@
                             <?php } ?>
                             <div class="form-group">
                                 <label for="section{{$i}}Content">Section {{$i}} Content</label>
-                                <textarea class="form-control" id="section{{$i}}Content" name="section{{$i}}Content" rows="3"></textarea>
+                                <textarea class="form-control tinymce-editor" id="section{{$i}}Content" name="section{{$i}}Content" rows="3"></textarea>
 
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -112,39 +112,7 @@
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script type="text/javascript">
     tinymce.init({
-        selector: 'textarea#section1Content',
-        height: 200,
-        menubar: false,
-        plugins: [
-            'advlist autolink lists link image charmap print preview anchor',
-            'searchreplace visualblocks code fullscreen',
-            'insertdatetime media table paste code help wordcount', 'image'
-        ],
-        toolbar: 'undo redo | formatselect | ' +
-            'bold italic backcolor | alignleft aligncenter ' +
-            'alignright alignjustify | bullist numlist outdent indent | ' +
-            'removeformat | help',
-        content_css: '//www.tiny.cloud/css/codepen.min.css'
-    });
-
-    tinymce.init({
-        selector: 'textarea#section2Content',
-        height: 200,
-        menubar: false,
-        plugins: [
-            'advlist autolink lists link image charmap print preview anchor',
-            'searchreplace visualblocks code fullscreen',
-            'insertdatetime media table paste code help wordcount', 'image'
-        ],
-        toolbar: 'undo redo | formatselect | ' +
-            'bold italic backcolor | alignleft aligncenter ' +
-            'alignright alignjustify | bullist numlist outdent indent | ' +
-            'removeformat | help',
-        content_css: '//www.tiny.cloud/css/codepen.min.css'
-    });
-
-    tinymce.init({
-        selector: 'textarea#section3Content',
+        selector: 'textarea.tinymce-editor',
         height: 200,
         menubar: false,
         plugins: [
