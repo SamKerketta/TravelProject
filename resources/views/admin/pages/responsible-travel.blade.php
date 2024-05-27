@@ -58,9 +58,8 @@
                     for ($i = 1; $i <= $noOfSections; $i++) {
                     ?>
                         <!-- Section 1 -->
-                        <form action="{{ route('admin.designation.updatesection') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.responsible.updatesection') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" class="form-control" id="pageName" name="pageName" value="designation">
                             <div class="form-group">
                                 <input type="hidden" class="form-control " id="section" name="section" value="{{$i}}">
                                 <label for="section{{$i}}Image">Section {{$i}} Image</label>
