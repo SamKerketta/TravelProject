@@ -151,20 +151,19 @@ class LandingPageController extends Controller
             'pageName'  => 'required',
             'section3'  => 'required',
             'value1'    => 'nullable',
-            'value2'    => 'nullable', //
+            'value2'    => 'nullable|image|mimes:jpeg,png,jpg', 
             'value3'    => 'nullable',
-            'value4'    => 'nullable', // 
+            'value4'    => 'nullable|image|mimes:jpeg,png,jpg', 
             'value5'    => 'nullable',
-            'value6'    => 'nullable', // 
+            'value6'    => 'nullable|image|mimes:jpeg,png,jpg',  
             'value7'    => 'nullable',
-            'value8'    => 'nullable', //
+            'value8'    => 'nullable|image|mimes:jpeg,png,jpg', 
             'value9'    => 'nullable'
         ]);
 
         try {
             $section = array();
 
-            
             if (isset($req->value1)) {
                 $array = [
                     "sectionName" => $req->section3,
