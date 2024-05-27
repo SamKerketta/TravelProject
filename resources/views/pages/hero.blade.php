@@ -21,21 +21,12 @@
             <div class="col-12">
                 <div class="trips-text">
                     <h2 style="margin-top:25px;margin-bottom:10px;">
-                        <spna class="titleheading">THE LUXURY SPECIALISTS</spna>
+                        <spna class="titleheading">{{$section2title}}</spna>
                     </h2>
-                    <p>It’s the era of limitless information about the wonders of
-                        the world. It’s not easy to navigate your way to the choices
-                        you really want to make. That’s where we come in. To create
-                        a space within which you need to focus on only the very best
-                        luxury travel — just for you. Being deeply immersed in the
-                        world of travel we are super-skilled at anticipating even your
-                        unspoken desires. That’s because we have a strong belief in
-                        communications and its power in the people-to-people
-                        connect. It&#39;s why you can rely on us for the most awesome
-                        luxury travel adventures in a borderless world.
+                    <p>{{$section2content}}
                         <br />
                         <br />
-                        Let’s Go. Far and Beyond. Together.
+                        {{$section2subContent}}
                     </p>
                     <div class="btn_know"><a class="btn_more" href="about-us.html" style="text-decoration:none;">KNOW
                             MORE</a>

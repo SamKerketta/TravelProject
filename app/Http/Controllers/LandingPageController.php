@@ -103,7 +103,7 @@ class LandingPageController extends Controller
             if (isset($req->value1)) {
                 $array = [
                     "sectionName"   => $req->section2,
-                    "value"         => $req->value2,
+                    "value"         => $req->value1,
                     "type"          => "title"                                       // Static
                 ];
                 array_push($section, $array);
@@ -136,6 +136,7 @@ class LandingPageController extends Controller
             }
 
             $responseMsg = $req->pageName . " Content Updated";
+            return back();
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }

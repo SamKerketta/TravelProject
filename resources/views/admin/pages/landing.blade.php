@@ -31,6 +31,9 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3> Section 1 </h3>
+                    </div>
                     <div class="col-md-12">
                         <form action="{{ route('section1.update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -39,7 +42,7 @@
                                     value="landingPage">
                                 <input type="hidden" class="form-control" id="section1" name="section1" value="1">
 
-                                <label class="form-label" for="value1">Default file input example</label>
+                                <label class="form-label" for="value1">Hero Video</label>
                                 <input type="file" class="@error('value1') is-invalid @enderror form-control"
                                     id="value1" name="value1" accept="video/*" />
                                 @error('value1')
@@ -61,6 +64,9 @@
             <div class="container-fluid" style="margin-top: 30px">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3> Section 2 </h3>
+                    </div>
                     <div class="col-md-12">
                         <form action="{{ route('section2.update') }}" method="POST">
                             @csrf
