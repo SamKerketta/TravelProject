@@ -301,7 +301,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link">
+                                    <a href="{{route('admin.responsible')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Responsible Travel</p>
                                     </a>
@@ -309,9 +309,9 @@
 
                             </ul>
                         </li>
-                        
-                        
-                        
+
+
+
                         <li class="nav-header">MULTI LEVEL EXAMPLE</li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -451,6 +451,7 @@
     <!-- AdminLTE for demo purposes -->
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="dashboard/dist/js/pages/dashboard.js"></script>
+    @yield('scripts')
 </body>
 
 </html>
