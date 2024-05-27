@@ -64,10 +64,14 @@ Route::middleware([
         Route::post('section3/update','sectionUpdate3')->name('section3.update');
         Route::post('section4/update','sectionUpdate4')->name('section4.update');
 
+        Route::post('section2/update', 'sectionUpdate2')->name('section2.update');
+        Route::post('section/delete', 'sectionDelete');
+        Route::post('section/save', 'sectionSave');
     });
 
     // Designation
     Route::controller(DesignationContoller::class)->group(function () {
         Route::get('admin/designation', 'viewAdminDesignation')->name('admin.designation');
+        Route::post('admin/designation/update-section', 'updateSections')->name('admin.designation.updatesection');
     });
 });
