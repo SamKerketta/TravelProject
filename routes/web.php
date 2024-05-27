@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUsPageController;
 use App\Http\Controllers\DesignationContoller;
 use App\Http\Controllers\Landing\DashboardController;
 use App\Http\Controllers\LandingPageController;
@@ -74,4 +75,10 @@ Route::middleware([
         Route::get('admin/designation', 'viewAdminDesignation')->name('admin.designation');
         Route::post('admin/designation/update-section', 'updateSections')->name('admin.designation.updatesection');
     });
+
+
+    Route::controller(AboutUsPageController::class)->group(function () {
+        Route::get('aboutus-page','aboutusPage')->name("admin.aboutUs");
+        });
+    
 });

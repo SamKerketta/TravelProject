@@ -2,12 +2,12 @@
 
 @section('page-content')
     <section class="hero" style="position:relative; ">
-        <img src="{{$section1image}}" class="d-block w-100" alt="Luxury Travels Bali">
+        <img src="images/home/little%20inspirations%20F%20and%20B.jpg" class="d-block w-100" alt="Luxury Travels Bali">
         <div class="container" style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%);">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="hero-title" style="text-align:center;">
-                        <h2 style="font-size:6.0625rem;line-height: .8em; color:#000;">{{$section1title}}</h2>
+                        <h2 style="font-size:6.0625rem;line-height: .8em; color:#000;">ABOUT US</h2>
                     </div>
                 </div>
             </div>

@@ -32,17 +32,15 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-md-12">
-                    <form action="{{ route('section1.update') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('about/section1.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <input type="hidden" class="form-control" id="pageName" name="pageName" value="aboutUs">
                             <input type="hidden" class="form-control" id="section1" name="section1" value="1">
 
                             <label class="form-label" for="value1">Section 1 Image</label>
-                            <input type="file" class="@error('value1') is-invalid @enderror form-control" id="value1" name="value1" accept="video/*" />
-                            @error('value1')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                            <input type="file" class="form-control" id="value1" name="value1" accept="video/*" />
+            
                         </div>
                         <div class="form-group">
 
@@ -75,10 +73,8 @@
                             <input type="hidden" class="form-control" id="section1" name="section1" value="1">
                             
                             <label class="form-label" for="value1">Section 2 Image</label>
-                            <input type="file" class="@error('value1') is-invalid @enderror form-control" id="value1" name="value1" accept="video/*" />
-                            @error('value1')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                            <input type="file" class="form-control" id="value1" name="value1" accept="image/*" />
+                            
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Section 2 Heading 1</label>
@@ -123,10 +119,8 @@
                             <input type="hidden" class="form-control" id="pageName" name="pageName" value="aboutUs">
                             <input type="hidden" class="form-control" id="section1" name="section1" value="1">
                             <label class="form-label" for="value1">Section 3 Image</label>
-                            <input type="file" class="@error('value1') is-invalid @enderror form-control" id="value1" name="value1" accept="video/*" />
-                            @error('value1')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                            <input type="file" class=" form-control" id="value1" name="value1" accept="image/*" />
+                            
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Section 3 Heading  </label>
@@ -163,17 +157,13 @@
                             <input type="hidden" class="form-control" id="pageName" name="pageName" value="aboutUs">
                             <input type="hidden" class="form-control" id="section1" name="section1" value="1">
                             <label class="form-label" for="value1">Section 4 Image 1</label>
-                            <input type="file" class="@error('value1') is-invalid @enderror form-control" id="value1" name="value1" accept="video/*" />
-                            @error('value1')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                            <input type="file" class=" form-control" id="value1" name="value1" accept="image/*" />
+                            
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="value1">Section 4 Image 2</label>
-                            <input type="file" class="@error('value1') is-invalid @enderror form-control" id="value1" name="value1" accept="video/*" />
-                            @error('value1')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                            <input type="file" class=" form-control" id="value1" name="value1" accept="image/*" />
+                           
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Section 4 Heading  </label>
@@ -218,10 +208,8 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="value1">Section 5 Image 1</label>
-                            <input type="file" class="@error('value1') is-invalid @enderror form-control" id="value1" name="value1" accept="video/*" />
-                            @error('value1')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                            <input type="file" class=" form-control" id="value1" name="value1" accept="image/*" />
+                            
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Section 5 Heading 1 </label>
@@ -241,10 +229,8 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="value1">Section 5 Image 2</label>
-                            <input type="file" class="@error('value1') is-invalid @enderror form-control" id="value1" name="value1" accept="video/*" />
-                            @error('value1')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                            <input type="file" class=" form-control" id="value1" name="value1" accept="image/*" />
+                            
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Section 5 Heading 2 </label>

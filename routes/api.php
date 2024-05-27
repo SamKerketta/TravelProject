@@ -34,8 +34,8 @@ Route::controller(DestinationController::class)->group(function () {
 });
 
 Route::controller(AboutUsPageController::class)->group(function () {
-    Route::get('aboutus-page','aboutusPage')->name("admin.aboutUs");
-    Route::post('about/section1/update', 'sectionUpdate1');
+    // Route::get('aboutus-page','aboutusPage')->name("admin.aboutUs");
+    Route::post('about/section1/update', 'sectionUpdate1')->name("about/section1.update");
     Route::post('about/section2/update','sectionUpdate2');
     Route::post('about/section3/update','sectionUpdate3');
     Route::post('about/section4/update','sectionUpdate4');
