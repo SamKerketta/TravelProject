@@ -79,11 +79,12 @@ Route::middleware([
 
 
     Route::controller(AboutUsPageController::class)->group(function () {
-        Route::get('aboutus-page','aboutusPage')->name("admin.aboutUs");
-        });
-    
+        Route::get('aboutus-page', 'aboutusPage')->name("admin.aboutUs");
+    });
+
     // Responsible Travel
     Route::controller(ResponsibleController::class)->group(function () {
         Route::get('admin/responsible', 'viewResponsible')->name('admin.responsible');
+        Route::post('admin/responsible/update-section', 'updateSections')->name('admin.responsible.updatesection');
     });
 });
