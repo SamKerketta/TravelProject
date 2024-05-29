@@ -3,11 +3,7 @@
 namespace App\Http\Controllers\Landing;
 
 use App\Http\Controllers\Controller;
-use App\Models\PageSection;
-use App\Models\SectionType;
 use App\Models\SectionValue;
-use Exception;
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
@@ -24,7 +20,7 @@ class DashboardController extends Controller
      * | Get and render Dasboard details 
      * | Get the details from the db and render the dashboard 
         | Serial No : 01
-        | Under Con 
+        | Working
         | 6 section`
      */
     public function index()
@@ -51,7 +47,6 @@ class DashboardController extends Controller
     {
         $pageName = "aboutUs";                                              // Static put in config
         $newArray = array();
-        # Get the landing page Dats
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
@@ -70,7 +65,6 @@ class DashboardController extends Controller
     {
         $pageName = "ourDestination";                                              // Static put in config
         $newArray = array();
-        # Get the landing page Dats
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
@@ -88,7 +82,6 @@ class DashboardController extends Controller
     {
         $pageName = "littileInspiration";                                              // Static put in config
         $newArray = array();
-        # Get the landing page Dats
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
@@ -107,7 +100,6 @@ class DashboardController extends Controller
     {
         $pageName = "ourServic";                                              // Static put in config
         $newArray = array();
-        # Get the landing page Dats
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
@@ -125,7 +117,6 @@ class DashboardController extends Controller
     {
         $pageName = "responsibleTravel";                                              // Static put in config
         $newArray = array();
-        # Get the landing page Dats
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
@@ -143,7 +134,6 @@ class DashboardController extends Controller
     {
         $pageName = "blogs";                                              // Static put in config
         $newArray = array();
-        # Get the landing page Dats
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;

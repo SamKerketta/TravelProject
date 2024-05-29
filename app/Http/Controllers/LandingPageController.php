@@ -78,7 +78,7 @@ class LandingPageController extends Controller
             }
 
             $responseMsg = $req->pageName . " Content Updated";
-            return true;
+            return back();
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -151,20 +151,20 @@ class LandingPageController extends Controller
             'pageName'  => 'required',
             'section3'  => 'required',
             'value1'    => 'nullable',
-            'value2'    => 'nullable|image|mimes:jpeg,png,jpg', 
+            'value2'    => 'nullable|image|mimes:jpeg,png,jpg',
             'value3'    => 'nullable',
-            'value4'    => 'nullable|image|mimes:jpeg,png,jpg', 
+            'value4'    => 'nullable|image|mimes:jpeg,png,jpg',
             'value5'    => 'nullable',
-            'value6'    => 'nullable|image|mimes:jpeg,png,jpg',  
+            'value6'    => 'nullable|image|mimes:jpeg,png,jpg',
             'value7'    => 'nullable',
-            'value8'    => 'nullable|image|mimes:jpeg,png,jpg', 
+            'value8'    => 'nullable|image|mimes:jpeg,png,jpg',
             'value9'    => 'nullable'
         ]);
 
         try {
             $section = array();
 
-            
+
             if (isset($req->value1)) {
                 $array = [
                     "sectionName" => $req->section3,
@@ -291,6 +291,7 @@ class LandingPageController extends Controller
                 }
             }
             $responseMsg = $req->pageName . " Content Updated";
+            return back();
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -306,8 +307,22 @@ class LandingPageController extends Controller
             'pageName'  => 'required',
             'section4'  => 'required',
             'value1'    => 'nullable',
-            'value2'    => 'nullable',
-            'value3'    => 'nullable'
+
+            'value2'    => 'nullable', //
+            'value3'    => 'nullable',
+            'value4'    => 'nullable',
+
+            'value5'    => 'nullable', // 
+            'value6'    => 'nullable',
+            'value7'    => 'nullable',
+
+            'value8'    => 'nullable', // 
+            'value9'    => 'nullable',
+            'value10'   => 'nullable',
+
+            'value11'   => 'nullable',  //
+            'value12'   => 'nullable',
+            'value13'   => 'nullable',
         ]);
 
         try {
@@ -441,6 +456,8 @@ class LandingPageController extends Controller
                     $this->mSectionValue->updateValues($sections, $req->pageName);
                 }
             }
+
+            return back();
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -554,6 +571,7 @@ class LandingPageController extends Controller
                     $this->mSectionValue->updateValues($sections, $req->pageName);
                 }
             }
+            return back();
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -606,6 +624,7 @@ class LandingPageController extends Controller
                 array_push($section, $second);
             }
 
+            #4
             if (isset($req->value2)) {
                 $second = [
                     "sectionName" => $req->section2,
@@ -615,7 +634,7 @@ class LandingPageController extends Controller
                 array_push($section, $second);
             }
 
-            #3
+            #5
             if (isset($req->value3)) {
                 $second = [
                     "sectionName" => $req->section2,
@@ -625,6 +644,7 @@ class LandingPageController extends Controller
                 array_push($section, $second);
             }
 
+            #6
             if (isset($req->value2)) {
                 $second = [
                     "sectionName" => $req->section2,
@@ -634,7 +654,7 @@ class LandingPageController extends Controller
                 array_push($section, $second);
             }
 
-            #3
+            #7
             if (isset($req->value3)) {
                 $second = [
                     "sectionName" => $req->section2,
@@ -644,6 +664,7 @@ class LandingPageController extends Controller
                 array_push($section, $second);
             }
 
+            #8
             if (isset($req->value2)) {
                 $second = [
                     "sectionName" => $req->section2,
@@ -653,7 +674,7 @@ class LandingPageController extends Controller
                 array_push($section, $second);
             }
 
-            #3
+            #9
             if (isset($req->value3)) {
                 $second = [
                     "sectionName" => $req->section2,
@@ -668,6 +689,7 @@ class LandingPageController extends Controller
                     $this->mSectionValue->updateValues($sections, $req->pageName);
                 }
             }
+            return back();
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }
