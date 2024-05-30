@@ -4,7 +4,7 @@
 <section class="">
     <div class="video">
         <!--<video width="100%" class="elVideo" loop="loop" autoPlay playsInline muted src=" https://www.distinctdestinations.in/asset/video/ddvideos.mp4" id='video-slider-1'></video>-->
-        <video width="100%" class="elVideo" loop="loop" autoPlay playsInline muted src="video/v1.mp4" id='video-slider-1'></video>
+        <video width="100%" class="elVideo" loop="loop" autoPlay playsInline muted src={{$section1video ?? ""}} id='video-slider-1'></video>
         <!--<img src="slider/banner-1.jpg" alt="banner-1">-->
         <div class="text-video">
             <h2><span style="font-size: 2.75rem;font-weight: 400;letter-spacing: 3px;line-height: 1.05;text-transform:uppercase;color:white">
@@ -20,14 +20,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="trips-text">
-                    <h2 style="margin-top:25px;margin-bottom:10px;">
-                        <spna class="titleheading">{{$section2title}}</spna>
-                    </h2>
-                    <p>{{$section2content}}
-                        <br />
-                        <br />
-                        {{$section2subContent}}
-                    </p>
+                    {!! $section2title??'' !!}
                     <div class="btn_know"><a class="btn_more" href="about-us.html" style="text-decoration:none;">KNOW
                             MORE</a>
                     </div>

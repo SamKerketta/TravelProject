@@ -310,6 +310,19 @@
                             </ul>
                         </li>
 
+                        <li class="nav-header">FORM DETAILS </li>
+                        <li class="nav-item">
+                            <a href={{route('admin.inquiry')}} class="nav-link">
+                                <i class="fas fa-circle nav-icon"></i>
+                                <p>inquiries</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-circle nav-icon"></i>
+                                <p>Subscription</p>
+                            </a>
+                        </li>
 
 
                         <li class="nav-header">MULTI LEVEL EXAMPLE</li>

@@ -108,12 +108,13 @@
 @endsection
 
 @section('scripts')
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/h2i627qpk2x44z2vkshvrgsesr6onkskwiw0mzd81z5ct9mj/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script type="text/javascript">
     tinymce.init({
         selector: 'textarea.tinymce-editor',
-        height: 200,
-        menubar: false,
+        height: 300,
+        menubar: true,
+        apikey:'h2i627qpk2x44z2vkshvrgsesr6onkskwiw0mzd81z5ct9mj',
         plugins: [
             'advlist autolink lists link image charmap print preview anchor',
             'searchreplace visualblocks code fullscreen',

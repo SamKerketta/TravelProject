@@ -93,8 +93,6 @@ class LandingPageController extends Controller
         $req->validate([
             'section2'  => 'required',
             'value1'    => 'nullable',
-            'value2'    => 'nullable',
-            'value3'    => 'nullable'
         ]);
 
         try {
@@ -109,26 +107,6 @@ class LandingPageController extends Controller
                 array_push($section, $array);
             }
 
-            #2
-            if (isset($req->value2)) {
-                $array = [
-                    "sectionName"   => $req->section2,
-                    "value"         => $req->value2,
-                    "type"          => "content"                                     // Static
-                ];
-                array_push($section, $array);
-            }
-
-            #3
-            if (isset($req->value3)) {
-                $array = [
-                    "sectionName"   => $req->section2,
-                    "value"         => $req->value3,
-                    "type"          => "subContent"                                  // Static
-                ];
-                array_push($section, $array);
-            }
-
             if (!empty($section)) {
                 foreach ($section as $sections) {
                     $this->mSectionValue->updateValues($sections, $this->_pageName);
@@ -136,7 +114,7 @@ class LandingPageController extends Controller
             }
 
             $responseMsg = $req->pageName . " Content Updated";
-            return back();
+            return back()->with('success', $responseMsg);
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }

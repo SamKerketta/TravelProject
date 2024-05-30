@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutUsPageController;
 use App\Http\Controllers\DesignationContoller;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\Landing\DashboardController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ResponsibleController;
@@ -86,5 +87,10 @@ Route::middleware([
     Route::controller(ResponsibleController::class)->group(function () {
         Route::get('admin/responsible', 'viewResponsible')->name('admin.responsible');
         Route::post('admin/responsible/update-section', 'updateSections')->name('admin.responsible.updatesection');
+    });
+
+    Route::controller(FormController::class)->group(function () {
+        Route::get('admin/inquiry', 'viewInquiry')->name('admin.inquiry');
+        Route::post('admin/save/inquiry', 'saveInquiry')->name('admin.save.inquiry');
     });
 });

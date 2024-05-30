@@ -75,22 +75,10 @@
                                     value="landinPage">
                                 <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
 
-                                <label for="exampleFormControlTextarea1">Section 2 Heading</label>
-                                <textarea class="form-control" id="value1" name="value1" rows="3"></textarea>
-
+                                <label for="exampleFormControlTextarea1"></label>
+                                <textarea class="form-control tinymce-editor" id="value1" name="value1" rows="3"></textarea>
                             </div>
-                            <div class="form-group">
 
-                                <label for="exampleFormControlTextarea1">Section 2 Content</label>
-                                <textarea class="form-control" id="value2" name="value2" rows="3"></textarea>
-
-                            </div>
-                            <div class="form-group">
-
-                                <label for="exampleFormControlTextarea1">Section2 sub content</label>
-                                <textarea class="form-control" id="value3" name="value3" rows="3"></textarea>
-
-                            </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
@@ -114,8 +102,7 @@
 
 
                                 <label for="exampleFormControlTextarea1">Section 3 Heading</label>
-                                <input type="text" class="form-control" id="value1" name="value1"
-                                    rows="3" />
+                                <input type="text" class="form-control" id="value1" name="value1" rows="3" />
 
                             </div>
 
@@ -137,9 +124,9 @@
                                 @enderror
                             </div>
 
-                            <?php 
-                                $a = $j+1;   
-                                $j = $a;
+                            <?php
+                            $a = $j + 1;
+                            $j = $a;
                             ?>
                             <div class="form-group" style="margin-bottom: 40px">
                                 <label for="exampleFormControlTextarea1">Section 3 heading {{ $i }}</label>
@@ -167,7 +154,8 @@
                             <div class="form-group">
                                 <input type="hidden" class=" form-control " id="pageName" name="pageName"
                                     value="landinPage">
-                                <input type="hidden" class=" form-control " id="section4" name="section4" value="4">
+                                <input type="hidden" class=" form-control " id="section4" name="section4"
+                                    value="4">
 
 
                                 <label for="exampleFormControlTextarea1">Section 4 Heading</label>
@@ -194,9 +182,9 @@
                                 @enderror
                             </div>
 
-                            <?php 
-                                $a = $j+1;   
-                                
+                            <?php
+                            $a = $j + 1;
+                            
                             ?>
                             <div class="form-group" style="margin-bottom: 40px">
                                 <label for="exampleFormControlTextarea1">Section 4 heading {{ $i }}</label>
@@ -204,8 +192,8 @@
                                     name="value{{ $a }}" rows="3" />
                             </div>
                             <?php
-                                $z = $a+1;
-                                $j = $z;
+                            $z = $a + 1;
+                            $j = $z;
                             ?>
                             <div class="form-group" style="margin-bottom: 40px">
                                 <label for="exampleFormControlTextarea1">Section 4 content {{ $i }}</label>
@@ -227,4 +215,27 @@
     <!-- /.content -->
     </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script src="https://cdn.tiny.cloud/1/h2i627qpk2x44z2vkshvrgsesr6onkskwiw0mzd81z5ct9mj/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: 'textarea.tinymce-editor',
+            height: 300,
+            menubar: true,
+            apikey: 'h2i627qpk2x44z2vkshvrgsesr6onkskwiw0mzd81z5ct9mj',
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount', 'image'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat | help',
+            content_css: '//www.tiny.cloud/css/codepen.min.css'
+        });
+    </script>
 @endsection
