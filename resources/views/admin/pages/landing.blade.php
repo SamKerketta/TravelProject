@@ -183,7 +183,7 @@
                             </div>
 
                             <?php
-                            $a = $j + 1;
+                            $a = $j + 1;  
                             
                             ?>
                             <div class="form-group" style="margin-bottom: 40px">
