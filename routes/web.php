@@ -5,6 +5,7 @@ use App\Http\Controllers\DesignationContoller;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\Landing\DashboardController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\LIController;
 use App\Http\Controllers\ResponsibleController;
 use App\Http\Controllers\Test\TestController;
 use Illuminate\Support\Facades\Route;
@@ -96,5 +97,13 @@ Route::middleware([
     Route::controller(FormController::class)->group(function () {
         Route::get('admin/inquiry', 'viewInquiry')->name('admin.inquiry');
         Route::post('admin/save/inquiry', 'saveInquiry')->name('admin.save.inquiry');
+    });
+
+    // Little Inspirations
+    Route::controller(LIController::class)->group(function () {
+        Route::get('little/view', 'littleView')->name('little.inspirations');
+        Route::post('little/update-section', 'updateSection')->name('admin.little.updatesection');
+        Route::post('little-uploadfile', 'uploadFile')->name('little.upload.file');
+        Route::get('file/delete/{id}', 'deleteFile');
     });
 });

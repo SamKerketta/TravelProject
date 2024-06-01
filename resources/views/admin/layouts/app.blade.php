@@ -295,7 +295,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="" class="nav-link">
+                                    <a href="{{route('little.inspirations')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Little Inspirations</p>
                                     </a>
@@ -418,6 +418,7 @@
 
         <!-- Content Wrapper. Contains page content -->
         @yield('page-content')
+
         <!-- /.content-wrapper -->
         <footer class="main-footer">
 
