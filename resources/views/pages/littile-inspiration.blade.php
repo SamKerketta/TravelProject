@@ -193,7 +193,7 @@
             text-align: center;
             justify-content: center;
             align-items: center;
-            margin-bottom: 23px;
+            margin-bottom: 60px;
         }
 
         .expo {
@@ -460,12 +460,12 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
+                                    </div>  
                                 </div>
 
                                 <style>
                                     .play-button-wrapper {
-                                        position: absolute;
+                                        position: relative;
                                         top: 0;
                                         left: 0;
                                         right: 0;
@@ -526,7 +526,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="padding:0px 30px 36px 36px;">
+            <div class="row" style="padding:0px 30px 36px 36px; margin-bottom: 60px;">
                 <div class="col-lg-4">
                     <div class="litt-trav">
                         <div

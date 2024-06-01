@@ -667,14 +667,14 @@
                     <div class="col-12">
                         <nav class="navbar navbar-expand-lg">
                             <div class="logo" id="logo1">
-                                <a href="index.html" class="logo">
+                                <a href="" class="logo">
                                     <div class="header-logo">
                                         <img src="images/logo/logo_far_and_beyond.png" alt="logo">
                                     </div>
                                 </a>
                             </div>
                             <div class="logo" id="logo2" style="display:none;">
-                                <a href="index.html" class="logo">
+                                <a href="" class="logo">
                                     <div class="header-logo">
                                         <img src="images/logo/logo_far_and_beyond_black.png" alt="logo">
                                     </div>
@@ -711,7 +711,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="contact" onclick="location.href='contact-us.html';">Contact Us</div>
+                                <div class="contact" onclick="location.href='contact-us';">Contact Us</div>
                             </div>
                         </nav>
                     </div>
@@ -723,103 +723,7 @@
     @yield('page-content')
 
     <!--Our patenar-->
-    <section class="our_team">
-        <h2 style="margin-top:65px">What They Say</h2>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" position="relative;">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/3.html" alt="">
-                    </div>
-                    <p class="testimonial">With these few words, would like to mention that, Vinay has been my reliable
-                        partner for more than 15 years for the requests of my VIP clients in India, Sri Lanka, Nepal,
-                        and Bhutan. He is an exceptional destination manager who understands and meets even the most
-                        complex requirements. His deep expertise and extensive knowledge of these destinations ensure
-                        unique and memorable experiences for travellers. I highly recommend his services for an
-                        authentic and worthwhile exploration of this wonderful region.</p>
-                    <p class="overview">
-                        <b> Laurence
-                        </b> LOCAZUR Travel - Yachting - Cruises<br>
-                        Belgium
-                    </p>
-                </div>
-                <div class="carousel-item">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/1.html" alt="">
-                    </div>
-                    <p class="testimonial">
-                        Je travaille avec Vinay depuis plus de 10 ans maintenant, j’apprécie particulièrement son
-                        professionnalisme et son efficacité mais aussi sa disponibilité pour le suivi des dossiers.
-                        Nous avons l’occasion de travailler ensemble sur l’organisation de voyages assez compliqués avec
-                        des clients très exigeants ou avec des demandes originales.
-                        En 10 ans de collaboration, tout s’est toujours parfaitement bien passé avec mes clients, je
-                        n’ai jamais eu le moindre retour négatif.
-
-                    </p>
-                    <p class="overview">
-                        <b>Aimée Bon-Hecker</b>Managing Director<br>TERANUI BY TSELANA TRAVEL
-                    </p>
-
-                </div>
-                <div class="carousel-item">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/2.html" alt="">
-                    </div>
-                    <p class="testimonial">Plus de 10 ans que Vinay, veille au bonheur de nos hôtes. Notre
-                        collaboration prend force grâce à ce supplément d’âme qui fait que chaque voyage en Inde que
-                        nous créons devient une féerie, embellis par les conseils avisés que nous recevons pour proposer
-                        une nouvelle adresse, un site à ne pas manquer…Et puis il y a ce sens de l’hospitalité et de la
-                        courtoisie totalement inné chez Vinay et donne force et sécurité à une collaboration à distance.
-                    </p>
-                    <p class="overview">
-                        <b>Nathalie BUENO</b>Directrice Générale – Managing Director<br>SECRETS DE VOYAGES
-
-                    </p>
-
-                </div>
-                <div class="carousel-item">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/2.html" alt="">
-                    </div>
-                    <p class="testimonial">Vinay Dhall is a highly skilled professional with whom I have built a strong
-                        relationship over the years.
-                        Available at anytime, efficient, enthusiastic and always offering excellent advice.
-                        I entrust my clients to him with complete confidence.
-                        When we work with such a professional, business becomes easier.
-                    </p>
-                    <p class="overview">
-                        <b>OLIVIER GLASBERG</b>Product Director
-                        <br>SUCCES VOYAGE
-
-                    </p>
-
-                </div>
-                <div class="carousel-item">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/2.html" alt="">
-                    </div>
-                    <p class="testimonial"> J’ai rencontré Vinay lors notre arrivée en Inde avec notre premier groupe
-                        de voyageurs en 2011. Vinay avait construit notre voyage et a veillé sur chaque instant de notre
-                        voyage. Un voyage pavé de surprises comme nous n’en avions jamais vécues dans les cadres
-                        somptueux des anciens palais choisis avec soin. Et depuis 2011 nous avons toujours gardé contact
-                        et un de mes rêves et retourner dans cet incroyable pays ☀️ et laisser à Vinay le soin de
-                        construire ce voyage ! </p>
-                    <p class="overview">
-                        <b>Sylvie ARRIGHI-REVAH</b>Veuve Clicquot
-                    </p>
-
-                </div>
-            </div>
-            <!-- Carousel controls -->
-            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        </div>
-    </section>
-
+    
     <style>
         /*.carousel-inner {*/
         /*    position: relative;*/
@@ -1170,7 +1074,7 @@
                     <div class="news-desc news-cont">Stay ahead with the latest updates in travel trends.</div>
                 </div>
                 <div class="col-7">
-                    <form class="form-inline" action="#">
+                    <form class="form-inline" action="">
                         <div class="form-group">
                             <input type="email" id="name" placeholder="Name" name="Name">
                         </div>

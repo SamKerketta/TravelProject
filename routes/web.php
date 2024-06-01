@@ -97,6 +97,9 @@ Route::middleware([
     Route::controller(FormController::class)->group(function () {
         Route::get('admin/inquiry', 'viewInquiry')->name('admin.inquiry');
         Route::post('admin/save/inquiry', 'saveInquiry')->name('admin.save.inquiry');
+
+        Route::get('admin/subscription', 'viewSubscription')->name('admin.subscription');
+
     });
 
     // Little Inspirations
