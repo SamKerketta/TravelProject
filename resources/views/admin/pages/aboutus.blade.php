@@ -153,16 +153,17 @@
                             @csrf
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Example textarea</label>
-                                <textarea class="form-control tinymce-editor" id="value4" name="value4" rows="4"></textarea>
+                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="4"></textarea>
+
+
+                                <input type="hidden" class="form-control" id="pageName" name="pageName"
+                                    value="landingPage">
+                                <input type="hidden" class="form-control" id="section4" name="section4"
+                                    value="4">
 
                             </div>
                             <div class="form-group">
-                                <input type="hidden" class="form-control" id="pageName" name="pageName"
-                                    value="landingPage">
-                                <input type="hidden" class="form-control" id="section3" name="section3"
-                                    value="3">
-
-                                <label class="form-label" for="value1">section 6 image</label>
+                                <label class="form-label" for="value1">section 4 image</label>
                                 <input type="file" class="@error('value1') is-invalid @enderror form-control"
                                     id="value1" name="value1" accept="image/*" />
                                 @error('value1')
@@ -176,7 +177,123 @@
             </div>
 
 
-           
+            {{-- section 5 --}}
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3> Section 5 </h3>
+                    </div>
+                    <div class="col-md-12">
+                        <form action="{{ route('about.section5.update') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Example textarea</label>
+                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="4"></textarea>
+                                <input type="hidden" class="form-control" id="pageName" name="pageName"
+                                    value="landingPage">
+                                <input type="hidden" class="form-control" id="section5" name="section5"
+                                    value="5">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="value1">section 5 image</label>
+                                <input type="file" class="@error('value1') is-invalid @enderror form-control"
+                                    id="value1" name="value1" accept="image/*" />
+                                @error('value1')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="value3">section 5 image no 2</label>
+                                <input type="file" class="@error('value3') is-invalid @enderror form-control"
+                                    id="value3" name="value3" accept="image/*" />
+                                @error('value3')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Example textarea </label>
+                                <textarea class="form-control tinymce-editor" id="value4" name="value4" rows="4"></textarea>
+                            </div>
+
+
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            {{-- section 6 --}}
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3> Section 6 </h3>
+                    </div>
+                    <div class="col-md-12">
+                        <form action="{{ route('about.section6.update') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+
+                            <div class="form-group">
+                                <label class="form-label" for="value1">section 6 image</label>
+                                <input type="file" class="@error('value1') is-invalid @enderror form-control"
+                                    id="value1" name="value1" accept="image/*" />
+                                @error('value1')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Example textarea</label>
+                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="4"></textarea>
+                                <input type="hidden" class="form-control" id="pageName" name="pageName"
+                                    value="landingPage">
+                                <input type="hidden" class="form-control" id="section6" name="section6"
+                                    value="6">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Example textarea </label>
+                                <textarea class="form-control tinymce-editor" id="value4" name="value4" rows="4"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="value3">section 6 image no 2</label>
+                                <input type="file" class="@error('value3') is-invalid @enderror form-control"
+                                    id="value3" name="value3" accept="image/*" />
+                                @error('value3')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="form-label" for="value5">section 6 image no 3</label>
+                                <input type="file" class="@error('value5') is-invalid @enderror form-control"
+                                    id="value5" name="value5" accept="image/*" />
+                                @error('value5')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Example textarea </label>
+                                <textarea class="form-control tinymce-editor" id="value6" name="value6" rows="4"></textarea>
+                            </div>
+
+                            
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
 
             <!-- /.row (main row) -->
     </div><!-- /.container-fluid -->
