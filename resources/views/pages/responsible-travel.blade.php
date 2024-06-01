@@ -2,18 +2,44 @@
 
 @section('page-content')
     <section class="hero" style="position:relative; ">
-        <img src="images/home/destination.jpg" class="d-block w-100" alt="Luxury Travels Bali">
-        <div class="container" style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%);">
+        <div class="banner">
+            <img src="images/responsible/Responsible-travel-cover.webp" class="d-block w-100" alt="Luxury Travels Bali">
+        </div>
+        <div class="container" style="position: absolute; top:48%; left: 50%; transform: translate(-50%, -50%);">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="hero-title" style="text-align:center;">
-                        <h2 style="font-size:4.5rem;line-height: .8em; color:#000;">RESPONSIBLE TRAVEL</h2>
+                        <h2>Responsible Travel</h2>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <style>
+        .trips-top {
+            padding: 60px 0 20px 0;
+        }
+
+        .banner {
+            width: 100%;
+            height: 40vw;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+
+        .hero-title h2 {
+            font-size: 6.5rem;
+            line-height: .8em;
+            color: #fff;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+
         .hero-title .bottom-head {
             font-size: 1rem;
             font-style: normal;
@@ -33,14 +59,14 @@
 
         .about-text p {
             padding-top: 0px;
-            font-family: 'arial', serif;
-            font-size: 20px;
+            font-size: 1rem;
             line-height: 30px;
             text-align: center;
+            font-family: "Futura Book" !important;
         }
 
         .about-text {
-            width: 80%;
+            width: 70%;
             margin: auto;
         }
 
@@ -61,20 +87,20 @@
         /*responsive travel css start*/
         .res-trav {
             width: 100%;
-            background: green;
-            height: 80vh;
-            overflow: hidden;
+            max-height: 80vh;
         }
 
         .res-trav img {
             width: 100%;
             object-fit: cover;
+
         }
 
         .zoom-img img {}
 
         .res-inner {
             overflow: hidden;
+            cursor: pointer;
         }
 
         .res-inner img {
@@ -83,7 +109,9 @@
         }
 
         .res-inner img:hover {
-            transform: scale(1.2);
+            transform: scale(1.3);
+            transform-origin: 50% 50%;
+            transition: all .5s ease-in-out
         }
 
         /*end responsive travel css*/
@@ -93,46 +121,15 @@
             <div class="row">
                 <div class="col-12">
                     <div class="about-text">
-                        <p>Spray paint drying time can vary based on several factors, including the type of paint, surface,
-                            humidity, and
-                            temperature. erature. Spray paint drying time can vary based on several factors, including the
-                            type of paint, surface,
-                            humidity, and temperature.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="trips-rsp">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12" style="padding: 30px 50px;">
-                    <div class="res-trav">
-                        <img src="images/home/destinations/india.jpg" alt="about">
-                    </div>
-                </div>
-                <div class="col-12" style="padding: 30px 0px 30px 0px;">
-                    <div class="about-text">
-                        <p>Spray paint drying time can vary based on several factors, including the type of paint, surface,
-                            humidity, and
-                            temperature. erature. Spray paint drying time can vary based on several factors, including the
-                            type of paint, surface,
-                            humidity, and temperature.Spray paint drying time can vary based on several factors, including
-                            the type of paint,
-                            surface, humidity, and temperature. erature. Spray paint drying time can vary based on several
-                            factors, including the
-                            type of paint, surface, humidity, and temperature.
-                            <br>
-                            <br>
-                            Spray paint drying time can vary based on several factors, including the type of paint, surface,
-                            humidity, and
-                            temperature. erature. Spray paint drying time can vary based on several factors, including the
-                            type of paint, surface,
-                            humidity, and temperature.Spray paint drying time can vary based on several factors, including
-                            the type of paint,
-                            surface, humidity, and temperature. erature. Spray paint drying time can vary based on several
-                            factors, including the
-                            type of paint, surface, humidity, and temperature.
+                        <p>
+                            Responsible Tourism serves as one of the most important bridges between
+                            climate change, environmental concerns and communities wherever
+                            travellers venture out to explore the world.
+                            For a more sustainable future for the travel industry, it is imperative that
+                            we put together our collective strengths to combine responsible practices
+                            with a desirable guest experience for the global travel community.
+
+
                         </p>
                     </div>
                 </div>
@@ -144,31 +141,50 @@
             <div class="row">
                 <div class="col-12" style="padding: 30px 50px;">
                     <div class="res-trav">
-                        <img src="images/home/destinations/india.jpg" alt="about">
+                        <img src="images/responsible/responsible%20travel%20image.webp" alt="about">
                     </div>
                 </div>
-                <div class="col-12" style="padding: 30px 0px 30px 0px;">
+                <div class="col-12" style="padding: 30px 0px 0px 0px;">
                     <div class="about-text">
-                        <p>Spray paint drying time can vary based on several factors, including the type of paint, surface,
-                            humidity, and
-                            temperature. erature. Spray paint drying time can vary based on several factors, including the
-                            type of paint, surface,
-                            humidity, and temperature.Spray paint drying time can vary based on several factors, including
-                            the type of paint,
-                            surface, humidity, and temperature. erature. Spray paint drying time can vary based on several
-                            factors, including the
-                            type of paint, surface, humidity, and temperature.
-                            <br>
-                            <br>
-                            Spray paint drying time can vary based on several factors, including the type of paint, surface,
-                            humidity, and
-                            temperature. erature. Spray paint drying time can vary based on several factors, including the
-                            type of paint, surface,
-                            humidity, and temperature.Spray paint drying time can vary based on several factors, including
-                            the type of paint,
-                            surface, humidity, and temperature. erature. Spray paint drying time can vary based on several
-                            factors, including the
-                            type of paint, surface, humidity, and temperature.
+                        <p>
+
+                            Responsible Tourism has achieved greater weightage in these past few
+                            years. We are seeing how it is now drawing in a rapidly growing community
+                            worldwide. That’s because people are recognising, even more strongly, how
+                            the initiative aims to reduce the negative imprint on tourism, while
+                            simultaneously maximising the benefits for local communities and the
+                            environment.
+
+                            Sustainable tourism development with a special focus on giving back to local
+                            communities is all about moving in the right direction for the travel industry.
+                            But what drives this even more strongly is an integrated and cooperative
+                            approach. This cohesive, mindful thinking will touch upon all the key
+                            components of this endeavour— including environmentally sustainable,
+                            economically beneficial, and culturally respectful practices.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="trips-rsp">
+        <div class="container-fluid">
+            <div class="row">
+                <!--<div class="col-12" style="padding: 30px 50px;">-->
+                <!--    <div class="res-trav" >-->
+                <!--         <img src="images/home/destinations/india.jpg" alt="about">-->
+                <!--    </div>-->
+                <!--</div>-->
+                <div class="col-12" style="padding:0px 0px 30px 0px;">
+                    <div class="about-text">
+                        <p>At Far and Beyond we see that these efforts can be further cemented on-
+                            ground by strong partnerships with like-minded operators right along the
+                            chain all the way to the local level.
+                            We are deeply committed to driving this initiative in a meaningful way. This
+                            is richly illustrated by inviting guests to participate in local eco-friendly
+                            activities; to be mindful of preserving the environment, and to immerse
+                            themselves in the delights of the community culture in a non-invasive way.
+
                         </p>
                     </div>
                 </div>
@@ -180,70 +196,34 @@
             <div class="row">
                 <div class="col-lg-6" style="padding-left:60px">
                     <div class="res-inner">
-                        <img src="images/home/destinations/india.jpg" alt="about">
+                        <img src="images/responsible/Responsible-travel.webp" alt="about">
                     </div>
                 </div>
                 <div class="col-lg-6" style="padding-right:60px">
                     <div class="res-inner">
-                        <img src="images/home/destinations/india.jpg" alt="about">
+                        <img src="images/responsible/iStock-.webp" alt="about">
                     </div>
                 </div>
                 <div class="col-12" style="padding: 30px 0px 30px 0px;">
                     <div class="about-text">
-                        <p>Spray paint drying time can vary based on several factors, including the type of paint, surface,
-                            humidity, and
-                            temperature. erature. Spray paint drying time can vary based on several factors, including the
-                            type of paint, surface,
-                            humidity, and temperature.Spray paint drying time can vary based on several factors, including
-                            the type of paint,
-                            surface, humidity, and temperature. erature. Spray paint drying time can vary based on several
-                            factors, including the
-                            type of paint, surface, humidity, and temperature.
+                        <p>We aim to inspire our guests with our proactive approach towards giving
+                            back to the local community in multiple ways— which includes support
+                            for local employment, friendship and cultural tolerance and the protection
+                            of their natural environments and wildlife.
+
                             <br>
                             <br>
-                            Spray paint drying time can vary based on several factors, including the type of paint, surface,
-                            humidity, and
-                            temperature. erature. Spray paint drying time can vary based on several factors, including the
-                            type of paint, surface,
-                            humidity, and temperature.Spray paint drying time can vary based on several factors, including
-                            the type of paint,
-                            surface, humidity, and temperature. erature. Spray paint drying time can vary based on several
-                            factors, including the
-                            type of paint, surface, humidity, and temperature.
+                            We strongly believe that this will not only serve as a win-win experience for
+                            our guests and the communities they meet on their travels, but also, in a
+                            broader context, add that extra push for safeguarding Planet Earth.
+
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="news-latter">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-5">
-                    <div class="news-cont">Subscribe to our travel notebook</div>
-                    <div class="news-desc news-cont">Be the first to discover the latest news in travel trends</div>
-                </div>
-                <div class="col-7">
-                    <form class="form-inline" action="#">
-                        <div class="form-group">
-                            <input type="email" id="name" placeholder="Name" name="Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="Enter email" name="email">
-                        </div>
-                        <a class="btn-2"> SUBSCRIBE </a>
-                        <div class="checkbox">
-                            <label class="check">
-                                <input type="checkbox">
-                                <p>I have read and accept the <a style="text-decoration: underline;">Privacy and Data
-                                        Protection Policy*</a> and I know that I can unsubscribe at any time. </p>
-                            </label>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--footer end-->
     <style>
         .cheack input {
             margin-left: -20px;
@@ -318,77 +298,11 @@
             padding: 64px 30px 62px 30px;
             background: #000000;
         }
-    </style>
-    <!--End news latter-->
 
-    <style>
-        .wedding {
-            margin-left: 60px;
-        }
-    </style>
-    <style>
-        .footers {
-            border-top: 1px #dedede solid;
-            transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-            padding: 90px 30px 100px 30px;
-        }
-
-        .f-list-item .list-item {
-            list-style: none;
-        }
-
-        .f-list-item {
-            padding-left: 0px;
-        }
-
-        .f-list-item .list-item a {
-            text-decoration: none;
-            font-family: "Inter", Sans-serif;
-            font-size: 12px;
-            font-weight: 500;
-            text-transform: none;
-            line-height: 16px;
-            letter-spacing: .5px;
-            color: black;
-        }
-
-        .f-heading {
-            font-size: 1rem;
+        .group-aff {
+            text-align: center;
+            padding-bottom: 20px;
+            color: white;
         }
     </style>
-    <div class="client-logo-bg">
-        <div class="client-text" style="display:none;">
-            <h3 class="border_line1">
-                <span>Our Affiliations</span>
-            </h3>
-        </div>
-        <div class="inspired_section-1">
-            <div class="owl-carousel owl-theme inspired_slider1">
-                <div class="item">
-                    <img src="slider/trustedFITservice.png" alt="One and only ">
-                </div>
-                <div class="item">
-                    <img src="slider/IATO.png" alt="Atlantis">
-                </div>
-                <div class="item">
-                    <img src="slider/trustedFITservice.png" alt="Four Seasons">
-                </div>
-                <div class="item">
-                    <img src="slider/IATO.png" alt="Raffles">
-                </div>
-                <div class="item">
-                    <img src="slider/trustedFITservice.png" alt="Fairmont">
-                </div>
-                <div class="item">
-                    <img src="slider/IATO.png" alt="Sofitel">
-                </div>
-                <div class="item">
-                    <img src="slider/trustedFITservice.png" alt="St Regis">
-                </div>
-                <div class="item">
-                    <img src="slider/IATO.png" alt="Preferred hotels">
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection

@@ -65,11 +65,8 @@ Route::middleware([
         Route::post('section1/update', 'sectionUpdate')->name('section1.update');
         Route::post('section2/update', 'sectionUpdate2')->name('section2.update');
         Route::post('section3/update', 'sectionUpdate3')->name('section3.update');
-        Route::post('section4/update', 'sectionUpdate4')->name('section4.update');
 
-        Route::post('section2/update', 'sectionUpdate2')->name('section2.update');
-        Route::post('section/delete', 'sectionDelete');
-        Route::post('section/save', 'sectionSave');
+        Route::post('section6/update', 'sectionUpdate6')->name('section6.update');
     });
 
     // Designation
@@ -81,6 +78,13 @@ Route::middleware([
 
     Route::controller(AboutUsPageController::class)->group(function () {
         Route::get('aboutus-page', 'aboutusPage')->name("admin.aboutUs");
+
+        Route::post('about/section1/update', 'sectionUpdate1')->name("about.section1.update");
+        Route::post('about/section2/update', 'sectionUpdate2')->name("about.section2.update");
+        Route::post('about/section3/update', 'sectionUpdate3')->name("about.section3.update");
+        Route::post('about/section4/update', 'sectionUpdate4')->name("about.section4.update");
+        Route::post('about/section5/update', 'sectionUpdate5')->name("about.section5.update");
+        Route::post('about/section6/update', 'sectionUpdate6')->name("about.section6.update");
     });
 
     // Responsible Travel

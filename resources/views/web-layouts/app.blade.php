@@ -22,12 +22,26 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link href="https://db.onlinewebfonts.com/c/02d8f1743ede250c7c9865f1574d7cc6?family=Circular+Book" rel="stylesheet">
     <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&amp;display=swap"
+        rel="stylesheet">
+    <link href="http://db.onlinewebfonts.com/c/b46bb1fc76216f5cd90457d0451dbee4?family=Futura+Book" rel="stylesheet"
+        type="text/css" />
     <style>
         body {}
 
         p {
-            font-family: Futura, Trebuchet MS, Arial, sans-serif !important;
+            font-family: "Futura Book" !important;
+            font-size: 1.25rem !important;
+
+        }
+
+        p {
+            color: #495057;
+        }
+
+        h2 {
+            font-weight: 600;
         }
 
         .h1,
@@ -42,7 +56,7 @@
         h4,
         h5,
         h6 {
-            font-family: Futura, Trebuchet MS, Arial, sans-serif !important;
+            font-family: "Futura Book" !important;
         }
 
         .track .content {
@@ -83,7 +97,7 @@
         }
 
         .client-logo-bg {
-            background-color: #ffffff;
+            background-color: #000;
             padding: 40px 0 50px 0;
             position: relative;
             z-index: 0;
@@ -134,8 +148,8 @@
         .trips-text p {
             padding-top: 20px;
             line-height: 30px;
-            color: #52575c !important;
-            font-size: 1rem;
+            /*color:#A9A9A9 !important;*/
+            font-size: 1.25rem;
             line-height: 1.75rem !important;
         }
 
@@ -146,8 +160,9 @@
 
         p {
             /*font-family: 'Kadwa', serif;*/
-            font-size: 16px;
-            font-family: 'Candara', serif;
+            /*font-size: 16px;*/
+            /*font-family: 'Candara', serif;*/
+            /*color:#A9A9A9;*/
         }
 
         .trips-text1 h1 {
@@ -220,7 +235,8 @@
             position: absolute;
             top: 35%;
             text-align: center;
-            left: 6%;
+            left: 15%;
+            right: 15%;
         }
 
         .logo-bg {
@@ -381,7 +397,7 @@
         }
 
         .trips-bg {
-            padding: 60px 0 100px 0;
+            padding: 60px 0 50px 0;
             /*background-image: url(https://indiaforworld.com/design2/images/Backpanel.jpg);*/
             /*background-size:contain;*/
             /*background-repeat:no-repeat;*/
@@ -400,24 +416,68 @@
         }
 
         .mainu {
-            position: absolute;
-            width: 24.5vw;
-            height: auto;
-            background: black;
-            z-index: 1000;
-            height: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             visibility: hidden;
-            top: 50px;
-            right: -195px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mainu .inner-mainu {
+            background: rgba(91, 91, 91, 0.85);
+            /*background:rgba (91,91,91, 0.85);*/
+            border-radius: 50%;
+            width: 200vw;
+            height: 200vw;
+            display: flex;
+            flex: none;
+            align-items: center;
+            justify-content: center;
+            transform: scale(0);
+            transition: all 0.4s ease;
         }
 
         .tog-btn:hover .mainu {
             visibility: visible;
         }
 
+        .tog-btn:hover .mainu .inner-mainu {
+            transform: scale(1);
+            transition-duration: 0.75s;
+            visibility: visible;
+
+        }
+
+        .mainu .inner-mainu .main-menu>ul>li {
+            list-style: none;
+            color: #fff;
+            font-size: 1.5rem;
+            padding: 0.4rem;
+        }
+
+
+        /*     .mainu {*/
+        /*    position: absolute;*/
+        /*    width: 24.5vw;*/
+        /*    height: auto;*/
+        /*    background: black;*/
+        /*    z-index: 1000;*/
+        /*    height: auto;*/
+        /*    visibility: hidden;*/
+        /*    top: 50px;*/
+        /*    right: -195px;*/
+        /*}*/
+        /*      .tog-btn:hover .mainu{*/
+        /*          visibility: visible;*/
+        /*      }*/
         .list-mainu {
             padding: 0px;
-            /*text-align:left;*/
+            text-align: left;
             text-align: center;
         }
 
@@ -429,17 +489,16 @@
         .list-mainu .list a {
             font-size: 18px;
             text-align: left;
-            color: white;
+            color: #fff;
             text-decoration: none;
         }
 
-        .inner-mainu {
-            width: 100%;
-            padding: 10px;
-        }
-
+        /*      .inner-mainu{*/
+        /*          width:100%;*/
+        /*          padding:10px;*/
+        /*      }*/
         .list-mainu .list a:hover {
-            color: #f17011;
+            color: #FFA8B0;
             transition-delay: 0ms;
             text-decoration: underline;
         }
@@ -452,12 +511,13 @@
             letter-spacing: 1.8px;
             line-height: 1.28;
             margin-bottom: 6.375px;
-            text-transform: uppercase;
+
         }
 
         p {
-            color: #52575c !important;
-            font-size: 1rem !important;
+            /*color: #52575c!important;*/
+            /*color:#A9A9A9!important;*/
+            font-size: 1.15rem !important;
         }
 
         .btn_know {
@@ -465,6 +525,19 @@
             text-align: center;
             justify-content: center;
             align-items: center;
+        }
+
+        .btn_more:hover {
+            height: 35px;
+            padding: 5px 15px;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            border: 1px solid black;
+
         }
 
         .btn_more {
@@ -475,18 +548,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: black;
+            background: white;
+            color: black;
+            border: 1px solid black;
 
         }
 
-        .btn_more:hover {
-            text-decoration: none;
-            border: 1px solid #5f698c;
-            background: #fff;
-            color: #5f698c;
-            /*border-radius: 10px;*/
-            cursor: pointer;
-        }
+        /*.btn_more:hover{  text-decoration: none;*/
+        /*  border: 1px solid #5f698c;*/
+        /*  background: #fff;*/
+        /*  color: #5f698c;*/
+        /*border-radius: 10px;*/
+        /*  cursor:pointer;}*/
 
 
         .FrBrighShw {
@@ -528,6 +601,7 @@
             justify-content: left;
             text-align: center;
             align-items: center;
+            margin-top: 10px;
         }
 
         .social i {
@@ -535,7 +609,7 @@
             width: 30px;
             height: 30px;
             background-color: transparent;
-            font-size: 20px;
+            font-size: 16px;
             text-align: center;
             margin-right: 5px;
             border-radius: 50%;
@@ -545,352 +619,207 @@
         }
 
         /*End social media icon css*/
-    </style>
-    <style>
-        .why-choose img {
-            width: 100px;
+
+        @media only screen and (max-width:764px) {
+            .contact {
+                display: none;
+            }
+
+            .left {
+                display: flex;
+                text-align: center;
+                align-items: center;
+                width: 9%;
+                justify-content: space-evenly;
+            }
+
+            .carousel {
+                width: 100% !important;
+            }
+
+            .texti-section .texti-inner {
+                padding: 12px 13px !important;
+            }
+
+            .desti-img {
+                padding-left: 0px !important;
+            }
         }
 
-        .desti-img img {
-            width: 100%;
-            /*height:auto;*/
-            height: 450px;
+        .header-logo {
+            /*height:32px;*/
+            /*width:226px;*/
         }
 
-        .dest-heading {
-            text-align: center;
-            padding: 75px 0px 40px 0px;
-        }
-
-        .dest-heading h2 {
-            /*font-size: 40px;*/
-            /*margin-top: 50px;*/
-            /*margin-bottom:35px;*/
-            text-transform: uppercase;
-        }
-
-        .desti-img span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            /*transform: translate(-50%, -50%);*/
-            transform: translate(-50%, 492%);
-            font-size: 25px;
-            font-weight: 500;
-            color: white;
-        }
-
-        h2 {
-            text-transform: uppercase;
-        }
-
-        .desti-img {
-            position: relative;
-            /*padding-left: 12px;*/
-            padding-right: 0px !important;
-            overflow: hidden;
-        }
-
-        .img-hover:before {
-            content: '';
-            display: block;
-            position: absolute;
-            height: 0%;
-            width: 100%;
-            bottom: 0;
-            transition: height 0.5s ease-out;
-            background: linear-gradient(to bottom, transparent 0%, #495057 100%);
-        }
-
-        .desti-img:hover:before {
+        .header-logo img {
+            width: 50%;
             height: 100%;
-        }
-
-        .texti-section img {
-            width: 100%;
-            height: auto;
-            /*object-fit: contain*/
-            min-height: 40vw;
-            height: 100%;
-        }
-
-        /*.texti-section{*/
-        /*    margin-bottom:15px;*/
-        /*}*/
-        .texti-section .texti-inner {
-            padding: 25px 100px;
-            /*padding-top:100px;*/
-        }
-
-        .texti-section .texti-inner h2 {
-            text-align: left;
-            margin-top: 51px;
-            margin-bottom: 42px;
-            /*font-size:24px;*/
-        }
-
-        .inspired_section {
-            padding: 5px 0px;
-        }
-
-        .offer-slider-btn-expele p {
-            display: none;
-        }
-
-        .offer-slider-btn-expele {
-            font-weight: 500;
-            font-size: 12px;
-            color: #fff;
-            display: inline-block;
-            padding: 6px;
-            letter-spacing: 0.5px;
-            text-align: center;
-            position: absolute;
-            transition: 1.5s;
-            margin: 0px 20px;
-            position: absolute;
-            bottom: -130px;
-            left: 0%;
-            right: 0%;
-            cursor: pointer;
-            height: 38vh;
-        }
-
-        .offer-slider-btn-expele p {
-            color: white !important;
-            font-size: 0.85rem !important;
-        }
-
-        .desti-img:hover .offer-slider-btn-expele {
-            bottom: 20px !important;
-        }
-
-        .desti-img:hover p {
-            display: block;
-        }
-
-        /*.trips-slider .owl-item:nth-child(odd) {*/
-        /*     margin-top:0px!important; */
-        /*}*/
-        @media (min-width: 1200px) {
-
-            .h2,
-            h2 {
-                /*font-size: 2.8125rem;*/
-                font-size: 2rem;
-                margin-bottom: 38px;
-            }
-        }
-
-        .expo {
-            padding: 0px;
-            border: none;
-        }
-
-        .expo a {
-            display: inline-block;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 20px;
-            padding-right: 20px;
-            font-size: 17px;
-            text-decoration: none;
-            color: #ffffff;
-            background: #000000;
-            font-weight: 500;
-        }
-
-        .botom {
-            height: 11vw;
-            position: absolute;
-            /*background: linear-gradient(to top, #945656, transparent) !important;*/
-            opacity: 1;
-            opacity: 1;
-            bottom: 0px;
-            background: red;
-            width: 93%;
-            z-index: 20
-        }
-
-        .slider_p {
-            height: 15vh;
-            width: 100%;
-        }
-
-        .owl-carousel .owl-item img {
-            display: block;
-            width: 100px;
-        }
-
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            text-align: center;
+            object-fit: cover;
         }
     </style>
-    <style>
-        .inner_img_text {
-            position: absolute;
-            top: 40%;
-            left: 40%;
-            transform: translate(-50%, -50%);
-            font-size: 25px;
-            font-weight: 500;
-            color: black;
-        }
-    </style>
-    <style>
-        .img-hove2 .animated {
-            animation-duration: 1s;
-            animation-fill-mode: both
-        }
+</head>
 
-        .img-hove2 .-in {
-            z-index: 0
-        }
+<body>
+    <header>
+        <div class="menu-bg" id="navbar">
+            <div class="container-fluid" style="padding-right: 0;">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="logo" id="logo1">
+                                <a href="index.html" class="logo">
+                                    <div class="header-logo">
+                                        <img src="images/logo/logo_far_and_beyond.png" alt="logo">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="logo" id="logo2" style="display:none;">
+                                <a href="index.html" class="logo">
+                                    <div class="header-logo">
+                                        <img src="images/logo/logo_far_and_beyond_black.png" alt="logo">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="left">
+                                <div class="tog-btn">
+                                    <div class="FrBrighShw">
+                                        <span class="Fnb"></span>
+                                        <span class="Fnb"></span>
+                                        <span class="Fnb"></span>
+                                        <span class="Fnb"></span>
+                                    </div>
+                                    <div class="mainu">
+                                        <div class="inner-mainu">
+                                            <div class="main-menu">
+                                                <ul class="list-mainu">
+                                                    <li class="list"><a href="">HOME</a></li>
+                                                    <li class="list"><a href="about-us">ABOUT US</a></li>
+                                                    <li class="list"><a href="our-destination">DESTINATIONS</a></li>
+                                                    <li class="list"> <a href="our-servic">SERVICES</a></li>
+                                                    <li class="list"><a href="littile-inspiration">INSPIRATIONAL
+                                                            ADVENTURES</a></li>
+                                                    <li class="list"><a href="responsible-travel">RESPONSIBLE
+                                                            TRAVEL</a></li>
+                                                    <li class="list"> <a href="about-us#why-us">WHY US</a></li>
+                                                    <li class="list"><a href="about-us#meet-our-team">MEET OUR
+                                                            TEAM</a></li>
+                                                    <li class="list"> <a href="contact-us">CONTACT</a></li>
+                                                    <li class="list"> <a href=""
+                                                            style="color:red;text-decoration:underline;">CLOSE</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact" onclick="location.href='contact-us.html';">Contact Us</div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        .img-hove2 .img-hove2-out {
-            z-index: 1
-        }
+    @yield('page-content')
 
-        .img-hove2 .fadeOut {
-            animation-name: fadeOut
-        }
+    <!--Our patenar-->
+    <section class="our_team">
+        <h2 style="margin-top:65px">What They Say</h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" position="relative;">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/3.html" alt="">
+                    </div>
+                    <p class="testimonial">With these few words, would like to mention that, Vinay has been my reliable
+                        partner for more than 15 years for the requests of my VIP clients in India, Sri Lanka, Nepal,
+                        and Bhutan. He is an exceptional destination manager who understands and meets even the most
+                        complex requirements. His deep expertise and extensive knowledge of these destinations ensure
+                        unique and memorable experiences for travellers. I highly recommend his services for an
+                        authentic and worthwhile exploration of this wonderful region.</p>
+                    <p class="overview">
+                        <b> Laurence
+                        </b> LOCAZUR Travel - Yachting - Cruises<br>
+                        Belgium
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/1.html" alt="">
+                    </div>
+                    <p class="testimonial">
+                        Je travaille avec Vinay depuis plus de 10 ans maintenant, j’apprécie particulièrement son
+                        professionnalisme et son efficacité mais aussi sa disponibilité pour le suivi des dossiers.
+                        Nous avons l’occasion de travailler ensemble sur l’organisation de voyages assez compliqués avec
+                        des clients très exigeants ou avec des demandes originales.
+                        En 10 ans de collaboration, tout s’est toujours parfaitement bien passé avec mes clients, je
+                        n’ai jamais eu le moindre retour négatif.
 
-        @keyframes fadeOut {
-            0% {
-                opacity: 1
-            }
+                    </p>
+                    <p class="overview">
+                        <b>Aimée Bon-Hecker</b>Managing Director<br>TERANUI BY TSELANA TRAVEL
+                    </p>
 
-            100% {
-                opacity: 0
-            }
-        }
+                </div>
+                <div class="carousel-item">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/2.html" alt="">
+                    </div>
+                    <p class="testimonial">Plus de 10 ans que Vinay, veille au bonheur de nos hôtes. Notre
+                        collaboration prend force grâce à ce supplément d’âme qui fait que chaque voyage en Inde que
+                        nous créons devient une féerie, embellis par les conseils avisés que nous recevons pour proposer
+                        une nouvelle adresse, un site à ne pas manquer…Et puis il y a ce sens de l’hospitalité et de la
+                        courtoisie totalement inné chez Vinay et donne force et sécurité à une collaboration à distance.
+                    </p>
+                    <p class="overview">
+                        <b>Nathalie BUENO</b>Directrice Générale – Managing Director<br>SECRETS DE VOYAGES
 
-        .why-choose {
-            padding-top: 75px;
-            padding-bottom: 75px;
-        }
-    </style>
-    <style>
-        .inspire {
-            text-align: center;
-            padding-top: 10px;
-            padding-bottom: 16px;
-            position: relative;
-        }
+                    </p>
 
-        .inspire h1::before {
-            width: 231px;
-            height: 2px;
-            top: auto;
-            right: auto;
-            bottom: 44px;
-            left: 50%;
-            position: absolute;
-            content: "";
-            background-color: #f17011;
-            transform: translate(-50%, 0px);
-        }
-    </style>
-    <style>
-        .blog-content .category {
-            padding: 10px 0px 10px 0px;
-            font-weight: 500;
-        }
+                </div>
+                <div class="carousel-item">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/2.html" alt="">
+                    </div>
+                    <p class="testimonial">Vinay Dhall is a highly skilled professional with whom I have built a strong
+                        relationship over the years.
+                        Available at anytime, efficient, enthusiastic and always offering excellent advice.
+                        I entrust my clients to him with complete confidence.
+                        When we work with such a professional, business becomes easier.
+                    </p>
+                    <p class="overview">
+                        <b>OLIVIER GLASBERG</b>Product Director
+                        <br>SUCCES VOYAGE
 
-        .blog-content .blog-t {
-            font-size: 1.0rem;
-            cursor: pointer;
-            color: rgb(26 44 53);
-        }
+                    </p>
 
-        .blog-content .comment {
-            /* display: flex;*/
-            /*justify-content: space-between;*/
-            /*text-align: center;*/
-            align-items: center;
-        }
+                </div>
+                <div class="carousel-item">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/2.html" alt="">
+                    </div>
+                    <p class="testimonial"> J’ai rencontré Vinay lors notre arrivée en Inde avec notre premier groupe
+                        de voyageurs en 2011. Vinay avait construit notre voyage et a veillé sur chaque instant de notre
+                        voyage. Un voyage pavé de surprises comme nous n’en avions jamais vécues dans les cadres
+                        somptueux des anciens palais choisis avec soin. Et depuis 2011 nous avons toujours gardé contact
+                        et un de mes rêves et retourner dans cet incroyable pays ☀️ et laisser à Vinay le soin de
+                        construire ce voyage ! </p>
+                    <p class="overview">
+                        <b>Sylvie ARRIGHI-REVAH</b>Veuve Clicquot
+                    </p>
 
-        .blog-content .comment span {
-            color: #a89f84;
-            font-size: 15px;
-        }
+                </div>
+            </div>
+            <!-- Carousel controls -->
+            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+    </section>
 
-        /*.owl-theme .blog{*/
-        /*    width:347px;*/
-        /*    margin: auto;*/
-        /*}*/
-        .border_line1 span {
-            background-color: #fff;
-            padding: 8px 15px;
-            position: relative;
-            z-index: 5;
-            display: block;
-            font-size: 20px;
-            color: black;
-        }
-    </style>
-    <style>
-        .contact {
-            position: relative;
-        }
-
-        .form {
-            position: absolute;
-            top: 114px;
-            right: 114px;
-            width: 45%;
-            height: auto;
-            background: #f6f3ec;
-        }
-
-        .form .inner-f {
-            width: 100%;
-            height: auto;
-            padding: 60px;
-        }
-
-        .inner-f .col-sm-6 {
-            padding-bottom: 20px;
-        }
-
-        input[type="text"] {
-            border-top: 0px;
-            border-left: 0px;
-            border-right: 0px;
-            border-bottom: 1px solid;
-            border-radius: 0px;
-            background: #f6f3ec;
-            outline: none;
-            padding-top: 13px;
-            padding-bottom: 13px;
-        }
-        }
-
-        . .inner-f h3 {
-            font-family: 'Kadwa', serif;
-            font-size: 3.5em;
-            text-align: center;
-        }
-
-        .btn-1 {
-            padding-left: 56px;
-            padding-right: 56px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            background: #d8a01d;
-            border: none;
-            color: white;
-        }
-
-        .chek {
-            padding-bottom: 10px;
-        }
-
-        input[type="checkbox"] {
-            margin: 5px;
-        }
-    </style>
     <style>
         /*.carousel-inner {*/
         /*    position: relative;*/
@@ -977,7 +906,7 @@
             border-radius: 50%;
             background: #999;
             text-shadow: none;
-            top: 198px;
+            top: 300px;
         }
 
         .carousel-control-prev i,
@@ -1025,6 +954,46 @@
             background: #888;
         }
     </style>
+    <!--End our patener-->
+
+
+    <!--contact-us-->
+    <section class="contact" style="display:none;">
+        <img src="slider/banner-4.jpg" alt="" style="width: 100%;">
+        <div class="form">
+            <div class="inner-f">
+                <p>CONTACT US</p>
+                <h3
+                    style=" font-family: 'Kadwa', serif;
+        font-size: 3.5em; line-height: 52px;
+    letter-spacing: -2.5px;margin-bottom: 40px;">
+                    Have questions? <br> Get in touch! </h3>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="Text" id="pwd" placeholder="Name">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="Text" id="pwd" placeholder="Last Name">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="Text" id="pwd" placeholder="Email">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="Text" id="pwd" placeholder="Country">
+                    </div>
+                </div>
+                <div class="chek cheack" style="padding-left: 20px;">
+                    <input class="form-check-input" type="checkbox" id="" name="option1" value="something"
+                        checked>
+                    <span>I agree to the Privacy Policy.</span>
+                </div>
+                <button class="btn btn-1 ">Get in Touch </button>
+            </div>
+        </div>
+    </section>
+    <!--contact us end-->
+    <!--news latter -->
+
     <style>
         .cheack input {
             margin-left: -20px;
@@ -1099,16 +1068,63 @@
             padding: 64px 30px 62px 30px;
             background: #000000;
         }
+
+        .group-aff {
+            text-align: center;
+            padding-bottom: 20px;
+            color: white;
+        }
     </style>
+    <!--End news latter-->
+
+    <div class="client-logo-bg">
+        <div class="group-aff">
+            <h3 style="font-weight:600;">
+                <span>Group Affiliations</span>
+            </h3>
+        </div>
+        <div class="inspired_section-1">
+            <div class="owl-carousel owl-theme inspired_slider1">
+                <div class="item">
+                    <img src="images/footerlogo/trustedFITservice.png" alt="One and only ">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/keralatravelmart.png" alt="Atlantis">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/Tourcert.png" alt="Four Seasons">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/Toft.png" alt="Raffles">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/RTSOI-LOGO.png" alt="Fairmont">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/One-Tree-Planted.png" alt="Sofitel">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/IATO.png" alt="St Regis">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/sanderson-phillips.png" alt="Preferred hotels">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/USTOA.png" alt="Preferred hotels">
+                </div>
+            </div>
+        </div>
+    </div>
     <style>
         .footers {
             border-top: 1px #dedede solid;
             transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-            padding: 90px 30px 100px 30px;
+            padding: 50px 30px 50px 30px;
         }
 
         .f-list-item .list-item {
             list-style: none;
+            padding: 10px 0px;
         }
 
         .f-list-item {
@@ -1128,185 +1144,104 @@
 
         .f-heading {
             font-size: 1rem;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .footer-logo {
+            /*height:250px;*/
+            /*width:250px;*/
+        }
+
+        .footer-logo img {
+            width: 45%;
+            object-fit: cover;
         }
     </style>
-    <style>
-        .copy-itm {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            text-align: center;
-            list-style: none;
-        }
 
-        .copywrite {
-            background: white;
-            padding: 10px 0 10px 0;
-            border-top: 1px #dedede solid;
-            color: black;
-            text-align: center;
-        }
 
-        .copy-itm .list-itm span {
-            color: black;
-            font-weight: 100;
-            padding-left: 24px;
-            font-size: 12px;
-        }
-    </style>
-</head>
 
-<body>
-
-    <header>
-        <div class="menu-bg" id="navbar">
-            <div class="container-fluid" style="padding-right: 0;">
-                <div class="row">
-                    <div class="col-12">
-                        <nav class="navbar navbar-expand-lg">
-                            <div class="logo">
-                                <a href="/" class="logo">
-                                    <img src="images/logo/logo_far_and_beyond.png" alt="logo" style="height: 20px;">
-                                </a>
-                            </div>
-                            <div class="left">
-                                <div class="tog-btn">
-                                    <div class="FrBrighShw">
-                                        <span class="Fnb"></span>
-                                        <span class="Fnb"></span>
-                                        <span class="Fnb"></span>
-                                        <span class="Fnb"></span>
-                                    </div>
-                                    <div class="mainu">
-                                        <div class="inner-mainu">
-                                            <ul class="list-mainu">
-                                                <li class="list"><a href="about-us">ABOUT US</a></li>
-                                                <li class="list"><a href="our-destination">OUR DESTINATIONS</a></li>
-                                                <li class="list"> <a href="our-servic">OUR SERVICES</a></li>
-                                                <li class="list"><a href="littile-inspiration">LITTLE
-                                                        INSPIRATIONS</a></li>
-                                                <li class="list"><a href="responsible-travel">RESPONSIBLE
-                                                        TRAVEL</a></li>
-                                                <li class="list"> <a href="about-us#why-us">WHY US</a></li>
-                                                <li class="list"><a href="about-us#meet-our-team">MEET OUR
-                                                        TEAM</a></li>
-                                                <li class="list"> <a href="blogs">BLOGS</a></li>
-                                                <li class="list"> <a href="contact-us">CONTACT</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="contact" onclick="location.href='contact-us.html';">CONTACT US</div>
-                            </div>
-                        </nav>
-                    </div>
+    {{-- this section form --}}
+    <section class="news-latter" style="border-top:1px solid rgb(255 255 255 / 50%);">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-5">
+                    <div class="news-cont">Join our travel notebook!</div>
+                    <div class="news-desc news-cont">Stay ahead with the latest updates in travel trends.</div>
+                </div>
+                <div class="col-7">
+                    <form class="form-inline" action="#">
+                        <div class="form-group">
+                            <input type="email" id="name" placeholder="Name" name="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Enter email" name="email">
+                        </div>
+                        <a class="btn-2"> SUBSCRIBE </a>
+                        <div class="checkbox">
+                            <label class="check">
+                                <input type="checkbox">
+                                <p style="font-size:1rem!important;">I have read and accept the <a
+                                        style="text-decoration: underline;">Privacy and Data Protection Policy*</a> and
+                                    I know that I can unsubscribe at any time. </p>
+                            </label>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </header>
-
-
-
-
-    @yield('page-content')
-
+    </section>
     <!--new footer desine-->
-    <div class="client-logo-bg">
-        <div class="client-text" style="display:none;">
-            <h3 class="border_line1">
-                <span>Our Affiliations</span>
-            </h3>
-        </div>
-        <div class="inspired_section-1">
-            <div class="owl-carousel owl-theme inspired_slider1">
-                <div class="items">
-                    <img src="slider/trustedFITservice.png" alt="One and only ">
-                </div>
-                <div class="items">
-                    <img src="slider/IATO.png" alt="Atlantis">
-                </div>
-                <div class="items">
-                    <img src="slider/trustedFITservice.png" alt="Four Seasons">
-                </div>
-                <div class="items">
-                    <img src="slider/IATO.png" alt="Raffles">
-                </div>
-                <div class="items">
-                    <img src="slider/trustedFITservice.png" alt="Fairmont">
-                </div>
-                <div class="items">
-                    <img src="slider/IATO.png" alt="Sofitel">
-                </div>
-                <div class="items">
-                    <img src="slider/trustedFITservice.png" alt="St Regis">
-                </div>
-                <div class="items">
-                    <img src="slider/IATO.png" alt="Preferred hotels">
-                </div>
-            </div>
-        </div>
-    </div>
-
     <footer class="footers">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="row">
                         <div class="col-12">
-                            <img src="slider/footer-image.jpg" alt="logo">
+                            <a href="index.html">
+                                <div class="footer-logo">
+                                    <img src="images/logo/footer-logo.png" alt="logo">
+                                </div>
+                            </a>
                             <div><span style="color: #6c757d;font-size: 0.85rem;">(A Unit Of Distinct
                                     Destinations)</span></div>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="row">
                         <div class="col-12">
-                            <h3 class="f-heading">Far And Beyond</h3>
+                            <h3 class="f-heading">Quick Links</h3>
                             <ul class="f-list-item">
                                 <li class="list-item">
-                                    <a href=" ">
-                                        <span class="">Destinos</span>
+                                    <a href="contact-us.html">
+                                        <span class="">About Us</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="#">
-                                        <span>Experiencias</span>
+                                    <a href="services.html">
+                                        <span>Services</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href=" ">
-                                        <span>Novios</span>
+                                    <a href="littile-inspirations.html">
+                                        <span>Inspirational Adventures</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href=" "> Regala </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href=" ">
-                                        <span class=" ">Bitácora</span>
+                                    <a href="responsible-travel.html">
+                                        <span class="">Responsible Travels</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="#">
-                                        <span class="">Contacto</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <h3 class="f-heading">Companies</h3>
-                            <ul class="f-list-item">
-                                <li class="list-item">
-                                    <a href=" ">
-                                        <span class="">Incentive travel</span>
+                                    <a href="about-us.html#meet-our-team.html">
+                                        <span class="">Our Team</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href=" ">
-                                        <span>Corporate events</span>
+                                    <a href="https://www.distinctdestinations.in/pay-online" target="_blank">
+                                        <span class="">Payment Links</span>
                                     </a>
                                 </li>
                             </ul>
@@ -1316,41 +1251,26 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="row">
                         <div class="col-12">
-                            <h3 class="f-heading">About</h3>
+                            <h3 class="f-heading">Destinations</h3>
                             <ul class="f-list-item">
                                 <li class="list-item">
-                                    <a href=" ">
-                                        <span class="">Manifesto</span>
+                                    <a href="destinations.html#india">
+                                        <span class="">India</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="#">
-                                        <span>Sustainability</span>
+                                    <a href="destinations.html#nepal">
+                                        <span>Nepal</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href=" ">
-                                        <span>Our history</span>
+                                    <a href="destinations.html#bhutan">
+                                        <span>Bhutan</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href=" ">
-                                        <span>The team</span>
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href=" ">
-                                        <span class=" ">Our boutiques</span>
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href="#">
-                                        <span class="">Press</span>
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href="#">
-                                        <span class="">Work with us</span>
+                                    <a href="destinations.html#shrilanka">
+                                        <span>Sri Lanka</span>
                                     </a>
                                 </li>
                             </ul>
@@ -1368,50 +1288,30 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="row">
                         <div class="col-12">
-                            <h3 class="f-heading">Contact Us</h3>
+                            <h3 class="f-heading">Get Help</h3>
                             <ul class="f-list-item">
                                 <li class="list-item">
-                                    <a href=" ">
-                                        <span class="">(+91) 765 011 657</span>
+                                    <a href="contact-us.html">
+                                        <span class="">Contact Us</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="#">
-                                        <span>Instagram</span>
+                                    <a href="https://api.whatsapp.com/send?phone=9810259645" target="_blank">
+                                        <span>Start a Whatsapp Chat</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href=" ">
-                                        <span>LinkedIn</span>
-                                    </a>
+
                                 </li>
                                 <li class="list-item">
-                                    <a href=" ">
-                                        <spna>Facebook</spna>
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href=" ">
-                                        <span class=" ">Twitter</span>
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href="#">
-                                        <span class="">Contacto</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <h3 class="f-heading">Global</h3>
-                            <ul class="f-list-item">
-                                <li class="list-item">
-                                    <a href=" ">
-                                        <span class=""> Text1 Mexico</span>
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href=" ">
-                                        <span class=""> Text2 United States</span>
-                                    </a>
+                                    <div class="social">
+                                        <a href="https://www.facebook.com/profile.php?id=61559894617770"
+                                            target="_blank"><i class="fa fa-facebook"></i></a>
+                                        <a href="https://www.linkedin.com/company/102744889/admin/feed/posts/"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                        <a href="https://www.instagram.com/farandbeyondd/" target="_blank"><i
+                                                class="fa fa-instagram"></i></a>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -1420,12 +1320,50 @@
             </div>
         </div>
     </footer>
+    <style>
+        .copy-itm {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            list-style: none;
+        }
 
+        .copy-itm {
+            padding-left: 0px;
+            margin: 0px !important;
+        }
+
+        .copywrite {
+            background: white;
+            padding: 10px 0 10px 0;
+            border-top: 1px #dedede solid;
+            color: black;
+            text-align: center;
+        }
+
+        .copy-itm .list-itm span {
+            color: black;
+            font-weight: 100;
+            padding-left: 24px;
+            font-size: 12px;
+        }
+
+        .footer-cent {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center
+        }
+    </style>
     <div class="copywrite">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 text-left">
-                    <ul class="copy-itm">
+                <div class="col-lg-4 col-md-4 col-sm-12 text-center footer-cent" style="font-size:12px;"><span>© 2024
+                        FAR & BEYOND. All Rights Reserved.</span>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 text-left footer-cent">
+                    <ul class="copy-itm" st>
                         <li class="list-itm">
                             <a href="privacy-policy.html">
                                 <span class="">Privacy</span>
@@ -1436,20 +1374,30 @@
                                 <span class=" ">Cookies</span>
                             </a>
                         </li>
+                        <li class="list-itm">
+                            <a href="https://indiaforworld.com/policy">
+                                <span class=" "> GDPR Policies</span>
+                            </a>
+                        </li>
+                        <li class="list-itm">
+                            <a href="https://indiaforworld.com/policy">
+                                <span class=" "> Payment Policy</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 text-center" style="font-size:12px;"> © 2024 FAR & BEYOND. All
-                    Rights
-                    Reserved.
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 text-left" style="font-size:12px;">
-                    <div class="social">
-                        <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a>
-                    </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 text-left footer-cent" style="font-size:12px;">
+                    <ul class="copy-itm">
+                        <li class="list-itm">
+                            <a href="https://bitgaintech.com/" target="_blank">
+                                <span class="">Technology Partner: <span
+                                        style="color: #0dcaf0;padding:0px!important">bit</span><span
+                                        style="color: #28a745;padding:0px;">Gain</span><span
+                                        style="padding:0px!important"> Technology</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1562,15 +1510,22 @@
         };
 
         function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
 
                 document.getElementById("navbar").style.background = "#fff";
+                document.getElementById('logo1').style.display = "none";
+                document.getElementById('logo2').style.display = "block";
+                document.getElementByClass('Fnb').style.color = "#fff"
             } else {
 
                 document.getElementById("navbar").style.background = "none";
+                document.getElementById('logo2').style.display = "none";
+                document.getElementById('logo1').style.display = "block";
             }
         }
     </script>
+    <!--transparent nabigation-->
 </body>
+
 
 </html>

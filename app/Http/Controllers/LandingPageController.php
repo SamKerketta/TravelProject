@@ -49,7 +49,7 @@ class LandingPageController extends Controller
                 $file = $req->file('value1');
                 $extension = $file->getClientOriginalExtension();
                 $filename = time() . rand(10, 100) . "." . $extension;
-                $viewPath = "uploads/landing/section1";
+                $viewPath = "uploads/landing";
                 $path = public_path() . "/" . $viewPath;
                 $file->move($path, $filename);
                 $actualFileName = $viewPath . "/" . $filename;
@@ -78,7 +78,7 @@ class LandingPageController extends Controller
             }
 
             $responseMsg = $req->pageName . " Content Updated";
-            return back();
+            return back()->with('success', $responseMsg);
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -97,7 +97,7 @@ class LandingPageController extends Controller
 
         try {
             $section = array();
-            #1
+
             if (isset($req->value1)) {
                 $array = [
                     "sectionName"   => $req->section2,
@@ -126,22 +126,12 @@ class LandingPageController extends Controller
     public function sectionUpdate3(Request $req)
     {
         $req->validate([
-            'pageName'  => 'required',
             'section3'  => 'required',
             'value1'    => 'nullable',
-            'value2'    => 'nullable|image|mimes:jpeg,png,jpg',
-            'value3'    => 'nullable',
-            'value4'    => 'nullable|image|mimes:jpeg,png,jpg',
-            'value5'    => 'nullable',
-            'value6'    => 'nullable|image|mimes:jpeg,png,jpg',
-            'value7'    => 'nullable',
-            'value8'    => 'nullable|image|mimes:jpeg,png,jpg',
-            'value9'    => 'nullable'
         ]);
 
         try {
             $section = array();
-
 
             if (isset($req->value1)) {
                 $array = [
@@ -152,522 +142,66 @@ class LandingPageController extends Controller
                 array_push($section, $array);
             }
 
-            if (isset($req->value2)) {
-
-                $file = $req->file('value2');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . rand(10, 100) . "." . $extension;
-                $viewPath = "uploads/section3";
-                $path = public_path() . "/" . $viewPath;
-                $file->move($path, $filename);
-                $actualFileName = $viewPath . "/" . $filename;
-
-                $array = [
-                    "sectionName" => $req->section3,
-                    "value" => $actualFileName,
-                    "type" => "image1"                                     // Static
-                ];
-                array_push($section, $array);
-            }
-
-            if (isset($req->value3)) {
-                $array = [
-                    "sectionName" => $req->section3,
-                    "value" => $req->value3,
-                    "type" => "heading1"                                  // Static
-                ];
-                array_push($section, $array);
-            }
-
-            if (isset($req->value4)) {
-
-                $file = $req->file('value4');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . rand(10, 100) . "." . $extension;
-                $viewPath = "uploads/section3";
-                $path = public_path() . "/" . $viewPath;
-                $file->move($path, $filename);
-                $actualFileName = $viewPath . "/" . $filename;
-
-                $array = [
-                    "sectionName" => $req->section3,
-                    "value" => $actualFileName,
-                    "type" => "image2"                                     // Static
-                ];
-                array_push($section, $array);
-            }
-
-            #3
-            if (isset($req->value5)) {
-                $array = [
-                    "sectionName" => $req->section3,
-                    "value" => $req->value5,
-                    "type" => "headin2"                                  // Static
-                ];
-                array_push($section, $array);
-            }
-
-            if (isset($req->value6)) {
-
-                $file = $req->file('value6');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . rand(10, 100) . "." . $extension;
-                $viewPath = "uploads/section3";
-                $path = public_path() . "/" . $viewPath;
-                $file->move($path, $filename);
-                $actualFileName = $viewPath . "/" . $filename;
-
-                $array = [
-                    "sectionName" => $req->section3,
-                    "value" => $actualFileName,
-                    "type" => "image3"                                     // Static
-                ];
-                array_push($section, $array);
-            }
-
-            #3
-            if (isset($req->value7)) {
-                $array = [
-                    "sectionName" => $req->section3,
-                    "value" => $req->value7,
-                    "type" => "heading3"                                  // Static
-                ];
-                array_push($section, $array);
-            }
-
-            if (isset($req->value8)) {
-
-                $file = $req->file('value8');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . rand(10, 100) . "." . $extension;
-                $viewPath = "uploads/section3";
-                $path = public_path() . "/" . $viewPath;
-                $file->move($path, $filename);
-                $actualFileName = $viewPath . "/" . $filename;
-
-                $array = [
-                    "sectionName" => $req->section3,
-                    "value" => $actualFileName,
-                    "type" => "image4"                                     // Static
-                ];
-                array_push($section, $array);
-            }
-
-            #3
-            if (isset($req->value9)) {
-                $array = [
-                    "sectionName" => $req->section3,
-                    "value" => $req->value9,
-                    "type" => "heading4"                                  // Static
-                ];
-                array_push($section, $array);
-            }
-
             if (!empty($section)) {
                 foreach ($section as $sections) {
-                    $this->mSectionValue->updateValues($sections, $req->pageName);
+                    $this->mSectionValue->updateValues($sections, $this->_pageName);
                 }
             }
             $responseMsg = $req->pageName . " Content Updated";
-            return back();
+            return back()->with('success', $responseMsg);
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }
     }
 
 
-    /**
-     * | Section 4
-     */
-    public function sectionUpdate4(Request $req)
-    {
-        $req->validate([
-            'pageName'  => 'required',
-            'section4'  => 'required',
-            'value1'    => 'nullable',
 
-            'value2'    => 'nullable', //
-            'value3'    => 'nullable',
-            'value4'    => 'nullable',
-
-            'value5'    => 'nullable', // 
-            'value6'    => 'nullable',
-            'value7'    => 'nullable',
-
-            'value8'    => 'nullable', // 
-            'value9'    => 'nullable',
-            'value10'   => 'nullable',
-
-            'value11'   => 'nullable',  //
-            'value12'   => 'nullable',
-            'value13'   => 'nullable',
-        ]);
-
-        try {
-            $section = array();
-
-            #1
-            if (isset($req->value1)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->value2",
-                    "type" => "title"                                       // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #2
-            if (isset($req->value2)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->value2",
-                    "type" => "svg1"                                     // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #3
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->value3",
-                    "type" => "svgTitle1"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-
-
-            if (isset($req->value4)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->value3",
-                    "type" => "svgcontent1"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->value3",
-                    "type" => "svgcontent2"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->value3",
-                    "type" => "svgcontent3"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->value3",
-                    "type" => "svgcontent4"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-
-
-
-            if (isset($req->value2)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->value2",
-                    "type" => "svg2"                                     // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #3
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->value3",
-                    "type" => "svgTitle2"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-
-            if (isset($req->value2)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->value2",
-                    "type" => "svg3"                                     // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #3
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->value3",
-                    "type" => "svgTitle3"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-
-            if (isset($req->value2)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->value2",
-                    "type" => "svg4"                                     // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #3
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->value3",
-                    "type" => "svgTitle4"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-
-            if (!empty($section)) {
-                foreach ($section as $sections) {
-                    $this->mSectionValue->updateValues($sections, $req->pageName);
-                }
-            }
-
-            return back();
-        } catch (Exception $e) {
-            return back()->with('error', $e->getMessage());
-        }
-    }
-
-    /**
-     * | Section 5
-     */
-    public function sectionUpdate5(Request $req)
-    {
-        $req->validate([
-            'pageName'  => 'required',
-            'section5'  => 'required',
-            'value1'    => 'nullable',
-            'value2'    => 'nullable',
-            'value3'    => 'nullable'
-        ]);
-
-        try {
-            $section = array();
-
-            #1
-            if (isset($req->value1)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value2",
-                    "type" => "title"                                       // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #2
-            if (isset($req->value2)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value2",
-                    "type" => "content"                                     // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #3
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value3",
-                    "type" => "image1"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-
-            if (isset($req->value2)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value2",
-                    "type" => "imageTitle1"                                     // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #3
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value3",
-                    "type" => "imageContent1"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-
-            if (isset($req->value2)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value2",
-                    "type" => "image3"                                     // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #3
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value3",
-                    "type" => "heading3"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-
-            if (isset($req->value2)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value2",
-                    "type" => "image4"                                     // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #3
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value3",
-                    "type" => "heading4"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-
-            if (!empty($section)) {
-                foreach ($section as $sections) {
-                    $this->mSectionValue->updateValues($sections, $req->pageName);
-                }
-            }
-            return back();
-        } catch (Exception $e) {
-            return back()->with('error', $e->getMessage());
-        }
-    }
-
-
-    /**
-     * | Section 6
-     */
     public function sectionUpdate6(Request $req)
     {
         $req->validate([
-            'pageName'  => 'required',
-            'section5'  => 'required',
+            'section6'  => 'nullable',
+            'section7'  => 'nullable',
             'value1'    => 'nullable',
             'value2'    => 'nullable',
-            'value3'    => 'nullable'
         ]);
 
         try {
             $section = array();
 
-            #1
-            if (isset($req->value1)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value2",
-                    "type" => "title"                                       // Static
+            if ($req->hasFile('value1') && $req->value1) {
+                $file = $req->file('value1');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/landing";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $first = [
+                    "sectionName"   => $req->section6 ?? $req->section7,
+                    "value"         => $actualFileName,
+                    "type"          => "image"
                 ];
-                array_push($section, $second);
+                array_push($section, $first);
             }
 
-            #2
             if (isset($req->value2)) {
                 $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value2",
-                    "type" => "content"                                     // Static
+                    "sectionName"   => $req->section6 ?? $req->section7,
+                    "value"         => $req->value2,
+                    "type"          => "content"
                 ];
                 array_push($section, $second);
             }
 
-            #3
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value3",
-                    "type" => "image1"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #4
-            if (isset($req->value2)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value2",
-                    "type" => "imageTitle1"                                     // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #5
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value3",
-                    "type" => "imageContent1"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #6
-            if (isset($req->value2)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value2",
-                    "type" => "image3"                                     // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #7
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value3",
-                    "type" => "heading3"                                  // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #8
-            if (isset($req->value2)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value2",
-                    "type" => "image4"                                     // Static
-                ];
-                array_push($section, $second);
-            }
-
-            #9
-            if (isset($req->value3)) {
-                $second = [
-                    "sectionName" => $req->section2,
-                    "value" => "$req->value3",
-                    "type" => "heading4"                                  // Static
-                ];
-                array_push($section, $second);
-            }
 
             if (!empty($section)) {
                 foreach ($section as $sections) {
-                    $this->mSectionValue->updateValues($sections, $req->pageName);
+                    $this->mSectionValue->updateValues($sections, $this->_pageName);
                 }
             }
-            return back();
+            $responseMsg = $req->pageName . " Content Updated";
+            return back()->with('success', $responseMsg);
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }

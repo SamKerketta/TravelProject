@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class SectionValue extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
     /**
      * | Update the section values 
@@ -15,13 +17,27 @@ class SectionValue extends Model
      */
     public function updateValues($updateValues, $pageName)
     {
-        SectionValue::where("page_section", $updateValues["sectionName"])
+        $mSectionValue = new SectionValue();
+        $dataExist = SectionValue::where("page_section", $updateValues["sectionName"])
             ->where("page_name", $pageName)
-            ->where("section_type",$updateValues['type'])
+            ->where("section_type", $updateValues['type'])
             ->where("status", true)
-            ->update([
+            ->first();
+
+        if (isset($dataExist)) {
+            $dataExist->update([
                 "value" => $updateValues['value']
             ]);
+            return true;
+        }
+
+        $mSectionValue->section_type    = $updateValues['type'];
+        $mSectionValue->page_section    = $updateValues['sectionName'];
+        $mSectionValue->value           = $updateValues['value'];
+        $mSectionValue->page_name       = $pageName;
+        $mSectionValue->created_at      = Carbon::now();
+        $mSectionValue->save();
+        return true;
     }
 
     /**
