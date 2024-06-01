@@ -8,6 +8,8 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LIController;
 use App\Http\Controllers\ResponsibleController;
 use App\Http\Controllers\Test\TestController;
+use App\Mail\SendEnquiryMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -50,6 +52,10 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('responsible-travel', 'responsibleTravel');
     Route::get('blogs', 'blogs');
     Route::get('contact-us', 'contactUs');
+});
+
+Route::controller(FormController::class)->group(function () {
+    Route::post('admin/save/inquiry', 'saveInquiry')->name('admin.save.inquiry');
 });
 
 Route::middleware([
@@ -96,7 +102,6 @@ Route::middleware([
 
     Route::controller(FormController::class)->group(function () {
         Route::get('admin/inquiry', 'viewInquiry')->name('admin.inquiry');
-        Route::post('admin/save/inquiry', 'saveInquiry')->name('admin.save.inquiry');
     });
 
     // Little Inspirations

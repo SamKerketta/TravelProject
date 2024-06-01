@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendEnquiryMail;
 use App\Models\Inquiry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FormController extends Controller
 {
@@ -14,7 +16,7 @@ class FormController extends Controller
 
         $mInquiry = new Inquiry();
         $inqData = $mInquiry->getInquiry()->get();
-        return view('admin.pages.inquiries',["item" => $inqData]);
+        return view('admin.pages.inquiries', ["item" => $inqData]);
     }
 
 
@@ -23,6 +25,11 @@ class FormController extends Controller
         $data = $req->all();
         $mInquiry = new Inquiry();
         $mInquiry->saveInquiry($req);
+        // Send email
+        $details = [
+            'message' => $req->textarea1
+        ];
+        Mail::to($req->Email)->send(new SendEnquiryMail($details));
         return back();
     }
 }
