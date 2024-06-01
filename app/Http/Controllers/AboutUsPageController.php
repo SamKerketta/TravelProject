@@ -187,7 +187,7 @@ class AboutUsPageController extends Controller
         try {
             $section = array();
 
-            if ($req->hasFile('value2') && $req->value2) {
+            if ($req->hasFile('value1') && $req->value1) {
                 $file = $req->file('value1');
                 $extension = $file->getClientOriginalExtension();
                 $filename = time() . rand(10, 100) . "." . $extension;
@@ -207,7 +207,7 @@ class AboutUsPageController extends Controller
             if (isset($req->value1)) {
                 $second = [
                     "sectionName"   => $req->section4,
-                    "value"         => $req->value1,
+                    "value"         => $req->value2,
                     "type"          => "content"
                 ];
                 array_push($section, $second);
@@ -225,118 +225,197 @@ class AboutUsPageController extends Controller
             return back()->with('error', $e->getMessage());
         }
     }
+
+
+
     /**
      * | Section 5
      */
     public function sectionUpdate5(Request $req)
     {
         $req->validate([
-            'pageName'  => 'required',
             'section5'  => 'required',
-            'image1'     => 'nullable',
-            'image2'     => 'nullable',
-            'heading1'   => 'nullable',
-            'heading2'   => 'nullable',
-            'subheading1'   => 'nullable',
-            'subheading2'   => 'nullable',
-            'content1'   => 'nullable',
-            'content2'   => 'nullable',
-            'content3'   => 'nullable',
-            'content4'   => 'nullable',
+            'value1'    => 'nullable',
+            'value2'    => 'nullable',
+
+            'value3'    => 'nullable',
+            'value4'    => 'nullable'
         ]);
 
         try {
             $section = array();
 
-            #image
-            if ($req->hasFile('image1') && $req->image1) {
-                $file = $req->file('image1');
+            if ($req->hasFile('value1') && $req->value1) {
+                $file = $req->file('value1');
                 $extension = $file->getClientOriginalExtension();
                 $filename = time() . rand(10, 100) . "." . $extension;
-                $viewPath = "uploads/aboutus   ";
-                $path = public_path() . '/' . $viewPath;
+                $viewPath = "uploads/about";
+                $path = public_path() . "/" . $viewPath;
                 $file->move($path, $filename);
                 $actualFileName = $viewPath . "/" . $filename;
 
                 $first = [
-                    "sectionName" => $req->section4,
-                    "value" => $actualFileName,
-                    "type" => "image"
+                    "sectionName"   => $req->section5,
+                    "value"         => $actualFileName,
+                    "type"          => "image"
                 ];
                 array_push($section, $first);
             }
 
-            #image
-            if ($req->hasFile('image2') && $req->image2) {
-                $file = $req->file('image2');
+            if (isset($req->value2)) {
+                $second = [
+                    "sectionName"   => $req->section5,
+                    "value"         => $req->value2,
+                    "type"          => "content"
+                ];
+                array_push($section, $second);
+            }
+
+
+            // second section
+            if ($req->hasFile('value3') && $req->value3) {
+                $file = $req->file('value3');
                 $extension = $file->getClientOriginalExtension();
                 $filename = time() . rand(10, 100) . "." . $extension;
-                $viewPath = "uploads/aboutus   ";
-                $path = public_path() . '/' . $viewPath;
+                $viewPath = "uploads/about";
+                $path = public_path() . "/" . $viewPath;
                 $file->move($path, $filename);
                 $actualFileName = $viewPath . "/" . $filename;
 
                 $first = [
-                    "sectionName" => $req->section4,
-                    "value" => $actualFileName,
-                    "type" => "image"
+                    "sectionName"   => $req->section5,
+                    "value"         => $actualFileName,
+                    "type"          => "image2"
                 ];
                 array_push($section, $first);
             }
 
-            #2
-            if (isset($req->heading)) {
+            if (isset($req->value4)) {
                 $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->heading",
-                    "type" => "heading"                                     // Static
+                    "sectionName"   => $req->section5,
+                    "value"         => $req->value4,
+                    "type"          => "content2"
                 ];
                 array_push($section, $second);
             }
 
-            #3
-            if (isset($req->content1)) {
+
+            if (!empty($section)) {
+                foreach ($section as $sections) {
+                    $this->mSectionValue->updateValues($sections, $this->_pageName);
+                }
+            }
+            $responseMsg = $req->pageName . " Content Updated";
+            return back()->with('success', $responseMsg);
+        } catch (Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
+    }
+
+
+
+    public function sectionUpdate6(Request $req)
+    {
+        $req->validate([
+            'section6'  => 'required',
+            'value1'    => 'nullable',
+            'value2'    => 'nullable',
+
+            'value3'    => 'nullable',
+            'value4'    => 'nullable',
+
+            'value5'    => 'nullable',
+            'value6'    => 'nullable'
+        ]);
+
+        try {
+            $section = array();
+
+            if ($req->hasFile('value1') && $req->value1) {
+                $file = $req->file('value1');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/about";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $first = [
+                    "sectionName"   => $req->section6,
+                    "value"         => $actualFileName,
+                    "type"          => "image"
+                ];
+                array_push($section, $first);
+            }
+
+            if (isset($req->value2)) {
                 $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->content1",
-                    "type" => "content1"                                  // Static
+                    "sectionName"   => $req->section6,
+                    "value"         => $req->value2,
+                    "type"          => "content"
                 ];
                 array_push($section, $second);
             }
 
-            #3
-            if (isset($req->content2)) {
+
+            // second section
+            if ($req->hasFile('value3') && $req->value3) {
+                $file = $req->file('value3');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/about";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $first = [
+                    "sectionName"   => $req->section6,
+                    "value"         => $actualFileName,
+                    "type"          => "image2"
+                ];
+                array_push($section, $first);
+            }
+
+            if (isset($req->value4)) {
                 $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->content2",
-                    "type" => "content2"                                  // Static
+                    "sectionName"   => $req->section6,
+                    "value"         => $req->value4,
+                    "type"          => "content2"
                 ];
                 array_push($section, $second);
             }
 
-            #3
-            if (isset($req->content3)) {
-                $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->content3",
-                    "type" => "content3"                                  // Static
+
+            // third section
+            if ($req->hasFile('value5') && $req->value5) {
+                $file = $req->file('value5');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/about";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $first = [
+                    "sectionName"   => $req->section6,
+                    "value"         => $actualFileName,
+                    "type"          => "image3"
                 ];
-                array_push($section, $second);
+                array_push($section, $first);
             }
 
-            #3
-            if (isset($req->content4)) {
+            if (isset($req->value6)) {
                 $second = [
-                    "sectionName" => $req->section4,
-                    "value" => "$req->content4",
-                    "type" => "content4"                                  // Static
+                    "sectionName"   => $req->section6,
+                    "value"         => $req->value6,
+                    "type"          => "content3"
                 ];
                 array_push($section, $second);
             }
 
             if (!empty($section)) {
                 foreach ($section as $sections) {
-                    $this->mSectionValue->updateValues($sections, $req->pageName);
+                    $this->mSectionValue->updateValues($sections, $this->_pageName);
                 }
             }
             $responseMsg = $req->pageName . " Content Updated";
