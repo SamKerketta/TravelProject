@@ -6,6 +6,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\Landing\DashboardController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LIController;
+use App\Http\Controllers\OurServicesController;
 use App\Http\Controllers\ResponsibleController;
 use App\Http\Controllers\Test\TestController;
 use App\Mail\SendEnquiryMail;
@@ -52,11 +53,23 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('responsible-travel', 'responsibleTravel');
     Route::get('blogs', 'blogs');
     Route::get('contact-us', 'contactUs');
+    Route::get('privacy-policy','privacyPolicy');
 });
 
+// Route::controller(FormController::class)->group(function () {
+//     Route::post('admin/save/inquiry', 'saveInquiry')->name('admin.save.inquiry');
+// });
 Route::controller(FormController::class)->group(function () {
+    Route::get('admin/inquiry', 'viewInquiry')->name('admin.inquiry');
     Route::post('admin/save/inquiry', 'saveInquiry')->name('admin.save.inquiry');
+
+    Route::get('admin/subscription', 'viewSubscription')->name('admin.subscription');
+    Route::post('admin/save/subscription', 'savesubscription')->name('admin.save.subscription');
 });
+
+
+
+
 
 Route::middleware([
     'auth:sanctum',
@@ -100,13 +113,7 @@ Route::middleware([
         Route::post('admin/responsible/update-section', 'updateSections')->name('admin.responsible.updatesection');
     });
 
-    Route::controller(FormController::class)->group(function () {
-        Route::get('admin/inquiry', 'viewInquiry')->name('admin.inquiry');
-        Route::post('admin/save/inquiry', 'saveInquiry')->name('admin.save.inquiry');
-
-        Route::get('admin/subscription', 'viewSubscription')->name('admin.subscription');
-
-    });
+    
 
     // Little Inspirations
     Route::controller(LIController::class)->group(function () {
@@ -114,5 +121,10 @@ Route::middleware([
         Route::post('little/update-section', 'updateSection')->name('admin.little.updatesection');
         Route::post('little-uploadfile', 'uploadFile')->name('little.upload.file');
         Route::get('file/delete/{id}', 'deleteFile');
+    });
+
+    Route::controller(OurServicesController::class)->group(function () {
+        Route::get('services/view', 'viewService')->name('admin.service');
+        Route::post('services/saveServices', 'saveServices')->name('admin.save.services');
     });
 });

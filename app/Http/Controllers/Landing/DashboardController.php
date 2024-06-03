@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Landing;
 
 use App\Http\Controllers\Controller;
+use App\Models\File;
 use App\Models\SectionValue;
 
 class DashboardController extends Controller
@@ -33,7 +34,9 @@ class DashboardController extends Controller
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
             $newArray[$newKey] = $pageDatas->value;
         }
-        return view("pages/hero", $newArray);
+        return view("pages/hero", [
+            "pageData" => $newArray
+            ]);
     }
 
 
@@ -80,14 +83,21 @@ class DashboardController extends Controller
      */
     public function littileInspiration()
     {
+        $mFile = new File();
         $pageName = "littileInspiration";                                              // Static put in config
         $newArray = array();
+        $fileDataPhoto = $mFile::where('file_type',"photo")->get();
+        $fileDataVideo = $mFile::where('file_type',"video")->get();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
             $newArray[$newKey] = $pageDatas->value;
         }
-        return view("pages/littile-inspiration", $newArray);
+        return view("pages/littile-inspiration", [
+            "pageData" => $newArray,
+            "tourData" => $fileDataPhoto,
+            "videoData1" => $fileDataVideo->first()->file_path
+        ]);
     }
 
 
@@ -143,6 +153,12 @@ class DashboardController extends Controller
     }
 
 
+    public function privacyPolicy()
+    {
+        return view("pages/privacy-policy");
+    }
+
+
     /**
      * | Get the details and view the contact us page 
         | Serial no :
@@ -152,4 +168,7 @@ class DashboardController extends Controller
     {
         return view("pages/contact-us");
     }
+
+
+
 }

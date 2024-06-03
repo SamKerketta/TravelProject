@@ -267,22 +267,31 @@
                     <div class="owl-carousel owl-theme inspired_slider owl-loaded owl-drag">
                         <div class="owl-stage-outer">
                             <div class="owl-stage">
+
+
+                                <?php foreach ($tourData as $key => $value) {
+                                ?>
+
                                 <div class="owl-item active">
                                     <div class="item">
                                         <div class="inspired_box">
-                                            <img src="images/little-inspirations/Village-tour.webp"
-                                                alt="Luxury Travels Sri Lanka">
-                                            <a href="https://www.alphonsostories-partners.com/partner-login?From_Url=/experiences"
-                                                style="color:white;">
-                                                <div class="content">
-                                                    <h3>Village Tour</h3>
-                                                    <p class="read-more color-primary sans-serif"> Read more </p>
-                                                </div>
+                                            {{-- <img src="images/little-inspirations/Village-tour.webp" --}}
+                                            <img src="{{ $value->file_path }}" alt="Luxury Travels Sri Lanka">
+                                            {{-- <a href="https://www.alphonsostories-partners.com/partner-login?From_Url=/experiences" --}}
+
+                                            style="color:white;">
+                                            <div class="content">
+                                                <h3>Village Tour</h3>
+                                                <p class="read-more color-primary sans-serif"> Read more </p>
+                                            </div>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="owl-item active">
+
+                                <?php }?>
+
+                                {{-- <div class="owl-item active">
                                     <div class="item">
                                         <div class="inspired_box">
                                             <img src="images/little-inspirations/Unique-tour.webp"
@@ -461,7 +470,7 @@
                                             </a>
                                         </div>
                                     </div>  
-                                </div>
+                                </div> --}}
 
                                 <style>
                                     .play-button-wrapper {
@@ -519,7 +528,8 @@
                         </div>
                         <div id="thevideo" style="display: none;">
                             <video controls width="100%" height="470px" class="elVideo" loop="loop" autoplay=""
-                                playsinline="" muted="" src="video/little-inspirat/CHITWAN.mp4"
+                                playsinline="" muted="" src="{{ $videoData1}}"
+                                {{-- src="video/little-inspirat/CHITWAN.mp4"  --}}
                                 id="video-slider-1 big-video"></video>
 
                         </div>

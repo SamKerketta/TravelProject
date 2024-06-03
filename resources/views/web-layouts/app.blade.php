@@ -9,6 +9,7 @@
     <script src="../../code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="../../cdn.jsdelivr.net/npm/popper.js%401.16.0/dist/umd/popper.min.js"></script>
     <script src="../../stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
@@ -667,14 +668,14 @@
                     <div class="col-12">
                         <nav class="navbar navbar-expand-lg">
                             <div class="logo" id="logo1">
-                                <a href="" class="logo">
+                                <a href="/" class="logo">
                                     <div class="header-logo">
                                         <img src="images/logo/logo_far_and_beyond.png" alt="logo">
                                     </div>
                                 </a>
                             </div>
                             <div class="logo" id="logo2" style="display:none;">
-                                <a href="" class="logo">
+                                <a href="/" class="logo">
                                     <div class="header-logo">
                                         <img src="images/logo/logo_far_and_beyond_black.png" alt="logo">
                                     </div>
@@ -692,7 +693,7 @@
                                         <div class="inner-mainu">
                                             <div class="main-menu">
                                                 <ul class="list-mainu">
-                                                    <li class="list"><a href="">HOME</a></li>
+                                                    <li class="list"><a href="/">HOME</a></li>
                                                     <li class="list"><a href="about-us">ABOUT US</a></li>
                                                     <li class="list"><a href="our-destination">DESTINATIONS</a></li>
                                                     <li class="list"> <a href="our-servic">SERVICES</a></li>
@@ -1074,14 +1075,16 @@
                     <div class="news-desc news-cont">Stay ahead with the latest updates in travel trends.</div>
                 </div>
                 <div class="col-7">
-                    <form class="form-inline" action="">
+                    <form class="form-inline" action={{ route('admin.save.subscription') }} method="POST">
+                        @csrf
                         <div class="form-group">
-                            <input type="email" id="name" placeholder="Name" name="Name">
+                            <input type="text" id="name" placeholder="Name" name="Name">
                         </div>
                         <div class="form-group">
                             <input type="email" id="email" placeholder="Enter email" name="email">
                         </div>
-                        <a class="btn-2"> SUBSCRIBE </a>
+                        {{-- <a class="btn-2"> SUBSCRIBE </a> --}}
+                        <button type="submit" class="btn-2 btn ">SUBSCRIBE</button>
                         <div class="checkbox">
                             <label class="check">
                                 <input type="checkbox">
@@ -1129,12 +1132,12 @@
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="littile-inspirations.html">
+                                    <a href="littile-inspiration">
                                         <span>Inspirational Adventures</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="responsible-travel.html">
+                                    <a href="responsible-travel">
                                         <span class="">Responsible Travels</span>
                                     </a>
                                 </li>

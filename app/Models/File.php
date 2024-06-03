@@ -15,4 +15,10 @@ class File extends Model
         return self::where('page_name', $pagename)
             ->get();
     }
+
+
+    public function getfile()
+    {
+        
+    }
 }

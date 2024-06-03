@@ -54,6 +54,7 @@ class DesignationContoller extends Controller
     // Update Section 1
     public function updateSection1($req)
     {
+        return back()->with('error', "module need bug fix!");
         if ($req->section == 1) {
             $req->validate([
                 "section"  => "required",

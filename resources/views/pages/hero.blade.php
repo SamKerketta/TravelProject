@@ -20,19 +20,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="trips-text">
-                        <h2 style="margin-top:25px;margin-bottom:10px;"><span class="titleheading1">The Luxury
-                                Specialists</span></h2>
-                        <p style="font-size:1.25rem!important;"> It’s the era of limitless information about the
-                            wonders of the world. It’s not easy to navigate your way to the choices you really want to
-                            make. That’s where we come in. To create a space within which you need to focus on only the
-                            very best luxury travel — just for you. Being deeply immersed in the world of travel we are
-                            super-skilled at anticipating even your unspoken desires. That’s because we have a strong
-                            belief in communications and its power in the people-to-people connect. It's why you can
-                            rely on us for the most awesome luxury travel adventures in a borderless world.
-                            <br />
-                            <br />
-                            Let’s Go. Far and Beyond. Together.
-                        </p>
+                        {!! $pageData["section2title"] !!}
                         <div class="btn_know"><a class="btn_more" href="about-us.html" style="text-decoration:none;">Know
                                 More</a></div>
                     </div>
@@ -330,7 +318,7 @@
             <div class="container-fluid">
                 <div class="row" style="padding-left:30px;padding-right:35px; ">
                     <div class="col-lg-3 col-md-6 col-sm-12 desti-img">
-                        <a href="destinations.html#india">
+                        <a href="our-destination#india">
                             <div class="card img-hover1">
                                 <img src="images/home/india.webp" alt="vote-for-us">
                                 <div class="h3">India</div>
@@ -338,17 +326,17 @@
                         </a>
                         <!--<section class="botom"></section>-->
                         <!--<div class="offer-slider-btn-expele">-->
-                        <!--  <h2 style="font-weight:400;"><a href="destinations.html#india">INDIA</a></h2>-->
+                        <!--  <h2 style="font-weight:400;"><a href="our-destination#india">INDIA</a></h2>-->
                         <!--  <div class="slider_p">-->
                         <!--  <p style="font-size:0.85rem;">-->
                         <!--      History, heritage, culture and the modern avatar of this-->
                         <!--     ancient land defines the quintessential “India Experience”</p>-->
                         <!--  </div>-->
-                        <!--     <button class="expo"><a href="destinations.html#india">EXPLORE</a></button>-->
+                        <!--     <button class="expo"><a href="our-destination#india">EXPLORE</a></button>-->
                         <!--</div>-->
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 desti-img">
-                        <a href="destinations.html#nepal">
+                        <a href="our-destination#nepal">
                             <div class="card img-hover1">
                                 <img src="images/home/nepal.webp" alt="vote-for-us">
                                 <div class="h3">Nepal</div>
@@ -356,17 +344,17 @@
                         </a>
                         <!--<button class="expo"><a href="">EXPLORE</a></button>-->
                         <!--  <div class="offer-slider-btn-expele">-->
-                        <!--    <h2 style="font-weight:400;"><a href="destinations.html#nepal">NEPALE</a></h2>-->
+                        <!--    <h2 style="font-weight:400;"><a href="our-destination#nepal">NEPALE</a></h2>-->
                         <!--    <div class="slider_p">-->
                         <!--    <p style="font-size:0.85rem;">-->
                         <!--        Home to many of the world’s highest mountains, it is still-->
                         <!--       deeply grounded in ancient traditions.</p>-->
                         <!--    </div>-->
-                        <!--<button class="expo"><a href="destinations.html#nepal">EXPLORE</a></button>-->
+                        <!--<button class="expo"><a href="our-destination#nepal">EXPLORE</a></button>-->
                         <!--  </div>-->
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 desti-img ">
-                        <a href="destinations.html#bhutan">
+                        <a href="our-destination#bhutan">
                             <div class="card img-hover1">
                                 <img src="images/home/bhutan.webp" alt="vote-for-us">
                                 <div class="h3">Bhutan</div>
@@ -381,11 +369,11 @@
                         <!--        practices can drive travel.-->
                         <!--    </p>-->
                         <!--  </div>-->
-                        <!--  <button class="expo"><a href="destinations.html#bhutan">EXPLORE</a></button>-->
+                        <!--  <button class="expo"><a href="our-destination#bhutan">EXPLORE</a></button>-->
                         <!--</div>-->
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 desti-img">
-                        <a href="destinations.html#shrilanka">
+                        <a href="our-destination#shrilanka">
                             <div class="card img-hover1">
                                 <img src="images/home/srilanka.webp" alt="vote-for-us">
                                 <div class="h3">Sri Lanka</div>
@@ -393,19 +381,19 @@
                         </a>
                         <!--<button class="expo"><a href="">EXPLORE</a></button>-->
                         <!--<div class="offer-slider-btn-expele">-->
-                        <!--  <h2 style="font-weight:400;"><a href="destinations.html#shrilanka">SRI LANKA</a></h2>-->
+                        <!--  <h2 style="font-weight:400;"><a href="our-destination#shrilanka">SRI LANKA</a></h2>-->
                         <!--  <div class="slider_p">-->
                         <!--  <p style="font-size:0.85rem;">-->
                         <!--The ‘Spice Island’ illustrates, in the most imaginative ways,-->
                         <!--why— “Small is Beautiful”.</p>-->
                         <!-- </div>-->
-                        <!--<button class="expo"><a href="destinations.html#shrilanka">EXPLORE</a></button>-->
+                        <!--<button class="expo"><a href="our-destination#shrilanka">EXPLORE</a></button>-->
                         <!--</div>-->
                     </div>
                 </div>
             </div>
             <div class="dest-btn">
-                <button class="expo"><a href="destinations.html">Explore</a></button>
+                <button class="expo"><a href="our-destination">Explore</a></button>
             </div>
         </div>
     </section>
@@ -422,14 +410,14 @@
                             </p>
                         </div>
                         <div class="ourser-btn">
-                            <button class="expo"><a href="services.html">Read More</a></button>
+                            <button class="expo"><a href="our-servic">Read More</a></button>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img">
                     <div class="card">
                         <img src="images/home/luxury-collection.webp" alt="vote-for-us">
-                        <a href="services.html" style="text-decoration:none;" class="hiden">
+                        <a href="our-servic" style="text-decoration:none;" class="hiden">
                             <div class="offer-slider-btn-expele">
                                 <h2 style="font-size: 24px; color:white;">The Luxury Collection</h2>
                                 <div class="slider_p" style="padding-top: 10px;">
@@ -446,7 +434,7 @@
                     <div class="card">
                         <img src="images/home/meetings-and-conferences.webp" alt="vote-for-us">
                         <!--<span class="text" style="font-size: 15px;">MICE</span>-->
-                        <a href="services.html">
+                        <a href="our-servic">
                             <div class="offer-slider-btn-expele">
                                 <h2 style="font-size:24px;color:white;">Meeting & Conferences</h2>
                                 <div class="slider_p" style="padding-top: 10px;">
@@ -462,7 +450,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img">
                     <div class="card">
                         <img src="images/home/Incentives.webp" alt="vote-for-us">
-                        <a href="services.html">
+                        <a href="our-servic">
                             <div class="offer-slider-btn-expele">
                                 <h2 style="font-size: 24px;color:white;">Incentives</h2>
                                 <div class="slider_p" style="padding-top: 10px;">
@@ -584,11 +572,11 @@
                         </p>
                         <div class="ourser-btn">
                             <br><br>
-                            <button class="expo"><a href="littile-inspirations.html">Read More</a></button>
+                            <button class="expo"><a href="littile-inspiration">Read More</a></button>
                         </div>
                         <!--          <span style=" margin-top: 20px;-->
 <!--display: inline-block;">-->
-                        <!--            <a href="littile-inspirations.html" class="enquri" style="cursor: pointer;border-radius:5px;">Read More</a>-->
+                        <!--            <a href="littile-inspiration" class="enquri" style="cursor: pointer;border-radius:5px;">Read More</a>-->
                         <!--          </span>-->
                     </div>
                 </div>
@@ -614,11 +602,11 @@
                         </p>
                         <div class="ourser-btn">
                             <br><br>
-                            <button class="expo"><a href="responsible-travel.html">Read More</a></button>
+                            <button class="expo"><a href="responsible-travel">Read More</a></button>
                         </div>
                         <!--          <span style=" margin-top: 20px;-->
 <!--display: inline-block;">-->
-                        <!--            <a href="responsible-travel.html" class="enquri" style="cursor: pointer;border-radius:5px;">Read More</a>-->
+                        <!--            <a href="responsible-travel" class="enquri" style="cursor: pointer;border-radius:5px;">Read More</a>-->
                         <!--          </span>-->
                     </div>
                 </div>

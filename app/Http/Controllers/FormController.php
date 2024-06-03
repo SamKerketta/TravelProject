@@ -23,7 +23,11 @@ class FormController extends Controller
 
     public function saveInquiry(Request $req)
     {
+
         $data = $req->all();
+        if (!$data['g-recaptcha-response']) {
+            return back()->with('error', "Invalid access");
+        }
         $mInquiry = new Inquiry();
         $mInquiry->saveInquiry($req);
         // Send email
@@ -38,8 +42,8 @@ class FormController extends Controller
     public function savesubscription(Request $req)
     {
         $data = $req->all();
-        $mInquiry = new Inquiry();
-        $mInquiry->saveInquiry($req);
+        $mSubscription = new Subscription();
+        $mSubscription->saveSubscription($req);
         return back();
     }
 
@@ -47,6 +51,6 @@ class FormController extends Controller
     {
         $mSubscription = new Subscription();
         $subData = $mSubscription->getSubscription()->get();
-        return view('admin.pages.subscription',["item" => $subData]);
+        return view('admin.pages.subscription', ["item" => $subData]);
     }
 }

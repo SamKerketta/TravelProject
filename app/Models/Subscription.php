@@ -11,6 +11,14 @@ class Subscription extends Model
 
     public function getSubscription()
     {
-       return Subscription::where('status',1);
+        return Subscription::where('status', 1);
+    }
+
+    public function saveSubscription($data)
+    {
+        $mSubscription = new Subscription();
+        $mSubscription->name = $data->Name;
+        $mSubscription->email = $data->email;
+        $mSubscription->save();
     }
 }
