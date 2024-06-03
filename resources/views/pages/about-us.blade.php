@@ -160,7 +160,7 @@
             margin: auto;
             overflow: hidden;
             position: relative;
-            top: -15%;
+            top: -8%;
             left: 10%;
         }
 
@@ -362,6 +362,7 @@
             </div>
         </div>
     </section>
+
     <section class="trips-bg" style="position:relative;">
         <div class="container-fluid">
             <div class="row">
@@ -459,6 +460,7 @@
             </div>
         </div>
     </section>
+
     <section class="trips-bg" style="position:relative; padding-bottom:20px!important;display:none;">
         <div style="background:#FFF3EF; position:absolute;position: absolute; height:18vw; top:135px; width: 100%;">
         </div>
@@ -500,8 +502,62 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
+
+    <section class="trips-bg" style="position:relative;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 inner-section">
+                    <div class="about-img4">
+                        <img src="images/about/vinay.jpg" alt="about">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 inner-section innner-content">
+                    <div class="about_main4">
+                        <div class="inner_main">
+                            <div class="about-h  about_left">
+                                <h2 style="text-align:left;">Vinay DHALL</h2>
+                                <h3>Role</h3>
+                            </div>
+                            <div class="about_p  about_left">
+                                <p>
+                                    For someone who has run over 25,000 kms in over 25 cities around world, Travel being a
+                                    passion is not surprising. What is surprising is the number of years he has spent in
+                                    travel since his first stint with Travel Corporation of India. Clocking twenty years in
+                                    the industry Vinay has been heading Luxury MICE and experiential FIT for a company
+                                    counted among the top five Luxury Operators in the World.
+
+                                </p>
+                                <br>
+                                <p style="font-size:16px">
+                                    His other love is people and their cultures, fluent in French his insight into
+                                    travellers profile has ensured many a successful luxury operations both for incentive
+                                    travel, small groups and individual curations for FITs. Eager to see and experience
+                                    places around the globe to connect with people and show them the beauty of the
+                                    subcontinent is his project for life, one that he continued to excel at, even after all
+                                    these years. Fitness is mantra for him, while food and heritage are favourite subjects.
+                                    Nothing describes Vinay better than catching him running barefoot - he has run in the
+                                    Himalayas, in the Parks for Delhi, around the Louvre in
+                                    Paris, the silent lanes of London at night, in the cold mornings of Zurich. Awaiting
+                                    more barefoot adventures, Vinay is now a man on a mission, unstoppable.
+
+
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">&nbsp;</div>
+            </div>
+        </div>
+    </section>
+
+
     <section>
         <div class="container" style="padding-bottom:20px!important;">
             <div class="row">

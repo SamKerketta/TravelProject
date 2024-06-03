@@ -34,6 +34,7 @@
                         <th scope="col">#</th>
                         <th scope="col">first name</th>
                         <th scope="col">email</th>
+                        <th scope="col">date of submition</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,6 +43,8 @@
                             <th scope="row">{{ $key + 1 }}</th>
                             <td>{{$items->name}}</td>
                             <td>{{$items->email}}</td>
+                            <td>{{$items->created_at->format('d/m/Y')}}</td>
+
                         </tr>
                     @endforeach
 

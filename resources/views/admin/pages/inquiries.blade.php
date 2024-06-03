@@ -36,6 +36,7 @@
                         <th scope="col">last name</th>
                         <th scope="col">email</th>
                         <th scope="col">phone</th>
+                        <th scope="col">date of submition</th>
                         <th scope="col">message</th>
                     </tr>
                 </thead>
@@ -47,7 +48,8 @@
                             <td>{{$items->last_name}}</td>
                             <td>{{$items->email}}</td>
                             <td>{{$items->phone}}</td>
-                            <td>{{$items->message}}</td>
+                            <td>{{$items->created_at->format('d/m/Y')}}</td>
+                            <td>{{\Illuminate\Support\Str::words($items->message, 12, '...')}}</td>
                         </tr>
                     @endforeach
 

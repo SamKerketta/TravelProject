@@ -10,6 +10,9 @@ use App\Http\Controllers\OurServicesController;
 use App\Http\Controllers\ResponsibleController;
 use App\Http\Controllers\Test\TestController;
 use App\Mail\SendEnquiryMail;
+use App\Models\File;
+use App\Models\Inquiry;
+use App\Models\Subscription;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -53,7 +56,7 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('responsible-travel', 'responsibleTravel');
     Route::get('blogs', 'blogs');
     Route::get('contact-us', 'contactUs');
-    Route::get('privacy-policy','privacyPolicy');
+    Route::get('privacy-policy', 'privacyPolicy');
 });
 
 // Route::controller(FormController::class)->group(function () {
@@ -77,7 +80,17 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/admin-dashboard', function () {
-        return view('admin.dashboard');
+
+        $pageData       = array();
+        $inspiration    = File::where('file_type' , 'photo')->count();
+        $inq            = Inquiry::where('status', 1)->count();
+        $subscription   = Subscription::where('status', 1)->count();
+        $pageData["inspiration"]    = $inspiration;
+        $pageData["inquire"]        = $inq;
+        $pageData["subscription"]   = $subscription;
+        
+        return view('admin.dashboard', $pageData);
+
     })->name('dashboard');
 
     Route::controller(LandingPageController::class)->group(function () {
@@ -113,7 +126,7 @@ Route::middleware([
         Route::post('admin/responsible/update-section', 'updateSections')->name('admin.responsible.updatesection');
     });
 
-    
+
 
     // Little Inspirations
     Route::controller(LIController::class)->group(function () {

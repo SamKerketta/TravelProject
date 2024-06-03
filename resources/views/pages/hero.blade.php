@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="trips-text">
-                        {!! $pageData["section2title"] !!}
+                        {!! $pageData['section2title'] !!}
                         <div class="btn_know"><a class="btn_more" href="about-us.html" style="text-decoration:none;">Know
                                 More</a></div>
                     </div>
@@ -549,13 +549,80 @@
             </div>
         </div>
     </div>
+
+
+
     <section class="texti-section">
         <div class="container-fluid">
             <div class="row">
+
+                {{-- <div class="col-lg-6 col-md-6 col-sm-12"
+                    style="padding: 0px 0px 0px; 0px;min-height: 40vw; overflow: hidden;">
+
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="images/home/little-inspirations.webp" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="images/home/little-inspirations.webp" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="images/home/little-inspirations.webp" alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                </div> --}}
+
+
                 <div class="col-lg-6 col-md-6 col-sm-12"
                     style="padding: 0px 0px 0px; 0px;min-height: 40vw; overflow: hidden;">
-                    <img src="images/home/little-inspirations.webp" alt="image">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/home/Responsible-travel.webp" alt="image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/home/little-inspirations.webp" alt="image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/home/Responsible-travel.webp" alt="image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/home/little-inspirations.webp" alt="image">
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+
+
+
+
+
+
+
                 <div class="col-lg-6 col-md-6 col-sm-12"
                     style="padding: 0px 0px 0px 0px;min-height: 40vw; overflow: hidden;">
                     <div class="texti-inner">
@@ -612,7 +679,35 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12"
                     style="padding: 0px 0px 0px 0px; min-height: 40vw; overflow: hidden;">
-                    <img src="images/home/Responsible-travel.webp" alt="image">
+                    <div class="col-lg-6 col-md-6 col-sm-12"
+                        style="padding: 0px 0px 0px; 0px;min-height: 40vw; overflow: hidden;">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="images/home/Responsible-travel.webp" alt="image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/home/little-inspirations.webp" alt="image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/home/Responsible-travel.webp" alt="image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/home/little-inspirations.webp" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -929,7 +1024,7 @@
     {{-- @yield('partner-content') --}}
 
 
-    
+
     <section class="our_team">
         <h2 style="margin-top:65px">What They Say</h2>
         <div id="myCarousel" class="carousel slide" data-ride="carousel" position="relative;">
@@ -1027,5 +1122,45 @@
         </div>
     </section>
 
+    <style>
+        .carousel-inner {
+            display: flex;
+            flex-direction: column;
+        }
 
+        .carousel-item {
+            transition: transform 0.6s ease;
+        }
+
+        .carousel-item-next,
+        .carousel-item-prev,
+        .carousel-item.active {
+            transform: translateY(0);
+        }
+
+        .carousel-item-next.carousel-item-start,
+        .carousel-item-prev.carousel-item-end {
+            transform: translateY(100%);
+        }
+
+        .carousel-item-next.carousel-item-end,
+        .carousel-item-prev.carousel-item-start {
+            transform: translateY(-100%);
+        }
+    </style>
+    <script>
+        (function($) {
+            $('.carousel-item-next').css('transform', 'translateY(100%)');
+            $('.carousel-item-prev').css('transform', 'translateY(-100%)');
+
+            $('#carouselExampleIndicators').on('slide.bs.carousel', function(e) {
+                var dir = e.direction === 'left' ? 'translateY(-100%)' : 'translateY(100%)';
+                $(e.relatedTarget).css('transform', dir);
+            });
+
+            $('#carouselExampleIndicators').on('slid.bs.carousel', function(e) {
+                $('.carousel-item').css('transform', 'translateY(0)');
+            });
+        })(jQuery);
+    </script>
 @endsection

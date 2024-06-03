@@ -16,7 +16,7 @@ class FormController extends Controller
     {
 
         $mInquiry = new Inquiry();
-        $inqData = $mInquiry->getInquiry()->get();
+        $inqData = $mInquiry->getInquiry()->orderByDesc('created_at')->get();
         return view('admin.pages.inquiries', ["item" => $inqData]);
     }
 
@@ -30,7 +30,6 @@ class FormController extends Controller
         }
         $mInquiry = new Inquiry();
         $mInquiry->saveInquiry($req);
-        // Send email
         $details = [
             'message' => $req->textarea1
         ];
@@ -50,7 +49,7 @@ class FormController extends Controller
     public function viewSubscription()
     {
         $mSubscription = new Subscription();
-        $subData = $mSubscription->getSubscription()->get();
+        $subData = $mSubscription->getSubscription()->orderByDesc('created_at')->get();
         return view('admin.pages.subscription', ["item" => $subData]);
     }
 }
