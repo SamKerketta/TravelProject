@@ -8,7 +8,8 @@
 
     <base href="/">
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="dashboard/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -29,12 +30,19 @@
     <link rel="stylesheet" href="dashboard/plugins/summernote/summernote-bs4.min.css">
 </head>
 
+<style>
+    .form-control {
+        height: 43px !important;
+    }
+</Style>
+
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="dashboard/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="dashboard/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60"
+                width="60">
         </div>
 
         <!-- Navbar -->
@@ -42,7 +50,8 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                            class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="index3.html" class="nav-link">Home</a>
@@ -62,7 +71,8 @@
                     <div class="navbar-search-block">
                         <form class="form-inline">
                             <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                                    aria-label="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-navbar" type="submit">
                                         <i class="fas fa-search"></i>
@@ -86,7 +96,8 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dashboard/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                                <img src="dashboard/dist/img/user1-128x128.jpg" alt="User Avatar"
+                                    class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Brad Diesel
@@ -102,7 +113,8 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dashboard/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                                <img src="dashboard/dist/img/user8-128x128.jpg" alt="User Avatar"
+                                    class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         John Pierce
@@ -118,11 +130,13 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dashboard/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                                <img src="dashboard/dist/img/user3-128x128.jpg" alt="User Avatar"
+                                    class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Nora Silvester
-                                        <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                                        <span class="float-right text-sm text-warning"><i
+                                                class="fas fa-star"></i></span>
                                     </h3>
                                     <p class="text-sm">The subject goes here</p>
                                     <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
@@ -167,7 +181,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
+                    <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true"
+                        href="#" role="button">
                         <i class="fas fa-th-large"></i>
                     </a>
                 </li>
@@ -185,7 +200,8 @@
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         <i class="fa fa-user"></i> My Profile
-                                        <span class="float-right text-sm text-primary"><i class="fas fa-star"></i></span>
+                                        <span class="float-right text-sm text-primary"><i
+                                                class="fas fa-star"></i></span>
                                     </h3>
                                     <p class="text-sm">See My Profile...</p>
                                 </div>
@@ -201,7 +217,8 @@
                                     <div class="media-body">
                                         <h3 class="dropdown-item-title">
                                             <i class="fa fa-user-lock"></i> Logout
-                                            <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                                            <span class="float-right text-sm text-danger"><i
+                                                    class="fas fa-star"></i></span>
                                         </h3>
                                         <p class="text-sm">Close The Session...</p>
                                     </div>
@@ -220,7 +237,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="dashboard/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="dashboard/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">FAR</span>
             </a>
 
@@ -229,17 +247,19 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="dashboard/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="dashboard/dist/img/user2-160x160.jpg" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{auth()->user()->name}}</a>
+                        <a href="#" class="d-block">{{ auth()->user()->name }}</a>
                     </div>
                 </div>
 
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                            aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-sidebar">
                                 <i class="fas fa-search fa-fw"></i>
@@ -250,7 +270,8 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
@@ -275,33 +296,33 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href={{route('admin.aboutUs')}} class="nav-link">
+                                    <a href={{ route('admin.aboutUs') }} class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>About Us</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href={{route('admin.designation')}} class="nav-link">
+                                    <a href={{ route('admin.designation') }} class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Destination</p>
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href={{route('admin.service')}} class="nav-link">
+                                    <a href={{ route('admin.service') }} class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Services</p>
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="{{route('little.inspirations')}}" class="nav-link">
+                                    <a href="{{ route('little.inspirations') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Little Inspirations</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('admin.responsible')}}" class="nav-link">
+                                    <a href="{{ route('admin.responsible') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Responsible Travel</p>
                                     </a>
@@ -312,13 +333,13 @@
 
                         <li class="nav-header">FORM DETAILS </li>
                         <li class="nav-item">
-                            <a href={{route('admin.inquiry')}} class="nav-link">
+                            <a href={{ route('admin.inquiry') }} class="nav-link">
                                 <i class="fas fa-circle nav-icon"></i>
                                 <p>inquiries</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href={{route('admin.subscription')}} class="nav-link">
+                            <a href={{ route('admin.subscription') }} class="nav-link">
                                 <i class="fas fa-circle nav-icon"></i>
                                 <p>Subscription</p>
                             </a>

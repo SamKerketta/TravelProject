@@ -170,5 +170,10 @@ class DashboardController extends Controller
     }
 
 
+    public function thankYou()
+    {
+        return view("pages/thank-you");
+    }
+    
 
 }

@@ -3,14 +3,12 @@
 @section('page-content')
     <section class="">
         <div class="video">
-            <!--<video width="100%" class="elVideo" loop="loop" autoPlay playsInline muted src=" https://www.distinctdestinations.in/asset/video/ddvideos.mp4" id='video-slider-1'></video>-->
-            <video width="100%" class="elVideo" loop="loop" autoPlay playsInline muted src="video/v1.mp4"
-                id='video-slider-1'></video>
-            <!--<img src="slider/banner-1.jpg" alt="banner-1">-->
+            <video width="100%" class="elVideo" loop="loop" autoPlay playsInline muted
+                src="{{ $pageData['section1video'] }}" id='video-slider-1'></video>
             <div class="text-video">
                 <h2><span
                         style="font-size:3rem;font-weight: 400;letter-spacing: 2px;line-height: 1.05;color:white; font-weight: 600; line-height:1.5;">
-                        Your Dependable Partner For Exclusive And Luxury Experiential Travel</span></h2>
+                        {{ $pageData['section1heading'] }}</span></h2>
 
             </div>
         </div>
@@ -55,7 +53,6 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            /*transform: translate(-50%, -50%);*/
             transform: translate(-50%, 492%);
             font-size: 25px;
             font-weight: 500;
@@ -68,26 +65,8 @@
 
         .desti-img {
             position: relative;
-            /*padding-left: 12px;*/
             padding-right: 0px !important;
-            /*overflow: hidden;*/
             margin-bottom: 10px;
-        }
-
-        /* .img-hover1 img:hover {*/
-        /*  background-color: black; opacity: 0.8; transition: all .5s ease-in-out;*/
-        /*  filter:brightness(60%);*/
-        /*  color:white;*/
-        /*}*/
-
-        .img-hover:before {
-            /*content: '';*/
-            /*display: block;*/
-            /*position: absolute;*/
-            /*height: 0%;*/
-            /*width: 100%;*/
-            /*bottom: 0;*/
-            /*transition: height 0.5s ease-out;*/
         }
 
         .desti-img:hover:before {
@@ -97,16 +76,13 @@
         .texti-section img {
             width: 100%;
             height: auto;
-            /*object-fit: contain*/
             min-height: 40vw;
             height: 100%;
         }
 
-        /*.texti-section{*/
-        /*    margin-bottom:15px;*/
-        /*}*/
+
         .texti-section .texti-inner {
-            padding: 25px 100px;
+            padding: 100px 100px;
             position: relative;
             bottom: 25px;
         }
@@ -115,7 +91,6 @@
             text-align: left;
             margin-top: 51px;
             margin-bottom: 42px;
-            /*font-size:24px;*/
         }
 
         .inspired_section {
@@ -150,17 +125,11 @@
             font-size: 0.85rem !important;
         }
 
-        /* .desti-img:hover .offer-slider-btn-expele{*/
-        /*   bottom:20px!important;*/
-        /* }*/
-        /*.desti-img:hover p{*/
-        /*   display:block;*/
-        /*}*/
+
         .trips-slider .owl-item:nth-child(odd) {
             margin-top: 0px !important;
         }
 
-        /*services card hover effect*/
 
         .srv-img:hover .offer-slider-btn-expele {
             bottom: 20px !important;
@@ -190,7 +159,6 @@
 
             .h2,
             h2 {
-                /*font-size: 2.8125rem;*/
                 font-size: 2rem;
                 margin-bottom: 38px;
             }
@@ -320,75 +288,36 @@
                     <div class="col-lg-3 col-md-6 col-sm-12 desti-img">
                         <a href="our-destination#india">
                             <div class="card img-hover1">
-                                <img src="images/home/india.webp" alt="vote-for-us">
-                                <div class="h3">India</div>
+                                <img src="{{ $pageData['section3image1'] }}" alt="vote-for-us">
+                                <div class="h3">{{ $pageData['section3title1'] }}</div>
                             </div>
                         </a>
-                        <!--<section class="botom"></section>-->
-                        <!--<div class="offer-slider-btn-expele">-->
-                        <!--  <h2 style="font-weight:400;"><a href="our-destination#india">INDIA</a></h2>-->
-                        <!--  <div class="slider_p">-->
-                        <!--  <p style="font-size:0.85rem;">-->
-                        <!--      History, heritage, culture and the modern avatar of this-->
-                        <!--     ancient land defines the quintessential “India Experience”</p>-->
-                        <!--  </div>-->
-                        <!--     <button class="expo"><a href="our-destination#india">EXPLORE</a></button>-->
-                        <!--</div>-->
+
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 desti-img">
                         <a href="our-destination#nepal">
                             <div class="card img-hover1">
-                                <img src="images/home/nepal.webp" alt="vote-for-us">
-                                <div class="h3">Nepal</div>
+                                <img src="{{ $pageData['section3image2'] }}" alt="vote-for-us">
+                                <div class="h3">{{ $pageData['section3title2'] }}</div>
                             </div>
                         </a>
-                        <!--<button class="expo"><a href="">EXPLORE</a></button>-->
-                        <!--  <div class="offer-slider-btn-expele">-->
-                        <!--    <h2 style="font-weight:400;"><a href="our-destination#nepal">NEPALE</a></h2>-->
-                        <!--    <div class="slider_p">-->
-                        <!--    <p style="font-size:0.85rem;">-->
-                        <!--        Home to many of the world’s highest mountains, it is still-->
-                        <!--       deeply grounded in ancient traditions.</p>-->
-                        <!--    </div>-->
-                        <!--<button class="expo"><a href="our-destination#nepal">EXPLORE</a></button>-->
-                        <!--  </div>-->
+
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 desti-img ">
                         <a href="our-destination#bhutan">
                             <div class="card img-hover1">
-                                <img src="images/home/bhutan.webp" alt="vote-for-us">
-                                <div class="h3">Bhutan</div>
+                                <img src="{{ $pageData['section3image3'] }}" alt="vote-for-us">
+                                <div class="h3">{{ $pageData['section3title3'] }}</div>
                             </div>
                         </a>
-                        <!--<button class="expo"><a href="">EXPLORE</a></button>-->
-                        <!--<div class="offer-slider-btn-expele">-->
-                        <!--  <h2 style="font-weight:400;">BHUTAN</a></h2>-->
-                        <!--  <div class="slider_p">-->
-                        <!--       <p style="font-size:0.85rem;">-->
-                        <!--       This remote Himalayan kingdom reminds us how sustainable-->
-                        <!--        practices can drive travel.-->
-                        <!--    </p>-->
-                        <!--  </div>-->
-                        <!--  <button class="expo"><a href="our-destination#bhutan">EXPLORE</a></button>-->
-                        <!--</div>-->
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 desti-img">
                         <a href="our-destination#shrilanka">
                             <div class="card img-hover1">
-                                <img src="images/home/srilanka.webp" alt="vote-for-us">
-                                <div class="h3">Sri Lanka</div>
+                                <img src="{{ $pageData['section3image4'] }}" alt="vote-for-us">
+                                <div class="h3">{{ $pageData['section3title4'] }}</div>
                             </div>
                         </a>
-                        <!--<button class="expo"><a href="">EXPLORE</a></button>-->
-                        <!--<div class="offer-slider-btn-expele">-->
-                        <!--  <h2 style="font-weight:400;"><a href="our-destination#shrilanka">SRI LANKA</a></h2>-->
-                        <!--  <div class="slider_p">-->
-                        <!--  <p style="font-size:0.85rem;">-->
-                        <!--The ‘Spice Island’ illustrates, in the most imaginative ways,-->
-                        <!--why— “Small is Beautiful”.</p>-->
-                        <!-- </div>-->
-                        <!--<button class="expo"><a href="our-destination#shrilanka">EXPLORE</a></button>-->
-                        <!--</div>-->
                     </div>
                 </div>
             </div>
@@ -550,44 +479,114 @@
         </div>
     </div>
 
+    <style>
+        .carousel-control-next1 {
 
+            left: 33rem !important;
+            top: 39rem !important;
+            z-index: 1 !important;
+        }
+
+        .carousel-control-prev1 {
+            left: auto;
+            right: 33rem !important;
+            top: 39rem !important;
+            z-index: 1 !important;
+        }
+    </style>
 
     <section class="texti-section">
         <div class="container-fluid">
             <div class="row">
 
-                {{-- <div class="col-lg-6 col-md-6 col-sm-12"
+                <div class="col-lg-6 col-md-6 col-sm-12"
                     style="padding: 0px 0px 0px; 0px;min-height: 40vw; overflow: hidden;">
 
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div id="carouselExampleIndicators" style="padding-bottom: 0px !important;" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="images/home/little-inspirations.webp" alt="First slide">
+                                <img src="images/home/Responsible-travel.webp" alt="image">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="images/home/little-inspirations.webp" alt="Second slide">
+                                <img src="images/home/little-inspirations.webp" alt="image">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="images/home/little-inspirations.webp" alt="Third slide">
+                                <img src="images/home/Responsible-travel.webp" alt="image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/home/little-inspirations.webp" alt="image">
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                            data-slide="prev">
+                        <button class="carousel-control-prev carousel-control-prev1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                            data-slide="next">
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next carousel-control-next1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
+                </div>
 
-                </div> --}}
 
 
                 <div class="col-lg-6 col-md-6 col-sm-12"
+                    style="padding: 0px 0px 0px 0px;min-height: 40vw; overflow: hidden;">
+                    <div class="texti-inner">
+                        <h2>Inspirational Adventures</h2>
+                        <p>
+                            Out-of-the ordinary insights go a long way in creating a more immersive experience of the
+                            places we visit— and the communities and cultures we encounter in those environs.
+                            <br><br>
+                            We put the spotlight here on our beautifully packaged mini city guides, a dedicated
+                            accommodation series, theme-based itineraries and captivating videos on must-visit
+                            destinations. Packed with information, visually inspiring, and driven by evocative insights
+                            for the curious traveller, this is one of our most alluring in-house products.
+
+                        </p>
+                        <div class="ourser-btn">
+                            <br><br>
+                            <button class="expo"><a href="littile-inspiration">Read More</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="texti-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12"
+                    style="padding: 0px 0px 0px 0px; background:#FFF7F7; min-height: 40vw; overflow: hidden;height: 680px;">
+                    <div class="texti-inner">
+                        <h2>Responsible Travel</h2>
+                        <p>
+                            Everything we do, to act responsibly in the field of travel, we do it for you and Planet
+                            Earth. Our long-term goal to help reduce the carbon footprint is driven by even the smallest
+                            footsteps.
+                            <br><br>
+                            Our words are backed by our deeds on many levels—Far and Beyond is a paperless
+                            company-everything is done digitally; we try to use local transport; saying ‘no’ to plastic
+                            is in our DNA; respecting communities and their culture is embedded in our work ethos…
+
+                        </p>
+                        <div class="ourser-btn">
+                            <br><br>
+                            <button class="expo"><a href="responsible-travel">Read More</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12"
                     style="padding: 0px 0px 0px; 0px;min-height: 40vw; overflow: hidden;">
+
+
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -618,97 +617,6 @@
 
 
 
-
-
-
-
-
-                <div class="col-lg-6 col-md-6 col-sm-12"
-                    style="padding: 0px 0px 0px 0px;min-height: 40vw; overflow: hidden;">
-                    <div class="texti-inner">
-                        <h2>Inspirational Adventures</h2>
-                        <p>
-                            Out-of-the ordinary insights go a long way in creating a more immersive experience of the
-                            places we visit— and the communities and cultures we encounter in those environs.
-                            <br><br>
-                            We put the spotlight here on our beautifully packaged mini city guides, a dedicated
-                            accommodation series, theme-based itineraries and captivating videos on must-visit
-                            destinations. Packed with information, visually inspiring, and driven by evocative insights
-                            for the curious traveller, this is one of our most alluring in-house products.
-
-                        </p>
-                        <div class="ourser-btn">
-                            <br><br>
-                            <button class="expo"><a href="littile-inspiration">Read More</a></button>
-                        </div>
-                        <!--          <span style=" margin-top: 20px;-->
-<!--display: inline-block;">-->
-                        <!--            <a href="littile-inspiration" class="enquri" style="cursor: pointer;border-radius:5px;">Read More</a>-->
-                        <!--          </span>-->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="texti-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12"
-                    style="padding: 0px 0px 0px 0px; background:#FFF7F7; min-height: 40vw; overflow: hidden;">
-                    <div class="texti-inner">
-                        <h2>Responsible Travel</h2>
-                        <p>
-                            Everything we do, to act responsibly in the field of travel, we do it for you and Planet
-                            Earth. Our long-term goal to help reduce the carbon footprint is driven by even the smallest
-                            footsteps.
-                            <br><br>
-                            Our words are backed by our deeds on many levels—Far and Beyond is a paperless
-                            company-everything is done digitally; we try to use local transport; saying ‘no’ to plastic
-                            is in our DNA; respecting communities and their culture is embedded in our work ethos…
-
-                        </p>
-                        <div class="ourser-btn">
-                            <br><br>
-                            <button class="expo"><a href="responsible-travel">Read More</a></button>
-                        </div>
-                        <!--          <span style=" margin-top: 20px;-->
-<!--display: inline-block;">-->
-                        <!--            <a href="responsible-travel" class="enquri" style="cursor: pointer;border-radius:5px;">Read More</a>-->
-                        <!--          </span>-->
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12"
-                    style="padding: 0px 0px 0px 0px; min-height: 40vw; overflow: hidden;">
-                    <div class="col-lg-6 col-md-6 col-sm-12"
-                        style="padding: 0px 0px 0px; 0px;min-height: 40vw; overflow: hidden;">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                                    aria-label="Slide 4"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="images/home/Responsible-travel.webp" alt="image">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="images/home/little-inspirations.webp" alt="image">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="images/home/Responsible-travel.webp" alt="image">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="images/home/little-inspirations.webp" alt="image">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1021,9 +929,6 @@
     </style>
     <!--End news latter-->
 
-    {{-- @yield('partner-content') --}}
-
-
 
     <section class="our_team">
         <h2 style="margin-top:65px">What They Say</h2>
@@ -1147,8 +1052,15 @@
         .carousel-item-prev.carousel-item-start {
             transform: translateY(-100%);
         }
+
+        /* Ensuring the next and previous items are visible */
+        .carousel-item-next.carousel-item-start,
+        .carousel-item-prev.carousel-item-end {
+            display: flex;
+            flex-direction: column;
+        }
     </style>
-    <script>
+    {{-- <script>
         (function($) {
             $('.carousel-item-next').css('transform', 'translateY(100%)');
             $('.carousel-item-prev').css('transform', 'translateY(-100%)');
@@ -1160,6 +1072,34 @@
 
             $('#carouselExampleIndicators').on('slid.bs.carousel', function(e) {
                 $('.carousel-item').css('transform', 'translateY(0)');
+            });
+        })(jQuery);
+    </script> --}}
+    <script>
+        (function($) {
+            $(document).ready(function() {
+                $('#carouselExampleIndicators').on('slide.bs.carousel', function(e) {
+                    var $next = $(e.relatedTarget);
+                    var index = $next.index();
+                    var itemsPerSlide = 1;
+                    var totalItems = $('.carousel-item').length;
+
+                    if (index >= totalItems - (itemsPerSlide - 1)) {
+                        var it = itemsPerSlide - (totalItems - index);
+                        for (var i = 0; i < it; i++) {
+                            // append slides to end
+                            if (e.direction == "left") {
+                                $('.carousel-item').eq(i).appendTo('.carousel-inner');
+                            } else {
+                                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+                            }
+                        }
+                    }
+                });
+
+                $('#carouselExampleIndicators').on('slid.bs.carousel', function(e) {
+                    $('.carousel-item').css('transform', 'translateY(0)');
+                });
             });
         })(jQuery);
     </script>

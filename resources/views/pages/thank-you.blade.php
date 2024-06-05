@@ -1,7 +1,6 @@
 @extends('web-layouts.app')
 
 @section('page-content')
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -247,266 +246,63 @@
     </style>
     <section class="trips-bg">
         <div class="container">
-            <div class="row">
-                <div class="col-4 cont-p hard-responsive ">
-                    <h3>Corporate Office Address</h3>
-                    <p>Unit No 701 to 708, Tower D, Global Business<br />
-                        Park, Sector-26, Gurugram, Haryana, 122002</p>
-                    <button class="expo"><a
-                            href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x390d23ebc52446cd:0x6fae1a16a0a95197?source=g.page.share">Get
-                            Directions</a></button>
-                </div>
-                <div class="col-4 hard-responsive ">
-                    <h3>Write us</h3>
-                    <p>info@distinctdestinations.in</p>
-
-                </div>
-                <div class="col-4 hard-responsive ">
-                    <h3>Call Us</h3>
-                    <p>+91 9818 401 791
-                        <br />
-                        +91 9971-466-955
-                    </p>
-
+            <div class="col-12">
+                <div class="thanku">
+                    <div class="thanku-h">Thank You</div>
+                    <div class="thanku-cont">
+                        <p>Thank you for contacting us. We'll contact you within 24 working hours. Meantime, please keep
+                            exploring exciting products
+                        </p>
+                        <p>
+                            Call Us :+91 9599-360-800
+                        </p>
+                        <p>
+                            Email : info@farandbeyond.in
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section>
-        <section>
-            @if (\Session::has('error'))
-                <div class="alert alert-danger">
-                    <ul>
-                        <li>{!! \Session::get('error') !!}</li>
-                    </ul>
-                </div>
-            @endif
-            @if ($errors->any())
-                <div class="alert alert-danger" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-            <div class="QickEnquiry">
-                <div class="IqryFrmBx-Wppr">
-                    <div class="Clm-sm-7">
-                        <div class="IqryFrmBx">
-                            <div class="title">
-                                <h2>Quick Inquiry</h2>
-                            </div>
+    <style>
+        .trips-bg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            background-color: #f5f5f5;
+            /* Optional: Add a background color */
+        }
 
-                            <form action={{ route('admin.save.inquiry') }} method="POST">
-                                @csrf
-                                <div class="IqryFrm-Wppr">
-                                    <div id="ContentPlaceHolder1_PnlNOrmalinquiry"
-                                        onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ContentPlaceHolder1_btnNormal')">
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
 
-                                        <div id="ContentPlaceHolder1_UpdatePanelNOrmalinquiry">
+        .thanku {
+            text-align: center;
+            background-color: #ffffff;
+            /* Optional: Add a background color */
+            padding: 20px;
+            border-radius: 8px;
+            /* Optional: Add rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Optional: Add shadow for depth */
+        }
 
-                                            <fieldset>
-                                                <input name="Name" type="text"
-                                                    id="ContentPlaceHolder1_txtNOrmalinquiryName" class="FtrInpt"
-                                                    oncopy="return false" onpaste="return false" oncut="return false"
-                                                    autocomplete="off">
-                                                <label class="InptTxtName">First Name</label>
-                                            </fieldset>
-                                            <fieldset>
-                                                <input name="tLastName" type="text" id="ContentPlaceHolder1_txtLastName"
-                                                    class="FtrInpt" oncopy="return false" onpaste="return false"
-                                                    oncut="return false" autocomplete="off">
-                                                <label class="InptTxtName">Last Name</label>
-                                            </fieldset>
-                                            <fieldset>
-                                                <input name="Email" type="text"
-                                                    id="ContentPlaceHolder1_txtNOrmalinquiryEmail" class="FtrInpt"
-                                                    oncopy="return false" onpaste="return false" oncut="return false"
-                                                    autocomplete="off">
-                                                <label class="InptTxtName"> Email </label>
-                                            </fieldset>
-                                            <fieldset>
-                                                <input name="Phone" type="text" maxlength="10"
-                                                    id="ContentPlaceHolder1_txtNOrmalinquiryPhone" class="FtrInpt"
-                                                    oncopy="return false" onpaste="return false" oncut="return false"
-                                                    autocomplete="off" onkeypress="return numeralsOnly(event)"
-                                                    pattern="[0-9]*" inputmode="numeric">
-                                                <label class="InptTxtName"> Phone </label>
-                                            </fieldset>
+        .thanku-h {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
 
-                                            <fieldset class="FlWdth">
-                                                <textarea name="textarea1" id="ContentPlaceHolder1_textarea1" class="FtrInpt"></textarea>
-                                                <label class="InptTxtName">Message</label>
-                                            </fieldset>
-
-                                            <div class="g-recaptcha"
-                                                data-sitekey="6LeUv-4pAAAAAP7Sgrv6IuSLnQPZ4VDWLupmlWkS">
-                                            </div>
-
-                                            <div class="ComBtnBx">
-                                                <button type="submit" class="btn expo"><strong>Submit</strong></button>
-                                            </div>
-                            </form>
-
-
-                        </div>
-                        <div id="ContentPlaceHolder1_UpdateProgressNOrmalinquiry" class="progress_aeodc"
-                            style="display:none;" role="status" aria-hidden="true">
-
-                            <span class="ibrandoxWeb31 ibrandoxWeb32">Please
-                                Wait...&nbsp;&nbsp;&nbsp;&nbsp;</span>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            </div>
-            </div>
-            </div>
-        </section>
-        <style>
-            .IqryFrmBx-Wppr .Clm-sm-7 .IqryFrmBx .title h2 {
-                display: block;
-                text-align: center;
-                font-size: 39px;
-                line-height: 52px;
-                text-transform: capitalize;
-                color: #fff;
-                font-family: "$PlayfairDisplay";
-            }
-
-            .IqryFrmBx-Wppr {
-                background: rgba(0, 0, 0, .6);
-                display: flex;
-                align-content: center;
-                justify-content: center;
-                padding: 60px 50px;
-                margin-bottom: 0px;
-                position: relative;
-            }
-
-            .IqryFrmBx-Wppr::before {
-                width: 100%;
-                height: 100%;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                position: absolute;
-                content: "";
-                background: url(images/cntbnner.jpg) center center no-repeat;
-                background-size: cover;
-                z-index: -1
-            }
-
-            .IqryFrmBx-Wppr .Clm-sm-7 {
-                flex: 0 70%;
-                max-width: 70%;
-                /*z-index: 1;*/
-            }
-
-            .title {
-                width: 100%;
-                position: relative;
-                display: inline-block;
-            }
-
-            .IqryFrmBx-Wppr .Clm-sm-7 .IqryFrmBx .IqryFrm-Wppr {
-                display: flex;
-                align-content: center;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-
-            .IqryFrmBx-Wppr .Clm-sm-7 .IqryFrmBx .IqryFrm-Wppr fieldset {
-                flex: 0 48%;
-                max-width: 48%;
-                margin-bottom: 40px;
-                margin-right: 8px;
-                position: relative;
-            }
-
-            .IqryFrmBx-Wppr .Clm-sm-7 .IqryFrmBx .IqryFrm-Wppr fieldset .FtrInpt {
-                line-height: 30px;
-            }
-
-            .IqryFrmBx-Wppr .Clm-sm-7 .IqryFrmBx .IqryFrm-Wppr fieldset .FtrInpt {
-                color: #fff;
-                outline: none;
-            }
-
-            fieldset .FtrInpt {
-                padding: 5px 0px;
-                border: 0;
-                border-bottom: 1px solid #959491;
-                font-size: 18px;
-                line-height: 25px;
-                background: rgba(0, 0, 0, 0);
-                width: 100%;
-            }
-
-            #ContentPlaceHolder1_UpdatePanelNOrmalinquiry {
-                display: flex;
-                align-content: center;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-
-            .IqryFrmBx-Wppr .Clm-sm-7 .IqryFrmBx .IqryFrm-Wppr fieldset .InptTxtName {
-                opacity: 48%;
-                color: #fff;
-            }
-
-            fieldset .InptTxtName {
-                position: absolute;
-                top: 10px;
-                left: 0;
-                font-size: 18px;
-                line-height: 14px;
-                font-weight: 300;
-                transition: all 1s;
-                z-index: 0;
-                padding: 0 0px;
-            }
-
-            .IqryFrmBx-Wppr .Clm-sm-7 .IqryFrmBx .IqryFrm-Wppr .FlWdth {
-                flex: 0 100%;
-                max-width: 100%;
-            }
-
-            .IqryFrmBx-Wppr .Clm-sm-7 .IqryFrmBx .IqryFrm-Wppr fieldset {
-                flex: 0 48%;
-                max-width: 48%;
-                margin-bottom: 40px;
-                margin-right: 8px;
-                position: relative;
-            }
-
-            .IqryFrmBx-Wppr .Clm-sm-7 .IqryFrmBx .IqryFrm-Wppr .ComBtnBx {
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 20px 0 0;
-            }
-
-            .IqryFrmBx-Wppr .Clm-sm-7 .IqryFrmBx .IqryFrm-Wppr .ComBtnBx .Cmn-Btn {
-                padding: 10px 30px;
-                padding-right: 50px;
-                border: 1px solid rgba(0, 0, 0, 0);
-                background: rgba(0, 0, 0, 0);
-                color: #e2781a;
-                font-size: 18px;
-                font-family: "Playfair Display", serif;
-                text-transform: uppercase;
-            }
-        </style>
-    </section>
+        .thanku-cont p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
     <!--footer start-->
     <style>
         .cheack input {
@@ -522,14 +318,6 @@
             font-size: 14px;
             color: white;
             margin-top: 20px;
-        }
-
-        .btn {
-            color: black;
-            background-color: white;
-            height: 40px;
-            text-align: center;
-
         }
 
         .btn-2:hover a {

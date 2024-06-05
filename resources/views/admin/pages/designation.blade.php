@@ -36,12 +36,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Little Inspirations</h1>
+                        <h1 class="m-0">Destination</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Little Inspirations</li>
+                            <li class="breadcrumb-item active">Destination</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -59,10 +59,6 @@
                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
                         aria-controls="profile" aria-selected="false">Add Destination</a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                        aria-controls="contact" aria-selected="false">Videos</a>
-                </li> --}}
             </ul>
             <br>
             <div class="container-fluid">
@@ -72,19 +68,17 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel"
                                 aria-labelledby="home-tab">
                                 <!-- Section 1 -->
-                                <form action="{{ route('admin.designation.updatesection') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('destination.section1.update') }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
-                                    <input type="hidden" name="section" id="section" value="1">
                                     <div class="form-group">
-                                        <label for="section1Heading">Section 1 Heading</label>
-                                        <input type="text" class="form-control" id="section1Heading"
-                                            name="section1Heading"></input>
+                                        <label for="value2">Section 1 Heading</label>
+                                        <input type="text" class="form-control" id="value2" name="value2"></input>
                                     </div>
                                     <div class="form-group">
-                                        <input type="hidden" class="form-control" id="pageName" name="pageName"
-                                            value="landingPage">
-                                        <input type="hidden" class="form-control" id="section1" name="section1" value="1">
-        
+                                        <input type="hidden" class="form-control" id="section1" name="section1"
+                                            value="1">
+
                                         <label class="form-label" for="value1">Hero image</label>
                                         <input type="file" class="@error('value1') is-invalid @enderror form-control"
                                             id="value1" name="value1" accept="image/*" />
@@ -96,12 +90,13 @@
                                 </form>
                                 <!-- Section 1 -->
                                 <hr>
-                                <form action="{{ route('admin.little.updatesection') }}" method="POST">
+
+                                <form action="{{ route('destination.section2.update') }}" method="POST">
                                     @csrf
-                                    <input type="hidden" name="section" id="section" value="2">
+                                    <input type="hidden" name="section2" id="section2" value="2">
                                     <div class="form-group">
-                                        <label for="section2Content">Section 2 Content</label>
-                                        <textarea class="form-control tinymce-editor" id="section2Content" name="section2Content" rows="3"></textarea>
+                                        <label for="value1">Section 2 Content</label>
+                                        <textarea class="form-control tinymce-editor" id="value1" name="value1" rows="3"></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
@@ -109,167 +104,90 @@
 
 
 
-                            {{-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                    data-target="#exampleModal">
-                                    Upload Photo
-                                </button>
+                            {{-- second section --}}
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                    aria-labelledby="addPhotoModal" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="addPhotoModal">Add Tour Photos</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form action="{{ route('little.upload.file') }}" method="POST"
-                                                    enctype="multipart/form-data">
-                                                    @csrf
-                                                    <input type="hidden" id="fileType" name="fileType" value="photo">
-                                                    <div class="form-group">
-                                                        <label for="tourfile">Select Tour Photo</label>
-                                                        <input type="file" class="form-control" id="tourfile"
-                                                            name="tourfile"></input>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="title">Photo Title</label>
-                                                        <input type="text" class="form-control" id="title"
-                                                            name="title"></input>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="description">Photo Description</label>
-                                                        <input type="text" class="form-control" id="description"
-                                                            name="description"></input>
-                                                    </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Save changes</button>
-                                            </div>
-                                            </form>
-                                        </div>
+                                
+
+                                <form action="{{ route('destination.section3.update') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" name="section" id="section" value="3">
+
+                                    <?php 
+                                    $noOfSection = 4; 
+                                    $k = 0;
+                                    $h = 2;
+
+                                    for($i= 1 ; $i<=$noOfSection ; $i++){  
+                                        $k = $k+1;  
+                                        $h = $h + $i;               
+                                    ?>
+                                    
+                                    <div class="form-group">
+                                        <label for="section1Heading">Destination {{ $i }} first content </label>
+                                        <textarea class="form-control tinymce-editor" id="value{{ $k }}" name="value{{ $k }}"
+                                            rows="3"></textarea>
                                     </div>
-                                </div>
-                                <!-- Modal -->
-                                <!-- Table -->
-                                <table class="table mt-2">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Photo</th>
-                                            <th scope="col">Title</th>
-                                            <th scope="col">Description</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($photos as $photo)
-                                            <tr>
-                                                <th>
-                                                    <img src="{{ $photo->file_path }}" alt="" srcset=""
-                                                        width="250">
-                                                </th>
-                                                <td>{{ $photo->title }}</td>
-                                                <td>{{ $photo->description }}</td>
-                                                <td>
-                                                    <a href="file/delete/{{ $photo->id }}"
-                                                        class="btn btn-sm btn-danger">Delete</button>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                                <!-- Table -->
-                            </div> --}}
 
+                                    <?php
+                                    $m = $k + 1;
+                                    $k = $m;
+                                    ?>
 
-                            {{-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                    data-target="#addVideoModal">
-                                    Upload Video
-                                </button>
-
-                                <!-- Modal -->
-                                <div class="modal fade" id="addVideoModal" tabindex="-1" role="dialog"
-                                    aria-labelledby="addVideoModal" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="addVideoModal">Add Tour Video</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form action="{{ route('little.upload.file') }}" method="POST"
-                                                    enctype="multipart/form-data">
-                                                    @csrf
-                                                    <input type="hidden" id="fileType" name="fileType" value="video">
-                                                    <div class="form-group">
-                                                        <label for="tourfile">Select Tour Video</label>
-                                                        <input type="file" class="form-control" id="tourfile"
-                                                            name="tourfile"></input>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="title">Video Title</label>
-                                                        <input type="text" class="form-control" id="title"
-                                                            name="title"></input>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="description">Video Description</label>
-                                                        <input type="text" class="form-control" id="description"
-                                                            name="description"></input>
-                                                    </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Save changes</button>
-                                            </div>
-                                            </form>
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="section1Heading">Destination {{ $i }} second content</label>
+                                        <textarea class="form-control tinymce-editor" id="value{{ $m }}" name="value{{ $m }}"
+                                            rows="3"></textarea>
                                     </div>
-                                </div>
-                                <!-- Modal -->
-                                <!-- Table -->
-                                <table class="table mt-2">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Video</th>
-                                            <th scope="col">Title</th>
-                                            <th scope="col">Description</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($videos as $video)
-                                            <tr>
-                                                <th scope="row">
-                                                    <video width="320" height="240" controls>
-                                                        <source src="{{ $video->file_path }}" type="video/mp4">
-                                                    </video>
-                                                </th>
-                                                <td>{{ $video->title }}</td>
-                                                <td>{{ $video->description }}</td>
-                                                <td>
-                                                    <a href="file/delete/{{ $video->id }}"
-                                                        class="btn btn-sm btn-danger">Delete</button>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                                <!-- Table -->
-                            </div> --}}
+
+                                    <?php
+                                    $m = $k + 1;
+                                    $k = $m;
+                                    ?>
+
+                                    <div class="form-group">
+                                        <label class="form-label" for="value{{ $m }}">Destination Image
+                                            {{ $i }} </label>
+                                        <input type="file"
+                                            class="@error('value{{ $m }}') is-invalid @enderror form-control"
+                                            id="value{{ $m }}" name="value{{ $m }}"
+                                            accept="image/*" />
+                                        @error('value{{ $m }}')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+
+                                        <?php
+                                        $m = $k + 1;
+                                        $k = $m;
+                                        ?>
+
+                                        <label class="form-label" for="value{{ $m }}">Destination Image
+                                            {{ $i + 1 }}</label>
+                                        <input type="file"
+                                            class="@error('value{{ $m }}') is-invalid @enderror form-control"
+                                            id="value{{ $m }}" name="value{{ $m }}"
+                                            accept="image/*" />
+                                        @error('value{{ $m }}')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                                    <?php } ?>
+
+                                </form>
+                                <!-- Section 1 -->
+                                <hr>
+
+
+
+                                
+                            </div>
+
+
+
                         </div>
 
 

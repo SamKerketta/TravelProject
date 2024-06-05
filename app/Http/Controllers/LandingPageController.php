@@ -128,19 +128,121 @@ class LandingPageController extends Controller
         $req->validate([
             'section3'  => 'required',
             'value1'    => 'nullable',
+            'value2'    => 'nullable',
+            'value3'    => 'nullable',
+            'value4'    => 'nullable',
+            'value5'    => 'nullable',
+            'value6'    => 'nullable',
+            'value7'    => 'nullable',
+            'value8'    => 'nullable',
+
         ]);
 
         try {
             $section = array();
 
+            // title
             if (isset($req->value1)) {
                 $array = [
                     "sectionName" => $req->section3,
                     "value" => $req->value1,
-                    "type" => "title"                                       // Static
+                    "type" => "title1"                                       // Static
                 ];
                 array_push($section, $array);
             }
+            if (isset($req->value3)) {
+                $array = [
+                    "sectionName" => $req->section3,
+                    "value" => $req->value1,
+                    "type" => "title2"                                       // Static
+                ];
+                array_push($section, $array);
+            }
+            if (isset($req->value5)) {
+                $array = [
+                    "sectionName" => $req->section3,
+                    "value" => $req->value1,
+                    "type" => "title3"                                       // Static
+                ];
+                array_push($section, $array);
+            }
+            if (isset($req->value7)) {
+                $array = [
+                    "sectionName" => $req->section3,
+                    "value" => $req->value1,
+                    "type" => "title4"                                       // Static
+                ];
+                array_push($section, $array);
+            }
+
+
+            // images 
+            if ($req->hasFile('value2') && $req->value2) {
+                $file = $req->file('value2');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/landing";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $array = [
+                    "sectionName"   => $req->section3,
+                    "value"         => $actualFileName,
+                    "type"          => "image1"
+                ];
+                array_push($section, $array);
+            }
+            if ($req->hasFile('value4') && $req->value4) {
+                $file = $req->file('value4');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/landing";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $array = [
+                    "sectionName"   => $req->section3,
+                    "value"         => $actualFileName,
+                    "type"          => "image2"
+                ];
+                array_push($section, $array);
+            }
+            if ($req->hasFile('value6') && $req->value6) {
+                $file = $req->file('value6');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/landing";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $array = [
+                    "sectionName"   => $req->section3,
+                    "value"         => $actualFileName,
+                    "type"          => "image3"
+                ];
+                array_push($section, $array);
+            }
+            if ($req->hasFile('value8') && $req->value8) {
+                $file = $req->file('value8');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/landing";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $array = [
+                    "sectionName"   => $req->section3,
+                    "value"         => $actualFileName,
+                    "type"          => "image4"
+                ];
+                array_push($section, $array);
+            }
+
+
 
             if (!empty($section)) {
                 foreach ($section as $sections) {
@@ -156,6 +258,115 @@ class LandingPageController extends Controller
 
 
 
+    public function sectionUpdate4(Request $req)
+    { {
+            $req->validate([
+                'section4'  => 'required',
+                'value1'    => 'nullable',
+                'value2'    => 'nullable',
+                'value3'    => 'nullable',
+                'value4'    => 'nullable',
+                'value5'    => 'nullable',
+                'value6'    => 'nullable',
+
+            ]);
+
+            try {
+                $section = array();
+
+                // title
+                if (isset($req->value1)) {
+                    $array = [
+                        "sectionName" => $req->section4,
+                        "value" => $req->value1,
+                        "type" => "title1"                                       // Static
+                    ];
+                    array_push($section, $array);
+                }
+                if (isset($req->value3)) {
+                    $array = [
+                        "sectionName" => $req->section4,
+                        "value" => $req->value1,
+                        "type" => "title2"                                       // Static
+                    ];
+                    array_push($section, $array);
+                }
+                if (isset($req->value5)) {
+                    $array = [
+                        "sectionName" => $req->section4,
+                        "value" => $req->value1,
+                        "type" => "title3"                                       // Static
+                    ];
+                    array_push($section, $array);
+                }
+                
+
+
+                // images 
+                if ($req->hasFile('value2') && $req->value2) {
+                    $file = $req->file('value2');
+                    $extension = $file->getClientOriginalExtension();
+                    $filename = time() . rand(10, 100) . "." . $extension;
+                    $viewPath = "uploads/landing";
+                    $path = public_path() . "/" . $viewPath;
+                    $file->move($path, $filename);
+                    $actualFileName = $viewPath . "/" . $filename;
+
+                    $array = [
+                        "sectionName"   => $req->section4,
+                        "value"         => $actualFileName,
+                        "type"          => "image1"
+                    ];
+                    array_push($section, $array);
+                }
+                if ($req->hasFile('value4') && $req->value4) {
+                    $file = $req->file('value4');
+                    $extension = $file->getClientOriginalExtension();
+                    $filename = time() . rand(10, 100) . "." . $extension;
+                    $viewPath = "uploads/landing";
+                    $path = public_path() . "/" . $viewPath;
+                    $file->move($path, $filename);
+                    $actualFileName = $viewPath . "/" . $filename;
+
+                    $array = [
+                        "sectionName"   => $req->section4,
+                        "value"         => $actualFileName,
+                        "type"          => "image2"
+                    ];
+                    array_push($section, $array);
+                }
+                if ($req->hasFile('value6') && $req->value6) {
+                    $file = $req->file('value6');
+                    $extension = $file->getClientOriginalExtension();
+                    $filename = time() . rand(10, 100) . "." . $extension;
+                    $viewPath = "uploads/landing";
+                    $path = public_path() . "/" . $viewPath;
+                    $file->move($path, $filename);
+                    $actualFileName = $viewPath . "/" . $filename;
+
+                    $array = [
+                        "sectionName"   => $req->section4,
+                        "value"         => $actualFileName,
+                        "type"          => "image3"
+                    ];
+                    array_push($section, $array);
+                }
+                
+                if (!empty($section)) {
+                    foreach ($section as $sections) {
+                        $this->mSectionValue->updateValues($sections, $this->_pageName);
+                    }
+                }
+                $responseMsg = $req->pageName . " Content Updated";
+                return back()->with('success', $responseMsg);
+            } catch (Exception $e) {
+                return back()->with('error', $e->getMessage());
+            }
+        }
+    }
+
+
+
     public function sectionUpdate6(Request $req)
     {
         $req->validate([
@@ -163,6 +374,8 @@ class LandingPageController extends Controller
             'section7'  => 'nullable',
             'value1'    => 'nullable',
             'value2'    => 'nullable',
+            'value3'    => 'nullable',
+            'value4'    => 'nullable',
         ]);
 
         try {
@@ -180,7 +393,39 @@ class LandingPageController extends Controller
                 $first = [
                     "sectionName"   => $req->section6 ?? $req->section7,
                     "value"         => $actualFileName,
-                    "type"          => "image"
+                    "type"          => "image1"
+                ];
+                array_push($section, $first);
+            }
+            if ($req->hasFile('value3') && $req->value3) {
+                $file = $req->file('value3');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/landing";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $first = [
+                    "sectionName"   => $req->section6 ?? $req->section7,
+                    "value"         => $actualFileName,
+                    "type"          => "image2"
+                ];
+                array_push($section, $first);
+            }
+            if ($req->hasFile('value4') && $req->value4) {
+                $file = $req->file('value4');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/landing";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $first = [
+                    "sectionName"   => $req->section6 ?? $req->section7,
+                    "value"         => $actualFileName,
+                    "type"          => "image3"
                 ];
                 array_push($section, $first);
             }

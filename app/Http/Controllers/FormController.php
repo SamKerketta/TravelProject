@@ -31,10 +31,11 @@ class FormController extends Controller
         $mInquiry = new Inquiry();
         $mInquiry->saveInquiry($req);
         $details = [
-            'message' => $req->textarea1
+            'message' => $req->textarea1,
+            'name' => $req->Name
         ];
-        Mail::to($req->Email)->send(new SendEnquiryMail($details));
-        return back();
+        $status = Mail::to($req->Email)->send(new SendEnquiryMail($details));
+        return view("pages/thank-you");
     }
 
 

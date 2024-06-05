@@ -57,6 +57,8 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('blogs', 'blogs');
     Route::get('contact-us', 'contactUs');
     Route::get('privacy-policy', 'privacyPolicy');
+    Route::get('thank-you', 'thankYou');
+
 });
 
 // Route::controller(FormController::class)->group(function () {
@@ -98,14 +100,21 @@ Route::middleware([
         Route::post('section1/update', 'sectionUpdate')->name('section1.update');
         Route::post('section2/update', 'sectionUpdate2')->name('section2.update');
         Route::post('section3/update', 'sectionUpdate3')->name('section3.update');
+        Route::post('section4/update', 'sectionUpdate4')->name('section4.update');
+
 
         Route::post('section6/update', 'sectionUpdate6')->name('section6.update');
     });
 
     // Designation
     Route::controller(DesignationContoller::class)->group(function () {
-        Route::get('admin/designation', 'viewAdminDesignation')->name('admin.designation');
-        Route::post('admin/designation/update-section', 'updateSections')->name('admin.designation.updatesection');
+        Route::get('admin/destination', 'viewAdminDesignation')->name('admin.designation');
+        // Route::post('admin/designation/update-section', 'updateSections')->name('admin.designation.updatesection');
+
+        Route::post('destination/section1/update', 'sectionUpdate1')->name("destination.section1.update");
+        Route::post('destination/section2/update', 'sectionUpdate2')->name("destination.section2.update");
+        Route::post('destination/section3/update', 'sectionUpdate3')->name("destination.section3.update");
+
     });
 
 
