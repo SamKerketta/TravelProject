@@ -32,24 +32,27 @@
                 </ul>
             </div>
         @endif
+
+
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1 class="m-0">Destination</h1>
-                    </div><!-- /.col -->
+                    </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item active">Destination</li>
                         </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Main content -->
         <section class="content">
+
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
@@ -59,12 +62,20 @@
                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
                         aria-controls="profile" aria-selected="false">Add Destination</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                        aria-controls="contact" aria-selected="false">List Destinations</a>
+                </li>
             </ul>
+
             <br>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="tab-content" id="myTabContent">
+
+
+                            {{-- first section --}}
                             <div class="tab-pane fade show active" id="home" role="tabpanel"
                                 aria-labelledby="home-tab">
                                 <!-- Section 1 -->
@@ -102,19 +113,15 @@
                                 </form>
                             </div>
 
-
-
                             {{-- second section --}}
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
-                                
-
-                                <form action="{{ route('destination.section3.update') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('destination.section3.update') }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" name="section" id="section" value="3">
 
                                     <?php 
-                                    $noOfSection = 4; 
+                                    $noOfSection = 1; 
                                     $k = 0;
                                     $h = 2;
 
@@ -122,9 +129,12 @@
                                         $k = $k+1;  
                                         $h = $h + $i;               
                                     ?>
-                                    
+
                                     <div class="form-group">
-                                        <label for="section1Heading">Destination {{ $i }} first content </label>
+                                        <label for="section1Heading">Destination Name </label>
+                                        <textarea class="form-control" id="name" name="name" rows="3"></textarea>
+
+                                        <label style ="margin-top:20px" for="section1Heading">Destination {{ $i }} first content </label>
                                         <textarea class="form-control tinymce-editor" id="value{{ $k }}" name="value{{ $k }}"
                                             rows="3"></textarea>
                                     </div>
@@ -183,22 +193,67 @@
 
 
 
-                                
+
                             </div>
 
+                            {{-- third section --}}
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 
+                                <!-- Modal -->
+                                <div class="modal fade" id="addVideoModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="addVideoModal" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="addVideoModal">View Destination List</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal -->
+                                <!-- Table -->
+                                <table class="table mt-2">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Image1</th>
+                                            <th scope="col">Image2</th>
+                                            <th scope="col">Description1</th>
+                                            <th scope="col">Description2</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach ($country as $video)
+                                        <tr>
+                                            <td>{{ $video->destination_name }}</td>
+                                            <th scope="row">
+                                                <img src="{{ $video->image_two }}" alt="" srcset=""
+                                                        width="250">
+                                            </th>
+                                            <th scope="row">
+                                                <img src="{{ $video->image_two }}" alt="" srcset=""
+                                                        width="250">
+                                            </th>
+                                            <td>{{ $video->content_one }}</td>
+                                            <td>{{ $video->content_two }}</td>
+                                            <td>
+                                                <a href="file/destination/delete/{{ $video->id }}"
+                                                    class="btn btn-sm btn-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
+                                    </tbody>
+                                </table>
+                            </div>
 
                         </div>
-
-
                     </div>
                 </div>
             </div>
-            <!-- /.row (main row) -->
-    </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-    </div>
+        </section>
     </div>
 @endsection
 

@@ -13,9 +13,11 @@
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <meta name="description" content=" " />
-    <meta name="keywords" content=" " />
+
+    <title>{{$meta->tittle ?? "not working"}}</title>
+    <meta name="description" content="{{$meta->description ?? "not working"}}" />
+    <meta name="keywords" content="{{$meta->keywords ?? "not working"}}" />
+
     <!-- css****** -->
     <link href="css/custom_style.css" type="text/css" rel="stylesheet">
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
@@ -725,14 +727,14 @@
                     <div class="col-12">
                         <nav class="navbar navbar-expand-lg">
                             <div class="logo" id="logo1">
-                                <a href="index.html" class="logo">
+                                <a href="/" class="logo">
                                     <div class="header-logo">
                                         <img src="images/logo/logo_far_and_beyond.png" alt="logo">
                                     </div>
                                 </a>
                             </div>
                             <div class="logo" id="logo2" style="display:none;">
-                                <a href="index.html" class="logo">
+                                <a href="/" class="logo">
                                     <div class="header-logo">
                                         <img src="images/logo/logo_far_and_beyond_black.png" alt="logo">
                                     </div>
@@ -767,7 +769,6 @@
                                                     <li class="list"> <a href="about-us#why-us">WHY US</a></li>
                                                     <li class="list"><a href="about-us#our-team">MEET OUR TEAM</a>
                                                     </li>
-                                                    <!--<li class="list"> <a href="blogs.html">BLOGS</a></li>-->
                                                     <li class="list"> <a href="contact-us">CONTACT</a></li>
                                                     <li class="list"> <a href=""
                                                             style="color:red;text-decoration:underline;">CLOSE</a></li>
@@ -783,6 +784,10 @@
                 </div>
             </div>
         </div>
+
+        {{-- this is the style --}}
+        @stack('styles')
+
     </header>
 
 
@@ -794,30 +799,14 @@
 
 
     <style>
-        /*.carousel-inner {*/
-        /*    position: relative;*/
-        /*    width: 100%;*/
-        /*    overflow: hidden;*/
-        /*    background-image: url(https://indiaforworld.com/design2/images/home/testi.jpg);*/
-        /*}*/
+        
         h2 {
             text-align: center;
             position: relative;
             margin: 50px 0 30px;
         }
 
-        /*h2::after {*/
-        /*  content: "";*/
-        /*  width: 100px;*/
-        /*  position: absolute;*/
-        /*  margin: 0 auto;*/
-        /*  height: 3px;*/
-        /*  background: #e6d1cc;*/
-        /*  left: 0;*/
-        /*  right: 0;*/
-        /*  bottom: -10px;*/
-        /*}*/
-
+        
         .carousel {
             width: 850px;
             margin: 0 auto;
@@ -880,7 +869,7 @@
             background: #999;
             text-shadow: none;
             top: 295px;
-            z-index: -1 ;
+            z-index: -1;
         }
 
         .carousel-control-prev i,
@@ -1139,8 +1128,7 @@
         }
 
         .footer-logo {
-            /*height:250px;*/
-            /*width:250px;*/
+            
         }
 
         .footer-logo img {
@@ -1159,10 +1147,14 @@
             border-radius: 50px;
             background: black;
         }
+
+        .btn-top-image {
+            margin-top: 4px;
+        }
     </style>
     <section class="news-latter" style="border-top:1px solid rgb(255 255 255 / 50%);">
         <div class="container-fluid">
-            <a href="#" class="btn-top"><img src="images/icon/top_arrow.png"></a>
+            <a href="#top" class="btn-top"><img class="btn-top-image" src="images/icon/top_arrow.png"></a>
             <div class="row">
                 <div class="col-5">
                     <div class="news-cont">Join our travel notebook!</div>
@@ -1172,16 +1164,18 @@
                     <form class="form-inline" action={{ route('admin.save.subscription') }} method="POST">
                         @csrf
                         <div class="form-group">
-                            <input class="nameform-footer" type="text" id="name" placeholder="Name" name="Name">
+                            <input class="nameform-footer" type="text" id="name" placeholder="Name"
+                                name="Name">
                         </div>
                         <div class="form-group">
-                            <input class="nameform-footer" type="email" id="email" placeholder="Enter email" name="email">
+                            <input class="nameform-footer" type="email" id="email" placeholder="Enter email"
+                                name="email">
                         </div>
                         <button type="submit" class="btn-2">SUBSCRIBE</button>
                         <div class="checkbox">
                             <label class="check" style="display:flex">
                                 <input type="checkbox">
-                                <p style="font-size:1rem!important;">I have read and accept the <a
+                                <p style="font-size:1rem!important;margin-left: 10px;">I have read and accept the <a
                                         style="text-decoration: underline;">Privacy and Data Protection Policy*</a> and
                                     I know that I can unsubscribe at any time. </p>
                             </label>
@@ -1198,7 +1192,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="row">
                         <div class="col-12">
-                            <a href="index.html">
+                            <a href="/">
                                 <div class="footer-logo">
                                     <img src="images/logo/footer-logo.png" alt="logo">
                                 </div>
@@ -1215,12 +1209,12 @@
                             <h3 class="f-heading">Quick Links</h3>
                             <ul class="f-list-item">
                                 <li class="list-item">
-                                    <a href="contact-us.html">
+                                    <a href="contact-us">
                                         <span class="">About Us</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="services.html">
+                                    <a href="our-servic">
                                         <span>Services</span>
                                     </a>
                                 </li>
@@ -1269,17 +1263,17 @@
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="destinations.html#nepal">
+                                    <a href="destination#nepal">
                                         <span>Nepal</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="destinations.html#bhutan">
+                                    <a href="destination#bhutan">
                                         <span>Bhutan</span>
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="destinations.html#shrilanka">
+                                    <a href="destination#shrilanka">
                                         <span>Sri Lanka</span>
                                     </a>
                                 </li>
@@ -1292,7 +1286,7 @@
                                     </a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="services.html#meetings-and-conferences">
+                                    <a href="our-servic#meetings-and-conferences">
                                         <span class="">Meetings & Conferences</span>
                                     </a>
                                 </li>
@@ -1384,22 +1378,22 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 text-left footer-cent">
                     <ul class="copy-itm" st>
                         <li class="list-itm">
-                            <a href="privacy-policy.html#tab_payment">
+                            <a href="privacy-policy#tab_payment">
                                 <span class="">Privacy Policy</span>
                             </a>
                         </li>
                         <li class="list-itm">
-                            <a href="privacy-policy.html#tab_cookie">
+                            <a href="privacy-policy#tab_cookie">
                                 <span class=" ">Cookies Policy</span>
                             </a>
                         </li>
                         <li class="list-itm">
-                            <a href="privacy-policy.html#tab_gdpr">
+                            <a href="privacy-policy#tab_gdpr">
                                 <span class=" "> GDPR Policy</span>
                             </a>
                         </li>
                         <li class="list-itm">
-                            <a href="privacy-policy.html#tab_policy">
+                            <a href="privacy-policy#tab_policy">
                                 <span class=" "> Payment Policy</span>
                             </a>
                         </li>

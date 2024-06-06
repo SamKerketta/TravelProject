@@ -31,8 +31,6 @@
             </div>
         @endif
 
-
-
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -51,8 +49,6 @@
 
         <!-- Main content -->
         <section class="content">
-
-
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
@@ -67,13 +63,14 @@
                         aria-controls="contact" aria-selected="false">Videos</a>
                 </li>
             </ul>
-
             <br>
 
-            <div class="container-fluid">
+            <div class="container-fluid" style="margin-top: 30px">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="tab-content" id="myTabContent">
+
+                            
                             <div class="tab-pane fade show active" id="home" role="tabpanel"
                                 aria-labelledby="home-tab">
                                 <!-- Section 1 -->
@@ -103,6 +100,8 @@
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
+
+
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal"
@@ -182,6 +181,8 @@
                                 </table>
                                 <!-- Table -->
                             </div>
+
+
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal"
@@ -268,11 +269,7 @@
                     </div>
                 </div>
             </div>
-            <!-- /.row (main row) -->
-    </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-    </div>
+        </section>
     </div>
 @endsection
 

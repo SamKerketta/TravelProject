@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsPageController;
+use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\DesignationContoller;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\Landing\DashboardController;
@@ -58,7 +59,6 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('contact-us', 'contactUs');
     Route::get('privacy-policy', 'privacyPolicy');
     Route::get('thank-you', 'thankYou');
-
 });
 
 // Route::controller(FormController::class)->group(function () {
@@ -84,15 +84,14 @@ Route::middleware([
     Route::get('/admin-dashboard', function () {
 
         $pageData       = array();
-        $inspiration    = File::where('file_type' , 'photo')->count();
+        $inspiration    = File::where('file_type', 'photo')->count();
         $inq            = Inquiry::where('status', 1)->count();
         $subscription   = Subscription::where('status', 1)->count();
         $pageData["inspiration"]    = $inspiration;
         $pageData["inquire"]        = $inq;
         $pageData["subscription"]   = $subscription;
-        
-        return view('admin.dashboard', $pageData);
 
+        return view('admin.dashboard', $pageData);
     })->name('dashboard');
 
     Route::controller(LandingPageController::class)->group(function () {
@@ -114,7 +113,7 @@ Route::middleware([
         Route::post('destination/section1/update', 'sectionUpdate1')->name("destination.section1.update");
         Route::post('destination/section2/update', 'sectionUpdate2')->name("destination.section2.update");
         Route::post('destination/section3/update', 'sectionUpdate3')->name("destination.section3.update");
-
+        Route::get('file/destination/delete/{id}', 'deleteFile');
     });
 
 
@@ -148,5 +147,13 @@ Route::middleware([
     Route::controller(OurServicesController::class)->group(function () {
         Route::get('services/view', 'viewService')->name('admin.service');
         Route::post('services/saveServices', 'saveServices')->name('admin.save.services');
+    });
+
+
+    // Use for the SCO
+    Route::controller(CollectionController::class)->group(function () {
+        Route::get('collection/destination', 'viewDestination')->name('admin.view.destination');
+        Route::get('collection/seo', 'viewSeo')->name('admin.view.seo');
+        Route::post('collection/save-seo', 'saveSeo')->name('admin.save.seo');
     });
 });

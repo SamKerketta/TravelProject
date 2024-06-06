@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Destination;
 use App\Models\SectionValue;
 use Exception;
 use Illuminate\Http\Request;
@@ -11,21 +12,22 @@ class DesignationContoller extends Controller
     private $mSectionValue;
     private $_pageName;
     private $_noOfSections;
+    private $mDestination;
     // Initializing Construct Function 
     public function __construct()
     {
         $this->mSectionValue    = new SectionValue();
-        $this->_pageName = "ourDestination";
-        $this->_noOfSections = 9;
+        $this->mDestination     = new Destination();
+        $this->_pageName        = "ourDestination";
+        $this->_noOfSections    = 9;
     }
 
     // View admin designation page
     public function viewAdminDesignation()
     {
-        $compacts = [
-            'noOfSections' => $this->_noOfSections
-        ];
-        return view('admin.pages.designation', $compacts);
+        $country = $this->mDestination->getDestination()->get();
+        $data["country"] = $country;
+        return view('admin.pages.designation', $data);
     }
 
 
@@ -121,96 +123,22 @@ class DesignationContoller extends Controller
     public function sectionUpdate3(Request $req)
     {
         $req->validate([
+            'name'      => 'required',
             'section'   => 'required',
             'value1'    => 'nullable|',
             'value2'    => 'nullable|',
             'value3'    => 'nullable|file',
             'value4'    => 'nullable|file',
-            'value5'    => 'nullable|',
-            'value6'    => 'nullable|',
-            'value7'    => 'nullable|file',
-            'value8'    => 'nullable|file',
-            'value9'    => 'nullable|',
-            'value10'    => 'nullable|',
-            'value11'    => 'nullable|file',
-            'value12'    => 'nullable|file',
-            'value13'    => 'nullable|',
-            'value14'    => 'nullable|',
-            'value15'    => 'nullable|file',
-            'value16'    => 'nullable|file',
-
         ]);
 
         try {
             # Update the page contents 
-            $section = array();
 
             // content section
-            if (isset($req->value1)) {
-                $second = [
-                    "sectionName"   => $req->section,
-                    "value"         => $req->value1,
-                    "type"          => "des1content"
-                ];
-                array_push($section, $second);
+            if (isset($req->value1) || isset($req->value2)) {
+                $first["des1content"] = $req->value1;
+                $first["des1subcontent"] = $req->value2;
             }
-            if (isset($req->value2)) {
-                $second = [
-                    "sectionName"   => $req->section,
-                    "value"         => $req->value2,
-                    "type"          => "des1subcontent"
-                ];
-                array_push($section, $second);
-            }
-            if (isset($req->value5)) {
-                $second = [
-                    "sectionName"   => $req->section,
-                    "value"         => $req->value5,
-                    "type"          => "des2content"
-                ];
-                array_push($section, $second);
-            }
-            if (isset($req->value6)) {
-                $second = [
-                    "sectionName"   => $req->section,
-                    "value"         => $req->value6,
-                    "type"          => "des2subcontent"
-                ];
-                array_push($section, $second);
-            }
-            if (isset($req->value9)) {
-                $second = [
-                    "sectionName"   => $req->section,
-                    "value"         => $req->value9,
-                    "type"          => "des3content"
-                ];
-                array_push($section, $second);
-            }
-            if (isset($req->value10)) {
-                $second = [
-                    "sectionName"   => $req->section,
-                    "value"         => $req->value10,
-                    "type"          => "des3subcontent"
-                ];
-                array_push($section, $second);
-            }
-            if (isset($req->value13)) {
-                $second = [
-                    "sectionName"   => $req->section,
-                    "value"         => $req->value13,
-                    "type"          => "des4content"
-                ];
-                array_push($section, $second);
-            }
-            if (isset($req->value14)) {
-                $second = [
-                    "sectionName"   => $req->section,
-                    "value"         => $req->value14,
-                    "type"          => "des4subcontent"
-                ];
-                array_push($section, $second);
-            }
-
 
 
             // image section
@@ -223,12 +151,7 @@ class DesignationContoller extends Controller
                 $file->move($path, $filename);
                 $actualFileName = $viewPath . "/" . $filename;
 
-                $first = [
-                    "sectionName"   => $req->section,
-                    "value"         => $actualFileName,
-                    "type"          => "des1image"
-                ];
-                array_push($section, $first);
+                $first["des1image"] = $actualFileName;
             }
             if ($req->hasFile('value4') && $req->value4) {
                 $file = $req->file('value4');
@@ -239,125 +162,26 @@ class DesignationContoller extends Controller
                 $file->move($path, $filename);
                 $actualFileName = $viewPath . "/" . $filename;
 
-                $first = [
-                    "sectionName"   => $req->section,
-                    "value"         => $actualFileName,
-                    "type"          => "des1secondimage"
-                ];
-                array_push($section, $first);
-            }
-            if ($req->hasFile('value7') && $req->value7) {
-                $file = $req->file('value7');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . rand(10, 100) . "." . $extension;
-                $viewPath = "uploads/landing";
-                $path = public_path() . "/" . $viewPath;
-                $file->move($path, $filename);
-                $actualFileName = $viewPath . "/" . $filename;
-
-                $first = [
-                    "sectionName"   => $req->section,
-                    "value"         => $actualFileName,
-                    "type"          => "des2image"
-                ];
-                array_push($section, $first);
-            }
-            if ($req->hasFile('value8') && $req->value8) {
-                $file = $req->file('value8');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . rand(10, 100) . "." . $extension;
-                $viewPath = "uploads/landing";
-                $path = public_path() . "/" . $viewPath;
-                $file->move($path, $filename);
-                $actualFileName = $viewPath . "/" . $filename;
-
-                $first = [
-                    "sectionName"   => $req->section,
-                    "value"         => $actualFileName,
-                    "type"          => "des2secondimage"
-                ];
-                array_push($section, $first);
-            }
-            if ($req->hasFile('value11') && $req->value11) {
-                $file = $req->file('value11');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . rand(10, 100) . "." . $extension;
-                $viewPath = "uploads/landing";
-                $path = public_path() . "/" . $viewPath;
-                $file->move($path, $filename);
-                $actualFileName = $viewPath . "/" . $filename;
-
-                $first = [
-                    "sectionName"   => $req->section,
-                    "value"         => $actualFileName,
-                    "type"          => "des3image"
-                ];
-                array_push($section, $first);
-            }
-            if ($req->hasFile('value12') && $req->value12) {
-                $file = $req->file('value12');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . rand(10, 100) . "." . $extension;
-                $viewPath = "uploads/landing";
-                $path = public_path() . "/" . $viewPath;
-                $file->move($path, $filename);
-                $actualFileName = $viewPath . "/" . $filename;
-
-                $first = [
-                    "sectionName"   => $req->section,
-                    "value"         => $actualFileName,
-                    "type"          => "des3secondimage"
-                ];
-                array_push($section, $first);
-            }
-            if ($req->hasFile('value15') && $req->value15) {
-                $file = $req->file('value15');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . rand(10, 100) . "." . $extension;
-                $viewPath = "uploads/landing";
-                $path = public_path() . "/" . $viewPath;
-                $file->move($path, $filename);
-                $actualFileName = $viewPath . "/" . $filename;
-
-                $first = [
-                    "sectionName"   => $req->section,
-                    "value"         => $actualFileName,
-                    "type"          => "des4image"
-                ];
-                array_push($section, $first);
-            }
-            if ($req->hasFile('value16') && $req->value16) {
-                $file = $req->file('value16');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . rand(10, 100) . "." . $extension;
-                $viewPath = "uploads/landing";
-                $path = public_path() . "/" . $viewPath;
-                $file->move($path, $filename);
-                $actualFileName = $viewPath . "/" . $filename;
-
-                $first = [
-                    "sectionName"   => $req->section,
-                    "value"         => $actualFileName,
-                    "type"          => "des4secondimage"
-                ];
-                array_push($section, $first);
+                $first["des1secondimage"] = $actualFileName;
             }
 
 
-
-
-
-
-            if (!empty($section)) {
-                foreach ($section as $sections) {
-                    $this->mSectionValue->updateValues($sections, $this->_pageName);
-                }
+            if (!empty($first) || isset($first)) {
+                $this->mDestination->saveUpdateDestination($this->_pageName, $first, $req->name);
             }
 
-            $responseMsg = $req->pageName . " Content Updated";
+            $responseMsg = $req->pageName . " Destination Saved";
             return back()->with('success', $responseMsg);
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }
     }
+
+    public function deleteFile($id)
+    {
+        $file = Destination::findOrFail($id);
+        $file->delete();
+        return back()->with('success', "Destination deleted Successfully");
+    }
+
 }

@@ -5,15 +5,18 @@ namespace App\Http\Controllers\Landing;
 use App\Http\Controllers\Controller;
 use App\Models\File;
 use App\Models\SectionValue;
+use App\Models\seoTable;
 
 class DashboardController extends Controller
 {
     private $mSectionValue;
+    private $mseoTable;
 
     // Initializing Construct Function 
     public function __construct()
     {
         $this->mSectionValue    = new SectionValue();
+        $this->mseoTable = new seoTable();
     }
 
 
@@ -28,15 +31,17 @@ class DashboardController extends Controller
     {
         $pageName = "landingPage";                                              // Static put in config
         $newArray = array();
-        # Get the landing page Dats
+
+        $metaData = $this->mseoTable->getSeoByPage("homePage")->first();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
             $newArray[$newKey] = $pageDatas->value;
         }
         return view("pages/hero", [
-            "pageData" => $newArray
-            ]);
+            "pageData" => $newArray,
+            "meta" => $metaData
+        ]);
     }
 
 
@@ -50,12 +55,16 @@ class DashboardController extends Controller
     {
         $pageName = "aboutUs";                                              // Static put in config
         $newArray = array();
+        $metaData = $this->mseoTable->getSeoByPage("aboutUs")->first();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
             $newArray[$newKey] = $pageDatas->value;
         }
-        return view("pages/about-us", $newArray);
+        return view("pages/about-us", [
+            "pageData" => $newArray,
+            "meta" => $metaData
+        ]);
     }
 
     /**
@@ -68,12 +77,16 @@ class DashboardController extends Controller
     {
         $pageName = "ourDestination";                                              // Static put in config
         $newArray = array();
+        $metaData = $this->mseoTable->getSeoByPage("destination")->first();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
             $newArray[$newKey] = $pageDatas->value;
         }
-        return view("pages/our-destination", $newArray);
+        return view("pages/our-destination", [
+            "pageData" => $newArray,
+            "meta" => $metaData
+        ]);
     }
 
     /**
@@ -86,8 +99,9 @@ class DashboardController extends Controller
         $mFile = new File();
         $pageName = "littileInspiration";                                              // Static put in config
         $newArray = array();
-        $fileDataPhoto = $mFile::where('file_type',"photo")->get();
-        $fileDataVideo = $mFile::where('file_type',"video")->get();
+        $metaData = $this->mseoTable->getSeoByPage("experiences")->first();
+        $fileDataPhoto = $mFile::where('file_type', "photo")->get();
+        $fileDataVideo = $mFile::where('file_type', "video")->get();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
@@ -96,7 +110,8 @@ class DashboardController extends Controller
         return view("pages/littile-inspiration", [
             "pageData" => $newArray,
             "tourData" => $fileDataPhoto,
-            "videoData1" => $fileDataVideo->first()->file_path
+            "videoData1" => $fileDataVideo->first()->file_path ?? "",
+            'meta' =>$metaData
         ]);
     }
 
@@ -110,12 +125,16 @@ class DashboardController extends Controller
     {
         $pageName = "ourServic";                                              // Static put in config
         $newArray = array();
+        $metaData = $this->mseoTable->getSeoByPage("services")->first();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
             $newArray[$newKey] = $pageDatas->value;
         }
-        return view("pages/our-service", $newArray);
+        return view("pages/our-service",[
+            "pageData" => $newArray,
+            "meta" => $metaData
+        ]);
     }
 
     /**
@@ -127,29 +146,38 @@ class DashboardController extends Controller
     {
         $pageName = "responsibleTravel";                                              // Static put in config
         $newArray = array();
+        $metaData = $this->mseoTable->getSeoByPage("travel")->first();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
             $newArray[$newKey] = $pageDatas->value;
         }
-        return view("pages/responsible-travel", $newArray);
+        return view("pages/responsible-travel",[
+            "pageData" => $newArray,
+            "meta" => $metaData
+        ]);
     }
 
     /**
      * | Get the blog page details and view it 
         | Serial No : 07
         | Under Con
+        | Not used
      */
     public function blogs()
     {
         $pageName = "blogs";                                              // Static put in config
         $newArray = array();
+        $metaData = $this->mseoTable->getSeoByPage("homePage")->first();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
             $newArray[$newKey] = $pageDatas->value;
         }
-        return view("pages/blogs", $newArray);
+        return view("pages/blogs", [
+            "pageData" => $newArray,
+            "meta" => $metaData
+        ]);
     }
 
 
@@ -174,6 +202,4 @@ class DashboardController extends Controller
     {
         return view("pages/thank-you");
     }
-    
-
 }

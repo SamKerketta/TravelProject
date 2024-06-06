@@ -275,8 +275,8 @@
                                 <div class="owl-item active">
                                     <div class="item">
                                         <div class="inspired_box">
-                                            {{-- <img src="images/little-inspirations/Village-tour.webp" --}}
-                                            <img src="{{ $value->file_path }}" alt="Luxury Travels Sri Lanka">
+                                            <img src="images/little-inspirations/Village-tour.webp"
+                                            {{-- <img src="{{ $value->file_path }}" alt="Luxury Travels Sri Lanka"> --}}
                                             {{-- <a href="https://www.alphonsostories-partners.com/partner-login?From_Url=/experiences" --}}
 
                                             style="color:white;">
