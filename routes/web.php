@@ -61,9 +61,6 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('thank-you', 'thankYou');
 });
 
-// Route::controller(FormController::class)->group(function () {
-//     Route::post('admin/save/inquiry', 'saveInquiry')->name('admin.save.inquiry');
-// });
 Route::controller(FormController::class)->group(function () {
     Route::get('admin/inquiry', 'viewInquiry')->name('admin.inquiry');
     Route::post('admin/save/inquiry', 'saveInquiry')->name('admin.save.inquiry');

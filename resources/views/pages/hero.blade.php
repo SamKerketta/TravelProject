@@ -1,6 +1,10 @@
 @extends('web-layouts.app')
 
 @section('page-content')
+    <link href="css/hero.min.css" type="text/css" rel="stylesheet">
+
+
+
     <section class="">
         <div class="video">
             <video width="100%" class="elVideo" loop="loop" autoPlay playsInline muted
@@ -13,6 +17,7 @@
             </div>
         </div>
     </section>
+
     <section class="trips-bg">
         <div class="container">
             <div class="row">
@@ -26,306 +31,103 @@
             </div>
         </div>
     </section>
-    <style>
-        .why-choose img {
-            width: 100px;
-        }
 
-        .desti-img img {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-        }
-
-        .dest-heading {
-            text-align: center;
-            padding: 50px 0px 40px 0px;
-        }
-
-        .dest-heading h2 {
-            /*font-size: 40px;*/
-            /*margin-top: 50px;*/
-            /*margin-bottom:35px;*/
-
-        }
-
-        .desti-img span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, 492%);
-            font-size: 25px;
-            font-weight: 500;
-            color: white;
-        }
-
-        h2 {
-            /*text-transform:uppercase;*/
-        }
-
-        .desti-img {
-            position: relative;
-            padding-right: 0px !important;
-            margin-bottom: 10px;
-        }
-
-        .desti-img:hover:before {
-            height: 100%;
-        }
-
-        .texti-section img {
-            width: 100%;
-            height: auto;
-            min-height: 40vw;
-            height: 100%;
-        }
-
-
-        .texti-section .texti-inner {
-            padding: 100px 100px;
-            position: relative;
-            bottom: 25px;
-        }
-
-        .texti-section .texti-inner h2 {
-            text-align: left;
-            margin-top: 51px;
-            margin-bottom: 42px;
-        }
-
-        .inspired_section {
-            padding: 5px 0px;
-        }
-
-        .offer-slider-btn-expele p {
-            display: none;
-        }
-
-        .offer-slider-btn-expele {
-            font-weight: 500;
-            font-size: 12px;
-            color: #fff;
-            display: inline-block;
-            padding: 6px;
-            letter-spacing: 0.5px;
-            text-align: center;
-            position: absolute;
-            transition: 1.5s;
-            margin: 0px 20px;
-            position: absolute;
-            bottom: -130px;
-            left: 0%;
-            right: 0%;
-            cursor: pointer;
-            height: 38vh;
-        }
-
-        .offer-slider-btn-expele p {
-            color: white !important;
-            font-size: 0.85rem !important;
-        }
-
-
-        .trips-slider .owl-item:nth-child(odd) {
-            margin-top: 0px !important;
-        }
-
-
-        .srv-img:hover .offer-slider-btn-expele {
-            bottom: 20px !important;
-        }
-
-        .srv-img:hover p {
-            display: block;
-        }
-
-        .srv-slider .owl-item:nth-child(odd) {
-            margin-top: 0px !important;
-        }
-
-        .img-hover:before {
-            content: '';
-            display: block;
-            position: absolute;
-            height: 0%;
-            width: 100%;
-            bottom: 0;
-            transition: height 0.5s ease-out;
-            opacity: 1
-        }
-
-        /*services card hover effect*/
-        @media (min-width: 1200px) {
-
-            .h2,
-            h2 {
-                font-size: 2rem;
-                margin-bottom: 38px;
-            }
-        }
-
-        .expo {
-            padding: 0px;
-            border: none;
-            min-width: 133px;
-        }
-
-        .expo a {
-            display: inline-block;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 20px;
-            padding-right: 20px;
-            font-size: 17px;
-            text-decoration: none;
-            color: #ffffff;
-            background: #000000;
-            font-weight: 500;
-            border: 1px solid black;
-            min-width: 133px;
-        }
-
-        .expo a:hover {
-            display: inline-block;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 20px;
-            padding-right: 20px;
-            font-size: 17px;
-            text-decoration: none;
-            color: #000;
-            background: #fff;
-            font-weight: 500;
-            border: 1px solid black;
-            min-width: 133px;
-        }
-
-        .offer-slider-btn-expele a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .botom {
-            height: 11vw;
-            position: absolute;
-            /*background: linear-gradient(to top, #945656, transparent) !important;*/
-            opacity: 1;
-            opacity: 1;
-            bottom: 0px;
-            background: red;
-            width: 93%;
-            z-index: 20
-        }
-
-        .slider_p {
-            height: auto;
-            width: 100%;
-        }
-
-        .owl-carousel .owl-item img {
-            display: block;
-            width: 100px;
-        }
-
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            text-align: center;
-        }
-
-        .card .h3 {
-            font-weight: 400;
-            position: absolute;
-            bottom: 20px;
-            right: 6%;
-            left: 6%;
-            color: white;
-            z-index: 1000;
-        }
-
-        .dest-btn {
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            margin-top: 18px;
-        }
-
-        .ourser-btn {
-            display: flex;
-            text-align: center;
-            justify-content: start;
-            align-items: center;
-            margin-top: 18px;
-        }
-
-        .inner_img_text1 {
-            position: absolute;
-            bottom: 10px;
-            padding: 30px 30px 0px 30px;
-        }
-
-        .img-hover1 {
-            overflow: hidden;
-        }
-
-        .img-hover1:hover img {
-            transform: scale(1.3);
-            transform-origin: 50% 50%;
-            transition: all .5s ease-in-out
-        }
-
-        .card {
-            overflow: hidden;
-        }
-    </style>
     <section>
         <div class="destination" style="background:#FFF7F7!important; padding-bottom:40px;">
             <div class="dest-heading">
                 <h2 style="margin-bottom:0px!important; margin-top:0px;">Destinations</h2>
             </div>
-            <div class="container-fluid">
-                <div class="row" style="padding-left:30px;padding-right:35px; ">
-                    <div class="col-lg-3 col-md-6 col-sm-12 desti-img">
-                        <a href="our-destination#india">
-                            <div class="card img-hover1">
-                                <img src="{{ $pageData['section3image1'] }}" alt="vote-for-us">
-                                <div class="h3">{{ $pageData['section3title1'] }}</div>
-                            </div>
-                        </a>
 
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 desti-img">
-                        <a href="our-destination#nepal">
-                            <div class="card img-hover1">
-                                <img src="{{ $pageData['section3image2'] }}" alt="vote-for-us">
-                                <div class="h3">{{ $pageData['section3title2'] }}</div>
-                            </div>
-                        </a>
+            <div style="padding-left:0px!important">
+                <div class="owl-carousel owl-theme inspired_slider owl-loaded owl-drag">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage"
+                            style="width: 2867px; padding-left: 50px; padding-right: 50px; transform: translate3d(-1729px, 0px, 0px); transition: all 0.25s ease 0s;">
 
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 desti-img ">
-                        <a href="our-destination#bhutan">
-                            <div class="card img-hover1">
-                                <img src="{{ $pageData['section3image3'] }}" alt="vote-for-us">
-                                <div class="h3">{{ $pageData['section3title3'] }}</div>
+
+                            <div class="owl-item col-lg-3 col-md-6 col-sm-12 desti-img">
+                                <a href="our-destination#india">
+                                    <div class="card img-hover1">
+                                        <img src="{{ $pageData['section3image1'] }}" alt="vote-for-us">
+                                        <div class="h3">{{ $pageData['section3title1'] }}</div>
+                                    </div>
+                                </a>
+
                             </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 desti-img">
-                        <a href="our-destination#shrilanka">
-                            <div class="card img-hover1">
-                                <img src="{{ $pageData['section3image4'] }}" alt="vote-for-us">
-                                <div class="h3">{{ $pageData['section3title4'] }}</div>
+                            <div class=" owl-item col-lg-3 col-md-6 col-sm-12 desti-img">
+                                <a href="our-destination#nepal">
+                                    <div class="card img-hover1">
+                                        <img src="{{ $pageData['section3image2'] }}" alt="vote-for-us">
+                                        <div class="h3">{{ $pageData['section3title2'] }}</div>
+                                    </div>
+                                </a>
+
                             </div>
-                        </a>
+                            <div class=" owl-item col-lg-3 col-md-6 col-sm-12 desti-img ">
+                                <a href="our-destination#bhutan">
+                                    <div class="card img-hover1">
+                                        <img src="{{ $pageData['section3image3'] }}" alt="vote-for-us">
+                                        <div class="h3">{{ $pageData['section3title3'] }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="owl-item col-lg-3 col-md-6 col-sm-12 desti-img">
+                                <a href="our-destination#shrilanka">
+                                    <div class="card img-hover1">
+                                        <img src="{{ $pageData['section3image4'] }}" alt="vote-for-us">
+                                        <div class="h3">{{ $pageData['section3title4'] }}</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            {{-- <div class="owl-item cloned" style="width: 335.8px; margin-right: 10px;">
+                                <div class="item">
+                                    <div class="inspired_box">
+                                        <img src="images/little-inspirations/Village-tour.webp" style="color:white;">
+                                        <div class="content">
+                                            <h3>Village Tour</h3>
+                                            <p class="read-more color-primary sans-serif"> Read more </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="owl-item cloned active" style="width: 335.8px; margin-right: 10px;">
+                                <div class="item">
+                                    <div class="inspired_box">
+                                        <img src="images/little-inspirations/Village-tour.webp" style="color:white;">
+                                        <div class="content">
+                                            <h3>Village Tour</h3>
+                                            <p class="read-more color-primary sans-serif"> Read more </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div> --}}
+
+
+                        </div>
+                    </div>
+
+                    <div class="owl-nav disabled">
+                        <button type="button" role="presentation" class="owl-prev"><span
+                                aria-label="Previous">‹</span></button><button type="button" role="presentation"
+                            class="owl-next"><span class="colorWhite" aria-label="Next">›</span></button>
+                    </div>
+                    <div class="owl-dots disabled"><button role="button" class="owl-dot active"><span></span></button>
                     </div>
                 </div>
             </div>
+
+
             <div class="dest-btn">
                 <button class="expo"><a href="our-destination">Explore</a></button>
             </div>
         </div>
     </section>
+
     <section class="destination" style="padding-top: 55px;padding-bottom: 65px;padding-right:35px;">
         <div class="container-fluid">
             <div class="row" style="padding-left:7px;padding-right:7px;">
@@ -394,17 +196,7 @@
                 </div>
             </div>
         </div>
-        <style>
-            .inner_img_text {
-                position: absolute;
-                top: 40%;
-                left: 40%;
-                transform: translate(-50%, -50%);
-                font-size: 25px;
-                font-weight: 500;
-                color: black;
-            }
-        </style>
+
     </section>
     <div class="why-choose">
         <div class="container">
@@ -479,21 +271,7 @@
         </div>
     </div>
 
-    <style>
-        .carousel-control-next1 {
 
-            left: 33rem !important;
-            top: 39rem !important;
-            z-index: 1 !important;
-        }
-
-        .carousel-control-prev1 {
-            left: auto;
-            right: 33rem !important;
-            top: 39rem !important;
-            z-index: 1 !important;
-        }
-    </style>
 
     <section class="texti-section">
         <div class="container-fluid">
@@ -502,12 +280,17 @@
                 <div class="col-lg-6 col-md-6 col-sm-12"
                     style="padding: 0px 0px 0px; 0px;min-height: 40vw; overflow: hidden;">
 
-                    <div id="carouselExampleIndicators" style="padding-bottom: 0px !important;" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselExampleIndicators" style="padding-bottom: 0px !important;" class="carousel slide"
+                        data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -523,11 +306,13 @@
                                 <img src="images/home/little-inspirations.webp" alt="image">
                             </div>
                         </div>
-                        <button class="carousel-control-prev carousel-control-prev1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <button class="carousel-control-prev carousel-control-prev1" type="button"
+                            data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next carousel-control-next1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <button class="carousel-control-next carousel-control-next1" type="button"
+                            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -620,98 +405,8 @@
             </div>
         </div>
     </section>
-    <style>
-        .img-hove2 .animated {
-            animation-duration: 1s;
-            animation-fill-mode: both
-        }
 
-        .img-hove2 .-in {
-            z-index: 0
-        }
 
-        .img-hove2 .img-hove2-out {
-            z-index: 1
-        }
-
-        .img-hove2 .fadeOut {
-            animation-name: fadeOut
-        }
-
-        @keyframes fadeOut {
-            0% {
-                opacity: 1
-            }
-
-            100% {
-                opacity: 0
-            }
-        }
-
-        .why-choose {
-            padding-top: 75px;
-            padding-bottom: 75px;
-        }
-    </style>
-    <style>
-        .inspire {
-            text-align: center;
-            padding-top: 10px;
-            padding-bottom: 16px;
-            position: relative;
-        }
-
-        .inspire h1::before {
-            width: 231px;
-            height: 2px;
-            top: auto;
-            right: auto;
-            bottom: 44px;
-            left: 50%;
-            position: absolute;
-            content: "";
-            background-color: #f17011;
-            transform: translate(-50%, 0px);
-        }
-    </style>
-    <style>
-        .blog-content .category {
-            padding: 10px 0px 10px 0px;
-            font-weight: 500;
-        }
-
-        .blog-content .blog-t {
-            font-size: 1.0rem;
-            cursor: pointer;
-            color: rgb(26 44 53);
-        }
-
-        .blog-content .comment {
-            /* display: flex;*/
-            /*justify-content: space-between;*/
-            /*text-align: center;*/
-            align-items: center;
-        }
-
-        .blog-content .comment span {
-            color: #a89f84;
-            font-size: 15px;
-        }
-
-        /*.owl-theme .blog{*/
-        /*    width:347px;*/
-        /*    margin: auto;*/
-        /*}*/
-        .border_line1 span {
-            background-color: #fff;
-            padding: 8px 15px;
-            position: relative;
-            z-index: 5;
-            display: block;
-            font-size: 20px;
-            color: black;
-        }
-    </style>
     <div class="trips-slider" style="display:none;">
         <div class="trips-text1">
             <h3>OUR BLOGS</h3>
@@ -862,77 +557,13 @@
     </div>
     <div class="clear"></div>
     <!--End blog section-->
-    <style>
-        .contact {
-            position: relative;
-        }
 
-        .form {
-            position: absolute;
-            top: 114px;
-            right: 114px;
-            width: 45%;
-            height: auto;
-            background: #f6f3ec;
-        }
-
-        .form .inner-f {
-            width: 100%;
-            height: auto;
-            padding: 60px;
-        }
-
-        .inner-f .col-sm-6 {
-            padding-bottom: 20px;
-        }
-
-        input[type="text"] {
-            border-top: 0px;
-            border-left: 0px;
-            border-right: 0px;
-            border-bottom: 1px solid;
-            border-radius: 0px;
-            background: #f6f3ec;
-            outline: none;
-            padding-top: 13px;
-            padding-bottom: 13px;
-        }
-        }
-
-        . .inner-f h3 {
-            font-family: 'Kadwa', serif;
-            font-size: 3.5em;
-            text-align: center;
-        }
-
-        .btn-1 {
-            padding-left: 56px;
-            padding-right: 56px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            background: #d8a01d;
-            border: none;
-            color: white;
-        }
-
-        .chek {
-            padding-bottom: 10px;
-        }
-
-        .check p {
-            color: white;
-        }
-
-        input[type="checkbox"] {
-            margin: 5px;
-        }
-    </style>
     <!--End news latter-->
 
 
     <section class="our_team">
         <h2 style="margin-top:65px">What They Say</h2>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" position="relative;">
+        {{-- <div id="myCarousel" class="carousel slide" data-ride="carousel" position="relative;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="img-box" style="display:none">
@@ -1024,42 +655,87 @@
             <a class="carousel-control-next" href="#myCarousel" data-slide="next">
                 <i class="fa fa-angle-right"></i>
             </a>
+        </div> --}}
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/3.html" alt="Image">
+                    </div>
+                    <p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia.
+                        Etiam faucibus
+                        mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus,
+                        volutpat vel
+                        tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
+                    <p class="overview">
+                        <b>Michael Holz</b>Seo Analyst at <a href="#">OsCorp Tech.</a>
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/1.html" alt="">
+                    </div>
+                    <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor,
+                        varius quam
+                        at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum
+                        idac nisl
+                        bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+                    <p class="overview">
+                        <b>Paula Wilson</b>Media Analyst at <a href="#">SkyNet Inc.</a>
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/2.html" alt="">
+                    </div>
+                    <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a
+                        mi suscipit
+                        tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse
+                        potenti.
+                        Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor velit.</p>
+                    <p class="overview">
+                        <b>Antonio Moreno</b>Web Developer at <a href="#">Circle Ltd.</a>
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/2.html" alt="">
+                    </div>
+                    <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a
+                        mi suscipit
+                        tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse
+                        potenti.
+                        Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor velit.</p>
+                    <p class="overview">
+                        <b>Antonio Moreno</b>Web Developer at <a href="#">Circle Ltd.</a>
+                    </p>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </section>
 
-    <style>
-        .carousel-inner {
-            display: flex;
-            flex-direction: column;
-        }
 
-        .carousel-item {
-            transition: transform 0.6s ease;
-        }
-
-        .carousel-item-next,
-        .carousel-item-prev,
-        .carousel-item.active {
-            transform: translateY(0);
-        }
-
-        .carousel-item-next.carousel-item-start,
-        .carousel-item-prev.carousel-item-end {
-            transform: translateY(100%);
-        }
-
-        .carousel-item-next.carousel-item-end,
-        .carousel-item-prev.carousel-item-start {
-            transform: translateY(-100%);
-        }
-
-        /* Ensuring the next and previous items are visible */
-        .carousel-item-next.carousel-item-start,
-        .carousel-item-prev.carousel-item-end {
-            display: flex;
-            flex-direction: column;
-        }
-    </style>
     {{-- <script>
         (function($) {
             $('.carousel-item-next').css('transform', 'translateY(100%)');

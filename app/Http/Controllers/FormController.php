@@ -42,6 +42,9 @@ class FormController extends Controller
     public function savesubscription(Request $req)
     {
         $data = $req->all();
+        if (!$data['Name']) {
+            return back()->with('error', "Please Fill the form properly");
+        }
         $mSubscription = new Subscription();
         $mSubscription->saveSubscription($req);
         return back();

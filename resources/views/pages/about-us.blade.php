@@ -1,308 +1,9 @@
 @extends('web-layouts.app')
 
 @section('page-content')
-
-    @push('styles')
-        <style>
-            .banner {
-                width: 100%;
-                height: 40vw;
-            }
-
-            .banner img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-
-            }
-
-            .hero-title h2 {
-                font-size: 6.5rem;
-                line-height: .8em;
-                color: #fff;
-                text-transform: capitalize;
-                font-weight: bold;
-            }
-
-            .hero-title .bottom-head {
-                font-size: 1rem;
-                font-style: normal;
-                font-weight: 700;
-                letter-spacing: 1.6px;
-                line-height: 1.4;
-                color: #379c8a;
-            }
-
-            .about-cont {
-                padding: 60px 0 0px 0;
-            }
-
-            .about-cont .container {
-                padding-top: 40px;
-            }
-
-            .about-text p {
-                padding-top: 0px;
-                font-size: 1.25rem !important;
-                line-height: 30px;
-                text-align: center;
-            }
-
-            p {
-                color: #495057;
-                font-size: 1.25rem !important;
-            }
-
-            .about-text {
-                width: 70%;
-                margin: auto;
-            }
-
-            .about-img img {
-                width: 100%;
-            }
-
-            .trips-bg .inner-section {
-                padding: 0px;
-            }
-
-            .about-h h2 {
-                font-size: 2rem;
-                font-weight: bold;
-            }
+    <link href="css/about.min.css" type="text/css" rel="stylesheet">
 
 
-            .innner-content {
-                overflow: hidden;
-            }
-
-            .about-img .inner-img {
-                width: 100%;
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-
-            .about_main {
-                min-height: 37vw;
-                height: 100%;
-                width: 80%;
-                margin: auto;
-            }
-
-            .about_main .about_p {
-                text-align: center;
-            }
-
-            .about_main .about_p p {
-                font-size: 1 rem;
-            }
-
-            .about-img1 {}
-
-            .about-img1 img {
-                width: 100%;
-                /*height:40vw;*/
-            }
-
-            .about-img2 {
-                min-height: 37vw;
-                /*min-width:506px;*/
-                height: 100%;
-                width: 100%;
-                overflow: hidden;
-            }
-
-            .about-img2 img {
-                width: 100%;
-                /*height:37vw;*/
-            }
-
-            .about_main2 {
-                display: flex;
-                text-align: center;
-                align-items: center;
-            }
-
-            .about_main3 {
-                padding: 0px 75px;
-                margin-bottom: 1px;
-                width: 85%;
-                position: relative;
-                bottom: 20px;
-
-            }
-
-            .meet_team {
-                max-height: 20vw;
-                height: 20vw;
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                align-items: center;
-            }
-
-            .about-img4 {
-                max-width: 540px;
-                width: 80%;
-                margin: auto;
-                overflow: hidden;
-                position: relative;
-                top: -8%;
-                left: 10%;
-            }
-
-            .about-img4 img {
-                width: 100%;
-                height: 37vw;
-            }
-
-            .about_left,
-            p {
-                text-align: left;
-            }
-
-            .about_main4 {
-                min-height: 37vw;
-                height: 100%;
-                width: 80%;
-                margin: auto;
-                display: flex;
-                text-align: center;
-                align-items: center;
-            }
-
-            .about_main1 {
-                padding: 25px 25px 25px 10px;
-                width: 95%;
-            }
-
-            .our-t {
-                padding-bottom: 20px;
-            }
-
-            .h2 {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                text-transform: capitalize;
-            }
-
-            .wrapper {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-            }
-
-            .image--cover {
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                margin: 20px;
-
-                object-fit: cover;
-                object-position: center right;
-            }
-
-            .item1 .shadow-effect {
-                background: #fff;
-                padding: 20px;
-                border-radius: 20px;
-                text-align: center;
-                border: 1px solid #ECECEC;
-                box-shadow: 0 19px 38px rgba(0, 0, 0, 0.10), 0 15px 12px rgba(0, 0, 0, 0.02);
-            }
-
-            .item1 {
-                height: 400px !important;
-                text-align: center;
-                padding: 10px;
-                /* opacity: .2; */
-                -webkit-transform: scale3d(0.8, 0.8, 1);
-                transform: scale3d(0.8, 0.8, 1);
-                -webkit-transition: all 0.3s ease-in-out;
-                -moz-transition: all 0.3s ease-in-out;
-                transition: all 0.3s ease-in-out;
-            }
-
-            .item1 p {
-                font-size: 15px;
-            }
-
-            .item1 h2 {
-                font-size: 28px !important;
-                font-weight: 500 !important;
-            }
-
-            .item1 .title {
-                font-size: 18px;
-            }
-
-            .item1 h5 {
-                font-size: 15px !important;
-                font-weight: 700 !important;
-            }
-
-            .owl-item.active.center .item {
-                opacity: 1;
-                -webkit-transform: scale3d(1.0, 1.0, 1);
-                transform: scale3d(1.0, 1.0, 1);
-            }
-
-            .teams .owl-carousel .owl-item .img-circle {
-                transform-style: preserve-3d;
-                max-width: 170px;
-                margin: 0 auto 17px;
-                transition: transform .5s;
-            }
-
-            .teams .owl-carousel .owl-item .img-circle:hover {
-                transform: scale(0.9);
-            }
-
-            @media only screen and (max-width: 1000px) {
-                #customers-teams.owl-carousel .owl-dots .owl-dot span {
-                    height: 20px;
-                    width: 20px;
-                    margin-top: 30px;
-                }
-            }
-
-
-            #teamsocial {
-                align-items: center;
-                justify-content: center;
-                display: flex;
-                margin: 10px auto;
-                margin-top: 20px;
-
-            }
-
-            #teamsocial #socialicon {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                width: 40px;
-                height: 40px;
-                margin: 0 0.5rem;
-                border-radius: 50%;
-                cursor: pointer;
-                font-size: 1.5rem;
-                text-decoration: none;
-                transition: all 0.3s ease;
-
-            }
-
-            #teamsocial #socialicon:hover {
-                font-size: 2rem;
-                width: 50px;
-                height: 50px;
-            }
-        </style>
-    @endpush
 
     <section class="hero" style="position:relative; ">
         <div class="banner">
@@ -345,7 +46,7 @@
                 </div>
                 <div class="col-lg-7 col-md-7 col-sm-12 inner-section innner-content">
                     <div class="about_main1">
-                        <div class="about-h" style="text-align:left;padding-bottom:25px;">
+                        <div class="about-h" style="text-align:left;">
                             <h2>Our Mission</h2>
                         </div>
                         <div class="about_p">
@@ -362,8 +63,7 @@
                             </p>
                         </div>
                         <br />
-                        <br />
-                        <div class="about-h" style="text-align:left;padding-bottom:25px;">
+                        <div class="about-h" style="text-align:left;">
                             <h2>Exclusivity Just For You</h2>
                         </div>
                         <div class="about_p">
@@ -387,13 +87,14 @@
             </div>
         </div>
     </section>
+    <div style="height:5vw; width:100%; clear:both;"></div>
     <section class="trips-bg" style="padding:0px;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-5 col-md-5 col-sm-12">
                     <div class="about_main2">
                         <div class="about_main3" style="padding:0px 75px;">
-                            <div class="about-h" style="text-align:left;padding-bottom:25px;">
+                            <div class="about-h" style="text-align:left;">
                                 <h2>Our Network</h2>
                             </div>
                             <div class="about_p">
@@ -404,10 +105,8 @@
                                     America, Germany, Austria and Switzerland, Scandinavia, Australia, North America, and
                                     Canada.
                                     <br />
-                                    <br />
                                     With the launch of Far and Beyond we aim to cement our status as a leading player in the
                                     luxury travel space.
-                                    <br />
                                     <br />
                                     Now, when you think Luxury Experiential Travel, let's take you Far and Beyond
                                 </p>
@@ -423,13 +122,14 @@
             </div>
         </div>
     </section>
+    <div style="height:5vw; width:100%; clear:both;"></div>
     <section class="trips-bg" style="padding:0px;margin-top:50px" id="why-us">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-7 col-md-7 col-sm-12">
                     <div class="about_main3">
                         <div class="about-h">
-                            <h2 style="text-align:left;padding-bottom:25px;">Why Travel With Far & Beyond</h2>
+                            <h2 style="text-align:left;">Why Travel With Far & Beyond</h2>
                         </div>
                         <div class="about_p">
                             <p>
@@ -437,7 +137,6 @@
                                 we offer to send you is our biggest drawcard. Our thrust on novel experiential travel and
                                 authentic cultural encounters is at the core how you travel with us. No detail is too small
                                 for our attention to ensure that every experience yields years of happy memories to savour.
-                                <br />
                                 <br />
                                 We firmly believe in promoting sustainable tourism development and the mutual benefits of
                                 the engagement with people, community and planet.
@@ -470,7 +169,6 @@
                                     Our fantastic luxury Concierge network ‘far and beyond’ empowers the guest experience.
                                     These amazing connections set the stage for driving home the message that each guest is
                                     well-cared-for and their needs are attended to at any time, any place.
-                                    <br />
                                     <br />
                                     Our partnerships with deeply knowledgeable local service providers serve as a pivotal
                                     point for our delivery of exceptional experiences. The intimate knowledge and the
@@ -639,7 +337,7 @@
     <section class="trips-bg" style="position:relative;">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 inner-section">
+                <div class="col-lg-6 col-md-6 col-sm-12 inner-section" style="margin-top: 50px">
                     <div class="about-img4">
                         <img src="images/about/vinay.jpg" alt="about">
                     </div>
@@ -797,7 +495,79 @@
     {{-- second section --}}
     <section class="our_team">
         <h2 style="margin-top:65px">What They Say</h2>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" position="relative;">
+        
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/3.html" alt="Image">
+                    </div>
+                    <p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia.
+                        Etiam faucibus
+                        mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus,
+                        volutpat vel
+                        tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
+                    <p class="overview">
+                        <b>Michael Holz</b>Seo Analyst at <a href="#">OsCorp Tech.</a>
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/1.html" alt="">
+                    </div>
+                    <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor,
+                        varius quam
+                        at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum
+                        idac nisl
+                        bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+                    <p class="overview">
+                        <b>Paula Wilson</b>Media Analyst at <a href="#">SkyNet Inc.</a>
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/2.html" alt="">
+                    </div>
+                    <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a
+                        mi suscipit
+                        tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse
+                        potenti.
+                        Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor velit.</p>
+                    <p class="overview">
+                        <b>Antonio Moreno</b>Web Developer at <a href="#">Circle Ltd.</a>
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/2.html" alt="">
+                    </div>
+                    <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a
+                        mi suscipit
+                        tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse
+                        potenti.
+                        Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor velit.</p>
+                    <p class="overview">
+                        <b>Antonio Moreno</b>Web Developer at <a href="#">Circle Ltd.</a>
+                    </p>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class=" carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        
+        {{-- <div id="myCarousel" class="carousel slide" data-ride="carousel" position="relative;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="img-box" style="display:none">
@@ -889,6 +659,6 @@
             <a class="carousel-control-next" href="#myCarousel" data-slide="next">
                 <i class="fa fa-angle-right"></i>
             </a>
-        </div>
+        </div> --}}
     </section>
 @endsection

@@ -185,8 +185,8 @@
         }
 
         .menu-bg {
+            background: transparent !important;
             width: 100%;
-            background: rgba(0, 0, 0, 0);
             background-size: cover;
             position: fixed;
             z-index: 1;
