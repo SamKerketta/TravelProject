@@ -1429,12 +1429,12 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 text-left">
                     <ul class="copy-itm">
                         <li class="list-itm">
-                            <a href="privacy-policy.html">
+                            <a href="privacy-policy">
                                 <span class="">Privacy</span>
                             </a>
                         </li>
                         <li class="list-itm">
-                            <a href="privacy-policy.html">
+                            <a href="privacy-policy">
                                 <span class=" ">Cookies</span>
                             </a>
                         </li>

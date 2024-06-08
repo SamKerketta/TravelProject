@@ -54,7 +54,7 @@
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
+                    <a href="/" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
@@ -348,7 +348,7 @@
 
                         <li class="nav-header">Collections</li>
                         <li class="nav-item">
-                            <a href={{route('admin.view.destination')}} class="nav-link">
+                            <a href={{ route('admin.view.destination') }} class="nav-link">
                                 <i class="fas fa-circle nav-icon"></i>
                                 <p>Destinations</p>
                             </a>
@@ -362,7 +362,7 @@
 
                         <li class="nav-header">SEO Tagging</li>
                         <li class="nav-item">
-                            <a href="{{route('admin.view.seo')}}" class="nav-link">
+                            <a href="{{ route('admin.view.seo') }}" class="nav-link">
                                 <i class="nav-icon far fa-circle text-danger"></i>
                                 <p class="text">SEO</p>
                             </a>

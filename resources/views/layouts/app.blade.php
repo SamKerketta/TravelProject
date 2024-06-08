@@ -11,6 +11,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link href="https://lms.openconnect.tech/public/build/assets/app-C-ffSE71.css" rel="stylesheet" />
+    <script src="https://lms.openconnect.tech/public/build/assets/app-BwrRV5ts.js"></script>
 
     <!-- Scripts -->
     <link rel="stylesheet" href="resources/css/app.css">

@@ -740,7 +740,7 @@ h2 {
 .carousel {
     width: 850px;
     margin: 0 auto;
-    padding-bottom: 85px;
+    padding-bottom: 0px;
 }
 
 .carousel .carousel-item {
