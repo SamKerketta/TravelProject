@@ -112,13 +112,15 @@ class LIController extends Controller
     public function uploadFile(Request $req)
     {
         $req->validate([
-            'tourfile'    => 'required|file|mimetypes:video/mp4,video/avi,video/mpeg,video/quicktime,image/jpeg,image/png,image/gif|max:5120',
+            'tourfile'    => 'required|file|mimetypes:video/mp4,video/avi,video/mpeg,video/quicktime,image/jpeg,image/png,image/gif|max:20120',
+            'placeholderImage'    => 'nullable|image|max:5120',
             'title'  => 'required',
             'description'    => 'required',
             'fileType' => 'required|In:photo,video'
         ]);
 
         try {
+            $actualImageName = null;
             $file = $req->file('tourfile');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . rand(10, 100) . "." . $extension;
@@ -127,12 +129,22 @@ class LIController extends Controller
             $file->move($path, $filename);
             $actualFileName = $viewPath . "/" . $filename;
 
+            if (isset($req->placeholderImage)) {
+                $image = $req->file('placeholderImage');
+                $extension = $image->getClientOriginalExtension();
+                $imageName = time() . rand(10, 100) . "." . $extension;
+                $path = public_path() . "/" . $viewPath;
+                $image->move($path, $imageName);
+                $actualImageName = $viewPath . "/" . $imageName;
+            }
+
             $fileReq = [
                 'file_path' => $actualFileName,
                 'file_type' => $req->fileType,
                 'title' => $req->title,
                 'description' => $req->description,
-                'page_name' => 'little_inspiration'
+                'page_name' => 'little_inspiration',
+                'placeholder_image_path' => $actualImageName
             ];
             File::create($fileReq);
             return back()->with('success', "Tour Successfully Created");
