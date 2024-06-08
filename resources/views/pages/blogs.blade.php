@@ -105,7 +105,7 @@
                                 we have been passionately working towards providing immersive and meaningful travel
                                 experiences for our international</p>
                         </div>
-                        <a href="index.html">Read More</a>
+                        <a href="/">Read More</a>
                     </div>
                 </div>
             </div>
