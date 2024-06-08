@@ -144,6 +144,7 @@ Route::middleware([
     Route::controller(OurServicesController::class)->group(function () {
         Route::get('services/view', 'viewService')->name('admin.service');
         Route::post('services/saveServices', 'saveServices')->name('admin.save.services');
+        Route::get('multi-service/delete/{id}', 'deleteMultiService')->name('admin.delete.services');
     });
 
 

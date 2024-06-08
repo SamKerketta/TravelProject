@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Landing;
 use App\Http\Controllers\Controller;
 use App\Models\Destination;
 use App\Models\File;
+use App\Models\MultiService;
 use App\Models\SectionValue;
 use App\Models\seoTable;
 
@@ -131,6 +132,9 @@ class DashboardController extends Controller
     {
         $pageName = "ourServic";                                              // Static put in config
         $newArray = array();
+        $mMultiServices = new MultiService();
+        $multiServies = $mMultiServices->getAll();
+
         $metaData = $this->mseoTable->getSeoByPage("services")->first();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
@@ -139,7 +143,8 @@ class DashboardController extends Controller
         }
         return view("pages/our-service", [
             "pageData" => $newArray,
-            "meta" => $metaData
+            "meta" => $metaData,
+            "multiServices" => $multiServies
         ]);
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MultiService;
 use App\Models\SectionValue;
 use Illuminate\Http\Request;
 use Exception;
@@ -21,20 +22,26 @@ class OurServicesController extends Controller
 
     public function viewService()
     {
-        return view('admin.pages.ourservices');
+        $mMultiServices = new MultiService();
+        $multiServies = $mMultiServices->getAll();
+        return view('admin.pages.ourservices', ['multiServices' => $multiServies]);
     }
 
     public function saveServices(Request $req)
     {
         $req->validate([
-            'section'   => 'required',
-            'value1'    => 'nullable|',
-            'value2'    => 'nullable'
+            'value1'    => 'nullable|image|mimes:jpeg,jpg,png',
+            'value2'    => 'nullable|string'
         ]);
 
+        $pageName = "MultiServices";
+        $mMultiServices = new MultiService();
         try {
             # Update the page contents 
-            $section = array();
+            $attributes = [
+                'content_value' => $req->value2,
+                'page_name' => "ourServices"
+            ];
 
             if ($req->hasFile('value1') && $req->value1) {
                 $file = $req->file('value1');
@@ -44,34 +51,21 @@ class OurServicesController extends Controller
                 $path = public_path() . "/" . $viewPath;
                 $file->move($path, $filename);
                 $actualFileName = $viewPath . "/" . $filename;
-
-                $first = [
-                    "sectionName"   => $req->section,
-                    "value"         => $actualFileName,
-                    "type"          => "video"
-                ];
-                array_push($section, $first);
+                $attributes['image_path'] = $actualFileName;
             }
-
-            if (isset($req->value2)) {
-                $second = [
-                    "sectionName"   => $req->section,
-                    "value"         => $req->value2,
-                    "type"          => "content"
-                ];
-                array_push($section, $second);
-            }
-
-            if (!empty($section)) {
-                foreach ($section as $sections) {
-                    $this->mSectionValue->updateValues($sections, $this->_pageName);
-                }
-            }
-
-            $responseMsg = $req->pageName . " Content Updated";
+            $mMultiServices->create($attributes);
+            $responseMsg = $pageName . " Content Updated";
             return back()->with('success', $responseMsg);
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }
+    }
+
+    // 
+    public function deleteMultiService($id)
+    {
+        $service = MultiService::findOrFail($id);
+        $service->delete();
+        return back()->with('success', "Service Deleted Successfully");
     }
 }
