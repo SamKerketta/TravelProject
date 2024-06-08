@@ -36,7 +36,7 @@ class DashboardController extends Controller
         $pageName = "landingPage";                                              // Static put in config
         $newArray = array();
 
-        // $destination    = $this->mDestination->getDestination()->get();
+        $destination    = $this->mDestination->getDestination()->get();
         $metaData       = $this->mseoTable->getSeoByPage("homePage")->first();
         $pageData       = $this->mSectionValue->getDataForPage($pageName)->get();
 
@@ -47,7 +47,7 @@ class DashboardController extends Controller
         return view("pages/hero", [
             "pageData"      => $newArray,
             "meta"          => $metaData,
-            // "destination"   => $destination
+            "destination"   => $destination
         ]);
     }
 

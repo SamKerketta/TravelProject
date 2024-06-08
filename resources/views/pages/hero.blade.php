@@ -15,11 +15,11 @@
     <section class="">
         <div class="video video-slider-1">
             <video width="100%" class="elVideo video-slider-1" loop="loop" autoPlay playsInline muted
-                src="{{ $pageData['section1video'] }}" id='video-slider-1'></video>
+                src="{{ $pageData['section1video'] ?? '' }}" id='video-slider-1'></video>
             <div class="text-video hard-responsive">
                 <h2><span class="hard-responsive"
                         style="font-size:3rem;font-weight: 400;letter-spacing: 2px;line-height: 1.05;color:white; font-weight: 600; line-height:1.5;">
-                        {{ $pageData['section1heading'] }}</span></h2>
+                        {{ $pageData['section1heading'] ?? '' }}</span></h2>
 
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="trips-text">
-                        {!! $pageData['section2title'] !!}
+                        {!! $pageData['section2title'] ?? '' !!}
                         <div class="btn_know"><a class="btn_more" href="about-us" style="text-decoration:none;">Know
                                 More</a></div>
                     </div>
@@ -46,22 +46,26 @@
             </div>
 
             <div style="padding-left:0px!important">
+
                 <div class="owl-carousel owl-theme inspired_slider owl-loaded owl-drag">
                     <div class="owl-stage-outer">
                         <div class="owl-stage"
                             style="width: 2867px; padding-left: 50px; padding-right: 50px; transform: translate3d(-1729px, 0px, 0px); transition: all 0.25s ease 0s;">
 
 
-
+                            <?php foreach ($destination as $key => $value) {
+                                # code...
+                            ?>
                             <div class="owl-item col-lg-3 col-md-6 col-sm-12 hard-responsive desti-img">
                                 <a href="our-destination#india">
                                     <div class="card img-hover1">
-                                        <img src="{{ $pageData['section3image1'] }}" alt="vote-for-us">
-                                        <div class="h3">{{ $pageData['section3title1'] }}</div>
+                                        <img src="{{ $value->image_one ?? '' }}" alt="vote-for-us">
+                                        <div class="h3">{!! $value->content_one ?? '' !!}</div>
                                     </div>
                                 </a>
                             </div>
 
+                            <?php } ?>
 
                         </div>
                     </div>
@@ -100,7 +104,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img">
+
+
+
+                {{-- <div class="owl-carousel owl-theme inspired_slider owl-loaded owl-drag">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage"
+                            style="width: 2867px; padding-left: 50px; padding-right: 50px; transform: translate3d(-1729px, 0px, 0px); transition: all 0.25s ease 0s;"> --}}
+
+                <div class=" col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img">
                     <div class="card">
                         <img src="images/home/luxury-collection.webp" alt="vote-for-us">
                         <a href="our-servic" style="text-decoration:none;" class="hiden">
@@ -116,7 +128,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img">
+                <div class="  col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img">
                     <div class="card">
                         <img src="images/home/meetings-and-conferences.webp" alt="vote-for-us">
                         <!--<span class="text" style="font-size: 15px;">MICE</span>-->
@@ -125,7 +137,8 @@
                                 <h2 style="font-size:24px;color:white;">Meeting & Conferences</h2>
                                 <div class="slider_p" style="padding-top: 10px;">
                                     <p style="color:white; font-size:18px!important;">
-                                        We provide a comprehensive range of ultra-personalised services, including
+                                        We provide a comprehensive range of ultra-personalised services,
+                                        including
                                         technological solutions and more.
                                     </p>
                                 </div>
@@ -133,7 +146,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 hard-responsive desti-img img-hove2 srv-img">
+                <div class="  col-lg-3 col-md-6 col-sm-12 hard-responsive desti-img img-hove2 srv-img">
                     <div class="card">
                         <img src="images/home/Incentives.webp" alt="vote-for-us">
                         <a href="our-servic">
@@ -149,6 +162,21 @@
                         </a>
                     </div>
                 </div>
+
+
+
+                {{-- <div class="owl-nav disabled">
+                                <button type="button" role="presentation" class="owl-prev"><span
+                                        aria-label="Previous">‹</span></button><button type="button" role="presentation"
+                                    class="owl-next"><span class="colorWhite" aria-label="Next">›</span></button>
+                            </div>
+                            <div class="owl-dots disabled"><button role="button"
+                                    class="owl-dot active"><span></span></button>
+                            </div>
+                        </div> --}}
+
+
+
             </div>
         </div>
 
@@ -244,21 +272,18 @@
                                 aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                                 aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                                aria-label="Slide 4"></button>
+                            {{-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button> --}}
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="images/home/Responsible-travel.webp" alt="image">
+                                <img src="{{ $pageData['section6image1'] ?? '' }}" alt="image">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/home/little-inspirations.webp" alt="image">
+                                <img src="{{ $pageData['section6image2'] ?? '' }}" alt="image">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/home/Responsible-travel.webp" alt="image">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/home/little-inspirations.webp" alt="image">
+                                <img src="{{ $pageData['section6image3'] ?? '' }}" alt="image">
                             </div>
                         </div>
                         <button class="carousel-control-prev carousel-control-prev1" type="hidden"
@@ -279,7 +304,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12"
                     style="padding: 0px 0px 0px 0px;min-height: 40vw; overflow: hidden;">
                     <div class="texti-inner">
-                        <h2>Inspirational Adventures</h2>
+                        {{-- <h2>Inspirational Adventures</h2>
                         <p>
                             Out-of-the ordinary insights go a long way in creating a more immersive experience of the
                             places we visit— and the communities and cultures we encounter in those environs.
@@ -289,7 +314,9 @@
                             destinations. Packed with information, visually inspiring, and driven by evocative insights
                             for the curious traveller, this is one of our most alluring in-house products.
 
-                        </p>
+                        </p> --}}
+
+                        {!! $pageData['section6content'] ?? '' !!}
                         <div class="ourser-btn">
                             <br><br>
                             <button class="expo"><a href="littile-inspiration">Read More</a></button>
@@ -306,7 +333,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12"
                     style="padding: 0px 0px 0px 0px; background:#FFF7F7; min-height: 40vw; overflow: hidden;height: 680px;">
                     <div class="texti-inner">
-                        <h2>Responsible Travel</h2>
+                        {{-- <h2>Responsible Travel</h2>
                         <p>
                             Everything we do, to act responsibly in the field of travel, we do it for you and Planet
                             Earth. Our long-term goal to help reduce the carbon footprint is driven by even the smallest
@@ -316,7 +343,10 @@
                             company-everything is done digitally; we try to use local transport; saying ‘no’ to plastic
                             is in our DNA; respecting communities and their culture is embedded in our work ethos…
 
-                        </p>
+                        </p> --}}
+
+                        {!! $pageData['section7content'] ?? '' !!}
+
                         <div class="ourser-btn">
                             <br><br>
                             <button class="expo"><a href="responsible-travel">Read More</a></button>
@@ -334,22 +364,22 @@
                                 aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                                 aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                                aria-label="Slide 4"></button>
+                            {{-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button> --}}
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="images/home/Responsible-travel.webp" alt="image">
+                                <img src="{{ $pageData['section7image1'] ?? '' }}" alt="image">
                             </div>
                             <div class="carousel-item">
+                                <img src="{{ $pageData['section7image2'] ?? '' }}" alt="image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{ $pageData['section7image3'] ?? '' }}" alt="image">
+                            </div>
+                            {{-- <div class="carousel-item">
                                 <img src="images/home/little-inspirations.webp" alt="image">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/home/Responsible-travel.webp" alt="image">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/home/little-inspirations.webp" alt="image">
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -517,100 +547,6 @@
 
     <section class="our_team">
         <h2 style="margin-top:65px">What They Say</h2>
-        {{-- <div id="myCarousel" class="carousel slide" data-ride="carousel" position="relative;">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/3.html" alt="">
-                    </div>
-                    <p class="testimonial">With these few words, would like to mention that, Vinay has been my reliable
-                        partner for more than 15 years for the requests of my VIP clients in India, Sri Lanka, Nepal,
-                        and Bhutan. He is an exceptional destination manager who understands and meets even the most
-                        complex requirements. His deep expertise and extensive knowledge of these destinations ensure
-                        unique and memorable experiences for travellers. I highly recommend his services for an
-                        authentic and worthwhile exploration of this wonderful region.</p>
-                    <p class="overview">
-                        <b> Laurence
-                        </b> LOCAZUR Travel - Yachting - Cruises<br>
-                        Belgium
-                    </p>
-                </div>
-                <div class="carousel-item">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/1.html" alt="">
-                    </div>
-                    <p class="testimonial">
-                        Je travaille avec Vinay depuis plus de 10 ans maintenant, j’apprécie particulièrement son
-                        professionnalisme et son efficacité mais aussi sa disponibilité pour le suivi des dossiers.
-                        Nous avons l’occasion de travailler ensemble sur l’organisation de voyages assez compliqués avec
-                        des clients très exigeants ou avec des demandes originales.
-                        En 10 ans de collaboration, tout s’est toujours parfaitement bien passé avec mes clients, je
-                        n’ai jamais eu le moindre retour négatif.
-
-                    </p>
-                    <p class="overview">
-                        <b>Aimée Bon-Hecker</b>Managing Director<br>TERANUI BY TSELANA TRAVEL
-                    </p>
-
-                </div>
-                <div class="carousel-item">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/2.html" alt="">
-                    </div>
-                    <p class="testimonial">Plus de 10 ans que Vinay, veille au bonheur de nos hôtes. Notre
-                        collaboration prend force grâce à ce supplément d’âme qui fait que chaque voyage en Inde que
-                        nous créons devient une féerie, embellis par les conseils avisés que nous recevons pour proposer
-                        une nouvelle adresse, un site à ne pas manquer…Et puis il y a ce sens de l’hospitalité et de la
-                        courtoisie totalement inné chez Vinay et donne force et sécurité à une collaboration à distance.
-                    </p>
-                    <p class="overview">
-                        <b>Nathalie BUENO</b>Directrice Générale – Managing Director<br>SECRETS DE VOYAGES
-
-                    </p>
-
-                </div>
-                <div class="carousel-item">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/2.html" alt="">
-                    </div>
-                    <p class="testimonial">Vinay Dhall is a highly skilled professional with whom I have built a strong
-                        relationship over the years.
-                        Available at anytime, efficient, enthusiastic and always offering excellent advice.
-                        I entrust my clients to him with complete confidence.
-                        When we work with such a professional, business becomes easier.
-                    </p>
-                    <p class="overview">
-                        <b>OLIVIER GLASBERG</b>Product Director
-                        <br>SUCCES VOYAGE
-
-                    </p>
-
-                </div>
-                <div class="carousel-item">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/2.html" alt="">
-                    </div>
-                    <p class="testimonial"> J’ai rencontré Vinay lors notre arrivée en Inde avec notre premier groupe
-                        de voyageurs en 2011. Vinay avait construit notre voyage et a veillé sur chaque instant de notre
-                        voyage. Un voyage pavé de surprises comme nous n’en avions jamais vécues dans les cadres
-                        somptueux des anciens palais choisis avec soin. Et depuis 2011 nous avons toujours gardé contact
-                        et un de mes rêves et retourner dans cet incroyable pays ☀️ et laisser à Vinay le soin de
-                        construire ce voyage ! </p>
-                    <p class="overview">
-                        <b>Sylvie ARRIGHI-REVAH</b>Veuve Clicquot
-                    </p>
-
-                </div>
-            </div>
-            <!-- Carousel controls -->
-            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        </div> --}}
-
 
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -682,7 +618,11 @@
         </div>
 
 
-
+        <style>
+            h3 p {
+                color: white !important;
+            }
+        </style>
 
 
     </section>
