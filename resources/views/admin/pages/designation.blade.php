@@ -134,7 +134,8 @@
                                         <label for="section1Heading">Destination Name </label>
                                         <textarea class="form-control" id="name" name="name" rows="3"></textarea>
 
-                                        <label style ="margin-top:20px" for="section1Heading">Destination {{ $i }} first content </label>
+                                        <label style ="margin-top:20px" for="section1Heading">Destination
+                                            {{ $i }} first content </label>
                                         <textarea class="form-control tinymce-editor" id="value{{ $k }}" name="value{{ $k }}"
                                             rows="3"></textarea>
                                     </div>
@@ -226,24 +227,24 @@
                                     <tbody>
 
                                         @foreach ($country as $video)
-                                        <tr>
-                                            <td>{{ $video->destination_name }}</td>
-                                            <th scope="row">
-                                                <img src="{{ $video->image_two }}" alt="" srcset=""
+                                            <tr>
+                                                <td>{{ $video->destination_name }}</td>
+                                                <th scope="row">
+                                                    <img src="{{ $video->image_one }}" alt="" srcset=""
                                                         width="250">
-                                            </th>
-                                            <th scope="row">
-                                                <img src="{{ $video->image_two }}" alt="" srcset=""
+                                                </th>
+                                                <th scope="row">
+                                                    <img src="{{ $video->image_two }}" alt="" srcset=""
                                                         width="250">
-                                            </th>
-                                            <td>{{ $video->content_one }}</td>
-                                            <td>{{ $video->content_two }}</td>
-                                            <td>
-                                                <a href="file/destination/delete/{{ $video->id }}"
-                                                    class="btn btn-sm btn-danger">Delete</button>
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                                </th>
+                                                <td>{{ $video->content_one }}</td>
+                                                <td>{{ $video->content_two }}</td>
+                                                <td>
+                                                    <a href="file/destination/delete/{{ $video->id }}"
+                                                        class="btn btn-sm btn-danger">Delete</button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
 
                                     </tbody>
                                 </table>

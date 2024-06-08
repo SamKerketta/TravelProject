@@ -108,7 +108,7 @@
             </div>
 
             {{-- section 3 --}}
-            <div class="container-fluid" style="margin-top: 30px">
+            {{-- <div class="container-fluid" style="margin-top: 30px">
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h3> Destination Section </h3>
@@ -155,10 +155,10 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             {{-- section 4 --}}
-            <div class="container-fluid" style="margin-top: 30px">
+            {{-- <div class="container-fluid" style="margin-top: 30px">
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h3> Our Services </h3>
@@ -205,7 +205,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             {{-- section 6 --}}
             <div class="container-fluid" style="margin-top: 30px">

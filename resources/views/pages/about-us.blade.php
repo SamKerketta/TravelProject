@@ -7,13 +7,13 @@
 
     <section class="hero" style="position:relative; ">
         <div class="banner">
-            <img src="images/about/about-us-cover.webp" class="d-block w-100" alt="Luxury Travels Bali">
+            <img src="{{ $pageData['section1image'] }}" class="d-block w-100" alt="Luxury Travels Bali">
         </div>
         <div class="container" style="position: absolute; top: 48%; left: 50%; transform: translate(-50%, -50%);">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="hero-title" style="text-align:center;">
-                        <h2>About us</h2>
+                        <h2>{{ $pageData['section1heading'] }}</h2>
                     </div>
                 </div>
             </div>
@@ -25,12 +25,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="about-text">
-                        <p>Empowered by over two decades of experience in experiential luxury travel we are leveraging our
-                            skills at destination specialism to roll out our spanking new B2B travel platform Far and
-                            Beyond. Rooted in the longstanding experience of DMC Distinct Destinations, its parent body, Far
-                            and Beyond aims to go the extra mile to enhance its experiential offerings to its niche target—
-                            the Luxury and MICE Market into India.
-                        </p>
+                        {!! $pageData['section2title'] !!}
                     </div>
                 </div>
             </div>
@@ -41,12 +36,12 @@
             <div class="row">
                 <div class="col-lg-5 col-md-5 col-sm-12 inner-section">
                     <div class="about-img1" style="padding:0px 75px;">
-                        <img src="images/about/about-us.jpg" alt="about">
+                        <img src="{{ $pageData['section3image'] }}" alt="about">
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-7 col-sm-12 inner-section innner-content">
-                    <div class="about_main1">
-                        <div class="about-h" style="text-align:left;">
+                    <div class="about_main1 hard-responsive">
+                        {{-- <div class="about-h" style="text-align:left;">
                             <h2>Our Mission</h2>
                         </div>
                         <div class="about_p">
@@ -61,9 +56,13 @@
                                 traveller. The passion of our dedicated team and hyper-personalisation have been the key
                                 components in designing these re-imagined, delight-giving traveller experiences.
                             </p>
-                        </div>
-                        <br />
-                        <div class="about-h" style="text-align:left;">
+                        </div> --}}
+
+                        {!! $pageData['section3content'] !!}
+
+
+                        {{-- <br /> --}}
+                        {{-- <div class="about-h" style="text-align:left;">
                             <h2>Exclusivity Just For You</h2>
                         </div>
                         <div class="about_p">
@@ -80,7 +79,7 @@
                                 and culturally immersive luxury experinces.
 
                             </p>
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>
@@ -93,8 +92,8 @@
             <div class="row">
                 <div class="col-lg-5 col-md-5 col-sm-12">
                     <div class="about_main2">
-                        <div class="about_main3" style="padding:0px 75px;">
-                            <div class="about-h" style="text-align:left;">
+                        <div class="about_main3 hard-responsive" style="padding:0px 75px;">
+                            {{-- <div class="about-h" style="text-align:left;">
                                 <h2>Our Network</h2>
                             </div>
                             <div class="about_p">
@@ -110,13 +109,15 @@
                                     <br />
                                     Now, when you think Luxury Experiential Travel, let's take you Far and Beyond
                                 </p>
-                            </div>
+                            </div> --}}
+                            {!! $pageData['section4content'] !!}
+
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-7 col-sm-12" style="padding-right:0px;">
                     <div class="about-img2" style="padding-left:45px;padding-top:45px;">
-                        <img src="images/about/about-us-1.jpg" alt="about">
+                        <img src="{{ $pageData['section4image'] }}" alt="about">
                     </div>
                 </div>
             </div>
@@ -127,8 +128,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-7 col-md-7 col-sm-12">
-                    <div class="about_main3">
-                        <div class="about-h">
+                    <div class="about_main3  hard-responsive">
+                        {{-- <div class="about-h">
                             <h2 style="text-align:left;">Why Travel With Far & Beyond</h2>
                         </div>
                         <div class="about_p">
@@ -141,13 +142,16 @@
                                 We firmly believe in promoting sustainable tourism development and the mutual benefits of
                                 the engagement with people, community and planet.
                             </p>
-                        </div>
+                        </div> --}}
+
+                        {!! $pageData['section5content'] !!}
+
                     </div>
 
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-12" style="padding-left:0px;padding-right:0px;">
 
-                    <img src="images/about/about-us-why-travel-with-FB.webp" alt="about" style="width:100%">
+                    <img src="{{ $pageData['section5image'] }}" alt="about" style="width:100%">
 
                 </div>
             </div>
@@ -158,14 +162,14 @@
             <div class="row">
                 <div class="col-lg-7 col-md-7 col-sm-12" style="padding-left:0px;padding-right:0px;">
                     <div class="about-img2">
-                        <img src="images/about/why-us-2.jpg" alt="about">
+                        <img src="{{ $pageData['section5image2'] }}" alt="about">
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-12">
                     <div class="about_main2">
-                        <div class="about_main3" style="margin-top: 243px;">
+                        <div class="about_main3 hard-responsive" style="margin-top: 243px;">
                             <div class="about_p">
-                                <p style="font-size:16px">
+                                {{-- <p style="font-size:16px">
                                     Our fantastic luxury Concierge network ‘far and beyond’ empowers the guest experience.
                                     These amazing connections set the stage for driving home the message that each guest is
                                     well-cared-for and their needs are attended to at any time, any place.
@@ -175,7 +179,10 @@
                                     immersive approach of our private and specialist guides bring invaluable insights.
 
 
-                                </p>
+                                </p> --}}
+
+                                {!! $pageData['section5content2'] !!}
+
                             </div>
                         </div>
                     </div>
@@ -196,13 +203,13 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 inner-section">
                     <div class="about-img4">
-                        <img src="images/about/vinay.jpg" alt="about">
+                        <img src="{{ $pageData['section6image'] }}" alt="about">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 inner-section innner-content">
                     <div class="about_main4">
                         <div class="inner_main">
-                            <div class="about-h  about_left">
+                            {{-- <div class="about-h  about_left">
                                 <h2 style="text-align:left;">Vinay DHALL</h2>
                                 <h3>Role</h3>
                             </div>
@@ -229,9 +236,12 @@
                                     more barefoot adventures, Vinay is now a man on a mission, unstoppable.
 
 
-                                </p>
+                                </p> --}}
 
-                            </div>
+
+                            {!! $pageData['section6content'] !!}
+
+                            {{-- </div> --}}
                         </div>
                     </div>
                 </div>
@@ -250,7 +260,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 inner-section innner-content">
                     <div class="about_main4">
                         <div class="inner_main" style="z-index: 1;">
-                            <div class="about-h about_left">
+                            {{-- <div class="about-h about_left">
                                 <h2 style="text-align:left;">Rahul Sareen</h2>
                                 <h3>Role</h3>
                             </div>
@@ -276,13 +286,16 @@
 
 
                                 </p>
-                            </div>
+                            </div> --}}
+
+                            {!! $pageData['section6content2'] !!}
+
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 inner-section">
-                    <div class="about-img4">
-                        <img src="images/about/ProfilePic.jpg" alt="about">
+                    <div class="about-img4 hard-responsive">
+                        <img src="{{ $pageData['section6image2'] }}" alt="about">
                     </div>
                 </div>
             </div>
@@ -296,13 +309,13 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 inner-section">
                     <div class="about-img4">
-                        <img src="images/home/little%20inspirations%20F%20and%20B.jpg" alt="about">
+                        <img src="{{ $pageData['section6image3'] }}" alt="about">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 inner-section innner-content">
                     <div class="about_main4">
                         <div class="inner_main">
-                            <div class="about-h about_left">
+                            {{-- <div class="about-h about_left">
                                 <h2 style="text-align:left;">Name</h2>
                                 <h3>Role</h3>
                             </div>
@@ -325,7 +338,9 @@
                                     of paint, surface, humidity, and
                                     temperature
                                 </p>
-                            </div>
+                            </div> --}}
+                            {!! $pageData['section6content3'] !!}
+
                         </div>
                     </div>
                 </div>
@@ -339,13 +354,13 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 inner-section" style="margin-top: 50px">
                     <div class="about-img4">
-                        <img src="images/about/vinay.jpg" alt="about">
+                        <img src="{{ $pageData['section6image3'] }}" alt="about">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 inner-section innner-content">
                     <div class="about_main4">
                         <div class="inner_main">
-                            <div class="about-h  about_left">
+                            {{-- <div class="about-h  about_left">
                                 <h2 style="text-align:left;">Vinay DHALL</h2>
                                 <h3>Role</h3>
                             </div>
@@ -374,7 +389,8 @@
 
                                 </p>
 
-                            </div>
+                            </div> --}}
+                            {!! $pageData['section6content3'] !!}
                         </div>
                     </div>
                 </div>
@@ -394,7 +410,8 @@
                     <div class="owl-carousel owl-theme inspired_slider owl-loaded owl-drag">
                         <div class="owl-stage-outer">
                             <div class="owl-stage">
-                                <div class="owl-item active">
+                                <div class="owl-item active hard-responsive">
+
                                     <div class="item item1">
                                         <div class="shadow-effect">
                                             <div class="wrapper">
@@ -423,7 +440,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="owl-item active">
+                                <div class="owl-item active hard-responsive">
                                     <div class="item item1">
                                         <div class="shadow-effect">
                                             <div class="wrapper">
@@ -452,7 +469,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="owl-item active">
+                                <div class="owl-item active hard-responsive">
                                     <div class="item item1">
                                         <div class="shadow-effect">
                                             <div class="wrapper">
@@ -495,13 +512,17 @@
     {{-- second section --}}
     <section class="our_team">
         <h2 style="margin-top:65px">What They Say</h2>
-        
+
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -557,108 +578,16 @@
                     </p>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
                 <span class=" carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        
-        {{-- <div id="myCarousel" class="carousel slide" data-ride="carousel" position="relative;">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/3.html" alt="">
-                    </div>
-                    <p class="testimonial">With these few words, would like to mention that, Vinay has been my reliable
-                        partner for more than 15 years for the requests of my VIP clients in India, Sri Lanka, Nepal,
-                        and Bhutan. He is an exceptional destination manager who understands and meets even the most
-                        complex requirements. His deep expertise and extensive knowledge of these destinations ensure
-                        unique and memorable experiences for travellers. I highly recommend his services for an
-                        authentic and worthwhile exploration of this wonderful region.</p>
-                    <p class="overview">
-                        <b> Laurence
-                        </b> LOCAZUR Travel - Yachting - Cruises<br>
-                        Belgium
-                    </p>
-                </div>
-                <div class="carousel-item">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/1.html" alt="">
-                    </div>
-                    <p class="testimonial">
-                        Je travaille avec Vinay depuis plus de 10 ans maintenant, j’apprécie particulièrement son
-                        professionnalisme et son efficacité mais aussi sa disponibilité pour le suivi des dossiers.
-                        Nous avons l’occasion de travailler ensemble sur l’organisation de voyages assez compliqués avec
-                        des clients très exigeants ou avec des demandes originales.
-                        En 10 ans de collaboration, tout s’est toujours parfaitement bien passé avec mes clients, je
-                        n’ai jamais eu le moindre retour négatif.
-
-                    </p>
-                    <p class="overview">
-                        <b>Aimée Bon-Hecker</b>Managing Director<br>TERANUI BY TSELANA TRAVEL
-                    </p>
-
-                </div>
-                <div class="carousel-item">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/2.html" alt="">
-                    </div>
-                    <p class="testimonial">Plus de 10 ans que Vinay, veille au bonheur de nos hôtes. Notre
-                        collaboration prend force grâce à ce supplément d’âme qui fait que chaque voyage en Inde que
-                        nous créons devient une féerie, embellis par les conseils avisés que nous recevons pour proposer
-                        une nouvelle adresse, un site à ne pas manquer…Et puis il y a ce sens de l’hospitalité et de la
-                        courtoisie totalement inné chez Vinay et donne force et sécurité à une collaboration à distance.
-                    </p>
-                    <p class="overview">
-                        <b>Nathalie BUENO</b>Directrice Générale – Managing Director<br>SECRETS DE VOYAGES
-
-                    </p>
-
-                </div>
-                <div class="carousel-item">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/2.html" alt="">
-                    </div>
-                    <p class="testimonial">Vinay Dhall is a highly skilled professional with whom I have built a strong
-                        relationship over the years.
-                        Available at anytime, efficient, enthusiastic and always offering excellent advice.
-                        I entrust my clients to him with complete confidence.
-                        When we work with such a professional, business becomes easier.
-                    </p>
-                    <p class="overview">
-                        <b>OLIVIER GLASBERG</b>Product Director
-                        <br>SUCCES VOYAGE
-
-                    </p>
-
-                </div>
-                <div class="carousel-item">
-                    <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/2.html" alt="">
-                    </div>
-                    <p class="testimonial"> J’ai rencontré Vinay lors notre arrivée en Inde avec notre premier groupe
-                        de voyageurs en 2011. Vinay avait construit notre voyage et a veillé sur chaque instant de notre
-                        voyage. Un voyage pavé de surprises comme nous n’en avions jamais vécues dans les cadres
-                        somptueux des anciens palais choisis avec soin. Et depuis 2011 nous avons toujours gardé contact
-                        et un de mes rêves et retourner dans cet incroyable pays ☀️ et laisser à Vinay le soin de
-                        construire ce voyage ! </p>
-                    <p class="overview">
-                        <b>Sylvie ARRIGHI-REVAH</b>Veuve Clicquot
-                    </p>
-
-                </div>
-            </div>
-            <!-- Carousel controls -->
-            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        </div> --}}
     </section>
 @endsection

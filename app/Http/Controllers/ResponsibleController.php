@@ -44,7 +44,7 @@ class ResponsibleController extends Controller
     {
         $req->validate([
             "section"  => "required",
-            "section1Image"    => "nullable|image|mimes:jpeg,jpg,png",
+            "section1Image"    => "nullable|file|",
             "section1Heading"    => "required|string",
             "section1Content"    => "required|string"
         ]);
@@ -105,8 +105,8 @@ class ResponsibleController extends Controller
     {
         $req->validate([
             "section"  => "required",
-            "section2Image"    => "nullable|image|mimes:jpeg,jpg,png",
-            "section2Content"    => "required|string"
+            "section2Image"    => "nullable|image|",
+            "section2Content"    => "nullable|string"
         ]);
         $section = array();
         try {
@@ -154,8 +154,8 @@ class ResponsibleController extends Controller
     {
         $req->validate([
             "section"  => "required",
-            "section3Image"    => "nullable|image|mimes:jpeg,jpg,png",
-            "section3Image2"    => "nullable|image|mimes:jpeg,jpg,png",
+            "section3Image"    => "nullable|image|",
+            "section3Image2"    => "nullable|image|",
             "section3Content"    => "required|string"
         ]);
 

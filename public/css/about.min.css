@@ -140,7 +140,7 @@ p {
     margin: auto;
     overflow: hidden;
     position: relative;
-    top: -8%;
+    top: 0% !important;
     left: 10%;
 }
 

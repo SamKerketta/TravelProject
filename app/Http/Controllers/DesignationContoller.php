@@ -183,5 +183,4 @@ class DesignationContoller extends Controller
         $file->delete();
         return back()->with('success', "Destination deleted Successfully");
     }
-
 }

@@ -299,7 +299,7 @@ class LandingPageController extends Controller
                     ];
                     array_push($section, $array);
                 }
-                
+
 
 
                 // images 
@@ -351,7 +351,7 @@ class LandingPageController extends Controller
                     ];
                     array_push($section, $array);
                 }
-                
+
                 if (!empty($section)) {
                     foreach ($section as $sections) {
                         $this->mSectionValue->updateValues($sections, $this->_pageName);
@@ -456,7 +456,9 @@ class LandingPageController extends Controller
 
 
 
-
+    /**
+     * | call the model for the data 
+     */
     public function landingPage()
     {
         return view('admin.pages.landing');

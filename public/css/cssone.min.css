@@ -9,6 +9,65 @@ p {
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .col-lg-6 {
+        padding-left: 10px !important;
+        padding-bottom: 40px !important;
+        padding-right: 10px !important;
+    }
+
+    .alpo-hedading {
+        text-align: center;
+    }
+
+    .exper-cont {
+        padding-top: 0px !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .col-4 {
+        padding-bottom: 40px !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .trips-bg {
+        padding-top: 40px !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .about-img4 {
+        position: static !important;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .col-3 {
+        padding-bottom: 40px !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .about-img2 {
+        padding-left: 0px !important ;
+        padding-top: 0px !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    video#video-slider-1 {
+        height: 600px;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .about_main1 {
+        padding: 25px 10px 25px 10px !important;
+    }
+}
+
 p {
     color: #495057;
 }

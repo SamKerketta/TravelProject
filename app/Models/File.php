@@ -17,8 +17,7 @@ class File extends Model
     }
 
 
-    public function getfile()
-    {
-        
-    }
+    // public function getfile()
+    // {  
+    // }
 }

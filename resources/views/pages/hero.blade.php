@@ -4,13 +4,20 @@
     <link href="css/hero.min.css" type="text/css" rel="stylesheet">
 
 
-
+    <style>
+        @media only screen and (max-width: 600px) {
+            .text-video {
+                left: 50% !important;
+                right: 50% !important;
+            }
+        }
+    </style>
     <section class="">
-        <div class="video">
-            <video width="100%" class="elVideo" loop="loop" autoPlay playsInline muted
+        <div class="video video-slider-1">
+            <video width="100%" class="elVideo video-slider-1" loop="loop" autoPlay playsInline muted
                 src="{{ $pageData['section1video'] }}" id='video-slider-1'></video>
-            <div class="text-video">
-                <h2><span
+            <div class="text-video hard-responsive">
+                <h2><span class="hard-responsive"
                         style="font-size:3rem;font-weight: 400;letter-spacing: 2px;line-height: 1.05;color:white; font-weight: 600; line-height:1.5;">
                         {{ $pageData['section1heading'] }}</span></h2>
 
@@ -45,67 +52,15 @@
                             style="width: 2867px; padding-left: 50px; padding-right: 50px; transform: translate3d(-1729px, 0px, 0px); transition: all 0.25s ease 0s;">
 
 
-                            <div class="owl-item col-lg-3 col-md-6 col-sm-12 desti-img">
+
+                            <div class="owl-item col-lg-3 col-md-6 col-sm-12 hard-responsive desti-img">
                                 <a href="our-destination#india">
                                     <div class="card img-hover1">
                                         <img src="{{ $pageData['section3image1'] }}" alt="vote-for-us">
                                         <div class="h3">{{ $pageData['section3title1'] }}</div>
                                     </div>
                                 </a>
-
                             </div>
-                            <div class=" owl-item col-lg-3 col-md-6 col-sm-12 desti-img">
-                                <a href="our-destination#nepal">
-                                    <div class="card img-hover1">
-                                        <img src="{{ $pageData['section3image2'] }}" alt="vote-for-us">
-                                        <div class="h3">{{ $pageData['section3title2'] }}</div>
-                                    </div>
-                                </a>
-
-                            </div>
-                            <div class=" owl-item col-lg-3 col-md-6 col-sm-12 desti-img ">
-                                <a href="our-destination#bhutan">
-                                    <div class="card img-hover1">
-                                        <img src="{{ $pageData['section3image3'] }}" alt="vote-for-us">
-                                        <div class="h3">{{ $pageData['section3title3'] }}</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="owl-item col-lg-3 col-md-6 col-sm-12 desti-img">
-                                <a href="our-destination#shrilanka">
-                                    <div class="card img-hover1">
-                                        <img src="{{ $pageData['section3image4'] }}" alt="vote-for-us">
-                                        <div class="h3">{{ $pageData['section3title4'] }}</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            {{-- <div class="owl-item cloned" style="width: 335.8px; margin-right: 10px;">
-                                <div class="item">
-                                    <div class="inspired_box">
-                                        <img src="images/little-inspirations/Village-tour.webp" style="color:white;">
-                                        <div class="content">
-                                            <h3>Village Tour</h3>
-                                            <p class="read-more color-primary sans-serif"> Read more </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            
-                            <div class="owl-item cloned active" style="width: 335.8px; margin-right: 10px;">
-                                <div class="item">
-                                    <div class="inspired_box">
-                                        <img src="images/little-inspirations/Village-tour.webp" style="color:white;">
-                                        <div class="content">
-                                            <h3>Village Tour</h3>
-                                            <p class="read-more color-primary sans-serif"> Read more </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div> --}}
 
 
                         </div>
@@ -178,7 +133,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img">
+                <div class="col-lg-3 col-md-6 col-sm-12 hard-responsive desti-img img-hove2 srv-img">
                     <div class="card">
                         <img src="images/home/Incentives.webp" alt="vote-for-us">
                         <a href="our-servic">

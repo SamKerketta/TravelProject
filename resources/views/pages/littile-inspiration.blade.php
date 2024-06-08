@@ -42,7 +42,7 @@
     <section class="trips-bg">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-3" style="padding-right:0px!important; padding-left:40px;">
+                <div class="col-3 hard-responsive" style="padding-right:0px!important; padding-left:40px;">
                     <div class="experiences-box">
                         <div class="exper-cont" style="padding-top:99px;">
                             <div class="content">
@@ -62,7 +62,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-9" style="padding-left:0px!important">
+
+                <style>
+                    @media only screen and (max-width: 600px) {
+                        .hard-responsive {
+                            width: 100% !important;
+                        }
+                    }
+
+                    @media only screen and (max-width: 600px) {
+                        .col-3 {
+                            padding-left: 0px !important;
+                        }
+
+
+                    }
+                </style>
+
+                <div class="col-9 hard-responsive" style="padding-left:0px!important">
                     <div class="owl-carousel owl-theme inspired_slider owl-loaded owl-drag">
                         <div class="owl-stage-outer">
                             <div class="owl-stage">
@@ -71,8 +88,8 @@
                                 <?php foreach ($tourData as $key => $value) {
                                 ?>
 
-                                <div class="owl-item active">
-                                    <div class="item">
+                                <div class="owl-item active hard-responsive">
+                                    <div class="item ">
                                         <div class="inspired_box">
                                             <img src="images/little-inspirations/Village-tour.webp" {{-- <img src="{{ $value->file_path }}" alt="Luxury Travels Sri Lanka"> --}}
                                                 {{-- <a href="https://www.alphonsostories-partners.com/partner-login?From_Url=/experiences" --}} style="color:white;">
@@ -104,9 +121,9 @@
                             <div class="play-button-wrapper">
                                 <div title="Play video" class="play-gif" id="circle-play-b">
                                     <!-- SVG Play Button -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
                                         <path d="M40 0a40 40 0 1040 40A40 40 0 0040 0zM26 61.56V18.44L64 40z" />
-                                    </svg>
+                                    </svg> --}}
                                 </div>
                             </div>
                             <img class="thumb" style="cursor: pointer;" src="video/little-inspirat/chitwan.webp">
@@ -128,9 +145,9 @@
                             <div class="play-button-wrapper">
                                 <div title="Play video" class="play-gif" id="circle-play-b">
                                     <!-- SVG Play Button -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" style="width:50px;">
+                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" style="width:50px;">
                                         <path d="M40 0a40 40 0 1040 40A40 40 0 0040 0zM26 61.56V18.44L64 40z" />
-                                    </svg>
+                                    </svg> --}}
                                 </div>
                             </div>
                             <img class="thumb" style="cursor: pointer;" src="video/little-inspirat/jodhpur.webp">
@@ -149,9 +166,9 @@
                             <div class="play-button-wrapper">
                                 <div title="Play video" class="play-gif" id="circle-play-b">
                                     <!-- SVG Play Button -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" style="width:50px;">
+                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" style="width:50px;">
                                         <path d="M40 0a40 40 0 1040 40A40 40 0 0040 0zM26 61.56V18.44L64 40z" />
-                                    </svg>
+                                    </svg> --}}
                                 </div>
                             </div>
                             <img class="thumb" style="cursor: pointer;" src="video/little-inspirat/galle.webp">
@@ -170,9 +187,9 @@
                             <div class="play-button-wrapper">
                                 <div title="Play video" class="play-gif" id="circle-play-b">
                                     <!-- SVG Play Button -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" style="width:50px;">
+                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" style="width:50px;">
                                         <path d="M40 0a40 40 0 1040 40A40 40 0 0040 0zM26 61.56V18.44L64 40z" />
-                                    </svg>
+                                    </svg> --}}
                                 </div>
                             </div>
                             <img class="thumb" style="cursor: pointer;" src="video/little-inspirat/paro.webp">

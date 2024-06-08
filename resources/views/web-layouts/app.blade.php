@@ -101,7 +101,7 @@
         </div>
 
         {{-- this is the style --}}
-        
+
     </header>
 
 
@@ -200,13 +200,14 @@
 
     <section class="news-latter" style="border-top:1px solid rgb(255 255 255 / 50%);">
         <div class="container-fluid">
-            <a onclick="topFunction()" class="btn-top"><img class="btn-top-image" src="images/icon/top_arrow.png"></a>
+            <a onclick="topFunction()" class="btn-top"><img class="btn-top-image"
+                    src="images/icon/top_arrow.png"></a>
             <div class="row">
-                <div class="col-5">
+                <div class="col-5 hard-responsive">
                     <div class="news-cont">Join our travel notebook!</div>
                     <div class="news-desc news-cont">Stay ahead with the latest updates in travel trends.</div>
                 </div>
-                <div class="col-7">
+                <div class="col-7 hard-responsive">
                     <form class="form-inline" action={{ route('admin.save.subscription') }} method="POST">
                         @csrf
                         <div class="form-group">
@@ -239,7 +240,7 @@
                     <div class="row">
                         <div class="col-12">
                             <a href="/">
-                                <div class="footer-logo">
+                                <div class="footer-logo hard-responsive">
                                     <img src="images/logo/footer-logo.png" alt="logo">
                                 </div>
                             </a>
@@ -249,7 +250,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="col-lg-3 col-md-6 col-sm-12 hard-responsive">
                     <div class="row">
                         <div class="col-12">
                             <h3 class="f-heading">Quick Links</h3>
@@ -298,7 +299,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="col-lg-3 col-md-6 col-sm-12 hard-responsive">
                     <div class="row">
                         <div class="col-12">
                             <h3 class="f-heading">Destinations</h3>
@@ -346,7 +347,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="col-lg-3 col-md-6 col-sm-12 hard-responsive">
                     <div class="row">
                         <div class="col-12">
                             <h3 class="f-heading">Contact Us</h3>
@@ -527,10 +528,9 @@
     </script>
     <!--transparent nabigation-->
     <script>
-
         function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
 
         window.onscroll = function() {
