@@ -145,7 +145,7 @@
                     </div>
                     <div id="{{$id}}" style="display: none;">
                         <!-- <video controls width="100%" class="elVideo" loop="loop" autoplay="" playsinline="" muted="" src="video/little-inspirat/JODHPUR.mp4" id="video-slider-1 big-video"></video> -->
-                        <video controls width="100%" class="elVideo" loop="loop" autoplay="" playsinline="" muted="" src="{{$video->file_path}}" id="video-slider-1 big-video"></video>
+                        <video controls width="100%" class="elVideo" loop="loop" autoplay="" playsinline="" muted="" src="{{$video->file_path}}" id="video-slider-1 big-video" style="max-height:400px;"></video>
                     </div>
                 </div>
             </div>
