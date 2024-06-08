@@ -114,10 +114,10 @@
                                     </svg> --}}
                             </div>
                         </div>
-                        <img class="thumb" style="cursor: pointer;" src="video/little-inspirat/chitwan.webp">
+                        <img class="thumb" style="cursor: pointer;" src="{{ $videoData1->placeholder_image_path }}">
                     </div>
                     <div id="thevideo" style="display: none;">
-                        <video controls width="100%" height="470px" class="elVideo" loop="loop" autoplay="" playsinline="" muted="" src="{{ $videoData1 }}" {{-- src="video/little-inspirat/CHITWAN.mp4"  --}} id="video-slider-1 big-video"></video>
+                        <video controls width="100%" height="470px" class="elVideo" loop="loop" autoplay="" playsinline="" muted="" src="{{ $videoData1->file_path }}" {{-- src="video/little-inspirat/CHITWAN.mp4"  --}} id="video-slider-1 big-video"></video>
                     </div>
                 </div>
             </div>

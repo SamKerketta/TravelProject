@@ -117,7 +117,7 @@ class DashboardController extends Controller
         return view("pages/littile-inspiration", [
             "pageData" => $newArray,
             "tourData" => $fileDataPhoto,
-            "videoData1" => $fileDataVideo->first()->file_path ?? "",
+            "videoData1" => $fileDataVideo->first(),
             "videoData" => collect($fileDataVideo)->slice(1)->all(),
             'meta' => $metaData
         ]);
