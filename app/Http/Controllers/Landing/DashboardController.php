@@ -86,13 +86,15 @@ class DashboardController extends Controller
         $newArray = array();
         $metaData = $this->mseoTable->getSeoByPage("destination")->first();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
+        $destinations = $this->mDestination->getDestination()->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
             $newArray[$newKey] = $pageDatas->value;
         }
         return view("pages/our-destination", [
             "pageData" => $newArray,
-            "meta" => $metaData
+            "meta" => $metaData,
+            "designations" => $destinations
         ]);
     }
 
