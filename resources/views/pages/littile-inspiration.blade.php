@@ -97,12 +97,6 @@
                                 </div>
 
                                 <?php } ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
 
 
     </section>
@@ -119,9 +113,8 @@
                             <div class="play-button-wrapper">
                                 <div title="Play video" class="play-gif" id="circle-play-b">
                                     <!-- SVG Play Button -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-                                        <path d="M40 0a40 40 0 1040 40A40 40 0 0040 0zM26 61.56V18.44L64 40z" />
-                                    </svg>
+                                    <img src="images/icons/play-icon.png" alt="" srcset=""
+                                        style="width: 100px; position:absolute; top:200px;">
                                 </div>
                             </div>
                             <img class="thumb" style="cursor: pointer;"
@@ -149,9 +142,8 @@
                                 <div class="play-button-wrapper">
                                     <div title="Play video" class="play-gif" id="circle-play-b">
                                         <!-- SVG Play Button -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" style="width:50px;">
-                                            <path d="M40 0a40 40 0 1040 40A40 40 0 0040 0zM26 61.56V18.44L64 40z" />
-                                        </svg>
+                                        <img src="images/icons/play-icon.png" alt="" srcset=""
+                                            style="width: 20%;position:absolute;height: 90px;top: 50px;">
                                     </div>
                                 </div>
                                 <!-- <img class="thumb" style="cursor: pointer;" src="video/little-inspirat/jodhpur.webp"> -->
