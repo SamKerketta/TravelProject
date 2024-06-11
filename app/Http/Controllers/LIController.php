@@ -112,7 +112,7 @@ class LIController extends Controller
     public function uploadFile(Request $req)
     {
         $req->validate([
-            'tourfile'    => 'required|file|mimetypes:video/mp4,video/avi,video/mpeg,video/quicktime,image/jpeg,image/png,image/gif|max:20120',
+            'tourfile'    => 'required|file|max:20120',
             'placeholderImage'    => 'nullable|image|max:5120',
             'title'  => 'required',
             'description'    => 'required',

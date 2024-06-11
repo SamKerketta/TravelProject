@@ -53,18 +53,36 @@
         <!-- Main content -->
         <section class="content">
 
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                        aria-controls="home" aria-selected="true">Home</a>
-                </li>
+            {{-- <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                        aria-controls="profile" aria-selected="false">Add Destination</a>
+                        aria-controls="profile" aria-selected="true">Add Destination</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
                         aria-controls="contact" aria-selected="false">List Destinations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                        aria-controls="home" aria-selected="false">Home</a>
+                </li>
+            </ul> --}}
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link {{ $activeTab == 'home' ? 'active' : '' }}" id="home-tab" data-toggle="tab"
+                        href="#home" role="tab" aria-controls="home"
+                        aria-selected="{{ $activeTab == 'home' ? 'true' : 'false' }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ $activeTab == 'profile' ? 'active' : '' }}" id="profile-tab" data-toggle="tab"
+                        href="#profile" role="tab" aria-controls="profile"
+                        aria-selected="{{ $activeTab == 'profile' ? 'true' : 'false' }}">Add Destination</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ $activeTab == 'contact' ? 'active' : '' }}" id="contact-tab" data-toggle="tab"
+                        href="#contact" role="tab" aria-controls="contact"
+                        aria-selected="{{ $activeTab == 'contact' ? 'true' : 'false' }}">List Destinations</a>
                 </li>
             </ul>
 
@@ -76,16 +94,19 @@
 
 
                             {{-- first section --}}
-                            <div class="tab-pane fade show active" id="home" role="tabpanel"
-                                aria-labelledby="home-tab">
+                            {{-- <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                aria-labelledby="home-tab"> --}}
+
+                            <div class="tab-pane fade {{ $activeTab == 'home' ? 'show active' : '' }}" id="home"
+                                role="tabpanel" aria-labelledby="home-tab">
+
+
+
                                 <!-- Section 1 -->
                                 <form action="{{ route('destination.section1.update') }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
-                                    <div class="form-group">
-                                        <label for="value2">Section 1 Heading</label>
-                                        <input type="text" class="form-control" id="value2" name="value2"></input>
-                                    </div>
+
                                     <div class="form-group">
                                         <input type="hidden" class="form-control" id="section1" name="section1"
                                             value="1">
@@ -97,6 +118,13 @@
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="value2">Hero Tittle</label>
+                                        {{-- <input type="text" id="value2" name="value2" class="form-control"></input> --}}
+                                        <textarea class="form-control" id="value2" name="value2" rows="3">{{ $section1heading ?? '' }}</textarea>
+
+                                    </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                                 <!-- Section 1 -->
@@ -107,14 +135,20 @@
                                     <input type="hidden" name="section2" id="section2" value="2">
                                     <div class="form-group">
                                         <label for="value1">Section 2 Content</label>
-                                        <textarea class="form-control tinymce-editor" id="value1" name="value1" rows="3"></textarea>
+                                        <textarea class="form-control tinymce-editor" id="value1" name="value1" rows="3">{{ $section2content ?? '' }}</textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
 
                             {{-- second section --}}
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            {{-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"> --}}
+
+                            <div class="tab-pane fade {{ $activeTab == 'profile' ? 'show active' : '' }}" id="profile"
+                                role="tabpanel" aria-labelledby="profile-tab">
+
+
+
                                 <form action="{{ route('destination.section3.update') }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
@@ -132,12 +166,12 @@
 
                                     <div class="form-group">
                                         <label for="section1Heading">Destination Name </label>
-                                        <textarea class="form-control" id="name" name="name" rows="3"></textarea>
+                                        <textarea class="form-control" id="name" name="name" rows="3">{{ $editedData['destination_name'] ?? '' }}</textarea>
 
                                         <label style ="margin-top:20px" for="section1Heading">Destination
                                             {{ $i }} first content </label>
                                         <textarea class="form-control tinymce-editor" id="value{{ $k }}" name="value{{ $k }}"
-                                            rows="3"></textarea>
+                                            rows="3">{{ $editedData['content_one'] ?? '' }}</textarea>
                                     </div>
 
                                     <?php
@@ -146,9 +180,10 @@
                                     ?>
 
                                     <div class="form-group">
-                                        <label for="section1Heading">Destination {{ $i }} second content</label>
+                                        <label for="section1Heading">Destination {{ $i }} second
+                                            content</label>
                                         <textarea class="form-control tinymce-editor" id="value{{ $m }}" name="value{{ $m }}"
-                                            rows="3"></textarea>
+                                            rows="3">{{ $editedData['content_two'] ?? '' }}</textarea>
                                     </div>
 
                                     <?php
@@ -183,6 +218,11 @@
                                         @enderror
 
 
+                                        <label class="form-label" for="valuel">landing page Destination </label>
+                                        <input type="file" class=" form-control" id="valuel" name="valuel"
+                                            accept="image/*" />
+
+
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
 
@@ -198,7 +238,12 @@
                             </div>
 
                             {{-- third section --}}
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            {{-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"> --}}
+
+
+                            <div class="tab-pane fade {{ $activeTab == 'contact' ? 'show active' : '' }}" id="contact"
+                                role="tabpanel" aria-labelledby="contact-tab">
+
 
                                 <!-- Modal -->
                                 <div class="modal fade" id="addVideoModal" tabindex="-1" role="dialog"
@@ -219,6 +264,7 @@
                                             <th scope="col">Name</th>
                                             <th scope="col">Image1</th>
                                             <th scope="col">Image2</th>
+                                            <th scope="col">Landing Page Image</th>
                                             <th scope="col">Description1</th>
                                             <th scope="col">Description2</th>
                                             <th scope="col">Action</th>
@@ -237,11 +283,29 @@
                                                     <img src="{{ $video->image_two }}" alt="" srcset=""
                                                         width="250">
                                                 </th>
-                                                <td>{{ $video->content_one }}</td>
-                                                <td>{{ $video->content_two }}</td>
+                                                <th scope="row">
+                                                    <img src="{{ $video->l_image }}" alt="" srcset=""
+                                                        width="250">
+                                                </th>
+                                                <td>{!! $video->content_one !!}</td>
+                                                <td>{!! $video->content_two !!}</td>
                                                 <td>
                                                     <a href="file/destination/delete/{{ $video->id }}"
                                                         class="btn btn-sm btn-danger">Delete</button>
+
+                                                        <a style="margin-top:10%"
+                                                            href="{{ route('admin.designation', ['id' => $video->id]) }}"
+                                                            class="btn btn-sm btn-success">Edit</a>
+
+                                                        @if ($video->status == 1)
+                                                            <a style="margin-top:10%"
+                                                                href="file/destination/deactive/{{ $video->id }}"
+                                                                class="btn btn-sm btn-danger">Deactive</a>
+                                                        @else
+                                                            <a style="margin-top:10%"
+                                                                href="file/destination/active/{{ $video->id }}"
+                                                                class="btn btn-sm btn-success">Active</a>
+                                                        @endif
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -277,6 +341,20 @@
                 'alignright alignjustify | bullist numlist outdent indent | ' +
                 'removeformat | help',
             content_css: '//www.tiny.cloud/css/codepen.min.css'
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            var hash = window.location.hash;
+            if (hash) {
+                $('.nav-link[href="' + hash + '"]').tab('show');
+            } else {
+                $('.nav-link[href="#{{ $activeTab }}"]').tab('show');
+            }
+
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+                window.location.hash = e.target.hash;
+            });
         });
     </script>
 @endsection

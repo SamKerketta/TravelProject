@@ -461,6 +461,15 @@ class LandingPageController extends Controller
      */
     public function landingPage()
     {
-        return view('admin.pages.landing');
+        $pageName   = "landingPage";
+        $pageData   = $this->mSectionValue->getDataForPage($pageName)->get();
+
+        foreach ($pageData as $pageDatas) {
+            $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
+            $newArray[$newKey] = $pageDatas->value;
+        }
+        return view('admin.pages.landing', [
+            "pageData"  => $newArray
+        ]);
     }
 }

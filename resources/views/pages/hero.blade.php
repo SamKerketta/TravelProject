@@ -47,37 +47,55 @@
 
             <div style="padding-left:0px!important">
 
-                <div class="owl-carousel owl-theme inspired_slider owl-loaded owl-drag">
-                    <div class="owl-stage-outer">
-                        <div class="owl-stage"
-                            style="width: 2867px; padding-left: 50px; padding-right: 50px; transform: translate3d(-1729px, 0px, 0px); transition: all 0.25s ease 0s;">
 
 
-                            <?php foreach ($destination as $key => $value) {
-                                # code...
-                            ?>
-                            <div class="owl-item col-lg-3 col-md-6 col-sm-12 hard-responsive desti-img">
-                                <a href="our-destination#india">
-                                    <div class="card img-hover1">
-                                        <img src="{{ $value->image_one ?? '' }}" alt="vote-for-us">
-                                        <div class="h3">{!! $value->content_one ?? '' !!}</div>
-                                    </div>
-                                </a>
+                <style>
+                    .owl-carousel .item {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 1px;
+                    }
+
+                    .owl-carousel .card {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .owl-carousel .card img {
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    .owl-carousel .card .h3 {
+                        text-align: center;
+                        font-size: 1.2em;
+                        margin-top: 10px;
+                    }
+                </style>
+
+                <div id="service-carousel" class="owl-carousel owl-theme">
+                    <?php foreach ($destination as $key => $value) { ?>
+                    <div class="item">
+                        <a href="{{ 'our-destination#' . $value->destination_name ?? '' }}">
+                            <div class="card img-hover1">
+                                <img src="{{ $value->l_image ?? '' }}" alt="{{ $value->destination_name ?? '' }}">
+                                <div class="h3">{!! $value->destination_name ?? '' !!}</div>
                             </div>
-
-                            <?php } ?>
-
-                        </div>
+                        </a>
                     </div>
-
-                    <div class="owl-nav disabled">
-                        <button type="button" role="presentation" class="owl-prev"><span
-                                aria-label="Previous">‹</span></button><button type="button" role="presentation"
-                            class="owl-next"><span class="colorWhite" aria-label="Next">›</span></button>
-                    </div>
-                    <div class="owl-dots disabled"><button role="button" class="owl-dot active"><span></span></button>
-                    </div>
+                    <?php } ?>
                 </div>
+
+
+
+
+
+
             </div>
 
 
@@ -112,7 +130,8 @@
                         <div class="owl-stage"
                             style="width: 2867px; padding-left: 50px; padding-right: 50px; transform: translate3d(-1729px, 0px, 0px); transition: all 0.25s ease 0s;"> --}}
 
-                <div class=" col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img">
+                {{-- <div id="service-carousel" class="owl-carousel owl-theme" style="width: 70% !important"> --}}
+                <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img">
                     <div class="card">
                         <img src="images/home/luxury-collection.webp" alt="vote-for-us">
                         <a href="our-servic" style="text-decoration:none;" class="hiden">
@@ -120,8 +139,8 @@
                                 <h2 style="font-size: 24px; color:white;">The Luxury Collection</h2>
                                 <div class="slider_p" style="padding-top: 10px;">
                                     <p style="color:white; font-size:18px!important;">
-                                        Our Luxury Collection is in sync with the expanded
-                                        new &quot;three T&#39;s&quot; of luxury: Time, Truth and Trust.
+                                        Our Luxury Collection is in sync with the expanded new &quot;three T&#39;s&quot;
+                                        of luxury: Time, Truth and Trust.
                                     </p>
                                 </div>
                             </div>
@@ -162,7 +181,7 @@
                         </a>
                     </div>
                 </div>
-
+                {{-- </div> --}}
 
 
                 {{-- <div class="owl-nav disabled">
@@ -181,6 +200,127 @@
         </div>
 
     </section>
+
+
+
+
+    <section class="trips-bg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3 hard-responsive" style="padding-right:0px!important; padding-left:40px;">
+                    <div class="experiences-box">
+                        <div class="exper-cont" style="padding-top:99px;">
+                            <div class="content">
+                                <div class="alpo-hedading">
+                                    <h3>Alphonso Experiences</h3>
+                                </div>
+                                <br />
+                                <br />
+                                <p>
+                                    Choose from our exclusive selection of handpicked experiences and fall in love with the
+                                    city, one story at a time.
+                                </p>
+                                <button style=""><a
+                                        href="https://www.alphonsostories-partners.com/partner-login?From_Url=/experiences"
+                                        style="text-decoration:none;color:white;">View All Experiences</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    @media only screen and (max-width: 600px) {
+                        .hard-responsive {
+                            width: 100% !important;
+                        }
+                    }
+
+                    @media only screen and (max-width: 600px) {
+                        .col-3 {
+                            padding-left: 0px !important;
+                        }
+
+
+                    }
+
+                    .owl-carousel .owl-stage {
+                        width: 3344px !important;
+                        position: relative;
+                        -ms-touch-action: pan-Y;
+                        touch-action: manipulation;
+                        -moz-backface-visibility: hidden;
+                    }
+
+                    .servicesSlider {
+                        margin-right: 10px !important;
+                        height: 500px !important;
+                    }
+
+                    .owl-carousel .item {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: inherit;
+                        width: 100%;
+                    }
+
+                    .desti-img {
+                        margin-bottom: 0px !important;
+                    }
+                </style>
+
+                <div class="col-9 hard-responsive" style="padding-left:0px!important">
+                    <div class="owl-carousel owl-theme inspired_slider owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" style="width: 3344px !important;">
+
+
+
+                                <div class="owl-item active hard-responsive servicesSlider"
+                                    style="width: 12% !important;">
+                                    <div class="item" style="border-radius: 20px;">
+                                        <?php for ($i = 1; $i <= 5; $i++); {?>
+                                        <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img">
+                                            <div class="card" style="width: 400% !important; border-radius: 20px;">
+                                                <div class="offer-slider-btn-expele">
+                                                    <h2 style="font-size: 24px; color:white;">The Luxury Collection
+                                                    </h2>
+                                                    <div class="slider_p" style="padding-top: 10px;">
+                                                        <p style="color:white; font-size:18px!important;">
+                                                            Our Luxury Collection is in sync with the expanded new
+                                                            &quot;three T&#39;s&quot;
+                                                            of luxury: Time, Truth and Trust.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <img src="images/home/luxury-collection.webp"
+                                                    style="width: 500px !important" alt="vote-for-us">
+                                                <a href="our-servic" style="text-decoration:none;" class="hiden">
+
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+    </section>
+
+
+
+
+
+
+
+
     <div class="why-choose">
         <div class="container">
             <div class="row">
@@ -286,7 +426,7 @@
                                 <img src="{{ $pageData['section6image3'] ?? '' }}" alt="image">
                             </div>
                         </div>
-                        <button class="carousel-control-prev carousel-control-prev1" type="hidden"
+                        {{-- <button class="carousel-control-prev carousel-control-prev1" type="hidden"
                             data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -295,7 +435,7 @@
                             data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
-                        </button>
+                        </button> --}}
                     </div>
                 </div>
 
@@ -624,51 +764,27 @@
             }
         </style>
 
-
-    </section>
-
-
-    {{-- <script>
-        (function($) {
-            $('.carousel-item-next').css('transform', 'translateY(100%)');
-            $('.carousel-item-prev').css('transform', 'translateY(-100%)');
-
-            $('#carouselExampleIndicators').on('slide.bs.carousel', function(e) {
-                var dir = e.direction === 'left' ? 'translateY(-100%)' : 'translateY(100%)';
-                $(e.relatedTarget).css('transform', dir);
-            });
-
-            $('#carouselExampleIndicators').on('slid.bs.carousel', function(e) {
-                $('.carousel-item').css('transform', 'translateY(0)');
-            });
-        })(jQuery);
-    </script> --}}
-    {{-- <script>
-        (function($) {
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script>
             $(document).ready(function() {
-                $('#carouselExampleIndicators').on('slide.bs.carousel', function(e) {
-                    var $next = $(e.relatedTarget);
-                    var index = $next.index();
-                    var itemsPerSlide = 1;
-                    var totalItems = $('.carousel-item').length;
-
-                    if (index >= totalItems - (itemsPerSlide - 1)) {
-                        var it = itemsPerSlide - (totalItems - index);
-                        for (var i = 0; i < it; i++) {
-                            // append slides to end
-                            if (e.direction == "left") {
-                                $('.carousel-item').eq(i).appendTo('.carousel-inner');
-                            } else {
-                                $('.carousel-item').eq(0).appendTo('.carousel-inner');
-                            }
+                $("#service-carousel").owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 3
+                        },
+                        1000: {
+                            items: 4
                         }
                     }
                 });
-
-                $('#carouselExampleIndicators').on('slid.bs.carousel', function(e) {
-                    $('.carousel-item').css('transform', 'translateY(0)');
-                });
             });
-        })(jQuery);
-    </script> --}}
+        </script>
+    </section>
 @endsection

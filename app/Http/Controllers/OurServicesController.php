@@ -22,16 +22,25 @@ class OurServicesController extends Controller
 
     public function viewService()
     {
+        $pageName = "ourServices";
         $mMultiServices = new MultiService();
         $multiServies = $mMultiServices->getAll();
-        return view('admin.pages.ourservices', ['multiServices' => $multiServies]);
+        $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
+        foreach ($pageData as $pageDatas) {
+            $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
+            $newArray[$newKey] = $pageDatas->value;
+        }
+        return view('admin.pages.ourservices', [
+            'multiServices' => $multiServies,
+            'pageData'      => $newArray
+        ]);
     }
 
     public function saveServices(Request $req)
     {
         $req->validate([
-            'value1'    => 'nullable|image|mimes:jpeg,jpg,png',
-            'value2'    => 'nullable|string'
+            'value1'    => 'nullable|',
+            'value2'    => 'nullable|string',
         ]);
 
         $pageName = "MultiServices";
@@ -40,7 +49,7 @@ class OurServicesController extends Controller
             # Update the page contents 
             $attributes = [
                 'content_value' => $req->value2,
-                'page_name' => "ourServices"
+                'page_name' => "ourServices",
             ];
 
             if ($req->hasFile('value1') && $req->value1) {
@@ -67,5 +76,66 @@ class OurServicesController extends Controller
         $service = MultiService::findOrFail($id);
         $service->delete();
         return back()->with('success', "Service Deleted Successfully");
+    }
+
+    public function updateSection1(Request $req)
+    {
+        $req->validate([
+            "section1"  => "required",
+            "value2"    => "nullable",
+            "value1"    => "nullable",  //image
+            "valueD"    => "nullable"
+
+        ]);
+
+        $section = array();
+        try {
+
+            if ($req->hasFile('value1') && $req->value1) {
+                $file = $req->file('value1');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/landing";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $first = [
+                    "sectionName"   => $req->section1,
+                    "value"         => $actualFileName,
+                    "type"          => "Image"
+                ];
+                array_push($section, $first);
+            }
+
+            if (isset($req->value2)) {
+                $second = [
+                    "sectionName"   => $req->section1,
+                    "value"         => $req->value2,
+                    "type"          => "tittle"
+                ];
+                array_push($section, $second);
+            }
+
+            if (isset($req->valueD)) {
+                $second = [
+                    "sectionName"   => $req->section1,
+                    "value"         => $req->valueD,
+                    "type"          => "content"
+                ];
+                array_push($section, $second);
+            }
+
+            if (!empty($section)) {
+                foreach ($section as $sections) {
+                    $this->mSectionValue->updateValues($sections, $this->_pageName);
+                }
+            }
+
+            $responseMsg = $req->pageName . " Content Updated";
+            return back()->with('success', $responseMsg);
+        } catch (Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
 }

@@ -35,10 +35,13 @@ class DashboardController extends Controller
     {
         $pageName = "landingPage";                                              // Static put in config
         $newArray = array();
+        $mMultiService = new MultiService();
 
-        $destination    = $this->mDestination->getDestination()->get();
+        $destination    = $this->mDestination->getDestination()->where('status', 1)->get();
         $metaData       = $this->mseoTable->getSeoByPage("homePage")->first();
         $pageData       = $this->mSectionValue->getDataForPage($pageName)->get();
+
+        $listServices   = $mMultiService->getAll();
 
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
@@ -47,7 +50,8 @@ class DashboardController extends Controller
         return view("pages/hero", [
             "pageData"      => $newArray,
             "meta"          => $metaData,
-            "destination"   => $destination
+            "destination"   => $destination,
+            "listServices"  => $listServices
         ]);
     }
 
@@ -86,7 +90,7 @@ class DashboardController extends Controller
         $newArray = array();
         $metaData = $this->mseoTable->getSeoByPage("destination")->first();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
-        $destinations = $this->mDestination->getDestination()->get();
+        $destinations = $this->mDestination->getDestination()->where('status', 1)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
             $newArray[$newKey] = $pageDatas->value;
@@ -133,7 +137,7 @@ class DashboardController extends Controller
      */
     public function ourServic()
     {
-        $pageName = "ourServic";                                              // Static put in config
+        $pageName = "ourServices";                                              // Static put in config
         $newArray = array();
         $mMultiServices = new MultiService();
         $multiServies = $mMultiServices->getAll();

@@ -6,6 +6,7 @@ use App\Models\Destination;
 use App\Models\SectionValue;
 use Exception;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class DesignationContoller extends Controller
 {
@@ -23,11 +24,32 @@ class DesignationContoller extends Controller
     }
 
     // View admin designation page
-    public function viewAdminDesignation()
+    public function viewAdminDesignation($id = null)
     {
-        $country = $this->mDestination->getDestination()->get();
-        $data["country"] = $country;
-        return view('admin.pages.designation', $data);
+
+        $data = [
+            'country' => $this->mDestination->getDestination()->get(),
+            'activeTab' => 'home'
+        ];
+
+
+        if (isset($id)) {
+            $editData = [
+                'activeTab' => 'profile',
+                'editedData' => $this->mDestination->getDestinationById($id)->first() // Assuming 'first' is used instead of 'get'
+            ];
+
+
+            $data = array_merge($data, $editData);
+        }
+
+        $pageName = "ourDestination";
+        $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
+        foreach ($pageData as $pageDatas) {
+            $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
+            $newArray[$newKey] = $pageDatas->value;
+        }
+        return view('admin.pages.designation', $data, $newArray);
     }
 
 
@@ -165,6 +187,18 @@ class DesignationContoller extends Controller
                 $first["des1secondimage"] = $actualFileName;
             }
 
+            if ($req->hasFile('valuel') && $req->valuel) {
+                $file = $req->file('valuel');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/landing";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $first["limage"] = $actualFileName;
+            }
+
 
             if (!empty($first) || isset($first)) {
                 $this->mDestination->saveUpdateDestination($this->_pageName, $first, $req->name);
@@ -182,5 +216,24 @@ class DesignationContoller extends Controller
         $file = Destination::findOrFail($id);
         $file->delete();
         return back()->with('success', "Destination deleted Successfully");
+    }
+
+    public function deactiveFile($id)
+    {
+        $file = Destination::findOrFail($id);
+        $file->update([
+            "status" => 0
+        ]);
+        return back()->with('success', "Destination deactivated Successfully");
+    }
+
+
+    public function activeFile($id)
+    {
+        $file = Destination::findOrFail($id);
+        $file->update([
+            "status" => 1
+        ]);
+        return back()->with('success', "Destination activated Successfully");
     }
 }

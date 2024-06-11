@@ -75,7 +75,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Hero Tittle</label>
-                                <textarea class="form-control" id="value2" name="value2" rows="3"></textarea>
+                                <textarea class="form-control" id="value2" name="value2" rows="3">{{ $pageData['section1heading'] ?? '' }}</textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
@@ -98,7 +98,7 @@
                                 <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
 
                                 <label for="exampleFormControlTextarea1"></label>
-                                <textarea class="form-control tinymce-editor" id="value1" name="value1" rows="3"></textarea>
+                                <textarea class="form-control tinymce-editor" id="value1" name="value1" rows="3">{{ $pageData['section2title'] ?? '' }}</textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -107,111 +107,13 @@
                 </div>
             </div>
 
-            {{-- section 3 --}}
-            {{-- <div class="container-fluid" style="margin-top: 30px">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h3> Destination Section </h3>
-                    </div>
-                    <div class="col-md-12">
-                        <form action="{{ route('section3.update') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
 
-                            <div class="form-group">
-                                <input type="hidden" class=" form-control " id="pageName" name="pageName"
-                                    value="landinPage">
-                                <input type="hidden" class=" form-control " id="section3" name="section3"
-                                    value="3">
-                            </div>
-
-                            <?php 
-                            $noOfSection = 4; 
-                            $k = 0;
-
-                            for($i= 1 ; $i<=$noOfSection ; $i++){  
-                                $k = $k+1;                 
-                            ?>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Section 3 country {{ $i }} name</label>
-                                <input type="text" class="form-control" id="value{{ $k }}"
-                                    name="value{{ $k }}" rows="3" />
-                            </div>
-
-                            <?php
-                            $m = $k + 1;
-                            $k = $m;
-                            ?>
-
-                            <div class="form-group">
-                                <label class="form-label" for="value{{ $m }}">section 3 image
-                                    {{ $i }}</label>
-                                <input type="file" class="form-control" id="value{{ $m }}"
-                                    name="value{{ $m }}" accept="image/*" />
-                            </div>
-
-                            <?php } ?>
-
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div> --}}
-
-            {{-- section 4 --}}
-            {{-- <div class="container-fluid" style="margin-top: 30px">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h3> Our Services </h3>
-                    </div>
-                    <div class="col-md-12">
-                        <form action="{{ route('section4.update') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-
-                            <div class="form-group">
-                                <input type="hidden" class=" form-control " id="pageName" name="pageName"
-                                    value="landinPage">
-                                <input type="hidden" class=" form-control " id="section4" name="section4"
-                                    value="4">
-                            </div>
-
-                            <?php 
-                            $noOfSection = 3; 
-                            $k = 0;
-
-                            for($i= 1 ; $i<=$noOfSection ; $i++){  
-                                $k = $k+1;                 
-                            ?>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Section 4 services {{ $i }}
-                                    name</label>
-                                <textarea class="form-control tinymce-editor" id="value{{ $k }}" name="value{{ $k }}"
-                                    rows="3"></textarea>
-                            </div>
-
-                            <?php
-                            $m = $k + 1;
-                            $k = $m;
-                            ?>
-
-                            <div class="form-group">
-                                <label class="form-label" for="value{{ $m }}">section 4 image
-                                    {{ $i }}</label>
-                                <input type="file" class="form-control" id="value{{ $m }}"
-                                    name="value{{ $m }}" accept="image/*" />
-                            </div>
-
-                            <?php } ?>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div> --}}
 
             {{-- section 6 --}}
             <div class="container-fluid" style="margin-top: 30px">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3> Section 6 </h3>
+                        <h3> Section 6 Inspirational Adventures</h3>
                     </div>
                     <div class="col-md-12">
                         <form action="{{ route('section6.update') }}" method="POST" enctype="multipart/form-data">
@@ -241,7 +143,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Example textarea</label>
-                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="3"></textarea>
+                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="3">{{ $pageData['section6content'] ?? '' }}</textarea>
 
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -254,7 +156,7 @@
             <div class="container-fluid" style="margin-top: 30px">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3> Section 7 </h3>
+                        <h3> Section 7 Responsible Travel</h3>
                     </div>
                     <div class="col-md-12">
                         <form action="{{ route('section6.update') }}" method="POST" enctype="multipart/form-data">
@@ -285,7 +187,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Example textarea</label>
-                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="3"></textarea>
+                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="3">{{ $pageData['section7content'] ?? '' }}</textarea>
 
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>

@@ -13,7 +13,15 @@ class AboutUsPageController extends Controller
      */
     public function aboutusPage()
     {
-        return view('admin.pages.aboutus');
+        $pageName = "aboutUs";
+        $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
+        foreach ($pageData as $pageDatas) {
+            $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
+            $newArray[$newKey] = $pageDatas->value;
+        }
+        return view('admin.pages.aboutus', [
+            "pageData" => $newArray
+        ]);
     }
 
     private $mSectionValue;
@@ -204,7 +212,7 @@ class AboutUsPageController extends Controller
                 array_push($section, $first);
             }
 
-            if (isset($req->value1)) {
+            if (isset($req->value2)) {
                 $second = [
                     "sectionName"   => $req->section4,
                     "value"         => $req->value2,

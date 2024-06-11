@@ -96,6 +96,10 @@
                                 @error('value2')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
+
+                                {{-- <label class="form-label" for="valueh">home page Destinaton Image </label>
+                                <input type="file" class="form-control" id="valueh" name="valueh" accept="image/*" /> --}}
+
                             </div>
 
                             <div class="form-group">
@@ -110,7 +114,7 @@
                         </form>
                     </div>
 
-                    
+
                 </div>
             </div>
 

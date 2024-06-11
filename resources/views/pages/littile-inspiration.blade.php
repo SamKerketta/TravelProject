@@ -113,9 +113,9 @@
                             <div class="play-button-wrapper">
                                 <div title="Play video" class="play-gif" id="circle-play-b">
                                     <!-- SVG Play Button -->
-                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
                                         <path d="M40 0a40 40 0 1040 40A40 40 0 0040 0zM26 61.56V18.44L64 40z" />
-                                    </svg> --}}
+                                    </svg>
                                 </div>
                             </div>
                             <img class="thumb" style="cursor: pointer;"
@@ -123,8 +123,8 @@
                         </div>
                         <div id="thevideo" style="display: none;">
                             <video controls width="100%" height="470px" class="elVideo" loop="loop" autoplay=""
-                                playsinline="" muted="" src="{{ $videoData1->file_path ?? '' }}"
-                                {{-- src="video/little-inspirat/CHITWAN.mp4"  --}} id="video-slider-1 big-video"></video>
+                                playsinline="" muted="" src="{{ $videoData1->file_path ?? '' }}" {{-- src="video/little-inspirat/CHITWAN.mp4"  --}}
+                                id="video-slider-1 big-video"></video>
                         </div>
                     </div>
                 </div>
@@ -143,9 +143,9 @@
                                 <div class="play-button-wrapper">
                                     <div title="Play video" class="play-gif" id="circle-play-b">
                                         <!-- SVG Play Button -->
-                                        {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" style="width:50px;">
-                                        <path d="M40 0a40 40 0 1040 40A40 40 0 0040 0zM26 61.56V18.44L64 40z" />
-                                    </svg> --}}
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" style="width:50px;">
+                                            <path d="M40 0a40 40 0 1040 40A40 40 0 0040 0zM26 61.56V18.44L64 40z" />
+                                        </svg>
                                     </div>
                                 </div>
                                 <!-- <img class="thumb" style="cursor: pointer;" src="video/little-inspirat/jodhpur.webp"> -->
@@ -153,9 +153,9 @@
                             </div>
                             <div id="{{ $id }}" style="display: none;">
                                 <!-- <video controls width="100%" class="elVideo" loop="loop" autoplay="" playsinline="" muted="" src="video/little-inspirat/JODHPUR.mp4" id="video-slider-1 big-video"></video> -->
-                                <video controls width="100%" class="elVideo" loop="loop" autoplay="" playsinline=""
-                                    muted="" src="{{ $video->file_path }}" id="video-slider-1 big-video"
-                                    style="max-height:400px;"></video>
+                                <video controls width="100%" class="elVideo" loop="loop" autoplay=""
+                                    playsinline="" muted="" src="{{ $video->file_path }}"
+                                    id="video-slider-1 big-video" style="max-height:400px;"></video>
                             </div>
                         </div>
                     </div>

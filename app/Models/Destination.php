@@ -42,6 +42,12 @@ class Destination extends Model
 
     public function getDestination()
     {
-        return Destination::where('status', 1)->orderBy('id');
+        return Destination::orderBy('id');
+    }
+
+
+    public function getDestinationById($id)
+    {
+        return Destination::where('id', $id);
     }
 }

@@ -57,7 +57,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3> Banner Section </h3>
+                        <h3> Hero Section </h3>
                     </div>
                     <div class="col-md-12">
                         <form action="{{ route('about.section1.update') }}" method="POST" enctype="multipart/form-data">
@@ -67,7 +67,7 @@
                                     value="landingPage">
                                 <input type="hidden" class="form-control" id="section1" name="section1" value="1">
 
-                                <label class="form-label" for="value1">Banner Image</label>
+                                <label class="form-label" for="value1">Hero Image</label>
                                 <input type="file" class="@error('value1') is-invalid @enderror form-control"
                                     id="value1" name="value1" accept="image/*" />
                                 @error('value1')
@@ -75,8 +75,8 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Banner Tittle</label>
-                                <textarea class="form-control" id="value2" name="value2" rows="3"></textarea>
+                                <label for="exampleFormControlTextarea1">Hero Tittle</label>
+                                <textarea class="form-control" id="value2" name="value2" rows="3">{{ $pageData['section1heading'] ?? '' }}</textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
@@ -99,7 +99,7 @@
                                 <input type="hidden" class=" form-control " id="section2" name="section2" value="2">
 
                                 <label for="exampleFormControlTextarea1"></label>
-                                <textarea class="form-control tinymce-editor" id="value1" name="value1" rows="3"></textarea>
+                                <textarea class="form-control tinymce-editor" id="value1" name="value1" rows="3">{{ $pageData['section2title'] ?? '' }}</textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -132,7 +132,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Description 1 content</label>
-                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="3"></textarea>
+                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="3">{{ $pageData['section3content'] ?? '' }}</textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
@@ -149,7 +149,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Description 2 content</label>
-                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="4"></textarea>
+                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="4">{{ $pageData['section4content'] ?? '' }}</textarea>
 
                                 <input type="hidden" class="form-control" id="pageName" name="pageName"
                                     value="landingPage">
@@ -178,12 +178,13 @@
                         <h3> About Us Description 3 </h3>
                     </div>
                     <div class="col-md-12">
-                        <form action="{{ route('about.section5.update') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('about.section5.update') }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Description 3 content 1</label>
-                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="4"></textarea>
+                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="4">{{ $pageData['section5content'] ?? '' }}</textarea>
                                 <input type="hidden" class="form-control" id="pageName" name="pageName"
                                     value="landingPage">
                                 <input type="hidden" class="form-control" id="section5" name="section5"
@@ -208,7 +209,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Description 3 content 1</label>
-                                <textarea class="form-control tinymce-editor" id="value4" name="value4" rows="4"></textarea>
+                                <textarea class="form-control tinymce-editor" id="value4" name="value4" rows="4">{{ $pageData['section5content2'] ?? '' }}</textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
@@ -237,7 +238,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Member 1 Description</label>
-                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="4"></textarea>
+                                <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="4">{{ $pageData['section6content'] ?? '' }}</textarea>
                                 <input type="hidden" class="form-control" id="pageName" name="pageName"
                                     value="landingPage">
                                 <input type="hidden" class="form-control" id="section6" name="section6"
@@ -255,7 +256,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Member 2 Description</label>
-                                <textarea class="form-control tinymce-editor" id="value4" name="value4" rows="4"></textarea>
+                                <textarea class="form-control tinymce-editor" id="value4" name="value4" rows="4">{{ $pageData['section6content2'] ?? '' }}</textarea>
                             </div>
 
 
@@ -270,7 +271,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Member 3 Description</label>
-                                <textarea class="form-control tinymce-editor" id="value6" name="value6" rows="4"></textarea>
+                                <textarea class="form-control tinymce-editor" id="value6" name="value6" rows="4">{{ $pageData['section6content3'] ?? '' }}</textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>

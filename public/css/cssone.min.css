@@ -101,6 +101,17 @@ h6 {
     color: #e2b855;
 }
 
+/* .owl-carousel {
+    z-index: -1 !important;
+} */
+
+.owl-next span {
+    font-size: 2em; /* Adjust the size as needed */
+}
+.owl-prev span {
+    font-size: 2em; /* Adjust the size as needed */
+}
+
 .marquee {
     position: relative;
     width: 100vw;
