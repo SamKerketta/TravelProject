@@ -22,8 +22,15 @@ class ResponsibleController extends Controller
     // Admin Responsible View Page
     public function viewResponsible()
     {
+        $pageName = "responsible_travels";
+        $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
+        foreach ($pageData as $pageDatas) {
+            $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
+            $newArray[$newKey] = $pageDatas->value;
+        }
         $compacts = [
-            'noOfSections' => $this->_noOfSections
+            'noOfSections' => $this->_noOfSections,
+            'pageData' => $newArray
         ];
         return view('admin.pages.responsible-travel', $compacts);
     }

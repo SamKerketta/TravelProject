@@ -85,13 +85,15 @@
                             <div class="form-group">
                                 <label for="section{{ $i }}Heading">Section {{ $i }} Heading</label>
                                 <input type="text" class="form-control" id="section{{ $i }}Heading"
-                                    name="section{{ $i }}Heading"></input>
+                                    name="section{{ $i }}Heading"
+                                    value="{{ $pageData['section1heading'] ?? '' }}"></input>
                             </div>
                             <?php } ?>
                             <div class="form-group">
                                 <label for="section{{ $i }}Content">Section {{ $i }} Content</label>
+                                <?php $valueText = 'section' . $i . 'content'; ?>
                                 <textarea class="form-control tinymce-editor" id="section{{ $i }}Content"
-                                    name="section{{ $i }}Content" rows="3"></textarea>
+                                    name="section{{ $i }}Content" rows="3">{{ $pageData[$valueText] ?? '' }}</textarea>
 
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
