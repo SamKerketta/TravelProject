@@ -160,6 +160,58 @@ class LIController extends Controller
         }
     }
 
+    public function editFile($id)
+    {
+        $file = File::findOrFail($id);
+        return view('admin.pages.edit-file', ['file' => $file]);
+    }
+
+    // 
+    public function editFileProcess(Request $req, $id)
+    {
+        $req->validate([
+            'tourfile'    => 'nullable|file|max:20120',
+            'placeholderImage'    => 'nullable|image|max:5120',
+            'title'  => 'required',
+            'description'    => 'required',
+        ]);
+        try {
+            $fileReq = [
+                'file_type' => $req->fileType,
+                'title' => $req->title,
+                'description' => $req->description,
+                'page_name' => 'little_inspiration',
+            ];
+
+            if (isset($req->tourFile)) {
+                $actualImageName = null;
+                $file = $req->file('tourfile');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/little";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+                $fileReq['file_path'] = $actualFileName;
+            }
+
+            if (isset($req->placeholderImage)) {
+                $image = $req->file('placeholderImage');
+                $extension = $image->getClientOriginalExtension();
+                $imageName = time() . rand(10, 100) . "." . $extension;
+                $path = public_path() . "/" . $viewPath;
+                $image->move($path, $imageName);
+                $actualImageName = $viewPath . "/" . $imageName;
+                $fileReq['placeholder_image_path'] = $actualImageName;
+            }
+
+            File::find($id)->update($fileReq);;
+            return redirect('littleView')->with('success', "Tour Updated Successfully");
+        } catch (Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
+    }
+
     // Delete file
     public function deleteFile($id)
     {

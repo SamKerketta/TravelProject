@@ -261,8 +261,10 @@
                                                 <td>{{ $video->title }}</td>
                                                 <td>{{ $video->description }}</td>
                                                 <td>
-                                                    <a href="file/delete/{{ $video->id }}"
-                                                        class="btn btn-sm btn-danger">Delete</button>
+                                                    <a href="file/view-edit/{{ $video->id }}"
+                                                        class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="file/delete/{{ $video->id }}"
+                                                            class="btn btn-sm btn-danger">Delete</button>
                                                 </td>
                                             </tr>
                                         @endforeach
