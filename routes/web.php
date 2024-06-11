@@ -141,6 +141,8 @@ Route::middleware([
         Route::post('little/update-section', 'updateSection')->name('admin.little.updatesection');
         Route::post('little-uploadfile', 'uploadFile')->name('little.upload.file');
         Route::get('file/delete/{id}', 'deleteFile');
+        Route::get('file/view-edit/{id}', 'editFile');
+        Route::post('file/process-edit/{id}', 'editFileProcess')->name('little.update.file');
     });
 
     Route::controller(OurServicesController::class)->group(function () {
