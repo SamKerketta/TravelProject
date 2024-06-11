@@ -40,6 +40,8 @@ class DashboardController extends Controller
         $destination    = $this->mDestination->getDestination()->where('status', 1)->get();
         $metaData       = $this->mseoTable->getSeoByPage("homePage")->first();
         $pageData       = $this->mSectionValue->getDataForPage($pageName)->get();
+        $littleIns      = File::where("file_type", "photo")->get();
+        $multipleServices = MultiService::where("status", 1)->get();
 
         $listServices   = $mMultiService->getAll()->where("status", 1);
 
@@ -51,7 +53,9 @@ class DashboardController extends Controller
             "pageData"      => $newArray,
             "meta"          => $metaData,
             "destination"   => $destination,
-            "listServices"  => $listServices
+            "listServices"  => $listServices,
+            "liImage"   => $littleIns,
+            "multipleServices" => $multipleServices
         ]);
     }
 

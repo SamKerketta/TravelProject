@@ -402,7 +402,7 @@
     </section>
 
 
-    <section>
+    {{-- <section>
         <div class="container" style="padding-bottom:20px!important;">
             <div class="row">
                 <div class="col-12">
@@ -505,7 +505,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
 

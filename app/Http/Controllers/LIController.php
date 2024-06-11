@@ -19,13 +19,20 @@ class LIController extends Controller
     }
     public function littleView()
     {
+        $pageName = "little_inspiration";
+        $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
+        foreach ($pageData as $pageDatas) {
+            $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
+            $newArray[$newKey] = $pageDatas->value;
+        }
         $files = File::findByPageName($this->pageName);
         $tourPhotos = collect($files)->where('file_type', 'photo');
         $tourVideos = collect($files)->where('file_type', 'video');
 
         return view('admin.pages.little-inspiration', [
             'photos' => $tourPhotos,
-            'videos' => $tourVideos
+            'videos' => $tourVideos,
+            'pageData' => $newArray ?? null
         ]);
     }
 

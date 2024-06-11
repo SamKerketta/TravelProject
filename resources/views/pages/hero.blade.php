@@ -132,32 +132,31 @@
 
 
 
-                                <div class="owl-item active hard-responsive servicesSlider" style="width: 12% !important;">
-                                    <div class="item" style="border-radius: 10px;">
-                                        <?php for ($i = 1; $i <= 5; $i++); {?>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img">
-                                            <div class="card" style="width: 400% !important; border-radius: 10px;">
-                                                <div class="offer-slider-btn-expele">
-                                                    <h2 style="font-size: 24px; color:white;">The Luxury Collection
-                                                    </h2>
-                                                    <div class="slider_p" style="padding-top: 10px;">
-                                                        <p style="color:white; font-size:18px!important;">
-                                                            Our Luxury Collection is in sync with the expanded new
-                                                            &quot;three T&#39;s&quot;
-                                                            of luxury: Time, Truth and Trust.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <img src="images/home/luxury-collection.webp"
-                                                    style="width: 500px !important" alt="vote-for-us">
-                                                <a href="our-servic" style="text-decoration:none;" class="hiden">
+                                @foreach ($multipleServices as $item)
+                                    <div class="owl-item active hard-responsive servicesSlider"
+                                        style="width: 12% !important;">
 
-                                                </a>
+                                        <div class="item" style="border-radius: 10px;">
+
+                                            <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img">
+
+
+                                                <div class="card" style="width: 400% !important; border-radius: 10px;">
+                                                    <div class="offer-slider-btn-expele">
+                                                        {!! $item->content_value !!}
+                                                    </div>
+                                                    <img src="{{ $item->image_path ?? '' }}" style="width: 500px !important"
+                                                        alt="vote-for-us">
+                                                    <a href="our-servic" style="text-decoration:none;" class="hiden">
+                                                    </a>
+                                                </div>
+
+
                                             </div>
                                         </div>
-                                        <?php } ?>
                                     </div>
-                                </div>
+                                @endforeach
+
 
 
                             </div>
@@ -261,36 +260,29 @@
                     <div id="carouselExampleIndicators" style="padding-bottom: 0px !important;" class="carousel slide"
                         data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                            {{-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                                aria-label="Slide 4"></button> --}}
+
+
+                            @foreach ($liImage as $index => $item)
+                                <button type="button" data-bs-target="#carouselExampleIndicators"
+                                    data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}"
+                                    aria-current="true" aria-label="Slide {{ $index + 1 }}"></button>
+                            @endforeach
+
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="{{ $pageData['section6image1'] ?? '' }}" alt="image">
-                            </div>
-                            <div class="carousel-item">
+
+                            @foreach ($liImage as $index => $item)
+                                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                    <img src="{{ $item->file_path ?? '' }}" alt="image">
+                                </div>
+                            @endforeach
+                            {{-- <div class="carousel-item">
                                 <img src="{{ $pageData['section6image2'] ?? '' }}" alt="image">
                             </div>
                             <div class="carousel-item">
                                 <img src="{{ $pageData['section6image3'] ?? '' }}" alt="image">
-                            </div>
+                            </div> --}}
                         </div>
-                        {{-- <button class="carousel-control-prev carousel-control-prev1" type="hidden"
-                            data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next carousel-control-next1" type="hidden"
-                            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button> --}}
                     </div>
                 </div>
 
@@ -684,6 +676,23 @@
             //         }
             //     }
             // });
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Preload images
+                const images = document.querySelectorAll('.carousel-item img');
+                images.forEach(img => {
+                    const src = img.getAttribute('src');
+                    const imgPreload = new Image();
+                    imgPreload.src = src;
+                });
+
+                // Smooth transitions by removing white flash
+                const carouselInner = document.querySelector('.carousel-inner');
+                carouselInner.style.transition = 'opacity 0.5s ease-in-out';
+                carouselInner.style.opacity = '1';
+            });
         </script>
     </section>
 @endsection

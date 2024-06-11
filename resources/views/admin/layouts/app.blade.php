@@ -41,8 +41,8 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="dashboard/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60"
-                width="60">
+            <img class="animation__shake" src="images/logo/logo_far_and_beyond_black.png" alt="AdminLTELogo"
+                style="color: black; width:500px" height="60" width="60">
         </div>
 
         <!-- Navbar -->
@@ -284,7 +284,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="" class="nav-link active">
+                                    <a href="/login" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Dashboard</p>
                                     </a>

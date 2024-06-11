@@ -124,12 +124,13 @@
                                 <input type="hidden" class="form-control" id="section6" name="section6"
                                     value="6">
 
-                                <label class="form-label" for="value1">section 6 image 1</label>
+                                {{-- <label class="form-label" for="value1">section 6 image 1</label>
                                 <input type="file" class="@error('value1') is-invalid @enderror form-control"
                                     id="value1" name="value1" accept="image/*" />
                                 @error('value1')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
+
 
                                 <label class="form-label" for="value3">section 6 image 2</label>
                                 <input type="file" class="form-control" id="value3" name="value3"
@@ -137,7 +138,7 @@
 
                                 <label class="form-label" for="value4">section 6 image 3</label>
                                 <input type="file" class="form-control" id="value4" name="value4"
-                                    accept="image/*" />
+                                    accept="image/*" /> --}}
 
 
                             </div>
