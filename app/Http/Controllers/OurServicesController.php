@@ -20,20 +20,35 @@ class OurServicesController extends Controller
         $this->_pageName        = "ourServices";
     }
 
-    public function viewService()
+    public function viewService($id = null)
     {
-        $pageName = "ourServices";
+        $editedData = null;
         $mMultiServices = new MultiService();
+        $activeTab = 'home';
+        if (isset($id)) {
+            $activeTab = 'exampleModal';
+            $editedData = $multiServies = $mMultiServices->getDataById($id)->first();
+        }
+
+        $pageName = "ourServices";
         $multiServies = $mMultiServices->getAll();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
             $newArray[$newKey] = $pageDatas->value;
         }
-        return view('admin.pages.ourservices', [
-            'multiServices' => $multiServies,
-            'pageData'      => $newArray
-        ]);
+
+        if (isset($editedData)) {
+            $returnData['editData']  = $editedData ?? null;
+        }
+
+
+        $returnData['activeTab']     = $activeTab;
+        $returnData['multiServices'] = $multiServies;
+        $returnData['pageData']      = $newArray;
+
+
+        return view('admin.pages.ourservices', $returnData);
     }
 
     public function saveServices(Request $req)
@@ -62,6 +77,16 @@ class OurServicesController extends Controller
                 $actualFileName = $viewPath . "/" . $filename;
                 $attributes['image_path'] = $actualFileName;
             }
+
+
+            // update
+            if (isset($req->id)) {
+                $mMultiServices->updateServices($attributes, $req->id);
+
+                $responseMsg = $pageName . " Content Updated";
+                return back()->with('success', $responseMsg);
+            }
+
             $mMultiServices->create($attributes);
             $responseMsg = $pageName . " Content Updated";
             return back()->with('success', $responseMsg);
@@ -137,5 +162,25 @@ class OurServicesController extends Controller
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }
+    }
+
+
+    public function activeMultiService($id)
+    {
+        $service = MultiService::findOrFail($id);
+        $service->update([
+            "status" => 1
+        ]);
+        return back()->with('success', "Service Updated Successfully");
+    }
+
+
+    public function deactiveMultiService($id)
+    {
+        $service = MultiService::findOrFail($id);
+        $service->update([
+            "status" => 0
+        ]);
+        return back()->with('success', "Service Updated Successfully");
     }
 }

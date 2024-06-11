@@ -41,7 +41,7 @@ class DashboardController extends Controller
         $metaData       = $this->mseoTable->getSeoByPage("homePage")->first();
         $pageData       = $this->mSectionValue->getDataForPage($pageName)->get();
 
-        $listServices   = $mMultiService->getAll();
+        $listServices   = $mMultiService->getAll()->where("status", 1);
 
         foreach ($pageData as $pageDatas) {
             $newKey = "section" . $pageDatas->page_section . $pageDatas->section_type;
@@ -140,7 +140,7 @@ class DashboardController extends Controller
         $pageName = "ourServices";                                              // Static put in config
         $newArray = array();
         $mMultiServices = new MultiService();
-        $multiServies = $mMultiServices->getAll();
+        $multiServies = $mMultiServices->getAll()->where("status", 1);
 
         $metaData = $this->mseoTable->getSeoByPage("services")->first();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();

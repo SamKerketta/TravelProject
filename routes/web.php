@@ -144,11 +144,14 @@ Route::middleware([
     });
 
     Route::controller(OurServicesController::class)->group(function () {
-        Route::get('services/view', 'viewService')->name('admin.service');
+        Route::get('services/view/{id?}', 'viewService')->name('admin.service');
         Route::post('services/saveServices', 'saveServices')->name('admin.save.services');
         Route::post('services/saveServices1', 'updateSection1')->name('admin.save.services1');
 
         Route::get('multi-service/delete/{id}', 'deleteMultiService')->name('admin.delete.services');
+
+        Route::get('multi-service/active/{id}', 'activeMultiService');
+        Route::get('multi-service/deactive/{id}', 'deactiveMultiService');
     });
 
 

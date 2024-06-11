@@ -50,12 +50,12 @@
 
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                    aria-controls="home" aria-selected="true">Home</a>
+                <a class="nav-link {{ $activeTab == 'home' ? 'show active' : '' }}" id="home-tab" data-toggle="tab"
+                    href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                    aria-controls="contact" aria-selected="false">Services</a>
+                <a class="nav-link {{ $activeTab == 'contact' ? 'show active' : '' }}" id="contact-tab" data-toggle="tab"
+                    href="#contact" role="tab" aria-controls="contact" aria-selected="false">Services</a>
             </li>
         </ul>
 
@@ -65,7 +65,8 @@
         <section class="content">
             <div class="tab-content" id="myTabContent">
                 <!-- Tab 1 -->
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="tab-pane fade {{ $activeTab == 'home' ? 'show active' : '' }}" id="home" role="tabpanel"
+                    aria-labelledby="home-tab">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12 text-center">
@@ -80,6 +81,7 @@
                                             value="landingPage">
                                         <input type="hidden" class="form-control" id="section1" name="section1"
                                             value="1">
+
 
                                         <label class="form-label" for="value1">Hero Image</label>
                                         <input type="file" class="@error('value1') is-invalid @enderror form-control"
@@ -109,7 +111,8 @@
                     <!-- /.row (main row) -->
                 </div>
                 <!-- Tab1 -->
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="tab-pane fade {{ $activeTab == 'contact' ? 'show active' : '' }}" id="contact" role="tabpanel"
+                    aria-labelledby="contact-tab">
                     <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#exampleModal">
                         Add Service
                     </button>
@@ -134,6 +137,19 @@
                                     <td>
                                         <a href="multi-service/delete/{{ $service->id }}"
                                             class="btn btn-sm btn-danger">Delete</button>
+
+                                            <a style="margin-top:10%"
+                                                href="{{ route('admin.service', ['id' => $service->id]) }}"
+                                                class="btn btn-sm btn-success">Edit</a>
+
+                                            @if ($service->status == 1)
+                                                <a style="margin-top:10%"
+                                                    href="multi-service/deactive/{{ $service->id }}"
+                                                    class="btn btn-sm btn-danger">Deactive</a>
+                                            @else
+                                                <a style="margin-top:10%" href="multi-service/active/{{ $service->id }}"
+                                                    class="btn btn-sm btn-success">Active</a>
+                                            @endif
                                     </td>
                                 </tr>
                             @endforeach
@@ -149,8 +165,8 @@
 
     <!-- Modal  -->
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade {{ $activeTab == 'exampleModal' ? 'show active' : '' }}" id="exampleModal" tabindex="-1"
+        role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -166,10 +182,15 @@
                         <div class="form-group">
                             <label for="value1">Select Tour Photo</label>
                             <input type="file" class="form-control" id="value1" name="value1">
+
+                            @if (isset($editData))
+                                <input type="hidden" class="form-control" id="id" name="id"
+                                    value="{{ $editData->id }}">
+                            @endif
                         </div>
                         <div class="form-group">
                             <label for="value2">Section Content</label>
-                            <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="3"></textarea>
+                            <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="3">{{ $editData->content_value ?? '' }}</textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -202,6 +223,14 @@
                 'alignright alignjustify | bullist numlist outdent indent | ' +
                 'removeformat | help',
             content_css: '//www.tiny.cloud/css/codepen.min.css'
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            @if ($activeTab == 'exampleModal')
+                $('#exampleModal').modal('show');
+            @endif
         });
     </script>
 @endsection

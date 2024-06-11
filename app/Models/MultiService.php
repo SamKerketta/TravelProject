@@ -19,6 +19,23 @@ class MultiService extends Model
     // 
     public function getAll()
     {
-        return self::orderBy('id')->active()->get();
+        return self::orderBy('id')->get();
+    }
+
+    public function getDataById($id)
+    {
+        return self::where("id", $id);
+    }
+
+
+    public function updateServices($refData, $id)
+    {
+        $data = self::where("id", $id)->first();
+        if ($data) {
+            $data->update([
+                "image_path"   =>  $refData["image_path"] ?? $data->image_path,
+                "content_value"  =>  $refData["content_value"] ?? $data->content_valuex
+            ]);
+        }
     }
 }
