@@ -77,6 +77,12 @@
                                 <form action="{{ route('admin.little.updatesection') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="section" id="section" value="1">
+
+                                    <div class="form-group">
+                                        <label for="photo1">Hero Photo</label>
+                                        <input type="file" class="form-control" id="photo1" name="photo1"></input>
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="section1Heading">Section 1 Heading</label>
                                         {{-- <input type="text" class="form-control" id="section1Heading"
@@ -87,17 +93,6 @@
                                     <div class="form-group">
                                         <label for="section1Content">Section 1 Content</label>
                                         <textarea class="form-control tinymce-editor" id="section1Content" name="section1Content" rows="3"></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>
-                                <!-- Section 1 -->
-                                <hr>
-                                <form action="{{ route('admin.little.updatesection') }}" method="POST">
-                                    @csrf
-                                    <input type="hidden" name="section" id="section" value="2">
-                                    <div class="form-group">
-                                        <label for="section2Content">Section 2 Content</label>
-                                        <textarea class="form-control tinymce-editor" id="section2Content" name="section2Content" rows="3"></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>

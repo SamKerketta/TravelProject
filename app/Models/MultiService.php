@@ -34,7 +34,8 @@ class MultiService extends Model
         if ($data) {
             $data->update([
                 "image_path"   =>  $refData["image_path"] ?? $data->image_path,
-                "content_value"  =>  $refData["content_value"] ?? $data->content_valuex
+                "content_value"  =>  $refData["content_value"] ?? $data->content_valuex,
+                "view_home" => $refData["view_home"] ?? $data->view_home
             ]);
         }
     }

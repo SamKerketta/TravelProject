@@ -156,6 +156,47 @@
 
 
     <!--End news latter-->
+    {{-- <div class="client-logo-bg">
+        <div class="group-aff">
+            <h3 style="font-weight:600;">
+                <span>Group Affiliations</span>
+            </h3>
+        </div>
+        <div class="inspired_section-1">
+            <div class="owl-carousel owl-theme inspired_slider1">
+                <div class="item">
+                    <img src="images/footerlogo/trustedFITservice.png" alt="One and only ">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/keralatravelmart.png" alt="Atlantis">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/Tourcert.png" alt="Four Seasons">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/Toft.png" alt="Raffles">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/RTSOI-LOGO.png" alt="Fairmont">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/One-Tree-Planted.png" alt="Sofitel">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/IATO.png" alt="St Regis">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/sanderson-phillips.png" alt="Preferred hotels">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/USTOA.png" alt="Preferred hotels">
+                </div>
+                <div class="item">
+                    <img src="images/footerlogo/SITE_wordmark.png" alt="site_wordmark">
+                </div>
+            </div>
+        </div>
+    </div> --}}
     <div class="client-logo-bg">
         <div class="group-aff">
             <h3 style="font-weight:600;">

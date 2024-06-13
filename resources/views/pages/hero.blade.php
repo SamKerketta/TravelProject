@@ -39,60 +39,41 @@
         </div>
     </section>
 
+    {{-- new section  --}}
     <section>
         <div class="destination" style="background:#FFF7F7!important; padding-bottom:40px;">
             <div class="dest-heading">
                 <h2 style="margin-bottom:0px!important; margin-top:0px;">Destinations</h2>
             </div>
-
-            <div style="padding-left:0px!important">
-
-
-
-
-
-
-
-
-                <div class="col-9 hard-responsive" style="padding-left:0px!important; width:100%">
-                    <div id="service-carousel" class="owl-carousel owl-theme inspired_slider owl-loaded owl-drag">
+            <div class="container-fluid">
+                <div class="row" style="padding-left:30px;padding-right:35px; ">
+                    <div class="owl-carousel vol1 owl-theme inspired_slider owl-loaded owl-drag">
                         <div class="owl-stage-outer">
-                            <div class="owl-stage" style="width: 4864px !important;">
-                                <?php foreach ($destination as $key => $value) { ?>
-                                <div class="owl-item owl-item2 active hard-responsive" style="width: 7.8% !important;">
-                                    <div class="item">
-                                        <a href="{{ 'our-destination#' . $value->destination_name ?? '' }}">
-                                            <div class="card img-hover1">
-                                                <img src="{{ $value->l_image ?? '' }}"
-                                                    alt="{{ $value->destination_name ?? '' }}">
-                                                <div class="h3">{!! $value->destination_name ?? '' !!}</div>
-                                            </div>
-                                        </a>
+                            <div class="owl-stage" style="width:4326px !important">
+
+                                @foreach ($destination as $value)
+                                    <div class="owl-item active">
+                                        <div class="item desti-img">
+                                            <a href="{{ 'our-destination#' . $value->destination_name ?? '' }}">
+                                                <div class="card img-hover1">
+                                                    <img src="{{ $value->l_image ?? '' }}">
+                                                    <div class="h3">{!! $value->destination_name ?? '' !!}</div>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                <?php } ?>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-                <div class="dest-btn">
-                    <button class="expo"><a href="our-destination">Explore</a></button>
-                </div>
             </div>
+        </div>
+        <div class="dest-btn">
+            <button class="expo"><a href="our-destination">Explore</a></button>
+        </div>
+        </div>
     </section>
-
-
-
-
 
 
     <section class="trips-bg">
@@ -145,8 +126,8 @@
                                                     <div class="offer-slider-btn-expele">
                                                         {!! $item->content_value !!}
                                                     </div>
-                                                    <img src="{{ $item->image_path ?? '' }}" style="width: 500px !important"
-                                                        alt="vote-for-us">
+                                                    <img src="{{ $item->image_path ?? '' }}"
+                                                        style="width: 500px !important; height:500px" alt="vote-for-us">
                                                     <a href="our-servic" style="text-decoration:none;" class="hiden">
                                                     </a>
                                                 </div>
@@ -156,23 +137,89 @@
                                         </div>
                                     </div>
                                 @endforeach
-
-
-
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
     </section>
 
 
+    {{-- <section class="destination" style="padding-top: 55px;padding-bottom: 65px; padding-left:30px;padding-right:35px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12" style="position:relative">
+                    <div class="inner_img_text1">
+                        <h2 style="color:black;text-align: left;">Our Services</h2>
+                        <div class="slider_p" style="padding-top: 10px;">
+                            <p style="text-align: left; font-size:18px!important;">
+                                We offer the most exclusive experiences to guests through
+                                our three highly personalised services.
+                            </p>
+                        </div>
+                        <div class="ourser-btn">
+                            <button class="expo"><a href="services.html">Read More</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img" style="">
+                    <div class="card">
+                        <img src="images/home/luxury-collection.webp" alt="vote-for-us">
+                        <a href="services.html#luxury-collection" style="text-decoration:none;" class="hiden">
+                            <div class="offer-slider-btn-expele">
+                                <h2 style="font-size: 24px; color:white;">The Luxury Collection</h2>
+                                <div class="slider_p" style="padding-top: 10px;">
+                                    <p style="color:white; font-size:18px!important;">
+                                        Our Luxury Collection is in sync with the expanded
+                                        new &quot;three T&#39;s&quot; of luxury: Time, Truth and Trust.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img" style="">
+                    <div class="card">
+                        <img src="images/home/meetings-and-conferences.webp" alt="vote-for-us">
+                        <a href="services.html#meetings-and-conferences">
+                            <div class="offer-slider-btn-expele">
+                                <h2 style="font-size:24px;color:white;">Meeting & Conferences</h2>
+                                <div class="slider_p" style="padding-top: 10px;">
+                                    <p style="color:white; font-size:18px!important;">
+                                        We provide a comprehensive range of ultra-personalised services, including
+                                        technological solutions and more.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
 
+                <div class="col-lg-3 col-md-6 col-sm-12 desti-img img-hove2 srv-img" style="">
+                    <div class="card">
+                        <img src="images/home/Incentives.webp" alt="vote-for-us">
+                        <a href="services.html#incentives">
+                            <div class="offer-slider-btn-expele">
+                                <h2 style="font-size: 24px;color:white;">Incentives</h2>
+                                <div class="slider_p" style="padding-top: 10px;">
+                                    <p style="color:white; font-size:18px!important;">
+                                        Our leisure time programmes offer the greatest value for
+                                        time and money through a spectrum of thrilling events and
+                                        fun activities.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+        </div>
+    </section> --}}
 
+    {{-- //////////////////////////////////////////////////////// --}}
 
 
     <div class="why-choose">
@@ -249,60 +296,41 @@
     </div>
 
 
-
+    {{-- first --}}
     <section class="texti-section">
         <div class="container-fluid">
             <div class="row">
-
-                <div class="col-lg-6 col-md-6 col-sm-12"
+                <div class="col-lg-6 col-md-6 col-sm-12 img-respo"
                     style="padding: 0px 0px 0px; 0px;min-height: 40vw; overflow: hidden;">
-
-                    <div id="carouselExampleIndicators" style="padding-bottom: 0px !important;" class="carousel slide"
-                        data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-
-
-                            @foreach ($liImage as $index => $item)
-                                <button type="button" data-bs-target="#carouselExampleIndicators"
-                                    data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}"
-                                    aria-current="true" aria-label="Slide {{ $index + 1 }}"></button>
-                            @endforeach
-
-                        </div>
+                    {{-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"
+                        data-bs-interval="900">
                         <div class="carousel-inner">
-
                             @foreach ($liImage as $index => $item)
                                 <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                    <img src="{{ $item->file_path ?? '' }}" alt="image">
+                                    <img src="{{ $item->file_path ?? '' }}" class="d-block w-100" alt="...">
                                 </div>
                             @endforeach
-                            {{-- <div class="carousel-item">
-                                <img src="{{ $pageData['section6image2'] ?? '' }}" alt="image">
+                        </div>
+                    </div> --}}
+
+                    <div id="carouselExampleControls" class="carousel vert slide" data-bs-ride="carousel"
+                        data-bs-interval="900">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/home/little-inspirations.webp" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ $pageData['section6image3'] ?? '' }}" alt="image">
-                            </div> --}}
+                                <img src="images/home/Responsible-travel.webp" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/home/little-inspirations.webp" class="d-block w-100" alt="...">
+                            </div>
                         </div>
                     </div>
                 </div>
-
-
-
                 <div class="col-lg-6 col-md-6 col-sm-12"
                     style="padding: 0px 0px 0px 0px;min-height: 40vw; overflow: hidden;">
                     <div class="texti-inner">
-                        {{-- <h2>Inspirational Adventures</h2>
-                        <p>
-                            Out-of-the ordinary insights go a long way in creating a more immersive experience of the
-                            places we visit— and the communities and cultures we encounter in those environs.
-                            <br><br>
-                            We put the spotlight here on our beautifully packaged mini city guides, a dedicated
-                            accommodation series, theme-based itineraries and captivating videos on must-visit
-                            destinations. Packed with information, visually inspiring, and driven by evocative insights
-                            for the curious traveller, this is one of our most alluring in-house products.
-
-                        </p> --}}
-
                         {!! $pageData['section6content'] ?? '' !!}
                         <div class="ourser-btn">
                             <br><br>
@@ -314,68 +342,52 @@
         </div>
     </section>
 
+
+    {{-- updated section  --}}
     <section class="texti-section">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12"
-                    style="padding: 0px 0px 0px 0px; background:#FFF7F7; min-height: 40vw; overflow: hidden;height: 680px;">
+                <div class="col-lg-6 col-md-6 col-sm-12 top-features"
+                    style="padding: 0px 0px 0px 0px; background:#FFF7F7; min-height: 40vw; overflow: hidden;">
                     <div class="texti-inner">
-                        {{-- <h2>Responsible Travel</h2>
+                        <h2>Responsible Travel</h2>
                         <p>
-                            Everything we do, to act responsibly in the field of travel, we do it for you and Planet
-                            Earth. Our long-term goal to help reduce the carbon footprint is driven by even the smallest
-                            footsteps.
+                            Everything we do, to act responsibly in the field of travel, we do it for you and Planet Earth.
+                            Our long-term goal to help reduce the carbon footprint is driven by even the smallest footsteps.
                             <br><br>
                             Our words are backed by our deeds on many levels—Far and Beyond is a paperless
-                            company-everything is done digitally; we try to use local transport; saying ‘no’ to plastic
-                            is in our DNA; respecting communities and their culture is embedded in our work ethos…
+                            company-everything is done digitally; we try to use local transport; saying ‘no’ to plastic is
+                            in our DNA; respecting communities and their culture is embedded in our work ethos…
 
-                        </p> --}}
-
-                        {!! $pageData['section7content'] ?? '' !!}
-
+                        </p>
                         <div class="ourser-btn">
                             <br><br>
-                            <button class="expo"><a href="responsible-travel">Read More</a></button>
+                            <button class="expo"><a href="responsible-travel.html">Read More</a></button>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12"
-                    style="padding: 0px 0px 0px; 0px;min-height: 40vw; overflow: hidden;">
-
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                            {{-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                                aria-label="Slide 4"></button> --}}
-                        </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 item-brand img-respo"
+                    style="padding: 0px 0px 0px 0px; min-height: 40vw; overflow: hidden;">
+                    <div id="carouselExampleControls" class="carousel vert slide" data-bs-ride="carousel"
+                        data-bs-interval="900">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="{{ $pageData['section7image1'] ?? '' }}" alt="image">
+                                <img src="images/home/little-inspirations.webp" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ $pageData['section7image2'] ?? '' }}" alt="image">
+                                <img src="images/home/Responsible-travel.webp" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ $pageData['section7image3'] ?? '' }}" alt="image">
+                                <img src="images/home/little-inspirations.webp" class="d-block w-100" alt="...">
                             </div>
-                            {{-- <div class="carousel-item">
-                                <img src="images/home/little-inspirations.webp" alt="image">
-                            </div> --}}
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </section>
+
+
 
 
     <div class="trips-slider" style="display:none;">
@@ -529,80 +541,129 @@
     <div class="clear"></div>
     <!--End blog section-->
 
-    <!--End news latter-->
 
 
-    <section class="our_team">
+    <section class="our_team" style="margin-bottom:5%">
         <h2 style="margin-top:65px">What They Say</h2>
-
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" position="relative;">
             <div class="carousel-inner">
-
                 <div class="carousel-item active">
                     <div class="img-box" style="display:none">
-                        <img src="../examples/images/clients/3.html" alt="Image">
+                        <img src="../examples/images/clients/3.html" alt="">
                     </div>
-                    <p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia.
-                        Etiam faucibus
-                        mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus,
-                        volutpat vel
-                        tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
+                    <p class="testimonial">With these few words, would like to mention that, Vinay has been my reliable
+                        partner for more than 15 years for the requests of my VIP clients in India, Sri Lanka, Nepal,
+                        and Bhutan. He is an exceptional destination manager who understands and meets even the most
+                        complex requirements. His deep expertise and extensive knowledge of these destinations ensure
+                        unique and memorable experiences for travellers. I highly recommend his services for an
+                        authentic and worthwhile exploration of this wonderful region.</p>
                     <p class="overview">
-                        <b>Michael Holz</b>Seo Analyst at <a href="#">OsCorp Tech.</a>
+                        <b> Laurence
+                        </b> LOCAZUR Travel - Yachting - Cruises<br>
+                        Belgium
                     </p>
                 </div>
                 <div class="carousel-item">
                     <div class="img-box" style="display:none">
                         <img src="../examples/images/clients/1.html" alt="">
                     </div>
-                    <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor,
-                        varius quam
-                        at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum
-                        idac nisl
-                        bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
-                    <p class="overview">
-                        <b>Paula Wilson</b>Media Analyst at <a href="#">SkyNet Inc.</a>
+                    <p class="testimonial">
+                        Je travaille avec Vinay depuis plus de 10 ans maintenant, j’apprécie particulièrement son
+                        professionnalisme et son efficacité mais aussi sa disponibilité pour le suivi des dossiers.
+                        Nous avons l’occasion de travailler ensemble sur l’organisation de voyages assez compliqués avec
+                        des clients très exigeants ou avec des demandes originales.
+                        En 10 ans de collaboration, tout s’est toujours parfaitement bien passé avec mes clients, je
+                        n’ai jamais eu le moindre retour négatif.
+
                     </p>
+                    <p class="overview">
+                        <b>Aimée Bon-Hecker</b>Managing Director<br>TERANUI BY TSELANA TRAVEL
+                    </p>
+
                 </div>
                 <div class="carousel-item">
                     <div class="img-box" style="display:none">
                         <img src="../examples/images/clients/2.html" alt="">
                     </div>
-                    <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a
-                        mi suscipit
-                        tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse
-                        potenti.
-                        Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor velit.</p>
-                    <p class="overview">
-                        <b>Antonio Moreno</b>Web Developer at <a href="#">Circle Ltd.</a>
+                    <p class="testimonial">Plus de 10 ans que Vinay, veille au bonheur de nos hôtes. Notre
+                        collaboration prend force grâce à ce supplément d’âme qui fait que chaque voyage en Inde que
+                        nous créons devient une féerie, embellis par les conseils avisés que nous recevons pour proposer
+                        une nouvelle adresse, un site à ne pas manquer…Et puis il y a ce sens de l’hospitalité et de la
+                        courtoisie totalement inné chez Vinay et donne force et sécurité à une collaboration à distance.
                     </p>
+                    <p class="overview">
+                        <b>Nathalie BUENO</b>Directrice Générale – Managing Director<br>SECRETS DE VOYAGES
+
+                    </p>
+
                 </div>
                 <div class="carousel-item">
                     <div class="img-box" style="display:none">
                         <img src="../examples/images/clients/2.html" alt="">
                     </div>
-                    <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a
-                        mi suscipit
-                        tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse
-                        potenti.
-                        Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor velit.</p>
-                    <p class="overview">
-                        <b>Antonio Moreno</b>Web Developer at <a href="#">Circle Ltd.</a>
+                    <p class="testimonial">Vinay Dhall is a highly skilled professional with whom I have built a strong
+                        relationship over the years.
+                        Available at anytime, efficient, enthusiastic and always offering excellent advice.
+                        I entrust my clients to him with complete confidence.
+                        When we work with such a professional, business becomes easier.
                     </p>
+                    <p class="overview">
+                        <b>OLIVIER GLASBERG</b>Product Director
+                        <br>SUCCES VOYAGE
+
+                    </p>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/2.html" alt="">
+                    </div>
+                    <p class="testimonial"> J’ai rencontré Vinay lors notre arrivée en Inde avec notre premier groupe
+                        de voyageurs en 2011. Vinay avait construit notre voyage et a veillé sur chaque instant de notre
+                        voyage. Un voyage pavé de surprises comme nous n’en avions jamais vécues dans les cadres
+                        somptueux des anciens palais choisis avec soin. Et depuis 2011 nous avons toujours gardé contact
+                        et un de mes rêves et retourner dans cet incroyable pays ☀️ et laisser à Vinay le soin de
+                        construire ce voyage ! </p>
+                    <p class="overview">
+                        <b>Sylvie ARRIGHI-REVAH</b>Veuve Clicquot
+                    </p>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="img-box" style="display:none">
+                        <img src="../examples/images/clients/2.html" alt="">
+                    </div>
+                    <p class="testimonial">Je travaille avec Vinay depuis 5 ans pour l’Inde et le Sri Lanka pour ma
+                        clientèle haut de gamme et très exigente et je ne confierais mes clients à personne d’autre que
+                        lui !
+
+                        Au-delà des feedbacks de mes clients qui sont revenus enchantés (qualité dans l’organisation,
+                        souci du détail, les surprises offertes pour créer un wow effect), j’apprécie aussi son
+                        expertise, la clarté et la transparence des informations, son Happy Face constant et so
+                        optimisme à toute épreuve.
+
+                        Vinay connait tout le monde en Inde, donc tout est extrêmement fluide, rapide avec une
+                        reconnaissance et une valorisation du client. « A l’impossible nul n’est tenu » …..Vinay en est
+                        le contre-exemple ! </p>
+                    <p class="overview">
+                        Cécile Bouchet<br />Trans Continental
+                    </p>
+
                 </div>
             </div>
-            {{-- <div style="z-index: 9 !important;"></div> --}}
-            <button class="carousel-control-prev" style="z-index: 10; top: 230px !important; " type="button"
-                data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                <span class="carousel-control-next-icon " aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" style="z-index: 10; top: 230px !important;" type="button"
-                data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <!-- Carousel controls -->
+            <a class="carousel-control-next" href="#myCarousel" data-slide="prev">
+                <i class="fa fa-angle-right">
+                    < </i>
+            </a>
+            <a class="carousel-control-prev" href="#myCarousel" data-slide="next">
+                <i class="fa fa-angle-left">
+                    ></i>
+            </a>
         </div>
+
+
+
 
 
         <style>
@@ -613,70 +674,6 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-        <script>
-            // $(document).ready(function() {
-            //     $("#service-carousel").owlCarousel({
-            //         loop: true,
-            //         margin: 10,
-            //         nav: true,
-            //         responsive: {
-            //             0: {
-            //                 items: 1
-            //             },
-            //             600: {
-            //                 items: 3
-            //             },
-            //             1000: {
-            //                 items: 4
-            //             }
-            //         }
-            //     });
-            // });
-
-
-            $(document).ready(function() {
-                $("#service-carousel").owlCarousel({
-                    items: 4, // Number of items you want to display
-                    margin: 15,
-                    loop: true,
-                    autoplay: true,
-                    autoplayTimeout: 3000,
-                    autoplayHoverPause: true,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        600: {
-                            items: 2
-                        },
-                        1000: {
-                            items: 4
-                        }
-                    }
-                });
-            });
-
-
-            // $("#service-carousel2").owlCarousel({
-            //     items: 4, // Number of items you want to display
-            //     margin: 15,
-            //     loop: true,
-            //     autoplay: true,
-            //     autoplayTimeout: 3000,
-            //     autoplayHoverPause: true,
-            //     responsive: {
-            //         0: {
-            //             items: 1
-            //         },
-            //         600: {
-            //             items: 1
-            //         },
-            //         1000: {
-            //             items: 3
-            //         }
-            //     }
-            // });
-        </script>
 
         <script>
             document.addEventListener("DOMContentLoaded", function() {
@@ -694,5 +691,267 @@
                 carouselInner.style.opacity = '1';
             });
         </script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#myCarousel').on('slide.bs.carousel', function(e) {
+                    var $e = $(e.relatedTarget);
+                    var idx = $e.index();
+                    var itemsPerSlide = 3;
+                    var totalItems = $('.carousel-item').length;
+
+                    if (idx >= totalItems - (itemsPerSlide - 1)) {
+                        var it = itemsPerSlide - (totalItems - idx);
+                        for (var i = 0; i < it; i++) {
+                            // append slides to end
+                            if (e.direction == "left") {
+                                $('.carousel-item').eq(i).appendTo('.carousel-inner');
+                            } else {
+                                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+
+
+
+
+
+
+        {{-- ////////////////////////////////////////////////////////////////////////// --}}
+
+
+        <script>
+            $(document).ready(function() {
+                var owl = $('#service-carousel2');
+                owl.owlCarousel({
+                    autoplay: true,
+                    autoplayHoverPause: true,
+                    margin: 10,
+                    stagePadding: 0,
+                    nav: false,
+                    loop: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 3
+                        }
+                    }
+                })
+            })
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                var owl = $('.owl-carousel');
+                owl.owlCarousel({
+                    autoplay: true,
+                    autoplayHoverPause: true,
+                    margin: 10,
+                    stagePadding: 0,
+                    nav: false,
+                    loop: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 4
+                        }
+                    }
+                })
+            })
+        </script>
+
+
+        <script>
+            $('.testi_box').owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: true,
+                navText: [' < i class = "fa fa-caret-left" > < /i>', ' < i class = "fa fa-caret-right" > < /i>'],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 1
+                    },
+                    960: {
+                        items: 4
+                    },
+                    1200: {
+                        items: 1
+                    }
+                }
+            });
+        </script>
+        <!--logo slider-->
+        <script>
+            $('.inspired_slider1').owlCarousel({
+                loop: true,
+                autoplay: true,
+                stagePadding: 150,
+                margin: 30,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 3
+                    },
+                    960: {
+                        items: 6
+                    },
+                    1200: {
+                        items: 7
+                    }
+                }
+            });
+        </script>
+        <script>
+            // Show the first tab and hide the rest
+            $('#tabs-nav li:first-child').addClass('active');
+            $('.tab-content').hide();
+            $('.tab-content:first').show();
+            // Click function
+            $('#tabs-nav li').mouseenter(function() {
+                $('#tabs-nav li').removeClass('active');
+                // $(this).addClass('active');
+                $('.tab-content').hide();
+                var activeTab = $(this).find('a').attr('href');
+                $(activeTab).fadeIn();
+                return false;
+            });
+        </script>
+        <script>
+            window.onscroll = function() {
+                myFunction()
+            };
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        </script>
+        <!--transparent nabigation-->
+        <script>
+            window.onscroll = function() {
+                scrollFunction()
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+
+                    document.getElementById("navbar").style.background = "#fff";
+                    document.getElementById('logo1').style.display = "none";
+                    document.getElementById('logo2').style.display = "block";
+                    document.getElementById('logo3').style.display = "none";
+                    document.getElementById('logo4').style.display = "block";
+                    document.getElementByClass('Fnb').style.color = "#fff"
+                    document.getElementByClassName('mybutton').classList.add("btn-visible")
+                } else {
+
+                    document.getElementById("navbar").style.background = "none";
+                    document.getElementById('logo2').style.display = "none";
+                    document.getElementById('logo1').style.display = "block";
+                    document.getElementById('logo4').style.display = "none";
+                    document.getElementById('logo3').style.display = "block";
+                    document.getElementByClassName('mybutton').classList.remove("btn-visible")
+                }
+            }
+        </script>
+        <script>
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+        <!--transparent nabigation-->
+        <script>
+            (function() {
+                "use strict";
+
+                var cookieAlert = document.querySelector(".cookie-alert");
+                var acceptCookies = document.querySelector(".accept-cookies");
+
+                cookieAlert.offsetHeight;
+
+                if (!getCookie("acceptCookies")) {
+                    cookieAlert.classList.add("show");
+                }
+
+                acceptCookies.addEventListener("click", function() {
+                    setCookie("acceptCookies", true, 60);
+                    cookieAlert.classList.remove("show");
+                });
+            })();
+
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+
+            function getCookie(cname) {
+                var name = cname + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) === ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) === 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </section>
 @endsection

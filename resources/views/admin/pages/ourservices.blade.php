@@ -61,10 +61,8 @@
 
 
         <!-- Main content -->
-
         <section class="content">
             <div class="tab-content" id="myTabContent">
-                <!-- Tab 1 -->
                 <div class="tab-pane fade {{ $activeTab == 'home' ? 'show active' : '' }}" id="home" role="tabpanel"
                     aria-labelledby="home-tab">
                     <div class="container-fluid">
@@ -110,7 +108,6 @@
 
                     <!-- /.row (main row) -->
                 </div>
-                <!-- Tab1 -->
                 <div class="tab-pane fade {{ $activeTab == 'contact' ? 'show active' : '' }}" id="contact" role="tabpanel"
                     aria-labelledby="contact-tab">
                     <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#exampleModal">
@@ -124,6 +121,7 @@
                                 <th scope="col">Photo</th>
                                 <th scope="col">Content</th>
                                 <th scope="col">Action</th>
+                                <th scope="col">View</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -150,6 +148,19 @@
                                                 <a style="margin-top:10%" href="multi-service/active/{{ $service->id }}"
                                                     class="btn btn-sm btn-success">Active</a>
                                             @endif
+
+
+                                    </td>
+                                    <td>
+                                        @if ($service->view_home == 1)
+                                            <a style="margin-top:10%"
+                                                href="{{ route('admin.service', ['id' => $service->id]) }}"
+                                                class="btn btn-sm btn-danger">Home Page</a>
+                                        @else
+                                            <a style="margin-top:10%"
+                                                href="{{ route('admin.service', ['id' => $service->id]) }}"
+                                                class="btn btn-sm btn-success">Services Page</a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
@@ -164,7 +175,6 @@
 
 
     <!-- Modal  -->
-    <!-- Modal -->
     <div class="modal fade {{ $activeTab == 'exampleModal' ? 'show active' : '' }}" id="exampleModal" tabindex="-1"
         role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -191,6 +201,14 @@
                         <div class="form-group">
                             <label for="value2">Section Content</label>
                             <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="3">{{ $editData->content_value ?? '' }}</textarea>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" name="flexCheckIndeterminate"
+                                id="flexCheckIndeterminate">
+                            <label class="form-check-label" for="flexCheckIndeterminate">
+                                <b>Show in The Home Page</b>
+                            </label>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -232,5 +250,9 @@
                 $('#exampleModal').modal('show');
             @endif
         });
+    </script>
+    <script>
+        var checkbox = document.getElementById('flexCheckIndeterminate');
+        checkbox.checked = {{ $editData->view_home }} == 1;
     </script>
 @endsection

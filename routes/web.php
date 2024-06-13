@@ -59,6 +59,7 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('contact-us', 'contactUs');
     Route::get('privacy-policy', 'privacyPolicy');
     Route::get('thank-you', 'thankYou');
+    Route::get('hero', 'hero');
 });
 
 Route::controller(FormController::class)->group(function () {

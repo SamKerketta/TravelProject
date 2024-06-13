@@ -65,6 +65,7 @@ class OurServicesController extends Controller
             $attributes = [
                 'content_value' => $req->value2,
                 'page_name' => "ourServices",
+                'view_home' => $req->flexCheckIndeterminate ?? 0,
             ];
 
             if ($req->hasFile('value1') && $req->value1) {
@@ -77,7 +78,6 @@ class OurServicesController extends Controller
                 $actualFileName = $viewPath . "/" . $filename;
                 $attributes['image_path'] = $actualFileName;
             }
-
 
             // update
             if (isset($req->id)) {

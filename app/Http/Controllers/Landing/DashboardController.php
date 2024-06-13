@@ -41,7 +41,7 @@ class DashboardController extends Controller
         $metaData       = $this->mseoTable->getSeoByPage("homePage")->first();
         $pageData       = $this->mSectionValue->getDataForPage($pageName)->get();
         $littleIns      = File::where("file_type", "photo")->get();
-        $multipleServices = MultiService::where("status", 1)->get();
+        $multipleServices = MultiService::where("status", 1)->where("view_home", 1)->get();
 
         $listServices   = $mMultiService->getAll()->where("status", 1);
 
@@ -57,6 +57,12 @@ class DashboardController extends Controller
             "liImage"   => $littleIns,
             "multipleServices" => $multipleServices
         ]);
+    }
+
+
+    public function hero()
+    {
+        return view("pages/hero2",);
     }
 
 
@@ -144,7 +150,7 @@ class DashboardController extends Controller
         $pageName = "ourServices";                                              // Static put in config
         $newArray = array();
         $mMultiServices = new MultiService();
-        $multiServies = $mMultiServices->getAll()->where("status", 1);
+        $multiServies = $mMultiServices->getAll()->where("status", 1)->where("view_home", 0);
 
         $metaData = $this->mseoTable->getSeoByPage("services")->first();
         $pageData = $this->mSectionValue->getDataForPage($pageName)->get();
