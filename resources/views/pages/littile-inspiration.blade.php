@@ -5,8 +5,7 @@
 
     <section class="hero" style="position:relative; ">
         <div class="banner">
-            <img src="images/little-inspirations/Inspirational%20Adventures.webp" class="d-block w-100"
-                alt="Luxury Travels Bali">
+            <img src="{{ $pageData['section1Image'] ?? '' }}" class="d-block w-100" alt="Luxury Travels Bali">
         </div>
         <div class="container" style="position: absolute; top:48%; left: 50%; transform: translate(-50%, -50%);">
             <div class="row">
@@ -24,10 +23,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="about-text">
-
                         {!! $pageData['section1content'] ?? '' !!}
-
-
                     </div>
                 </div>
             </div>
@@ -62,14 +58,10 @@
                         .hard-responsive {
                             width: 100% !important;
                         }
-                    }
 
-                    @media only screen and (max-width: 600px) {
                         .col-3 {
                             padding-left: 0px !important;
                         }
-
-
                     }
                 </style>
 
@@ -85,10 +77,9 @@
                                 <div class="owl-item active hard-responsive">
                                     <div class="item ">
                                         <div class="inspired_box">
-                                            <img src="images/little-inspirations/Village-tour.webp" {{-- <img src="{{ $value->file_path }}" alt="Luxury Travels Sri Lanka"> --}}
-                                                {{-- <a href="https://www.alphonsostories-partners.com/partner-login?From_Url=/experiences" --}} style="color:white;">
+                                            <img src="{{ $value->file_path ?? '' }}" style="color:white;">
                                             <div class="content">
-                                                <h3>Village Tour</h3>
+                                                <h3>{{ $value->title }}</h3>
                                                 <p class="read-more color-primary sans-serif"> Read more </p>
                                             </div>
                                             </a>

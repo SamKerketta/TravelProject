@@ -74,25 +74,25 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel"
                                 aria-labelledby="home-tab">
                                 <!-- Section 1 -->
-                                <form action="{{ route('admin.little.updatesection') }}" method="POST">
+                                <form action="{{ route('admin.little.updatesection') }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" name="section" id="section" value="1">
 
                                     <div class="form-group">
-                                        <label for="photo1">Hero Photo</label>
-                                        <input type="file" class="form-control" id="photo1" name="photo1"></input>
+                                        <label class="form-label" for="heroImage">Hero Image</label>
+                                        <input type="file" class="form-control" id="heroImage" name="heroImage"
+                                            accept="image/*" />
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="section1Heading">Section 1 Heading</label>
-                                        {{-- <input type="text" class="form-control" id="section1Heading"
-                                            name="section1Heading"></input> --}}
-                                        <textarea class="form-control" id="section1Heading" name="section1Heading" rows="3">{{ $pageData['name'] ?? '' }}</textarea>
+                                        <label for="section1Heading">Hero Heading</label>
+                                        <textarea class="form-control" id="section1Heading" name="section1Heading" rows="3">{{ $pageData['section1heading'] ?? '' }}</textarea>
 
                                     </div>
                                     <div class="form-group">
                                         <label for="section1Content">Section 1 Content</label>
-                                        <textarea class="form-control tinymce-editor" id="section1Content" name="section1Content" rows="3"></textarea>
+                                        <textarea class="form-control tinymce-editor" id="section1Content" name="section1Content" rows="3">{{ $pageData['section1content'] ?? '' }}</textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>

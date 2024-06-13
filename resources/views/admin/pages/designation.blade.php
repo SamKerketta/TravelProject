@@ -261,6 +261,7 @@
                                 <table class="table mt-2">
                                     <thead>
                                         <tr>
+                                            {{-- <th scope="col">S</th> --}}
                                             <th scope="col">Name</th>
                                             <th scope="col">Image1</th>
                                             <th scope="col">Image2</th>
@@ -287,8 +288,21 @@
                                                     <img src="{{ $video->l_image }}" alt="" srcset=""
                                                         width="250">
                                                 </th>
-                                                <td>{!! $video->content_one !!}</td>
-                                                <td>{!! $video->content_two !!}</td>
+                                                {{-- <td>{!! $video->content_one !!}</td> --}}
+                                                <td>
+                                                    @php
+                                                        $trimmedContent = Str::limit($video->content_one, 200, '...');
+                                                        echo $trimmedContent;
+                                                    @endphp
+                                                </td>
+                                                <td>
+                                                    @php
+                                                        $trimmedContent = Str::limit($video->content_two, 200, '...');
+                                                        echo $trimmedContent;
+                                                    @endphp
+                                                </td>
+
+                                                {{-- <td>{!! $video->content_two !!}</td> --}}
                                                 <td>
                                                     <a href="file/destination/delete/{{ $video->id }}"
                                                         class="btn btn-sm btn-danger">Delete</button>

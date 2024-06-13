@@ -41,16 +41,17 @@ class LIController extends Controller
     {
         if ($req->section == 1)
             return $this->updateSection1($req);
-        if ($req->section == 2)
-            return $this->updateSection2($req);
+        // if ($req->section == 2)
+        //     return $this->updateSection2($req);
     }
 
     // Update section 1
     private function updateSection1($req)
     {
         $req->validate([
-            "section1Heading"    => "required|string",
-            "section1Content"    => "required|string"
+            "section1Heading"    => "nullable|string",
+            "section1Content"    => "nullable|string",
+            "hero-image"         => "nullable"
         ]);
 
         $section = array();
@@ -73,6 +74,26 @@ class LIController extends Controller
                 ];
                 array_push($section, $third);
             }
+
+
+            if ($req->hasFile('heroImage') && $req->heroImage) {
+                $file = $req->file('heroImage');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . rand(10, 100) . "." . $extension;
+                $viewPath = "uploads/landing";
+                $path = public_path() . "/" . $viewPath;
+                $file->move($path, $filename);
+                $actualFileName = $viewPath . "/" . $filename;
+
+                $first = [
+                    "sectionName"   => $req->section,
+                    "value"         => $actualFileName,
+                    "type"          => "Image"
+                ];
+                array_push($section, $first);
+            }
+
+
             if (!empty($section)) {
                 foreach ($section as $sections) {
                     $this->mSectionValue->updateValues($sections, $this->pageName);

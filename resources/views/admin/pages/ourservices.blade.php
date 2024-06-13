@@ -251,8 +251,10 @@
             @endif
         });
     </script>
-    <script>
-        var checkbox = document.getElementById('flexCheckIndeterminate');
-        checkbox.checked = {{ $editData->view_home }} == 1;
-    </script>
+    @if (isset($editData))
+        <script>
+            var checkbox = document.getElementById('flexCheckIndeterminate');
+            checkbox.checked = {{ $editData['view_home'] }} === 1;
+        </script>
+    @endif
 @endsection
