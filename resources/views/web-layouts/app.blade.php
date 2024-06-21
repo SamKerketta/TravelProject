@@ -249,7 +249,9 @@
                     <div class="news-desc news-cont">Stay ahead with the latest updates in travel trends.</div>
                 </div>
                 <div class="col-7 hard-responsive">
-                    <form class="form-inline" action={{ route('admin.save.subscription') }} method="POST">
+
+                    <form class="form-inline" action="{{ route('admin.save.subscription') }}" method="POST"
+                        onsubmit="return validateForm()">
                         @csrf
                         <div class="form-group">
                             <input class="nameform-footer" type="text" id="name" placeholder="Name"
@@ -262,10 +264,12 @@
                         <button type="submit" class="btn-2">SUBSCRIBE</button>
                         <div class="checkbox">
                             <label class="check" style="display:flex">
-                                <input type="checkbox">
-                                <p style="font-size:1rem!important;margin-left: 10px;">I have read and accept the <a
-                                        style="text-decoration: underline;">Privacy and Data Protection Policy*</a> and
-                                    I know that I can unsubscribe at any time. </p>
+                                <input type="checkbox" id="privacyPolicyCheckbox">
+                                <p style="font-size:1rem!important;margin-left: 10px;">
+                                    I have read and accept the
+                                    <a style="text-decoration: underline;">Privacy and Data Protection Policy*</a>
+                                    and I know that I can unsubscribe at any time.
+                                </p>
                             </label>
                         </div>
                     </form>
@@ -514,7 +518,17 @@
             }
         });
     </script>
-    <!--logo slider-->
+
+    <script>
+        function validateForm() {
+            var checkbox = document.getElementById("privacyPolicyCheckbox");
+            if (!checkbox.checked) {
+                alert("You must accept the Privacy and Data Protection Policy to subscribe.");
+                return false;
+            }
+            return true;
+        }
+    </script>
     <script>
         $('.inspired_slider1').owlCarousel({
             loop: true,

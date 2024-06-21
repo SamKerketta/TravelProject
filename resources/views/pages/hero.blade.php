@@ -2,8 +2,6 @@
 
 @section('page-content')
     <link href="css/hero.min.css" type="text/css" rel="stylesheet">
-
-
     <style>
         @media only screen and (max-width: 600px) {
             .text-video {
@@ -313,18 +311,14 @@
                         </div>
                     </div> --}}
 
-                    <div id="carouselExampleControls" class="carousel vert slide" data-bs-ride="carousel"
+                    <div id="carouselExampleControls" class="carousel  slide" data-bs-ride="carousel"
                         data-bs-interval="900">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="images/home/little-inspirations.webp" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/home/Responsible-travel.webp" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/home/little-inspirations.webp" class="d-block w-100" alt="...">
-                            </div>
+                            @foreach ($liImage as $index => $item)
+                                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                    <img src="{{ $item->file_path ?? '' }}" class="d-block w-100" alt="...">
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -350,25 +344,16 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 top-features"
                     style="padding: 0px 0px 0px 0px; background:#FFF7F7; min-height: 40vw; overflow: hidden;">
                     <div class="texti-inner">
-                        <h2>Responsible Travel</h2>
-                        <p>
-                            Everything we do, to act responsibly in the field of travel, we do it for you and Planet Earth.
-                            Our long-term goal to help reduce the carbon footprint is driven by even the smallest footsteps.
-                            <br><br>
-                            Our words are backed by our deeds on many levels—Far and Beyond is a paperless
-                            company-everything is done digitally; we try to use local transport; saying ‘no’ to plastic is
-                            in our DNA; respecting communities and their culture is embedded in our work ethos…
-
-                        </p>
+                        {!! $pageData['section7content'] ?? '' !!}
                         <div class="ourser-btn">
                             <br><br>
-                            <button class="expo"><a href="responsible-travel.html">Read More</a></button>
+                            <button class="expo"><a href="responsible-travel">Read More</a></button>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 item-brand img-respo"
                     style="padding: 0px 0px 0px 0px; min-height: 40vw; overflow: hidden;">
-                    <div id="carouselExampleControls" class="carousel vert slide" data-bs-ride="carousel"
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"
                         data-bs-interval="900">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -928,30 +913,5 @@
                 return "";
             }
         </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </section>
 @endsection

@@ -96,22 +96,21 @@
                             {{-- first section --}}
                             {{-- <div class="tab-pane fade show active" id="home" role="tabpanel"
                                 aria-labelledby="home-tab"> --}}
-
                             <div class="tab-pane fade {{ $activeTab == 'home' ? 'show active' : '' }}" id="home"
                                 role="tabpanel" aria-labelledby="home-tab">
-
-
 
                                 <!-- Section 1 -->
                                 <form action="{{ route('destination.section1.update') }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
-
+                                    <div class="col-md-12 text-center">
+                                        <h3>Destination Banner Section </h3>
+                                    </div>
                                     <div class="form-group">
                                         <input type="hidden" class="form-control" id="section1" name="section1"
                                             value="1">
 
-                                        <label class="form-label" for="value1">Hero image</label>
+                                        <label class="form-label" for="value1">Banner image</label>
                                         <input type="file" class="@error('value1') is-invalid @enderror form-control"
                                             id="value1" name="value1" accept="image/*" />
                                         @error('value1')
@@ -120,7 +119,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="value2">Hero Tittle</label>
+                                        <label for="value2">Banner Tittle</label>
                                         {{-- <input type="text" id="value2" name="value2" class="form-control"></input> --}}
                                         <textarea class="form-control" id="value2" name="value2" rows="3">{{ $section1heading ?? '' }}</textarea>
 
@@ -132,9 +131,12 @@
 
                                 <form action="{{ route('destination.section2.update') }}" method="POST">
                                     @csrf
+                                    <div class="col-md-12 text-center">
+                                        <h3>Destination Content Section </h3>
+                                    </div>
                                     <input type="hidden" name="section2" id="section2" value="2">
                                     <div class="form-group">
-                                        <label for="value1">Section 2 Content</label>
+                                        <label for="value1">Destination page Content</label>
                                         <textarea class="form-control tinymce-editor" id="value1" name="value1" rows="3">{{ $section2content ?? '' }}</textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -168,8 +170,8 @@
                                         <label for="section1Heading">Destination Name </label>
                                         <textarea class="form-control" id="name" name="name" rows="3">{{ $editedData['destination_name'] ?? '' }}</textarea>
 
-                                        <label style ="margin-top:20px" for="section1Heading">Destination
-                                            {{ $i }} first content </label>
+                                        <label style ="margin-top:20px" for="section1Heading">Destination First
+                                            Description </label>
                                         <textarea class="form-control tinymce-editor" id="value{{ $k }}" name="value{{ $k }}"
                                             rows="3">{{ $editedData['content_one'] ?? '' }}</textarea>
                                     </div>
@@ -180,8 +182,7 @@
                                     ?>
 
                                     <div class="form-group">
-                                        <label for="section1Heading">Destination {{ $i }} second
-                                            content</label>
+                                        <label for="section1Heading">Destination Second Description</label>
                                         <textarea class="form-control tinymce-editor" id="value{{ $m }}" name="value{{ $m }}"
                                             rows="3">{{ $editedData['content_two'] ?? '' }}</textarea>
                                     </div>
@@ -192,7 +193,7 @@
                                     ?>
 
                                     <div class="form-group">
-                                        <label class="form-label" for="value{{ $m }}">Destination Image
+                                        <label class="form-label" for="value{{ $m }}">Destination first Image
                                             {{ $i }} </label>
                                         <input type="file"
                                             class="@error('value{{ $m }}') is-invalid @enderror form-control"
@@ -207,7 +208,7 @@
                                         $k = $m;
                                         ?>
 
-                                        <label class="form-label" for="value{{ $m }}">Destination Image
+                                        <label class="form-label" for="value{{ $m }}">Destination Second Image
                                             {{ $i + 1 }}</label>
                                         <input type="file"
                                             class="@error('value{{ $m }}') is-invalid @enderror form-control"
@@ -218,7 +219,8 @@
                                         @enderror
 
 
-                                        <label class="form-label" for="valuel">landing page Destination </label>
+                                        <label class="form-label" for="valuel">Home page Destination Section
+                                            Image</label>
                                         <input type="file" class=" form-control" id="valuel" name="valuel"
                                             accept="image/*" />
 
@@ -239,8 +241,6 @@
 
                             {{-- third section --}}
                             {{-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"> --}}
-
-
                             <div class="tab-pane fade {{ $activeTab == 'contact' ? 'show active' : '' }}" id="contact"
                                 role="tabpanel" aria-labelledby="contact-tab">
 
@@ -263,11 +263,11 @@
                                         <tr>
                                             {{-- <th scope="col">S</th> --}}
                                             <th scope="col">Name</th>
-                                            <th scope="col">Image1</th>
-                                            <th scope="col">Image2</th>
-                                            <th scope="col">Landing Page Image</th>
-                                            <th scope="col">Description1</th>
-                                            <th scope="col">Description2</th>
+                                            <th scope="col">Destination Page First Image</th>
+                                            <th scope="col">Destination Page Second Image</th>
+                                            <th scope="col">Home Page Destination Image</th>
+                                            <th scope="col">Destination Page First Description</th>
+                                            <th scope="col">Destination Page Second Description</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>

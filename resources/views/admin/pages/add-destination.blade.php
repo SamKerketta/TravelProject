@@ -1,8 +1,8 @@
 @extends('admin.layouts.app')
 
 @section('page-content')
-
     <div class="content-wrapper">
+
         @if (\Session::has('error'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 {!! \Session::get('error') !!}

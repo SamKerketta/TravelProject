@@ -78,10 +78,12 @@
                                     <div class="item ">
                                         <div class="inspired_box">
                                             <img src="{{ $value->file_path ?? '' }}" style="color:white;">
-                                            <div class="content">
-                                                <h3>{{ $value->title }}</h3>
-                                                <p class="read-more color-primary sans-serif"> Read more </p>
-                                            </div>
+                                            <a href="https://www.alphonsostories-partners.com/partner-login?From_Url=/experiences"
+                                                style="color:white;">
+                                                <div class="content">
+                                                    <h3>{{ $value->title }}</h3>
+                                                    <p class="read-more color-primary sans-serif"> Read more </p>
+                                                </div>
                                             </a>
                                         </div>
                                     </div>

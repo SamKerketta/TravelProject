@@ -66,7 +66,7 @@
                                     value="landingPage">
                                 <input type="hidden" class="form-control" id="section1" name="section1" value="1">
 
-                                <label class="form-label" for="value1">Hero Video</label>
+                                <label class="form-label" for="value1">Banner Video</label>
                                 <input type="file" class="@error('value1') is-invalid @enderror form-control"
                                     id="value1" name="value1" accept="video/*" />
                                 @error('value1')
@@ -74,7 +74,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Hero Tittle</label>
+                                <label for="exampleFormControlTextarea1">Banner Tittle</label>
                                 <textarea class="form-control" id="value2" name="value2" rows="3">{{ $pageData['section1heading'] ?? '' }}</textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -113,7 +113,7 @@
             <div class="container-fluid" style="margin-top: 30px">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3> Section 6 Inspirational Adventures</h3>
+                        <h3>Inspirational Adventures</h3>
                     </div>
                     <div class="col-md-12">
                         <form action="{{ route('section6.update') }}" method="POST" enctype="multipart/form-data">
@@ -124,26 +124,9 @@
                                 <input type="hidden" class="form-control" id="section6" name="section6"
                                     value="6">
 
-                                {{-- <label class="form-label" for="value1">section 6 image 1</label>
-                                <input type="file" class="@error('value1') is-invalid @enderror form-control"
-                                    id="value1" name="value1" accept="image/*" />
-                                @error('value1')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-
-
-                                <label class="form-label" for="value3">section 6 image 2</label>
-                                <input type="file" class="form-control" id="value3" name="value3"
-                                    accept="image/*" />
-
-                                <label class="form-label" for="value4">section 6 image 3</label>
-                                <input type="file" class="form-control" id="value4" name="value4"
-                                    accept="image/*" /> --}}
-
-
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Example textarea</label>
+                                <label for="exampleFormControlTextarea1">Inspirational Adventures Content</label>
                                 <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="3">{{ $pageData['section6content'] ?? '' }}</textarea>
 
                             </div>
@@ -157,7 +140,7 @@
             <div class="container-fluid" style="margin-top: 30px">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3> Section 7 Responsible Travel</h3>
+                        <h3>Responsible Travel</h3>
                     </div>
                     <div class="col-md-12">
                         <form action="{{ route('section6.update') }}" method="POST" enctype="multipart/form-data">
@@ -168,26 +151,26 @@
                                 <input type="hidden" class="form-control" id="section7" name="section7"
                                     value="7">
 
-                                <label class="form-label" for="value1">section 7 Image 1</label>
+                                <label class="form-label" for="value1">Responsible Travel Image 1</label>
                                 <input type="file" class="@error('value1') is-invalid @enderror form-control"
                                     id="value1" name="value1" accept="image/*" />
                                 @error('value1')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
 
-                                <label class="form-label" for="value3">section 7 image 2</label>
+                                <label class="form-label" for="value3">Responsible Travel image 2</label>
                                 <input type="file" class="form-control" id="value3" name="value3"
                                     accept="image/*" />
 
 
-                                <label class="form-label" for="value4">section 7 image 3</label>
+                                <label class="form-label" for="value4">Responsible Travel image 3</label>
                                 <input type="file" class="form-control" id="value4" name="value4"
                                     accept="image/*" />
 
 
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Example textarea</label>
+                                <label for="exampleFormControlTextarea1">Responsible Travel Content</label>
                                 <textarea class="form-control tinymce-editor" id="value2" name="value2" rows="3">{{ $pageData['section7content'] ?? '' }}</textarea>
 
                             </div>

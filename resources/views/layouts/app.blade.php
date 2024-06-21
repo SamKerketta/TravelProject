@@ -16,6 +16,7 @@
     <script src="https://lms.openconnect.tech/public/build/assets/app-BwrRV5ts.js"></script>
 
     <!-- Scripts -->
+    <link href="css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="resources/css/app.css">
     <script src="resources/js/app.js"></script>
     <!-- Styles -->

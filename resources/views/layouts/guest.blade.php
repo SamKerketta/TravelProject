@@ -15,12 +15,17 @@
     <script src="https://lms.openconnect.tech/public/build/assets/app-BwrRV5ts.js"></script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="resources/css/app.css">
+
+    {{-- <link rel="stylesheet" href="resources/css/app.css"> --}}
+    <script src="resources/js/app.js"></script>
 
     <!-- Styles -->
     @livewireStyles
 </head>
 
 <body>
+
     <div class="font-sans text-gray-900 antialiased">
         {{ $slot }}
     </div>

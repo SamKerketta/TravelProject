@@ -63,12 +63,14 @@
         <!-- Main content -->
         <section class="content">
             <div class="tab-content" id="myTabContent">
+
+                {{-- first  --}}
                 <div class="tab-pane fade {{ $activeTab == 'home' ? 'show active' : '' }}" id="home" role="tabpanel"
                     aria-labelledby="home-tab">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12 text-center">
-                                <h3> Section 1 </h3>
+                                <h3>Our Services Banner Section </h3>
                             </div>
                             <div class="col-md-12">
                                 <form action="{{ route('admin.save.services1') }}" method="POST"
@@ -81,7 +83,7 @@
                                             value="1">
 
 
-                                        <label class="form-label" for="value1">Hero Image</label>
+                                        <label class="form-label" for="value1">Banner Image</label>
                                         <input type="file" class="@error('value1') is-invalid @enderror form-control"
                                             id="value1" name="value1" accept="image/*" />
                                         @error('value1')
@@ -90,12 +92,12 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Hero Image Tittle</label>
+                                        <label for="exampleFormControlTextarea1">Banner Tittle</label>
                                         <textarea class="form-control" id="value2" name="value2" rows="3">{{ $pageData['section1tittle'] ?? '' }}</textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleFormControlTextarea1"> Description </label>
+                                        <label for="exampleFormControlTextarea1">Our Services Description </label>
                                         <textarea class="form-control tinymce-editor" id="valueD" name="valueD" rows="3">{{ $pageData['section1content'] ?? '' }}</textarea>
                                     </div>
 
@@ -108,6 +110,8 @@
 
                     <!-- /.row (main row) -->
                 </div>
+
+                {{-- second --}}
                 <div class="tab-pane fade {{ $activeTab == 'contact' ? 'show active' : '' }}" id="contact" role="tabpanel"
                     aria-labelledby="contact-tab">
                     <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#exampleModal">
@@ -118,10 +122,10 @@
                     <table class="table mt-2">
                         <thead>
                             <tr>
-                                <th scope="col">Photo</th>
-                                <th scope="col">Content</th>
+                                <th scope="col">Our Services Image</th>
+                                <th scope="col">Our Services Dscription</th>
                                 <th scope="col">Action</th>
-                                <th scope="col">View</th>
+                                <th scope="col">Displaying in Home/Our Services page</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -2,6 +2,7 @@
 
 @section('page-content')
     <div class="content-wrapper">
+
         @if (\Session::has('error'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 {!! \Session::get('error') !!}
@@ -36,15 +37,15 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1 class="m-0">Little Inspirations</h1>
-                    </div><!-- /.col -->
+                    </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item active">Little Inspirations</li>
                         </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Main content -->
@@ -73,25 +74,29 @@
 
                             <div class="tab-pane fade show active" id="home" role="tabpanel"
                                 aria-labelledby="home-tab">
+
                                 <!-- Section 1 -->
                                 <form action="{{ route('admin.little.updatesection') }}" method="POST"
                                     enctype="multipart/form-data">
+                                    <div class="col-md-12 text-center">
+                                        <h3>Little Inspirations Section </h3>
+                                    </div>
                                     @csrf
                                     <input type="hidden" name="section" id="section" value="1">
 
                                     <div class="form-group">
-                                        <label class="form-label" for="heroImage">Hero Image</label>
+                                        <label class="form-label" for="heroImage">Banner Image</label>
                                         <input type="file" class="form-control" id="heroImage" name="heroImage"
                                             accept="image/*" />
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="section1Heading">Hero Heading</label>
+                                        <label for="section1Heading">Banner Tittle</label>
                                         <textarea class="form-control" id="section1Heading" name="section1Heading" rows="3">{{ $pageData['section1heading'] ?? '' }}</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <label for="section1Content">Section 1 Content</label>
+                                        <label for="section1Content">Little Inspirations Content</label>
                                         <textarea class="form-control tinymce-editor" id="section1Content" name="section1Content" rows="3">{{ $pageData['section1content'] ?? '' }}</textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -171,6 +176,9 @@
                                                 <td>
                                                     <a href="file/delete/{{ $photo->id }}"
                                                         class="btn btn-sm btn-danger">Delete</button>
+                                                        <br>
+                                                        <a style="margin-left:10%" href=""
+                                                            class="btn btn-sm btn-success">Edit</a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -256,7 +264,7 @@
                                                 <td>{{ $video->title }}</td>
                                                 <td>{{ $video->description }}</td>
                                                 <td>
-                                                    <a href="file/view-edit/{{ $video->id }}"
+                                                    <a style="margin-right:10%" href="file/view-edit/{{ $video->id }}"
                                                         class="btn btn-sm btn-success">Edit</button>
                                                         <a href="file/delete/{{ $video->id }}"
                                                             class="btn btn-sm btn-danger">Delete</button>
