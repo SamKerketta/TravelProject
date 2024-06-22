@@ -137,7 +137,9 @@ Route::middleware([
         Route::post('little-uploadfile', 'uploadFile')->name('little.upload.file');
         Route::get('file/delete/{id}', 'deleteFile');
         Route::get('file/view-edit/{id}', 'editFile');
+        Route::get('photo/view-edit/{id}', 'editPhoto');
         Route::post('file/process-edit/{id}', 'editFileProcess')->name('little.update.file');
+        Route::get('file/deactive-active/{id}/{status}', 'deactiveActive')->name('little.deactive.active');
     });
 
     Route::controller(OurServicesController::class)->group(function () {

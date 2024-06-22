@@ -187,6 +187,12 @@ class LIController extends Controller
         return view('admin.pages.edit-file', ['file' => $file]);
     }
 
+    public function editPhoto($id)
+    {
+        $file = File::findOrFail($id);
+        return view('admin.pages.edit-photo', ['file' => $file]);
+    }
+
     // 
     public function editFileProcess(Request $req, $id)
     {
@@ -204,7 +210,7 @@ class LIController extends Controller
                 'page_name' => 'little_inspiration',
             ];
 
-            if (isset($req->tourFile)) {
+            if (isset($req->tourfile)) {
                 $actualImageName = null;
                 $file = $req->file('tourfile');
                 $extension = $file->getClientOriginalExtension();
@@ -227,7 +233,7 @@ class LIController extends Controller
             }
 
             File::find($id)->update($fileReq);;
-            return redirect('littleView')->with('success', "Tour Updated Successfully");
+            return redirect()->back()->with('success', "Tour Updated Successfully");
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -239,5 +245,15 @@ class LIController extends Controller
         $file = File::findOrFail($id);
         $file->delete();
         return back()->with('success', "File deleted Successfully");
+    }
+
+    // 
+    public function deactiveActive($id, $status)
+    {
+        $updReq = [
+            'is_active' => ($status == "active") ? 1 : 0
+        ];
+        File::find($id)->update($updReq);
+        return back();
     }
 }
