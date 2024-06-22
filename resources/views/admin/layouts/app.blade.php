@@ -235,7 +235,7 @@
             <!-- Brand Logo -->
             <a href="/" class="brand-link">
                 <img src="images/logo/logo_far_and_beyond.png" alt="AdminLTE Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                    class="brand-image img-circle elevation-3" style="opacity: .8 ;border-radius: 0%;">
                 <span class="brand-text font-weight-light">FAR</span>
             </a>
 
@@ -322,6 +322,12 @@
                                     <a href="{{ route('admin.responsible') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Responsible Travel</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.testimonials') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Testimonials</p>
                                     </a>
                                 </li>
 

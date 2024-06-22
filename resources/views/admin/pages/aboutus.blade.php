@@ -306,7 +306,7 @@
             </div>
 
             {{-- second section  --}}
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            {{-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                 <div class="container-fluid" style="margin-top: 30px">
                     <div class="row">
                         <div class="col-md-12 text-center">
@@ -330,7 +330,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </section>
     </div>

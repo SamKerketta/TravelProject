@@ -54,7 +54,7 @@ class DashboardController extends Controller
             "meta"          => $metaData,
             "destination"   => $destination,
             "listServices"  => $listServices,
-            "liImage"   => $littleIns,
+            "liImage"       => $littleIns,
             "multipleServices" => $multipleServices
         ]);
     }

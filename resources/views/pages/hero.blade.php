@@ -357,13 +357,13 @@
                         data-bs-interval="900">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="images/home/little-inspirations.webp" class="d-block w-100" alt="...">
+                                <img src="{!! $pageData['section7image1'] ?? '' !!}" class="d-block w-100" alt="section7image1">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/home/Responsible-travel.webp" class="d-block w-100" alt="...">
+                                <img src="{!! $pageData['section7image2'] ?? '' !!}" class="d-block w-100" alt="section7image2">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/home/little-inspirations.webp" class="d-block w-100" alt="...">
+                                <img src="{!! $pageData['section7image3'] ?? '' !!}" class="d-block w-100" alt="section7image3">
                             </div>
                         </div>
                     </div>

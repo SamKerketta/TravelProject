@@ -62,13 +62,7 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('hero', 'hero');
 });
 
-Route::controller(FormController::class)->group(function () {
-    Route::get('admin/inquiry', 'viewInquiry')->name('admin.inquiry');
-    Route::post('admin/save/inquiry', 'saveInquiry')->name('admin.save.inquiry');
 
-    Route::get('admin/subscription', 'viewSubscription')->name('admin.subscription');
-    Route::post('admin/save/subscription', 'savesubscription')->name('admin.save.subscription');
-});
 
 
 
@@ -163,5 +157,23 @@ Route::middleware([
         Route::get('collection/destination', 'viewDestination')->name('admin.view.destination');
         Route::get('collection/seo', 'viewSeo')->name('admin.view.seo');
         Route::post('collection/save-seo', 'saveSeo')->name('admin.save.seo');
+    });
+
+
+    Route::controller(FormController::class)->group(function () {
+        Route::get('admin/inquiry', 'viewInquiry')->name('admin.inquiry');
+        Route::post('admin/save/inquiry', 'saveInquiry')->name('admin.save.inquiry');
+
+        Route::get('admin/subscription', 'viewSubscription')->name('admin.subscription');
+        Route::post('admin/save/subscription', 'savesubscription')->name('admin.save.subscription');
+
+        Route::get('admin/testimonials', 'viewTestimonials')->name('admin.testimonials');
+        Route::post('admin/testimonials/add', 'addTestimonials')->name('add.testimonaial');
+
+        Route::get('admin/testimonials/view/edit', 'viewTestimonialsEdit')->name('admin.view.edit.testimonials');
+
+        Route::get('admin/testimonials/delete/{id}', 'deleteTestimonials')->name('admin.testimonials.delete');
+        Route::get('admin/testimonials/activate/{id}', 'activateTestimonials')->name('admin.testimonials.activate');
+        Route::get('admin/testimonials/deactivate/{id}', 'deactivateTestimonials')->name('admin.testimonials.deactivate');
     });
 });

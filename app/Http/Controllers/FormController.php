@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Mail\SendEnquiryMail;
 use App\Models\Inquiry;
 use App\Models\Subscription;
+use App\Models\Testimonial;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -55,5 +57,51 @@ class FormController extends Controller
         $mSubscription = new Subscription();
         $subData = $mSubscription->getSubscription()->orderByDesc('created_at')->get();
         return view('admin.pages.subscription', ["item" => $subData]);
+    }
+
+
+    public function viewTestimonials()
+    {
+        $mtestimonial = Testimonial::orderByDesc('id')->get();
+        return view('admin.pages.testimonial', ["testimonial" => $mtestimonial]);
+    }
+
+    public function addTestimonials(Request $req)
+    {
+        try {
+            $mTestimonial = new Testimonial();
+            $mTestimonial->saveTestimonial($req);
+            $responseMsg = "Testimonial added successfully";
+            return back()->with('success', $responseMsg);
+        } catch (Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
+    }
+
+
+    public function deleteTestimonials($id)
+    {
+        $file = Testimonial::findOrFail($id);
+        $file->delete();
+        return back()->with('success', "Testimonial deleted Successfully");
+    }
+
+    public function deactivateTestimonials($id)
+    {
+        $file = Testimonial::findOrFail($id);
+        $file->update([
+            "status" => 0
+        ]);
+        return back()->with('success', "Testimonial deactivated Successfully");
+    }
+
+
+    public function activateTestimonials($id)
+    {
+        $file = Testimonial::findOrFail($id);
+        $file->update([
+            "status" => 1
+        ]);
+        return back()->with('success', "Testimonial activated Successfully");
     }
 }
