@@ -54,20 +54,16 @@
                 <form action="{{route('little.update.file',['id'=>$file->id])}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="tourfile">Select Tour Video</label>
+                        <label for="tourfile">Select Your Photo</label>
                         <input type="file" class="form-control" id="tourfile" name="tourfile">
-                        <input type="hidden" class="form-control" id="fileType" name="fileType" value="video">
+                        <input type="hidden" class="form-control" id="fileType" name="fileType" value="photo">
                     </div>
                     <div class="form-group">
-                        <label for="placeholderImage">Select Placeholder Image</label>
-                        <input type="file" class="form-control" id="placeholderImage" name="placeholderImage">
-                    </div>
-                    <div class="form-group">
-                        <label for="title">Video Title</label>
+                        <label for="title">Photo Title</label>
                         <input type="text" class="form-control" id="title" name="title" value="{{$file->title}}">
                     </div>
                     <div class="form-group">
-                        <label for="description">Video Description</label>
+                        <label for="description">Photo Description</label>
                         <input type="text" class="form-control" id="description" name="description" value="{{$file->description}}">
                     </div>
                     <button class="btn btn-danger" type="submit">Update</button>
