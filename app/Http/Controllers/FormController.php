@@ -79,6 +79,9 @@ class FormController extends Controller
     }
 
 
+    /**
+     * | testimonail section 
+     */
     public function deleteTestimonials($id)
     {
         $file = Testimonial::findOrFail($id);
@@ -92,7 +95,7 @@ class FormController extends Controller
         $file->update([
             "status" => 0
         ]);
-        return back()->with('success', "Testimonial deactivated Successfully");
+        return back()->with('success', "Testimonial Deactivated Successfully");
     }
 
 
@@ -102,6 +105,29 @@ class FormController extends Controller
         $file->update([
             "status" => 1
         ]);
-        return back()->with('success', "Testimonial activated Successfully");
+        return back()->with('success', "Testimonial Activated Successfully");
+    }
+
+    public function viewTestimonialsEdit($id)
+    {
+        $editData = Testimonial::where('id', $id)->first();
+        return view('admin.pages.edittestimonial', ["testimonial" => $editData]);
+    }
+
+
+    public function editTestimonials(Request $req)
+    {
+        try {
+            $data = $req->all();
+            Testimonial::where("id", $req->id)->update([
+                "description"   => $req->testimonaial,
+                "name"          => $req->name,
+                "designation"   => $req->designation,
+                "country"       => $req->country
+            ]);
+            return back()->with('success', "Testimonial Updated Successfully");
+        } catch (Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
 }

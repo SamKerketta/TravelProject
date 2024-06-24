@@ -170,7 +170,9 @@ Route::middleware([
         Route::get('admin/testimonials', 'viewTestimonials')->name('admin.testimonials');
         Route::post('admin/testimonials/add', 'addTestimonials')->name('add.testimonaial');
 
-        Route::get('admin/testimonials/view/edit', 'viewTestimonialsEdit')->name('admin.view.edit.testimonials');
+        Route::get('admin/testimonials/view/edit/{id}', 'viewTestimonialsEdit')->name('admin.view.edit.testimonials');
+        Route::post('admin/testimonials/edit', 'editTestimonials')->name('edit.testimonaials');
+
 
         Route::get('admin/testimonials/delete/{id}', 'deleteTestimonials')->name('admin.testimonials.delete');
         Route::get('admin/testimonials/activate/{id}', 'activateTestimonials')->name('admin.testimonials.activate');
